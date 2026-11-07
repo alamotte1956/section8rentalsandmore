@@ -12,12 +12,14 @@ from flask import Flask, abort, jsonify, redirect, render_template_string, reque
 from import_partners import import_partners
 from referral_routes import referrals, init_referral_schema
 from agency_portal import agency
+from landlord_portal import landlords
 
 ROOT = Path(__file__).resolve().parent
 DB_PATH = Path(os.environ.get("REFERRAL_DB_PATH", str(ROOT / "referrals.sqlite3")))
 app = Flask(__name__)
 app.register_blueprint(referrals)
 app.register_blueprint(agency)
+app.register_blueprint(landlords)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY")
 app.config.update(SESSION_COOKIE_HTTPONLY=True, SESSION_COOKIE_SAMESITE="Lax",
                   SESSION_COOKIE_SECURE=True, MAX_CONTENT_LENGTH=16384)
