@@ -5,7 +5,11 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 import secrets
 import hmac
+from datetime import datetime, timezone
 from referral_routes import COUNTIES
+
+TERMS_VERSION = "2026-11-07-draft-1"
+CONSENT_VERSION = "2026-11-07-email-1"
 
 landlords = Blueprint("landlords", __name__, url_prefix="/landlords")
 
@@ -17,7 +21,10 @@ def init_schema(db):
     db.execute("""CREATE TABLE IF NOT EXISTS landlord_accounts (
         id INTEGER PRIMARY KEY, email TEXT NOT NULL UNIQUE,
         name TEXT NOT NULL, password_hash TEXT NOT NULL,
-        active INTEGER NOT NULL DEFAULT 1, created_at TEXT DEFAULT CURRENT_TIMESTAMP)""")
+        active INTEGER NOT NULL DEFAULT 1, created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+        terms_version TEXT, terms_accepted_at TEXT,
+        marketing_opt_in INTEGER NOT NULL DEFAULT 0,
+        marketing_consent_at TEXT, marketing_consent_version TEXT)""")
     db.execute("""CREATE TABLE IF NOT EXISTS landlord_units (
         id INTEGER PRIMARY KEY, owner_id INTEGER NOT NULL REFERENCES landlord_accounts(id),
         county TEXT NOT NULL, bedrooms INTEGER NOT NULL, rent INTEGER NOT NULL,
@@ -47,13 +54,19 @@ def register():
     email = str(data.get("email","")).strip().lower()
     name = str(data.get("name","")).strip()
     password = str(data.get("password",""))
+    if data.get("accept_terms") is not True or data.get("terms_version") != TERMS_VERSION:
+        return jsonify(error="You must affirmatively accept the current account terms"), 400
+    if type(data.get("marketing_opt_in", False)) is not bool:
+        return jsonify(error="Marketing consent must be an explicit checkbox choice"), 400
+    opted_in = data.get("marketing_opt_in", False)
+    now = datetime.now(timezone.utc).isoformat()
     if not 3 <= len(email) <= 254 or "@" not in email or not 2 <= len(name) <= 150 or not 12 <= len(password) <= 256:
         return jsonify(error="Valid email, landlord name and 12+ character password required"), 400
     with connect() as db:
         init_schema(db)
         try:
-            db.execute("INSERT INTO landlord_accounts(email,name,password_hash) VALUES(?,?,?)",
-                       (email,name,generate_password_hash(password)))
+            db.execute("INSERT INTO landlord_accounts(email,name,password_hash,terms_version,terms_accepted_at,marketing_opt_in,marketing_consent_at,marketing_consent_version) VALUES(?,?,?,?,?,?,?,?)",
+                       (email,name,generate_password_hash(password),TERMS_VERSION,now,int(opted_in),now if opted_in else None,CONSENT_VERSION if opted_in else None))
         except sqlite3.IntegrityError:
             return jsonify(error="Account already registered"), 409
     return jsonify(message="Registered; sign in to manage rental units"), 201
