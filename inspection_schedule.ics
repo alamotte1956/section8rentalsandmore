@@ -1,25 +1,22 @@
-﻿BEGIN:VCALENDAR
+BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Section 8 Rentals and More LLC//Compliance Engine//EN
+PRODID:-//Section 8 Rentals and More LLC//Inspection Engine//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
 BEGIN:VEVENT
-SUMMARY:Annual NSPIRE Pre-Inspection Walkthrough
-DESCRIPTION:Check CO detectors within 10ft of sleeping rooms, smoke alarms within 21ft, water heater TPR valve extension <= 6 in, and GFCI outlets.
+SUMMARY:NSPIRE Audit - 10805 173rd St W Unit 127
+DESCRIPTION:HCV Annual NSPIRE Inspection with Dakota County CDA.
+LOCATION:10805 173rd St W, Lakeville, MN 55044
 DTSTART:20261115T150000Z
-DTEND:20261115T160000Z
-LOCATION:Lakeville, MN
+DTEND:20261115T163000Z
+STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:HAP Contract Renewal & Rent Reasonableness Audit
-DESCRIPTION:Review HUD 2026 Payment Standards for Dakota County CDA, MPHA, and St. Paul PHA. Submit rent adjustment 60 days prior.
-DTSTART:20261201T150000Z
-DTEND:20261201T160000Z
-LOCATION:Lakeville, MN
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Tenant Arrears & Ledger Audit (Minn. Stat. § 504B.321)
-DESCRIPTION:Review tenant balances. Issue 14-day statutory notice with county financial assistance disclosure if overdue.
-DTSTART:20261215T150000Z
-DTEND:20261215T160000Z
-LOCATION:Lakeville, MN
+SUMMARY:MPHA Initial HQS Inspection - 2412 Central Ave NE
+DESCRIPTION:Minneapolis Public Housing Authority Initial Move-In Inspection.
+LOCATION:2412 Central Ave NE, Minneapolis, MN 55418
+DTSTART:20261118T160000Z
+DTEND:20261118T173000Z
+STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR
