@@ -1,12 +1,9 @@
-﻿
-cf_*.py
+﻿node_modules/
+dist/
 .wrangler/
+cf_*.py
 build_all_assets.py
 integrate_intake.py
 auto_merge.py
-
-cf_*.py
-.wrangler/
-build_all_assets.py
-integrate_intake.py
-auto_merge.py
+__pycache__/
+*.pyc
