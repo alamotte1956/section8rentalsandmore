@@ -3,285 +3,149 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Section 8 Rentals & More | Executive Presentation</title>
+  <title>Executive Investor Presentation | Section 8 Rentals and More LLC</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body { background-color: #0f172a; color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; }
     .slide { display: none; }
     .slide.active { display: block; }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-white">
-  <header class="bg-[#010e21] border-b border-[#dfa433]/30 sticky top-0 z-50 px-6 py-4 flex flex-wrap justify-between items-center shadow-xl">
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between font-sans antialiased">
+
+  <header class="border-b border-[#dfa433]/30 bg-slate-900/80 backdrop-blur px-6 py-4 flex items-center justify-between sticky top-0 z-50">
     <div class="flex items-center gap-3">
-      <a href="index.html" class="flex items-center gap-3 hover:opacity-90 transition-opacity">
-        <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-[#dfa433] to-[#f3ca65] flex items-center justify-center text-slate-950 font-black text-xl shadow-md">S8</div>
-        <div>
-          <h1 class="text-lg font-black tracking-wide text-white">Section 8 Rentals & More <span class="text-[#f3ca65]">LLC</span></h1>
-          <p class="text-xs text-slate-400">Twin Cities Metro & Western WI | Direct HCV Authority</p>
-        </div>
-      </a>
+      <div class="h-10 w-10 rounded-lg bg-[#dfa433]/20 border border-[#dfa433] flex items-center justify-center font-bold text-[#dfa433] text-lg">S8</div>
+      <div>
+        <h1 class="text-sm font-semibold tracking-wide uppercase text-[#dfa433]">Section 8 Rentals and More LLC</h1>
+        <p class="text-xs text-slate-400">Executive Deck &bull; Operational Expansion</p>
+      </div>
     </div>
-
-    <!-- Center Navigation Links -->
-    <nav class="hidden lg:flex items-center gap-5 text-xs font-semibold text-slate-300">
-      <a href="index.html" class="hover:text-[#f3ca65] transition-colors">Home</a>
-      <a href="landlord-guaranteed-rent.html" class="hover:text-[#f3ca65] transition-colors">Guaranteed Rent</a>
-      <a href="property-managers.html" class="hover:text-[#f3ca65] transition-colors">Property Managers</a>
-      <a href="market-rate-conversions.html" class="hover:text-[#f3ca65] transition-colors">Market Conversions</a>
-      <a href="voucher-relocation.html" class="hover:text-[#f3ca65] transition-colors">Voucher Relocation</a>
-      <a href="presentation.html" class="hover:text-[#f3ca65] transition-colors">Presentation</a>
-    </nav>
-
-    <!-- Right-Hand Controls -->
-    <div class="flex items-center gap-3 mt-3 sm:mt-0">
-      <a href="admin.html" class="text-xs font-bold text-slate-950 bg-gradient-to-r from-[#dfa433] to-[#f3ca65] hover:opacity-90 px-3.5 py-2 rounded-lg transition-all shadow-md flex items-center gap-1.5">
-        <i class="fa-solid fa-lock"></i> Executive Hub
-      </a>
-      <button type="button" onclick="openLeadModal('Direct Landlord & Agency Consultation')" class="text-xs font-semibold text-[#f3ca65] border border-[#dfa433]/50 hover:bg-[#dfa433]/10 px-3.5 py-2 rounded-lg transition-all flex items-center gap-1.5 cursor-pointer">
-        <i class="fa-solid fa-envelope"></i> Contact Us
-      </button>
+    <div class="flex items-center gap-4">
+      <a href="admin.html" class="text-xs text-slate-400 hover:text-white transition">Admin Hub</a>
+      <a href="investor-dossier.html" class="text-xs text-slate-400 hover:text-white transition">Investor Dossier</a>
+      <a href="index.html" class="text-xs bg-[#dfa433] text-slate-950 font-bold px-3 py-1.5 rounded hover:bg-[#c99026] transition">Public Site</a>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-4 py-8 flex-1 flex items-center justify-center w-full">
-    <div class="slide active w-full" data-start="0" data-end="28">
-      <div class="bg-[#04244a]/80 border border-[#dfa433]/30 rounded-2xl p-8 md:p-12 shadow-2xl">
-        <p class="text-amber-500 text-xs font-bold tracking-widest uppercase mb-3">Affordable Housing Automation Platform</p>
-        <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">Section 8 Rentals and More</h1>
-        <p class="text-slate-300 text-lg md:text-xl mb-8 leading-relaxed">
-          Automated PHA Compliance, Instant HUD-52517 (RFTA) Generation & NSPIRE Pre-Audits across the Twin Cities 5-County Metropolitan Area.
+  <div class="max-w-4xl mx-auto w-full px-6 pt-6">
+    <div class="bg-slate-900 border border-[#dfa433]/40 rounded-2xl p-4 flex flex-col md:flex-row items-center justify-between gap-4 shadow-xl shadow-black/40">
+      <div class="flex items-center gap-3">
+        <button id="playBtn" class="h-12 w-12 rounded-full bg-[#dfa433] hover:bg-[#c99026] text-slate-950 flex items-center justify-center text-lg font-bold shadow-lg transition active:scale-95">
+          <i id="playIcon" class="fa-solid fa-play ml-0.5"></i>
+        </button>
+        <div>
+          <p class="text-sm font-semibold text-white">Audio Narration</p>
+          <p id="timeDisplay" class="text-xs text-slate-400">00:00 / 04:36</p>
+        </div>
+      </div>
+      <audio id="audioPlayer" src="speech.mp3" preload="auto" controls class="w-full md:w-80 h-10 rounded-lg"></audio>
+    </div>
+  </div>
+
+  <main class="max-w-4xl mx-auto w-full px-6 py-6 flex-1 flex flex-col justify-center">
+    <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl min-h-[420px] flex flex-col justify-between">
+      
+      <section class="slide active" data-start="0" data-end="35">
+        <span class="text-xs font-bold tracking-widest text-[#dfa433] uppercase">Slide 1 &bull; Executive Thesis</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold mt-3 text-white">Guaranteed Government-Backed Yield</h2>
+        <p class="mt-4 text-slate-300 leading-relaxed text-sm md:text-base">
+          Section 8 Rentals and More LLC bridges institutional capital and verified voucher holders across Minnesota and Western Wisconsin, securing monthly rental payments directly disbursed by HUD and local Public Housing Agencies (PHAs).
         </p>
-        <div class="border-t border-[#dfa433]/30 pt-6 flex justify-between text-sm text-slate-400">
-          <div><strong class="text-white">Albert R. LaMotte</strong>, Founder & Managing Director</div>
-          <div class="text-amber-500 font-semibold"><i class="fa-solid fa-location-dot mr-1"></i> Lakeville, Minnesota</div>
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+            <p class="text-xs text-slate-400">Direct Deposit</p>
+            <p class="text-xl font-bold text-[#dfa433] mt-1">100% PHA</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+            <p class="text-xs text-slate-400">Core Market</p>
+            <p class="text-xl font-bold text-white mt-1">Twin Cities</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+            <p class="text-xs text-slate-400">Default Risk</p>
+            <p class="text-xl font-bold text-emerald-400 mt-1">Near Zero</p>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="slide w-full" data-start="28" data-end="62">
-      <div class="bg-[#04244a]/80 border border-[#dfa433]/30 rounded-2xl p-8 md:p-10 shadow-2xl">
-        <p class="text-amber-500 text-xs font-bold tracking-widest uppercase mb-2">The Industry Problem</p>
-        <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">The Affordable Housing Bottleneck: Friction & Lost Revenue</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div class="bg-[#02162e]/60 p-5 rounded-xl border border-[#dfa433]/30/60">
-            <span class="text-xs font-bold text-amber-500 uppercase">Paperwork & RFTA Delays</span>
-            <h3 class="text-lg font-bold text-white my-2">30–60 Day Move-In Lag</h3>
-            <p class="text-xs text-slate-300">Manual packets with utility calculation mistakes trigger repeated caseworker rejections.</p>
-          </div>
-          <div class="bg-[#02162e]/60 p-5 rounded-xl border border-[#dfa433]/30/60">
-            <span class="text-xs font-bold text-amber-500 uppercase">NSPIRE Physical Gaps</span>
-            <h3 class="text-lg font-bold text-white my-2">40%+ Failure Rate</h3>
-            <p class="text-xs text-slate-300">Initial inspections fail over simple items, delaying rent by 30+ days.</p>
-          </div>
-          <div class="bg-[#02162e]/60 p-5 rounded-xl border border-[#dfa433]/30/60">
-            <span class="text-xs font-bold text-amber-500 uppercase">Landlord Hesitancy</span>
-            <h3 class="text-lg font-bold text-white my-2">Lost Rental Income</h3>
-            <p class="text-xs text-slate-300">Owners avoid Section 8 due to red tape and lost cash flow.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide w-full" data-start="62" data-end="88">
-      <div class="bg-[#04244a]/80 border border-[#dfa433]/30 rounded-2xl p-8 md:p-10 shadow-2xl">
-        <p class="text-amber-500 text-xs font-bold tracking-widest uppercase mb-2">Lease-Up Velocity</p>
-        <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">Compressing 45 Days Down to Under 10 Days</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-[#02162e]/60 p-6 rounded-xl border border-red-500/30">
-            <span class="text-xs font-bold text-red-400 uppercase tracking-wider">Traditional Method</span>
-            <h3 class="text-2xl font-bold text-white my-2">45–60 Days Average</h3>
-            <ul class="text-xs text-slate-300 space-y-2 mt-4">
-              <li><i class="fa-solid fa-xmark text-red-500 mr-2"></i>Manual paper packet errors</li>
-              <li><i class="fa-solid fa-xmark text-red-500 mr-2"></i>Multi-week casework back-and-forth</li>
-              <li><i class="fa-solid fa-xmark text-red-500 mr-2"></i>Preventable inspection failures</li>
-            </ul>
-          </div>
-          <div class="bg-[#02162e]/60 p-6 rounded-xl border border-amber-500/40">
-            <span class="text-xs font-bold text-amber-500 uppercase tracking-wider">Section 8 Rentals & More</span>
-            <h3 class="text-2xl font-bold text-white my-2">Under 10 Days to Signing</h3>
-            <ul class="text-xs text-slate-300 space-y-2 mt-4">
-              <li><i class="fa-solid fa-check text-amber-500 mr-2"></i>Automated HUD-52517 generated in 60s</li>
-              <li><i class="fa-solid fa-check text-amber-500 mr-2"></i>Exact utility allowance & payment standards</li>
-              <li><i class="fa-solid fa-check text-amber-500 mr-2"></i>Mobile digital NSPIRE pre-audits</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide w-full" data-start="88" data-end="122">
-      <div class="bg-[#04244a]/80 border border-[#dfa433]/30 rounded-2xl p-8 md:p-10 shadow-2xl">
-        <p class="text-amber-500 text-xs font-bold tracking-widest uppercase mb-2">Platform Capabilities</p>
-        <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">Purpose-Built Voucher Automation Architecture</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div class="bg-[#02162e]/60 p-5 rounded-xl border border-[#dfa433]/30/60">
-            <h3 class="text-base font-bold text-white mb-1">Instant HUD-52517 Generation</h3>
-            <p class="text-xs text-slate-300">Clean RFTA packets formatted for caseworkers in under 60 seconds.</p>
-          </div>
-          <div class="bg-[#02162e]/60 p-5 rounded-xl border border-[#dfa433]/30/60">
-            <h3 class="text-base font-bold text-white mb-1">Mobile NSPIRE Pre-Inspection</h3>
-            <p class="text-xs text-slate-300">Room-by-room digital punchlists ensure units pass on the first visit.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide w-full" data-start="122" data-end="152">
-      <div class="bg-[#04244a]/80 border border-[#dfa433]/30 rounded-2xl p-8 md:p-10 shadow-2xl">
-        <p class="text-amber-500 text-xs font-bold tracking-widest uppercase mb-2">Regional Coverage</p>
-        <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">Twin Cities 5-County Representation</h2>
-        <div class="space-y-3 text-xs">
-          <div class="bg-[#02162e]/60 p-3 rounded-xl border border-[#dfa433]/30 flex justify-between">
-            <div><strong class="text-amber-500">Dakota County</strong> | Dakota County CDA (Lakeville, Burnsville)</div>
-            <div class="text-amber-500 font-bold">$1,750 - $2,350/mo</div>
-          </div>
-          <div class="bg-[#02162e]/60 p-3 rounded-xl border border-[#dfa433]/30 flex justify-between">
-            <div><strong class="text-amber-500">Hennepin County</strong> | Minneapolis PHA (Minneapolis, Bloomington)</div>
-            <div class="text-amber-500 font-bold">$1,275 - $2,200/mo</div>
-          </div>
-          <div class="bg-[#02162e]/60 p-3 rounded-xl border border-[#dfa433]/30 flex justify-between">
-            <div><strong class="text-amber-500">Ramsey County</strong> | Saint Paul PHA (Saint Paul, Roseville)</div>
-            <div class="text-amber-500 font-bold">$1,650 - $2,150/mo</div>
-          </div>
-          <div class="bg-[#02162e]/60 p-3 rounded-xl border border-[#dfa433]/30 flex justify-between">
-            <div><strong class="text-amber-500">Anoka County</strong> | Anoka County HRA (Coon Rapids, Blaine)</div>
-            <div class="text-amber-500 font-bold">$1,625 - $2,100/mo</div>
-          </div>
-          <div class="bg-[#02162e]/60 p-3 rounded-xl border border-[#dfa433]/30 flex justify-between">
-            <div><strong class="text-amber-500">Washington County</strong> | Washington County CDA (Woodbury)</div>
-            <div class="text-amber-500 font-bold">$1,850 - $2,450/mo</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide w-full" data-start="152" data-end="194">
-      <div class="bg-[#04244a]/80 border border-[#dfa433]/30 rounded-2xl p-8 md:p-10 shadow-2xl">
-        <p class="text-amber-500 text-xs font-bold tracking-widest uppercase mb-2">Field Evaluation</p>
-        <h2 class="text-2xl md:text-4xl font-bold text-white mb-4">Calvin's Practical Assessment</h2>
-        <div class="bg-[#02162e]/80 border-l-4 border-amber-500 p-6 rounded-r-xl mb-6">
-          <p class="text-base italic text-slate-200">
-            “It stripped out the confusion and turned a multi-week administrative hassle into a straightforward, automated routine.”
-          </p>
-        </div>
-        <p class="text-xs text-slate-300">
-          Calvin, an experienced Twin Cities rental owner, evaluated Section 8 Rentals and More on his units, eliminating vacancy delays and administrative overhead.
+      <section class="slide" data-start="35" data-end="70">
+        <span class="text-xs font-bold tracking-widest text-[#dfa433] uppercase">Slide 2 &bull; Market Mechanics</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold mt-3 text-white">2026 Fair Market Rents &amp; SAFMRs</h2>
+        <p class="mt-4 text-slate-300 leading-relaxed text-sm md:text-base">
+          Leveraging Small Area Fair Market Rent (SAFMR) schedules across Hennepin, Ramsey, Dakota, Anoka, and Washington counties yields payment standards consistently exceeding unassisted private-market leases.
         </p>
-      </div>
-    </div>
-
-    <div class="slide w-full" data-start="194" data-end="226">
-      <div class="bg-[#04244a]/80 border border-[#dfa433]/30 rounded-2xl p-8 md:p-10 shadow-2xl">
-        <p class="text-amber-500 text-xs font-bold tracking-widest uppercase mb-2">Business Models</p>
-        <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">Turnkey Monetization Paths</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-          <div class="bg-[#02162e]/60 p-4 rounded-xl border border-[#dfa433]/30">
-            <strong class="text-amber-500 block mb-1">Co-Hosting & Management</strong>
-            <p class="text-slate-300">8–10% monthly management fee for handling paperwork, casework, and inspections.</p>
-          </div>
-          <div class="bg-[#02162e]/60 p-4 rounded-xl border border-[#dfa433]/30">
-            <strong class="text-amber-500 block mb-1">Master Lease Arbitrage</strong>
-            <p class="text-slate-300">Master-lease vacant single-family homes, placing voucher holders at payment standards.</p>
-          </div>
-          <div class="bg-[#02162e]/60 p-4 rounded-xl border border-[#dfa433]/30">
-            <strong class="text-amber-500 block mb-1">Contractor Synergies</strong>
-            <p class="text-slate-300">Connect pre-inspection repairs to vetted local contractors, eliminating failed walkthroughs.</p>
-          </div>
+        <div class="mt-8 p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-sm text-slate-300">
+          Statutory compliance under Minn. Stat. &sect; 504B and HUD-52517 Request for Tenancy Approval (RFTA) processing.
         </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="slide w-full" data-start="226" data-end="254">
-      <div class="bg-[#04244a]/80 border border-[#dfa433]/30 rounded-2xl p-8 md:p-10 shadow-2xl">
-        <p class="text-amber-500 text-xs font-bold tracking-widest uppercase mb-2">Competitive Edge</p>
-        <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">Why We Beat Legacy Listing Boards</h2>
-        <p class="text-sm text-slate-300 leading-relaxed">
-          While traditional listing boards stop at passive property directories, Section 8 Rentals and More automates the actual administrative pipeline: pre-populating HUD-52517 RFTA packets, conducting mobile NSPIRE pre-audits, and interfacing directly with local Housing Authorities.
+      <section class="slide" data-start="70" data-end="105">
+        <span class="text-xs font-bold tracking-widest text-[#dfa433] uppercase">Slide 3 &bull; Quality &amp; Compliance</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold mt-3 text-white">HUD NSPIRE Pre-Inspection Standards</h2>
+        <p class="mt-4 text-slate-300 leading-relaxed text-sm md:text-base">
+          Our proprietary inspection readiness engine audits properties against all 63 NSPIRE safety, habitability, and structural checkpoints before the housing authority inspector arrives on-site.
         </p>
-      </div>
-    </div>
+      </section>
 
-    <div class="slide w-full" data-start="254" data-end="280">
-      <div class="bg-[#04244a]/80 border border-[#dfa433]/30 rounded-2xl p-8 md:p-10 shadow-2xl">
-        <p class="text-amber-500 text-xs font-bold tracking-widest uppercase mb-2">Execution Plan</p>
-        <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">Immediate Execution Roadmap</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-          <div class="bg-[#02162e]/60 p-4 rounded-xl border border-[#dfa433]/30">
-            <strong class="text-amber-500 block mb-1">Phase 1: Volume Sync</strong>
-            <p class="text-slate-300">Active database across Dakota, Hennepin, Ramsey, Anoka, and Washington counties.</p>
-          </div>
-          <div class="bg-[#02162e]/60 p-4 rounded-xl border border-[#dfa433]/30">
-            <strong class="text-amber-500 block mb-1">Phase 2: Landlord Outreach</strong>
-            <p class="text-slate-300">Direct engagement with owners to eliminate paperwork lag and secure cash flow.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+      <section class="slide" data-start="105" data-end="140">
+        <span class="text-xs font-bold tracking-widest text-[#dfa433] uppercase">Slide 4 &bull; Portfolio Scaling</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold mt-3 text-white">Market-Rate Portfolio Conversions</h2>
+        <p class="mt-4 text-slate-300 leading-relaxed text-sm md:text-base">
+          Converting underperforming conventional multifamily and single-family portfolios into Section 8 housing eliminates tenant default risk, stabilizes net operating income, and guarantees reliable cash flow.
+        </p>
+      </section>
 
-    <div class="slide w-full" data-start="280" data-end="999">
-      <div class="bg-[#04244a]/80 border border-[#dfa433]/30 rounded-2xl p-8 md:p-12 shadow-2xl">
-        <p class="text-amber-500 text-xs font-bold tracking-widest uppercase mb-3">Partner With Us Today</p>
-        <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">Guaranteed Direct-Deposit Rent</h2>
-        <div class="space-y-4 my-8 text-sm text-slate-300">
-          <div><strong class="text-white">Competitive Contracts Available to Peruse:</strong> Comprehensive onboarding agreements ready for review today.</div>
-          <div><strong class="text-white">Software Demos by Appointment:</strong> Scheduled walkthroughs of our 1-click RFTA generator and pre-audit tools.</div>
+      <section class="slide" data-start="140" data-end="180">
+        <span class="text-xs font-bold tracking-widest text-[#dfa433] uppercase">Slide 5 &bull; Voucher Placement</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold mt-3 text-white">Pre-Audited Tenant Placement</h2>
+        <p class="mt-4 text-slate-300 leading-relaxed text-sm md:text-base">
+          Voucher relocation matching pairs pre-screened, verified voucher holders with licensed housing inventory, minimizing vacancy turnaround times to under 14 days.
+        </p>
+      </section>
+
+      <section class="slide" data-start="180" data-end="215">
+        <span class="text-xs font-bold tracking-widest text-[#dfa433] uppercase">Slide 6 &bull; Automation Architecture</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold mt-3 text-white">Full-Stack Operational Engine</h2>
+        <p class="mt-4 text-slate-300 leading-relaxed text-sm md:text-base">
+          Automated RFTA packet generation, lease compliance checks, and real-time PHA payment verification eliminate manual paperwork bottlenecks and expedite initial subsidy release.
+        </p>
+      </section>
+
+      <section class="slide" data-start="215" data-end="250">
+        <span class="text-xs font-bold tracking-widest text-[#dfa433] uppercase">Slide 7 &bull; Expansion Model</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold mt-3 text-white">Wisconsin &amp; Regional Growth</h2>
+        <p class="mt-4 text-slate-300 leading-relaxed text-sm md:text-base">
+          Extending statutory operations under Wis. Stat. &sect; 704 across St. Croix and Pierce counties to support Western Wisconsin housing authorities with unified tenant and property management.
+        </p>
+      </section>
+
+      <section class="slide" data-start="250" data-end="276">
+        <span class="text-xs font-bold tracking-widest text-[#dfa433] uppercase">Slide 8 &bull; Summary &amp; Next Steps</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold mt-3 text-white">Partner with Section 8 Rentals and More LLC</h2>
+        <p class="mt-4 text-slate-300 leading-relaxed text-sm md:text-base">
+          Review the full investor dossier or connect directly with our acquisitions and management desk to deploy capital or convert your residential units.
+        </p>
+        <div class="mt-8">
+          <a href="investor-dossier.html" class="inline-block bg-[#dfa433] text-slate-950 font-bold px-6 py-3 rounded-xl hover:bg-[#c99026] transition">Access Complete Investor Dossier</a>
         </div>
-        <div class="border-t border-[#dfa433]/30 pt-6 flex justify-between items-center">
-          <div class="text-xs text-slate-400"><strong>Albert R. LaMotte</strong>, Managing Director</div>
-          <a href="index.html" class="px-6 py-2.5 rounded-xl bg-amber-500 text-slate-950 font-bold hover:bg-amber-500 text-sm">
-            Return to Main Site
-          </a>
-        </div>
+      </section>
+
+      <div class="mt-8 pt-6 border-t border-slate-800 flex items-center justify-between">
+        <button id="prevSlide" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-sm font-semibold transition">
+          <i class="fa-solid fa-arrow-left mr-2"></i> Previous
+        </button>
+        <span id="slideIndicator" class="text-xs font-mono text-slate-400 font-semibold tracking-wider">1 / 8</span>
+        <button id="nextSlide" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-sm font-semibold transition">
+          Next <i class="fa-solid fa-arrow-right ml-2"></i>
+        </button>
       </div>
+
     </div>
   </main>
 
-  <footer class="bg-[#010e21] border-t border-[#dfa433]/30 text-slate-400 text-xs py-12 px-6 mt-16">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div>
-        <div class="flex items-center gap-2 mb-3">
-          <div class="w-8 h-8 rounded bg-gradient-to-r from-[#dfa433] to-[#f3ca65] flex items-center justify-center text-slate-950 font-black">S8</div>
-          <span class="text-white font-bold text-sm">Section 8 Rentals & More <span class="text-[#f3ca65]">LLC</span></span>
-        </div>
-        <p class="leading-relaxed">Connecting Qualified Tenants, Landlords, and Housing Agencies across Dakota, Hennepin, Ramsey, Anoka, and Washington Counties.</p>
-        <p class="mt-2 text-slate-500">10805 173rd St W, Lakeville, MN 55044</p>
-      </div>
-      <div>
-        <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px] text-[#f3ca65]">Landlord & Manager Solutions</h4>
-        <ul class="space-y-2">
-          <li><a href="landlord-guaranteed-rent.html" class="hover:text-[#f3ca65] transition-colors">Guaranteed HUD Payments</a></li>
-          <li><a href="property-managers.html" class="hover:text-[#f3ca65] transition-colors">Property Management Portals</a></li>
-          <li><a href="market-rate-conversions.html" class="hover:text-[#f3ca65] transition-colors">Market-Rate HCV Conversions</a></li>
-          <li><a href="voucher-relocation.html" class="hover:text-[#f3ca65] transition-colors">Tenant Voucher Relocation</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px] text-[#f3ca65]">Operations & Compliance</h4>
-        <ul class="space-y-2">
-          <li><a href="admin.html" class="hover:text-[#f3ca65] transition-colors">Executive Admin Hub</a></li>
-          <li><a href="presentation.html" class="hover:text-[#f3ca65] transition-colors">Investor & Partner Deck</a></li>
-          <li><a href="inspection_schedule.ics" download class="hover:text-[#f3ca65] transition-colors">NSPIRE / HQS Calendar Feed</a></li>
-          <li><button type="button" onclick="openLeadModal('Compliance & PHA Inquiry')" class="text-left hover:text-[#f3ca65] transition-colors bg-transparent border-none p-0 cursor-pointer">Direct Agency Consultation</button></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px] text-[#f3ca65]">Compliance Standards</h4>
-        <p class="leading-relaxed text-slate-400">Strict adherence to Minn. Stat. § 504B, Wis. Stat. § 704, HUD NSPIRE standards, and CARES Act 30-day statutory notice requirements.</p>
-        <div class="mt-4 pt-3 border-t border-[#dfa433]/20 text-[10px] text-slate-500">
-          &copy; 2026 Section 8 Rentals and More LLC. All rights reserved.
-        </div>
-      </div>
-    </div>
+  <footer class="border-t border-[#dfa433]/20 bg-slate-900/50 py-4 text-center text-xs text-slate-500">
+    &copy; 2026 Section 8 Rentals and More LLC &bull; Strict adherence to Minn. Stat. &sect; 504B, Wis. Stat. &sect; 704, and HUD NSPIRE standards.
   </footer>
-
-      <!-- Audio Engine & Visual Fallback Bar -->
-  <div style="display: flex; justify-content: center; align-items: center; margin: 25px auto; max-width: 600px; padding: 0 16px; position: relative; z-index: 100;">
-      <!-- Audio Engine & Visual Fallback Bar -->
-  <div style="display: flex; justify-content: center; align-items: center; margin: 25px auto; max-width: 600px; padding: 0 16px; position: relative; z-index: 100;">
-    <audio id="audioPlayer" src="speech.mp3" preload="auto" controls style="width: 100%; height: 50px; border-radius: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"></audio>
-  </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -297,9 +161,8 @@
 
       function showSlide(idx) {
         if (!slides.length || idx < 0 || idx >= slides.length) return;
-        slides.forEach((sl, i) => {
-          sl.classList.toggle('active', i === idx);
-          sl.style.display = (i === idx) ? 'block' : 'none';
+        slides.forEach((s, i) => {
+          s.classList.toggle('active', i === idx);
         });
         currentSlide = idx;
         if (slideIndicator) slideIndicator.textContent = (currentSlide + 1) + ' / ' + slides.length;
@@ -314,7 +177,7 @@
             audio.play().then(() => {
               if (playIcon) playIcon.classList.replace('fa-play', 'fa-pause');
             }).catch(err => {
-              console.warn('Browser autoplay prevented. Use audio bar directly:', err);
+              console.warn('Playback blocked or failed:', err);
             });
           } else {
             audio.pause();
@@ -340,8 +203,8 @@
           }
 
           for (let i = slides.length - 1; i >= 0; i--) {
-            const rawStart = slides[i].getAttribute('data-start');
-            const start = rawStart ? parseFloat(rawStart) : 0;
+            const startAttr = slides[i].getAttribute('data-start');
+            const start = startAttr ? parseFloat(startAttr) : 0;
             if (cur >= start) {
               if (currentSlide !== i) showSlide(i);
               break;
@@ -375,76 +238,5 @@
       }
     });
   </script>
-
-<!-- Universal Lead / Contact Modal -->
-<div id="universal-lead-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-  <div class="bg-[#02162e] border border-[#dfa433]/40 rounded-2xl max-w-lg w-full p-6 text-white shadow-2xl relative">
-    <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl cursor-pointer">&times;</button>
-    <div class="flex items-center gap-3 mb-4">
-      <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-[#dfa433] to-[#f3ca65] flex items-center justify-center text-slate-950 font-black">S8</div>
-      <div>
-        <h3 id="modal-service-title" class="text-lg font-bold text-white">Direct Agency Contact</h3>
-        <p class="text-xs text-[#f3ca65]">Section 8 Rentals and More LLC | 5-County Portal</p>
-      </div>
-    </div>
-    <form id="universal-intake-form" onsubmit="handleLeadSubmit(event)" class="space-y-4">
-      <div>
-        <label class="block text-xs font-semibold text-slate-300 mb-1">Your Full Name</label>
-        <input type="text" id="intake-name" required placeholder="Dr. Albert LaMotte / Property Owner" class="w-full bg-[#010e21] border border-[#dfa433]/30 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-[#f3ca65]" />
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-        <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address</label>
-          <input type="email" id="intake-email" required placeholder="contact@domain.com" class="w-full bg-[#010e21] border border-[#dfa433]/30 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-[#f3ca65]" />
-        </div>
-        <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Target County</label>
-          <select id="intake-county" class="w-full bg-[#010e21] border border-[#dfa433]/30 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-[#f3ca65]">
-            <option value="Dakota County (MN042)">Dakota County (CDA)</option>
-            <option value="Hennepin County (MN002)">Hennepin County (MPHA)</option>
-            <option value="Ramsey County (MN001)">Ramsey County (St. Paul PHA)</option>
-            <option value="Anoka County (MN027)">Anoka County</option>
-            <option value="Washington County (MN033)">Washington County</option>
-            <option value="Western Wisconsin">Western Wisconsin</option>
-          </select>
-        </div>
-      </div>
-      <div>
-        <label class="block text-xs font-semibold text-slate-300 mb-1">Property Address or Voucher Inquiry</label>
-        <textarea id="intake-notes" rows="3" placeholder="Provide property address, current rent, or voucher bedroom count..." class="w-full bg-[#010e21] border border-[#dfa433]/30 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-[#f3ca65]"></textarea>
-      </div>
-      <div class="flex justify-end gap-3 pt-2">
-        <button type="button" onclick="closeLeadModal()" class="px-4 py-2 text-xs font-bold text-slate-400 hover:text-white cursor-pointer">Cancel</button>
-        <button type="submit" class="px-5 py-2.5 text-xs font-bold text-slate-950 bg-gradient-to-r from-[#dfa433] to-[#f3ca65] hover:opacity-90 rounded-lg shadow-lg cursor-pointer">Submit Securely</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<script>
-window.openLeadModal = function(title) {
-  const modal = document.getElementById('universal-lead-modal');
-  const t = document.getElementById('modal-service-title');
-  if (t && title) t.innerText = title;
-  if (modal) modal.classList.remove('hidden');
-};
-window.closeLeadModal = function() {
-  const modal = document.getElementById('universal-lead-modal');
-  if (modal) modal.classList.add('hidden');
-};
-window.handleLeadSubmit = function(e) {
-  e.preventDefault();
-  const name = document.getElementById('intake-name').value;
-  const email = document.getElementById('intake-email').value;
-  const county = document.getElementById('intake-county').value;
-  alert(`Thank you, ${name}!
-
-Your inquiry for ${county} has been securely transmitted to Section 8 Rentals and More LLC.
-Confirmation copy dispatched to: ${email}`);
-  closeLeadModal();
-  document.getElementById('universal-intake-form').reset();
-};
-</script>
-
 </body>
 </html>
