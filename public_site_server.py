@@ -7,7 +7,8 @@ import os
 ROOT = Path(__file__).resolve().parent
 PUBLIC = {"/": "index.html", "/index.html": "index.html",
           "/presentation.html": "presentation.html",
-          "/referral-partners.html": "referral-partners.html"}
+          "/referral-partners.html": "referral-partners.html",
+          "/landlords.html": "landlords.html"}
 ASSETS = {".mp3": "audio/mpeg", ".ics": "text/calendar"}
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
