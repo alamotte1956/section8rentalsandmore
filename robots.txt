@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /*_report.json
+Disallow: /*_audit*.json
+Disallow: /*.py
+Disallow: /*.ics
+
+Sitemap: https://www.section8rentalsandmore.com/sitemap.xml
+Host: https://www.section8rentalsandmore.com
