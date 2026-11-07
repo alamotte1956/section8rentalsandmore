@@ -3,6 +3,8 @@ import sqlite3
 from flask import Blueprint, request, session, redirect, url_for, abort, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
+import secrets
+import hmac
 from referral_routes import COUNTIES
 
 landlords = Blueprint("landlords", __name__, url_prefix="/landlords")
@@ -32,6 +34,10 @@ def authenticated(fn):
         if not active:
             session.clear()
             return jsonify(error="Sign in required"), 401
+        if request.method not in ("GET", "HEAD", "OPTIONS"):
+            token = request.headers.get("X-CSRF-Token", "")
+            if not hmac.compare_digest(session.get("landlord_csrf", ""), token):
+                return jsonify(error="Invalid CSRF token"), 403
         return fn(*args, **kwargs)
     return wrapper
 
@@ -63,7 +69,8 @@ def login():
         return jsonify(error="Invalid credentials"), 401
     session.clear()
     session["landlord_id"] = user["id"]
-    return jsonify(message="Signed in")
+    session["landlord_csrf"] = secrets.token_urlsafe(32)
+    return jsonify(message="Signed in", csrf_token=session["landlord_csrf"])
 
 @landlords.post("/logout")
 @authenticated
