@@ -1,47 +1,34 @@
-[
-  {
-    "county": "Dakota",
-    "state": "MN",
-    "pha": "Dakota County CDA (MN042)",
-    "source": "Published HUD MSP-Metro Payment Schedule",
-    "rates": {
-      "source": "Published HUD MSP-Metro Payment Schedule",
-      "year": 2027,
-      "0br": 1398,
-      "1br": 1582,
-      "2br": 1944,
-      "3br": 2420,
-      "4br": 2785
-    }
-  },
-  {
-    "county": "Hennepin",
-    "state": "MN",
-    "pha": "Minneapolis Public Housing Authority (MN002)",
-    "source": "Published HUD MSP-Metro Payment Schedule",
-    "rates": {
-      "source": "Published HUD MSP-Metro Payment Schedule",
-      "year": 2027,
-      "0br": 1398,
-      "1br": 1582,
-      "2br": 1944,
-      "3br": 2420,
-      "4br": 2785
-    }
-  },
-  {
-    "county": "St. Croix",
-    "state": "WI",
-    "pha": "West Central Wisconsin CAA (WI122)",
-    "source": "Published HUD MSP-Metro Payment Schedule",
-    "rates": {
-      "source": "Published HUD MSP-Metro Payment Schedule",
-      "year": 2027,
-      "0br": 1398,
-      "1br": 1582,
-      "2br": 1944,
-      "3br": 2420,
-      "4br": 2785
+{
+  "source": "HUD User Programmatic Dataset (MSP Metro FMR Area)",
+  "verified_metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area",
+  "standards": {
+    "Dakota County, MN": {
+      "efficiency": 1242,
+      "one_bed": 1405,
+      "two_bed": 1709,
+      "three_bed": 2262,
+      "four_bed": 2531
+    },
+    "Hennepin County, MN": {
+      "efficiency": 1242,
+      "one_bed": 1405,
+      "two_bed": 1709,
+      "three_bed": 2262,
+      "four_bed": 2531
+    },
+    "Ramsey County, MN": {
+      "efficiency": 1242,
+      "one_bed": 1405,
+      "two_bed": 1709,
+      "three_bed": 2262,
+      "four_bed": 2531
+    },
+    "St. Croix County, WI": {
+      "efficiency": 1242,
+      "one_bed": 1405,
+      "two_bed": 1709,
+      "three_bed": 2262,
+      "four_bed": 2531
     }
   }
-]
+}
