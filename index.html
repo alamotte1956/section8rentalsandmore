@@ -11,41 +11,41 @@
     .tab-content.active { display: block; }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col"><a href="referral-partners.html" style="display:inline-block;margin:8px 12px;padding:9px 14px;background:#f59e0b;color:#101e34;font-weight:700;border-radius:8px;text-decoration:none">Housing Referral Network</a>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col"><a href="referral-partners.html" style="display:inline-block;margin:8px 12px;padding:9px 14px;background:#78BE21;color:#003865;font-weight:700;border-radius:8px;text-decoration:none">Housing Referral Network</a>
 
   <!-- TOP BAR -->
-  <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50"><div class="bg-orange-500 text-slate-950 text-center py-2 px-4 font-bold text-sm"><a href="admin.html" class="underline hover:text-white mr-4">Admin Hub</a><a href="presentation.html" class="underline hover:text-white">Click here to watch the Executive Presentation (Audio Synced) &rarr;</a></div>
+  <header class="bg-[#003865] text-white border-b border-slate-800 sticky top-0 z-50"><div class="bg-[#78BE21] text-[#003865] text-center py-2 px-4 font-bold text-sm"><a href="admin.html" class="underline hover:text-white mr-4">Admin Hub</a><a href="presentation.html" class="underline hover:text-white">Click here to watch the Executive Presentation (Audio Synced) &rarr;</a></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
       <div class="flex items-center space-x-3">
-        <div class="bg-amber-500 text-slate-950 font-black px-2.5 py-1 rounded text-xl tracking-wider">S8+</div>
+        <div class="bg-[#78BE21] text-[#003865] font-black px-2.5 py-1 rounded text-xl tracking-wider">S8+</div>
         <div>
           <span class="font-bold text-lg leading-none block">Section 8 Rentals &amp; More</span>
           <span class="text-xs text-slate-400">Twin Cities Metro &amp; Greater Minnesota</span>
         </div>
       </div>
       <div>
-        <a href="admin.html" class="underline hover:text-white mr-4">Admin Hub</a><a href="presentation.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-400 hover:to-amber-400 text-slate-950 font-black px-5 py-2.5 rounded-xl shadow-lg shadow-orange-500/30 text-sm tracking-wide transition transform hover:scale-105 animate-pulse">
+        <a href="admin.html" class="underline hover:text-white mr-4">Admin Hub</a><a href="presentation.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-[#78BE21] to-[#CEDE55] hover:from-[#8CCD43] hover:to-[#DFE99A] text-[#003865] font-black px-5 py-2.5 rounded-xl shadow-lg shadow-[#78BE21]/30 text-sm tracking-wide transition transform hover:scale-105 animate-pulse">
           <i class="fa-solid fa-play"></i>
           <span>START PRESENTATION</span>
         </a>
         </div>
       </div>
       <nav class="hidden md:flex space-x-1">
-        <button onclick="switchTab('listings-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-slate-800 transition text-amber-400" id="btn-listings">Rental Search</button>
-        <button onclick="switchTab('landlord-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-slate-800 transition text-slate-300" id="btn-landlord">List a Property</button>
-        <button onclick="switchTab('rfta-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-slate-800 transition text-slate-300" id="btn-rfta">RFTA &amp; Voucher Utility</button>
-        <button onclick="switchTab('nspire-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-slate-800 transition text-slate-300" id="btn-nspire">NSPIRE Punchlist</button>
-      <a href='presentation.html' class='text-orange-400 font-bold ml-4'>Watch Presentation</a></nav>
+        <button onclick="switchTab('listings-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-[#0D5257] transition text-[#CEDE55]" id="btn-listings">Rental Search</button>
+        <button onclick="switchTab('landlord-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-[#0D5257] transition text-slate-300" id="btn-landlord">List a Property</button>
+        <button onclick="switchTab('rfta-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-[#0D5257] transition text-slate-300" id="btn-rfta">RFTA &amp; Voucher Utility</button>
+        <button onclick="switchTab('nspire-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-[#0D5257] transition text-slate-300" id="btn-nspire">NSPIRE Punchlist</button>
+      <a href='presentation.html' class='text-[#CEDE55] font-bold ml-4'>Watch Presentation</a></nav>
       <div class="flex items-center space-x-2">
         <span id="api-status-badge" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-900 text-yellow-200">
           <span class="w-1.5 h-1.5 mr-1.5 bg-yellow-400 rounded-full animate-pulse"></span> Connecting API
         </span>
       </div>
     </div>
-   <a href="/admin.html" class="bg-amber-500 text-slate-950 font-bold px-3 py-1.5 rounded text-xs uppercase tracking-wider shadow">Admin Hub</a> </header>
+   <a href="/admin.html" class="bg-[#78BE21] text-[#003865] font-bold px-3 py-1.5 rounded text-xs uppercase tracking-wider shadow">Admin Hub</a> </header>
 
   <!-- SUB NAV FOR MOBILE -->
-  <div class="md:hidden bg-slate-800 text-white flex overflow-x-auto px-2 py-2 space-x-1 text-xs">
+  <div class="md:hidden bg-[#0D5257] text-white flex overflow-x-auto px-2 py-2 space-x-1 text-xs">
     <button onclick="switchTab('listings-tab')" class="px-3 py-1.5 rounded whitespace-nowrap bg-slate-700">Rentals</button>
     <button onclick="switchTab('landlord-tab')" class="px-3 py-1.5 rounded whitespace-nowrap">List Property</button>
     <button onclick="switchTab('rfta-tab')" class="px-3 py-1.5 rounded whitespace-nowrap">RFTA Helper</button>
@@ -62,23 +62,23 @@
             <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Search Keyword or City</label>
             <div class="relative">
               <i class="fa-solid fa-search absolute left-3 top-3 text-slate-400"></i>
-              <input type="text" id="filter-search" oninput="applyFilters()" placeholder="Lakeville, Minneapolis, St. Paul, Apple Valley..." class="w-full pl-9 pr-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
+              <input type="text" id="filter-search" oninput="applyFilters()" placeholder="Lakeville, Minneapolis, St. Paul, Apple Valley..." class="w-full pl-9 pr-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-[#008EAA] focus:outline-none">
             </div>
           </div>
           <div>
             <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">County / Housing Authority</label>
-            <select id="filter-county" onchange="applyFilters()" class="w-full py-2 px-3 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-amber-500 focus:outline-none">
-              <option value="ALL">All Metro Counties (5-County)</option>
+            <select id="filter-county" onchange="applyFilters()" class="w-full py-2 px-3 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-[#008EAA] focus:outline-none">
+              <option value="ALL">All Minnesota Counties (8-County Pilot)</option>
               <option value="Dakota">Dakota County CDA</option>
               <option value="Hennepin">Hennepin County / Mpls PHA</option>
               <option value="Ramsey">Ramsey County / St. Paul PHA</option>
               <option value="Anoka">Anoka County HRA</option>
-              <option value="Washington">Washington County CDA</option>
+              <option value="Washington">Washington County CDA</option><option value="Renville">Renville County</option><option value="Redwood">Redwood County (Walnut Grove)</option><option value="Lyon">Lyon County (Taunton)</option>
             </select>
           </div>
           <div>
             <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Bedrooms</label>
-            <select id="filter-beds" onchange="applyFilters()" class="w-full py-2 px-3 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-amber-500 focus:outline-none">
+            <select id="filter-beds" onchange="applyFilters()" class="w-full py-2 px-3 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-[#008EAA] focus:outline-none">
               <option value="ALL">Any Bedrooms</option>
               <option value="1">1 Bedroom</option>
               <option value="2">2 Bedrooms</option>
@@ -109,28 +109,28 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Property Street Address</label>
-              <input type="text" id="prop-address" required placeholder="e.g. 10805 173rd St W" class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-amber-500">
+              <input type="text" id="prop-address" required placeholder="e.g. 10805 173rd St W" class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-[#008EAA]">
             </div>
             <div>
               <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">City</label>
-              <input type="text" id="prop-city" required placeholder="e.g. Lakeville" class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-amber-500">
+              <input type="text" id="prop-city" required placeholder="e.g. Lakeville" class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-[#008EAA]">
             </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
               <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">County</label>
-              <select id="prop-county" required class="w-full p-2.5 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-amber-500">
+              <select id="prop-county" required class="w-full p-2.5 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-[#008EAA]">
                 <option value="Dakota">Dakota County</option>
                 <option value="Hennepin">Hennepin County</option>
                 <option value="Ramsey">Ramsey County</option>
                 <option value="Anoka">Anoka County</option>
-                <option value="Washington">Washington County</option>
+                <option value="Washington">Washington County</option><option value="Renville">Renville County</option><option value="Redwood">Redwood County</option><option value="Lyon">Lyon County</option>
               </select>
             </div>
             <div>
               <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Bedrooms</label>
-              <select id="prop-beds" required class="w-full p-2.5 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-amber-500">
+              <select id="prop-beds" required class="w-full p-2.5 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-[#008EAA]">
                 <option value="1">1 Bedroom</option>
                 <option value="2">2 Bedrooms</option>
                 <option value="3">3 Bedrooms</option>
@@ -139,14 +139,14 @@
             </div>
             <div>
               <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Monthly Rent ($)</label>
-              <input type="number" id="prop-rent" required placeholder="1850" class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-amber-500">
+              <input type="number" id="prop-rent" required placeholder="1850" class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-[#008EAA]">
             </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Housing Authority Tier / Section 8 Status</label>
-              <select id="prop-section8" class="w-full p-2.5 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-amber-500">
+              <select id="prop-section8" class="w-full p-2.5 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-[#008EAA]">
                 <option value="Vouchers Accepted">Section 8 Vouchers Accepted</option>
                 <option value="Section 8 & Market Rate">Section 8 &amp; Market Rate</option>
                 <option value="Expedited Inspection Ready">Expedited Inspection Ready</option>
@@ -154,19 +154,19 @@
             </div>
             <div>
               <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Contact Phone / Email</label>
-              <input type="text" id="prop-contact" required placeholder="contact@domain.com or phone" class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-amber-500">
+              <input type="text" id="prop-contact" required placeholder="contact@domain.com or phone" class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-[#008EAA]">
             </div>
           </div>
 
           <div>
             <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Property Description &amp; Utility Split</label>
-            <textarea id="prop-desc" rows="3" placeholder="Includes heat and water; tenant pays electric. Close to transit..." class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-amber-500"></textarea>
+            <textarea id="prop-desc" rows="3" placeholder="Includes heat and water; tenant pays electric. Close to transit..." class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-[#008EAA]"></textarea>
           </div>
 
-          <button type="submit" id="btn-submit-listing" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 rounded-lg text-sm transition">
+          <button type="submit" id="btn-submit-listing" class="w-full bg-[#003865] hover:bg-[#0D5257] text-white font-semibold py-3 rounded-lg text-sm transition">
             Publish Property Listing
           </button>
-          <div id="landlord-success-msg" class="hidden p-3 bg-emerald-100 text-emerald-800 rounded text-sm text-center"></div>
+          <div id="landlord-success-msg" class="hidden p-3 bg-green-100 text-emerald-800 rounded text-sm text-center"></div>
         </form>
       </div>
     </section>
@@ -215,7 +215,7 @@
         </div>
 
         <div class="mt-6 flex justify-end">
-          <button onclick="alert('RFTA HUD-52517 pre-fill template prepared. Exporting parameters to packet generator...')" class="bg-amber-600 hover:bg-amber-500 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition">
+          <button onclick="alert('RFTA HUD-52517 pre-fill template prepared. Exporting parameters to packet generator...')" class="bg-amber-600 hover:bg-[#78BE21] text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition">
             Export Pre-filled RFTA Packet (HUD-52517)
           </button>
         </div>
@@ -230,23 +230,23 @@
 
         <div class="space-y-3 text-sm text-slate-700">
           <label class="flex items-start space-x-3 p-3 bg-slate-50 rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer">
-            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-amber-500">
+            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-[#008EAA]">
             <span><strong>Smoke &amp; CO Detectors:</strong> Dual photoelectric/ionization smoke alarms operational on each level; carbon monoxide detector within 10 feet of every bedroom (MN Statute Â§ 299F.50).</span>
           </label>
           <label class="flex items-start space-x-3 p-3 bg-slate-50 rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer">
-            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-amber-500">
+            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-[#008EAA]">
             <span><strong>Electrical Outlets &amp; GFCI:</strong> All wet areas (kitchen counters, bathrooms, laundry, exterior) have functional GFCI protection; zero missing covers or open junction knockouts.</span>
           </label>
           <label class="flex items-start space-x-3 p-3 bg-slate-50 rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer">
-            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-amber-500">
+            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-[#008EAA]">
             <span><strong>Windows &amp; Egress:</strong> Ground floor windows have working sash locks; second-floor egress windows open freely and hold position without prop sticks.</span>
           </label>
           <label class="flex items-start space-x-3 p-3 bg-slate-50 rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer">
-            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-amber-500">
+            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-[#008EAA]">
             <span><strong>Water Heater &amp; Plumbing:</strong> Temperature and Pressure (T&amp;P) relief valve discharge pipe terminates 6 inches above floor level; no leaks under traps.</span>
           </label>
           <label class="flex items-start space-x-3 p-3 bg-slate-50 rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer">
-            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-amber-500">
+            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-[#008EAA]">
             <span><strong>Handrails &amp; Guardrails:</strong> Solid, graspable handrails secured on stairs with 4 or more risers (both interior and exterior entry steps).</span>
           </label>
         </div>
@@ -279,15 +279,15 @@
         if (res.ok) {
           const data = await res.json();
           allProperties = Array.isArray(data) && data.length > 0 ? data : defaultSeed;
-          badge.className = "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-900 text-emerald-200";
-          badge.innerHTML = '<span class="w-1.5 h-1.5 mr-1.5 bg-emerald-400 rounded-full"></span> API Connected';
+          badge.className = "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-900 text-emerald-200";
+          badge.innerHTML = '<span class="w-1.5 h-1.5 mr-1.5 bg-green-400 rounded-full"></span> API Connected';
         } else {
           throw new Error("HTTP error " + res.status);
         }
       } catch (err) {
         console.warn("Backend API direct fetch failed, utilizing client-side cached listings:", err);
         allProperties = defaultSeed;
-        badge.className = "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800 text-slate-300";
+        badge.className = "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#0D5257] text-slate-300";
         badge.innerHTML = '<span class="w-1.5 h-1.5 mr-1.5 bg-amber-400 rounded-full"></span> Standalone Mode';
       }
       renderListings(allProperties);
@@ -311,7 +311,7 @@
           <div class="p-5">
             <div class="flex justify-between items-start mb-2">
               <span class="inline-block bg-amber-100 text-amber-800 text-xs font-semibold px-2 py-0.5 rounded"> County</span>
-              <span class="text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded"></span>
+              <span class="text-xs font-medium text-emerald-700 bg-green-50 px-2 py-0.5 rounded"></span>
             </div>
             <h3 class="font-bold text-slate-900 text-base mb-1"></h3>
             <p class="text-slate-500 text-xs mb-3">, MN</p>
@@ -393,7 +393,7 @@
       document.getElementById(tabId).classList.add("active");
 
       document.querySelectorAll(".nav-btn").forEach(btn => {
-        btn.classList.remove("text-amber-400");
+        btn.classList.remove("text-[#CEDE55]");
         btn.classList.add("text-slate-300");
       });
       const activeBtnMap = {
@@ -404,7 +404,7 @@
       };
       const activeBtn = document.getElementById(activeBtnMap[tabId]);
       if (activeBtn) {
-        activeBtn.classList.add("text-amber-400");
+        activeBtn.classList.add("text-[#CEDE55]");
         activeBtn.classList.remove("text-slate-300");
       }
     }
@@ -435,5 +435,5 @@
       runRftaCalc();
     });
   </script>
-</body>
+<div style="text-align:center;padding:14px;color:#003865;font-size:12px">Independent housing referral service. Not affiliated with or endorsed by Minnesota Housing or the State of Minnesota.</div></body>
 </html>
