@@ -1,0 +1,47 @@
+[
+  {
+    "county": "Dakota",
+    "state": "MN",
+    "pha": "Dakota County CDA (MN042)",
+    "source": "Published HUD MSP-Metro Payment Schedule",
+    "rates": {
+      "source": "Published HUD MSP-Metro Payment Schedule",
+      "year": 2027,
+      "0br": 1398,
+      "1br": 1582,
+      "2br": 1944,
+      "3br": 2420,
+      "4br": 2785
+    }
+  },
+  {
+    "county": "Hennepin",
+    "state": "MN",
+    "pha": "Minneapolis Public Housing Authority (MN002)",
+    "source": "Published HUD MSP-Metro Payment Schedule",
+    "rates": {
+      "source": "Published HUD MSP-Metro Payment Schedule",
+      "year": 2027,
+      "0br": 1398,
+      "1br": 1582,
+      "2br": 1944,
+      "3br": 2420,
+      "4br": 2785
+    }
+  },
+  {
+    "county": "St. Croix",
+    "state": "WI",
+    "pha": "West Central Wisconsin CAA (WI122)",
+    "source": "Published HUD MSP-Metro Payment Schedule",
+    "rates": {
+      "source": "Published HUD MSP-Metro Payment Schedule",
+      "year": 2027,
+      "0br": 1398,
+      "1br": 1582,
+      "2br": 1944,
+      "3br": 2420,
+      "4br": 2785
+    }
+  }
+]

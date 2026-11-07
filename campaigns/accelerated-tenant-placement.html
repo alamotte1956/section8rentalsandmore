@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Fill Your Twin Cities Vacancies in 14 Days or Less | Section 8 Rentals and More LLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f8fafc; color: #0f172a; margin: 0; padding: 20px; }
+    .card { max-width: 680px; margin: 24px auto; background: #fff; padding: 32px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+    h1 { color: #1e3a8a; font-size: 24px; margin-top: 0; }
+    p.sub { font-size: 15px; color: #64748b; line-height: 1.5; }
+    ul { line-height: 1.8; font-size: 15px; padding-left: 20px; }
+    .cta { margin-top: 24px; text-align: center; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; }
+    .btn { display: inline-block; background: #16a34a; color: #fff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 700; margin-top: 8px; }
+    .back { display: block; text-align: center; margin-top: 20px; color: #64748b; font-size: 13px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Fill Your Twin Cities Vacancies in 14 Days or Less</h1>
+    <p class="sub">Streamlined Voucher Processing and Automated HUD-52517 RFTA Submission</p>
+    <ul><li><strong>✔</strong> Automated RFTA packet generation tailored to Dakota CDA, MPHA, and St. Paul PHA</li><li><strong>✔</strong> Rigorous 40% initial rent burden underwriting to eliminate PHA rejections</li><li><strong>✔</strong> Extensive pipeline of ready-to-move Section 8 voucher holders</li><li><strong>✔</strong> Average 14-day lease-up turnaround from application to inspection</li></ul>
+    <div class="cta">
+      <h3 style="margin: 0 0 6px 0; color: #166534;">Check Guaranteed Rent Underwriting</h3>
+      <p style="margin: 0; font-size: 13px; color: #15803d;">Calculate maximum allowable HUD payment standards for your property.</p>
+      <a href="../calculator.html" class="btn">Launch Rent Calculator</a>
+    </div>
+    <a href="../index.html" class="back">&larr; Return to Home</a>
+  
+<div style="margin-top:24px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:20px;">
+  <h3 style="margin-top:0;color:#1e3a8a;">Request Property Placement Analysis</h3>
+  <form id="leadForm">
+    <div style="margin-bottom:10px;">
+      <label style="display:block;font-size:13px;font-weight:600;margin-bottom:4px;">Full Name *</label>
+      <input type="text" name="full_name" required placeholder="Dr. Albert LaMotte" style="width:100%;box-sizing:border-box;padding:8px;border:1px solid #94a3b8;border-radius:4px;">
+    </div>
+    <div style="margin-bottom:10px;">
+      <label style="display:block;font-size:13px;font-weight:600;margin-bottom:4px;">Phone Number *</label>
+      <input type="tel" name="phone" required placeholder="(612) 701-7064" style="width:100%;box-sizing:border-box;padding:8px;border:1px solid #94a3b8;border-radius:4px;">
+    </div>
+    <div style="margin-bottom:10px;">
+      <label style="display:block;font-size:13px;font-weight:600;margin-bottom:4px;">Email Address *</label>
+      <input type="email" name="email" required placeholder="info@Section8RentalsandMore.com" style="width:100%;box-sizing:border-box;padding:8px;border:1px solid #94a3b8;border-radius:4px;">
+    </div>
+    <div style="margin-bottom:10px;">
+      <label style="display:block;font-size:13px;font-weight:600;margin-bottom:4px;">Property Address</label>
+      <input type="text" name="property_address" placeholder="17420 Kenwood Trail, Lakeville, MN" style="width:100%;box-sizing:border-box;padding:8px;border:1px solid #94a3b8;border-radius:4px;">
+    </div>
+    <button type="submit" style="width:100%;background:#16a34a;color:#fff;padding:10px;border:none;border-radius:4px;font-weight:700;cursor:pointer;">Submit for Guaranteed Placement</button>
+    <div id="statusMsg" style="margin-top:10px;padding:8px;border-radius:4px;display:none;font-size:13px;text-align:center;"></div>
+  </form>
+</div>
+<script>
+document.getElementById('leadForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const s = document.getElementById('statusMsg');
+  s.style.display = 'block';
+  s.style.background = '#eff6ff';
+  s.style.color = '#1e40af';
+  s.innerText = 'Registering inquiry...';
+
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData.entries());
+  data.timestamp = new Date().toISOString();
+  data.lead_id = 'LEAD-' + Date.now();
+
+  try {
+    let existing = JSON.parse(localStorage.getItem('section8_leads') || '[]');
+    existing.push(data);
+    localStorage.setItem('section8_leads', JSON.stringify(existing));
+
+    s.style.background = '#dcfce7';
+    s.style.color = '#15803d';
+    s.innerHTML = '✔ <strong>Placement Request Received!</strong> Reference: ' + data.lead_id + '<br>Our underwriting team will contact you within 24 hours.';
+    e.target.reset();
+  } catch (err) {
+    s.style.background = '#fee2e2';
+    s.style.color = '#b91c1c';
+    s.innerText = 'Notice: Please contact underwriting directly at (612) 701-7064.';
+  }
+});
+</script>
+
+</div>
+</body>
+</html>
