@@ -1,6 +1,7 @@
 ﻿export async function onRequest(context) {
   const { request } = context;
 
+  // Handle CORS preflight
   if (request.method === "OPTIONS") {
     return new Response(null, {
       status: 204,
@@ -15,7 +16,11 @@
   if (request.method !== "POST") {
     return new Response(JSON.stringify({ error: `Method ${request.method} Not Allowed` }), {
       status: 405,
-      headers: { "Content-Type": "application/json", "Allow": "POST, OPTIONS" }
+      headers: { 
+        "Content-Type": "application/json",
+        "Allow": "POST, OPTIONS",
+        "Access-Control-Allow-Origin": "*"
+      }
     });
   }
 
@@ -33,7 +38,7 @@
     } else {
       return new Response(JSON.stringify({ error: "Unsupported Content-Type" }), {
         status: 400,
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" }
       });
     }
 
@@ -42,7 +47,7 @@
     if (!full_name || !email || !phone) {
       return new Response(JSON.stringify({ error: "Missing required fields: full_name, email, phone." }), {
         status: 422,
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" }
       });
     }
 
@@ -71,7 +76,7 @@
   } catch (err) {
     return new Response(JSON.stringify({ error: "Server error processing inquiry", details: err.message }), {
       status: 500,
-      headers: { "Content-Type": "application/json" }
+      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" }
     });
   }
 }
