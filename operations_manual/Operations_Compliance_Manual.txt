@@ -1,0 +1,29 @@
+================================================================================
+SECTION 8 RENTALS AND MORE LLC - OPERATIONS & COMPLIANCE MANUAL
+Headquarters: 10805 173rd St W, Unit 127, Lakeville, MN 55044
+================================================================================
+
+1. HOUSING CHOICE VOUCHER (HCV) WORKFLOW:
+   - Tenant Match: Ensure voucher bedroom size matches property configuration.
+   - HUD-52517 RFTA: Submit completed Request for Tenancy Approval + utility split.
+   - Rent Reasonableness: Rent must not exceed unassisted market comparables.
+   - NSPIRE Inspection: Property must pass NSPIRE before HAP contract execution.
+   - HAP Contract: Executed between Landlord and Housing Authority; monthly direct 
+     deposit initiates on the 1st of each month.
+
+2. NSPIRE COMPLIANCE CHECKLIST (TOP FAILURE ITEMS):
+   - Smoke Alarms: Working alarm inside every bedroom + within 21 feet outside sleeping areas.
+   - Carbon Monoxide: Working CO detector within 10 feet of each sleeping room.
+   - Water Heater TPR Valve: Extension pipe within 6 inches of the floor; no threads at outlet.
+   - GFCI Outlets: Required within 6 feet of all water sources (sinks, tubs).
+   - Egress Windows: Unobstructed opening, functioning locks, clear exit pathways.
+
+3. STATUTORY EVICTION NOTICE TIMELINES:
+   - Minnesota: Minn. Stat. § 504B.321 mandates a minimum 14-day written notice with 
+     itemized accounting and emergency financial aid disclosures prior to filing eviction.
+   - Wisconsin: Wis. Stat. § 704.17 mandates 5-day notice with right to cure (or 14-day 
+     notice without right to cure for year leases / repeated violations).
+   - CARES Act: 30-day notice required for covered properties participating in federal programs.
+   - PHA Notice Copy: Federal regulations (24 C.F.R. § 982.310) require a copy of any 
+     eviction notice to be served concurrently on the administering Housing Authority.
+================================================================================

@@ -1,0 +1,56 @@
+================================================================================
+FOURTEEN (14) DAY NOTICE TO QUIT FOR NON-PAYMENT OF RENT
+State of Minnesota - Minn. Stat. § 504B.321
+================================================================================
+
+DATE OF SERVICE: [DATE]
+
+TO TENANT(S):
+Tenant Name(s): [TENANT_NAME]
+Premises Address: [STREET_ADDRESS], Unit #[UNIT_NUMBER]
+City, State, Zip: [CITY], MN [ZIP_CODE]
+
+FROM LANDLORD / MANAGING AGENT:
+Section 8 Rentals and More LLC
+10805 173rd St W, Unit 127, Lakeville, MN 55044
+Telephone: 612-701-7064 | Email: info@section8rentalsandmore.com
+
+DEMAND FOR PAYMENT OF RENT:
+PLEASE TAKE NOTICE that under Minnesota Statutes Section 504B.321, you are indebted
+to Section 8 Rentals and More LLC for past-due tenant-portion rent and authorized
+charges for the residential premises identified above, itemized as follows:
+
+ITEMIZATION OF PAST-DUE AMOUNTS:
+--------------------------------------------------------------------------------
+1. Monthly Tenant-Portion Rent for [MONTH_1]:                $ [AMOUNT_1]
+2. Monthly Tenant-Portion Rent for [MONTH_2]:                $ [AMOUNT_2]
+3. Allowable Late Fees (Minn. Stat. § 504B.177 - Max 8%):    $ [LATE_FEE]
+4. Authorized Utility Re-billing / Other Agreed Charges:     $ [UTILITIES]
+--------------------------------------------------------------------------------
+TOTAL AMOUNT CURRENTLY DUE AND OWING:                        $ [TOTAL_DUE]
+
+FOURTEEN (14) DAY RIGHT TO CURE OR SURRENDER:
+Pursuant to Minn. Stat. § 504B.321, you are hereby notified that you have FOURTEEN (14)
+DAYS from the date of delivery or mailing of this notice to either:
+  1. Pay the full itemized amount of $ [TOTAL_DUE] to the Landlord; OR
+  2. Surrender possession and vacate the premises.
+
+If you fail to pay the total balance or vacate within fourteen (14) days, an Eviction
+Action will be commenced in District Court pursuant to Minn. Stat. § 504B.285.
+
+NOTICE OF FINANCIAL ASSISTANCE RESOURCES:
+Under Minnesota law, you have the right to seek emergency financial assistance.
+Contact your county social services or local community action agency immediately:
+  - Hennepin County Emergency Assistance: 612-596-1300
+  - Ramsey County Emergency Assistance: 651-266-4444
+  - Dakota County Financial Assistance / CDA Crisis: 651-554-5611
+  - Anoka County Economic Assistance: 763-422-7200
+  - Washington County Community Services: 651-430-6455
+
+SECTION 8 HOUSING CHOICE VOUCHER PROGRAM - PHA COPY:
+Pursuant to 24 C.F.R. § 982.310(e)(2)(ii), a copy of this notice is concurrently
+furnished to the Housing Authority administering your voucher subsidy:
+Agency Name: [HOUSING_AUTHORITY_NAME]
+
+Authorized Representative: _____________________________________________
+Section 8 Rentals and More LLC
