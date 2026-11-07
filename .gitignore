@@ -11,3 +11,7 @@ __pycache__/
 *.tmp
 *_marker.tmp
 .env
+
+*.tar.gz
+MASTER_SYSTEM_AUDIT_REPORT.json
+inbound_leads_stream.json
