@@ -1,0 +1,80 @@
+[
+  {
+    "agency_code": "MN002",
+    "agency_name": "Minneapolis Public Housing Authority (MPHA)",
+    "county": "Hennepin County",
+    "address": "2412 Nicollet Ave, Minneapolis, MN 55404",
+    "bedrooms": 2,
+    "payment_ceiling": 1890.0,
+    "proposed_contract_rent": 1780.0,
+    "utility_allowance": 110.0,
+    "gross_rent": 1890.0,
+    "margin_buffer": 0.0,
+    "compliance_status": "APPROVED (Compliant)"
+  },
+  {
+    "agency_code": "MN001",
+    "agency_name": "Saint Paul Public Housing Agency (PHA)",
+    "county": "Ramsey County",
+    "address": "845 Grand Ave, Saint Paul, MN 55105",
+    "bedrooms": 3,
+    "payment_ceiling": 2340.0,
+    "proposed_contract_rent": 2195.0,
+    "utility_allowance": 145.0,
+    "gross_rent": 2340.0,
+    "margin_buffer": 0.0,
+    "compliance_status": "APPROVED (Compliant)"
+  },
+  {
+    "agency_code": "MN163",
+    "agency_name": "Metropolitan Council HRA (Metro HRA)",
+    "county": "Hennepin / Suburban Metro",
+    "address": "7800 Metro Pkwy, Bloomington, MN 55425",
+    "bedrooms": 2,
+    "payment_ceiling": 1940.0,
+    "proposed_contract_rent": 1850.0,
+    "utility_allowance": 90.0,
+    "gross_rent": 1940.0,
+    "margin_buffer": 0.0,
+    "compliance_status": "APPROVED (Compliant)"
+  },
+  {
+    "agency_code": "MN033",
+    "agency_name": "Washington County Community Development Agency (CDA)",
+    "county": "Washington County",
+    "address": "3200 Radio Dr, Woodbury, MN 55125",
+    "bedrooms": 3,
+    "payment_ceiling": 2410.0,
+    "proposed_contract_rent": 2275.0,
+    "utility_allowance": 135.0,
+    "gross_rent": 2410.0,
+    "margin_buffer": 0.0,
+    "compliance_status": "APPROVED (Compliant)"
+  },
+  {
+    "agency_code": "MN027",
+    "agency_name": "Anoka County Housing and Redevelopment Authority",
+    "county": "Anoka County",
+    "address": "2100 3rd Ave, Anoka, MN 55303",
+    "bedrooms": 2,
+    "payment_ceiling": 1820.0,
+    "proposed_contract_rent": 1725.0,
+    "utility_allowance": 95.0,
+    "gross_rent": 1820.0,
+    "margin_buffer": 0.0,
+    "compliance_status": "APPROVED (Compliant)"
+  },
+  {
+    "agency_code": "MN042",
+    "agency_name": "Dakota County CDA (Current Lakeville Asset)",
+    "county": "Dakota County",
+    "address": "10805 173rd St W, Unit 127, Lakeville, MN 55044",
+    "bedrooms": 3,
+    "payment_ceiling": 2420.0,
+    "proposed_contract_rent": 2250.0,
+    "utility_allowance": 170.0,
+    "gross_rent": 2420.0,
+    "margin_buffer": 0.0,
+    "compliance_status": "APPROVED (Compliant)"
+  }
+]
