@@ -1,0 +1,16 @@
+{
+  "rent_burden_check": {
+    "status": "PASS",
+    "tenant_share": 460.0,
+    "burden_pct": 21.9
+  },
+  "rent_reasonableness": {
+    "status": "PASS",
+    "avg_comp_rent": 2290.0,
+    "target_rent": 2250.0
+  },
+  "utility_allowances": {
+    "MN_Dakota": 115.0,
+    "WI_StCroix": 106.0
+  }
+}

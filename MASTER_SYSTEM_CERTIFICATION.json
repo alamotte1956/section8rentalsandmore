@@ -1,0 +1,29 @@
+{
+  "system_name": "Section 8 Rentals and More LLC",
+  "platform_url": "https://www.section8rentalsandmore.com",
+  "verified_at": "2026-11-07T14:54:39.471950",
+  "phases_verified": [
+    "Phase 1: Backend Python Engines",
+    "Phase 2: Database Schemas & Storage",
+    "Phase 3: Statutory Legal Notices (MN, WI, CARES Act)",
+    "Phase 4: HTML Portals & Routing Integrity",
+    "Phase 5: System Payloads & Deliverables",
+    "Phase 6: Live Cloudflare Edge Network Connectivity",
+    "Phase 7: Lead Intake, RBAC & Purge Failsafe",
+    "Phase 8: Financial Underwriting & Utility Splits",
+    "Phase 9: Lead-Based Paint (LBP) Gating & Exemptions",
+    "Phase 10: Multi-Manager Scoped Portfolio Segregation",
+    "Phase 11: Emergency Dispatch SLAs & Recertification",
+    "Phase 12: Production Backups & Cryptographic Integrity"
+  ],
+  "manifest_checksums": {
+    "FULL_E2E_AUDIT_REPORT.json": "63e58887a725a075a02d2ce9044be61d44abc78901a6c4c1118167a6251fc95d",
+    "inbound_leads_stream.json": "fd805644e67028316306ea8fdd496d6e2e33cc50f1afb7f7f74f01dc393f4966",
+    "FINANCIAL_UNDERWRITING_AUDIT.json": "0656f1139d7e1a4a9c10109842c235b319854184e39463fc3669b30d112724ca",
+    "lbp_compliance_audit.json": "d7848fa07fb0ca8f782d257bdd8445ff904ebb8eefb5ad6824c5b4590c69516e",
+    "manager_segregation_audit.json": "64a4c16ac16b2ed3d35337bbc046845cc61d32e08f953cc89dfb6233291fd7ed",
+    "dispatch_and_syndication_audit.json": "22f88fc5646b85759dc9dcd169eb7f6ee5db7fc5ae22078d4430d86cd2181f46"
+  },
+  "archive_package": "production_audit_backup_20261107.tar.gz",
+  "status": "FULLY_CERTIFIED_PRODUCTION_READY"
+}

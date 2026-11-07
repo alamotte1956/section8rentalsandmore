@@ -1,0 +1,28 @@
+{
+  "emergency_sla_audit": "PASS",
+  "recertification_engine": [
+    {
+      "lease_id": "HAP-MN042-882",
+      "pha": "Dakota County CDA (MN042)",
+      "days_remaining": 114,
+      "action": "TRANSMIT_INCOME_VERIFICATION_PACKET"
+    }
+  ],
+  "syndication_pipeline": {
+    "campaign_id": "SYND-2026-METRO",
+    "headline": "Guaranteed Monthly Rent | Section 8 & HCV Approved Homes",
+    "target_counties": [
+      "Hennepin",
+      "Ramsey",
+      "Dakota",
+      "Anoka",
+      "Washington"
+    ],
+    "channels": [
+      "Facebook_Marketplace_XML",
+      "Craigslist_REST",
+      "AffordableHousing_API"
+    ],
+    "landing_url": "https://www.section8rentalsandmore.com/landlord-guaranteed-rent.html"
+  }
+}

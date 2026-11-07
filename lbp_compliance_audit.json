@@ -1,0 +1,26 @@
+[
+  {
+    "property_id": "PROP-MN-001",
+    "address": "10805 173rd St W, Unit 127, Lakeville, MN 55044",
+    "year_built": 2004,
+    "exemption_status": "EXEMPT",
+    "legal_basis": "Constructed in 2004 (Post-1978 Federal Exemption)",
+    "compliance_action": "None. Retain build documentation in tenant file."
+  },
+  {
+    "property_id": "PROP-MN-002",
+    "address": "2412 Nicollet Ave, Minneapolis, MN 55404",
+    "year_built": 1968,
+    "exemption_status": "ACTION_REQUIRED",
+    "legal_basis": "Target Housing (Built 1968, Pre-1978) - Subject to Full LBP Disclosure & Inspection",
+    "compliance_action": "Mandatory EPA Pamphlet ('Protect Your Family From Lead in Your Home'), signed HUD-52517 LBP Disclosure, and visual paint assessment."
+  },
+  {
+    "property_id": "PROP-WI-001",
+    "address": "567 2nd St, Hudson, WI 54016",
+    "year_built": 1974,
+    "exemption_status": "EXEMPT",
+    "legal_basis": "Constructed in 1974 - Designated Elderly/Disabled Housing with NO child under age 6 residing",
+    "compliance_action": "Maintain age-restriction covenant and certification on record."
+  }
+]
