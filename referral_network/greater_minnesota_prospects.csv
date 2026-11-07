@@ -1,7 +1,7 @@
 organization_name,service_counties,referral_category,priority,source_url,public_phone,public_email,verification_status,partnership_status
 "Renville County Housing and Redevelopment Authority","Renville","Housing authority and voucher programs","high","https://www.renvillecountymn.gov/housing-and-economic-development/housing-authority/","507-637-4004","","official_site_identified","not_contacted"
 "Renville County Human Services","Renville","County housing support and human services","high","https://www.renvillecountymn.gov/human-services/","320-523-2202","","official_site_identified","not_contacted"
-"Southwest Health and Human Services","Redwood; Lyon","County housing support and human services","high","https://www.swmhhs.com/","507-537-6747","","needs_verification","not_contacted"
+"Southwest Health and Human Services","Redwood; Lyon","County housing support and human services","high","https://swmhhs.com/locations/","1-888-837-6713","","official_site_identified","not_contacted"
 "United Community Action Partnership","Renville; Redwood; Lyon","Housing navigation and homelessness prevention","high","https://www.unitedcapmn.org/programs/housing/rental-mortgage-assistance/","507-537-1416","","official_site_identified","not_contacted"
 "Worthington Housing and Redevelopment Authority","Redwood; Lyon","Regional housing authority and rental assistance","high","https://worthingtonhra.com/","507-376-3655","","official_site_identified","not_contacted"
 "Redwood Falls Housing and Redevelopment Authority","Redwood","Public housing and local housing resources","review","","507-637-2221","","needs_verification","not_contacted"
