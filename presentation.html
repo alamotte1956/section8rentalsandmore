@@ -276,62 +276,100 @@
     </div>
   </footer>
 
-    <!-- Audio Controls Container -->
-  <div style="display: flex; justify-content: center; align-items: center; margin: 20px auto; max-width: 600px; padding: 0 16px; position: relative; z-index: 50;">
-    <audio id="audioPlayer" src="speech.mp3" preload="auto" controls style="width: 100%; height: 48px; border-radius: 24px; outline: none;"></audio>
+      <!-- Audio Engine & Visual Fallback Bar -->
+  <div style="display: flex; justify-content: center; align-items: center; margin: 25px auto; max-width: 600px; padding: 0 16px; position: relative; z-index: 100;">
+    <audio id="audioPlayer" src="speech.mp3" preload="auto" controls style="width: 100%; height: 50px; border-radius: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"></audio>
   </div>
+
   <script>
-    const slides = document.querySelectorAll('.slide');
-    const audio = document.getElementById('audioPlayer');
-    const playBtn = document.getElementById('playBtn');
-    const playIcon = document.getElementById('playIcon');
-    const prevBtn = document.getElementById('prevSlide');
-    const nextBtn = document.getElementById('nextSlide');
-    const slideIndicator = document.getElementById('slideIndicator');
-    const timeDisplay = document.getElementById('timeDisplay');
-    let currentSlide = 0;
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.slide');
+      const audio = document.getElementById('audioPlayer');
+      const playBtn = document.getElementById('playBtn');
+      const playIcon = document.getElementById('playIcon');
+      const prevBtn = document.getElementById('prevSlide');
+      const nextBtn = document.getElementById('nextSlide');
+      const slideIndicator = document.getElementById('slideIndicator');
+      const timeDisplay = document.getElementById('timeDisplay');
+      let currentSlide = 0;
 
-    function showSlide(idx) {
-      if (idx < 0 || idx >= slides.length) return;
-      slides[currentSlide].classList.remove('active');
-      currentSlide = idx;
-      slides[currentSlide].classList.add('active');
-      slideIndicator.textContent = `${currentSlide + 1} / ${slides.length}`;
-    }
-
-    playBtn.addEventListener('click', () => {
-      if (audio.paused) {
-        audio.play().then(() => playIcon.classList.replace('fa-play', 'fa-pause')).catch(e => console.log(e));
-      } else {
-        audio.pause();
-        playIcon.classList.replace('fa-pause', 'fa-play');
+      function showSlide(idx) {
+        if (!slides.length || idx < 0 || idx >= slides.length) return;
+        slides.forEach((sl, i) => {
+          sl.classList.toggle('active', i === idx);
+          sl.style.display = (i === idx) ? 'block' : 'none';
+        });
+        currentSlide = idx;
+        if (slideIndicator) slideIndicator.textContent = (currentSlide + 1) + ' / ' + slides.length;
       }
-    });
 
-    audio.addEventListener('timeupdate', () => {
-      const cur = audio.currentTime;
-      const m = Math.floor(cur / 60).toString().padStart(2, '0');
-      const s = Math.floor(cur % 60).toString().padStart(2, '0');
-      timeDisplay.textContent = `${m}:${s} / 04:36`;
+      showSlide(0);
 
-      slides.forEach((sl, idx) => {
-        const start = parseFloat(sl.getAttribute('data-start'));
-        const end = parseFloat(sl.getAttribute('data-end'));
-        if (cur >= start && cur < end && idx !== currentSlide) showSlide(idx);
-      });
-    });
-
-    prevBtn.addEventListener('click', () => {
-      if (currentSlide > 0) {
-        showSlide(currentSlide - 1);
-        audio.currentTime = parseFloat(slides[currentSlide].getAttribute('data-start'));
+      if (playBtn && audio) {
+        playBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (audio.paused) {
+            audio.play().then(() => {
+              if (playIcon) playIcon.classList.replace('fa-play', 'fa-pause');
+            }).catch(err => {
+              console.warn('Browser autoplay prevented. Use audio bar directly:', err);
+            });
+          } else {
+            audio.pause();
+            if (playIcon) playIcon.classList.replace('fa-pause', 'fa-play');
+          }
+        });
       }
-    });
 
-    nextBtn.addEventListener('click', () => {
-      if (currentSlide < slides.length - 1) {
-        showSlide(currentSlide + 1);
-        audio.currentTime = parseFloat(slides[currentSlide].getAttribute('data-start'));
+      if (audio) {
+        audio.addEventListener('play', () => {
+          if (playIcon) playIcon.classList.replace('fa-play', 'fa-pause');
+        });
+        audio.addEventListener('pause', () => {
+          if (playIcon) playIcon.classList.replace('fa-pause', 'fa-play');
+        });
+
+        audio.addEventListener('timeupdate', () => {
+          const cur = audio.currentTime;
+          if (timeDisplay) {
+            const m = Math.floor(cur / 60).toString().padStart(2, '0');
+            const s = Math.floor(cur % 60).toString().padStart(2, '0');
+            timeDisplay.textContent = m + ':' + s + ' / 04:36';
+          }
+
+          for (let i = slides.length - 1; i >= 0; i--) {
+            const rawStart = slides[i].getAttribute('data-start');
+            const start = rawStart ? parseFloat(rawStart) : 0;
+            if (cur >= start) {
+              if (currentSlide !== i) showSlide(i);
+              break;
+            }
+          }
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (currentSlide > 0) {
+            showSlide(currentSlide - 1);
+            if (audio && slides[currentSlide]) {
+              audio.currentTime = parseFloat(slides[currentSlide].getAttribute('data-start') || '0');
+            }
+          }
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (currentSlide < slides.length - 1) {
+            showSlide(currentSlide + 1);
+            if (audio && slides[currentSlide]) {
+              audio.currentTime = parseFloat(slides[currentSlide].getAttribute('data-start') || '0');
+            }
+          }
+        });
       }
     });
   </script>
