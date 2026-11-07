@@ -25,6 +25,17 @@ def init_schema(db):
         terms_version TEXT, terms_accepted_at TEXT,
         marketing_opt_in INTEGER NOT NULL DEFAULT 0,
         marketing_consent_at TEXT, marketing_consent_version TEXT)""")
+    # Upgrade pre-consent SQLite databases without discarding existing accounts.
+    existing = {row[1] for row in db.execute("PRAGMA table_info(landlord_accounts)")}
+    for column, definition in (
+        ("terms_version", "TEXT"),
+        ("terms_accepted_at", "TEXT"),
+        ("marketing_opt_in", "INTEGER NOT NULL DEFAULT 0"),
+        ("marketing_consent_at", "TEXT"),
+        ("marketing_consent_version", "TEXT"),
+    ):
+        if column not in existing:
+            db.execute(f"ALTER TABLE landlord_accounts ADD COLUMN {column} {definition}")
     db.execute("""CREATE TABLE IF NOT EXISTS landlord_units (
         id INTEGER PRIMARY KEY, owner_id INTEGER NOT NULL REFERENCES landlord_accounts(id),
         county TEXT NOT NULL, bedrooms INTEGER NOT NULL, rent INTEGER NOT NULL,
@@ -146,3 +157,19 @@ def availability(unit_id):
         if not result.rowcount:
             abort(404)
     return jsonify(message="Updated")
+
+@landlords.post("/email-preferences")
+@authenticated
+def email_preferences():
+    """Allow a signed-in landlord to withdraw or grant optional marketing consent."""
+    data = request.get_json(silent=True) or {}
+    if type(data.get("marketing_opt_in")) is not bool:
+        return jsonify(error="Explicit boolean marketing_opt_in required"), 400
+    opted_in = data["marketing_opt_in"]
+    now = datetime.now(timezone.utc).isoformat() if opted_in else None
+    with connect() as db:
+        init_schema(db)
+        db.execute("""UPDATE landlord_accounts SET marketing_opt_in=?,
+            marketing_consent_at=?, marketing_consent_version=? WHERE id=?""",
+            (int(opted_in), now, CONSENT_VERSION if opted_in else None, session["landlord_id"]))
+    return jsonify(marketing_opt_in=opted_in)
