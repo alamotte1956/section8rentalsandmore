@@ -12,25 +12,25 @@
     .slide.active { display: block; }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-orange-500 selection:text-white">
-  <header class="bg-slate-900/90 backdrop-blur border-b border-slate-800 sticky top-0 z-50 px-4 py-3">
+<body class="min-h-screen flex flex-col justify-between selection:bg-[#78BE21] selection:text-white">
+  <header class="bg-[#003865]/90 backdrop-blur border-b border-slate-800 sticky top-0 z-50 px-4 py-3">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
       <div class="flex items-center gap-3 w-full md:w-auto justify-between">
-        <a href="index.html" class="flex items-center gap-2 text-orange-500 font-bold hover:text-orange-400 transition">
+        <a href="index.html" class="flex items-center gap-2 text-orange-500 font-bold hover:text-[#CEDE55] transition">
           <i class="fa-solid fa-arrow-left"></i>
           <span>Back to Main Site</span>
         </a>
-        <span class="text-xs bg-orange-500/20 text-orange-400 font-semibold px-2.5 py-1 rounded border border-orange-500/30">
+        <span class="text-xs bg-[#78BE21]/20 text-[#CEDE55] font-semibold px-2.5 py-1 rounded border border-orange-500/30">
           Executive Deck
         </span>
       </div>
-      <div class="flex items-center gap-3 bg-slate-800 px-4 py-2 rounded-xl border border-slate-700 w-full md:w-auto justify-center">
-        <button id="playBtn" class="w-8 h-8 rounded-full bg-orange-500 text-slate-950 flex items-center justify-center font-bold hover:bg-orange-400 transition">
+      <div class="flex items-center gap-3 bg-[#0D5257] px-4 py-2 rounded-xl border border-slate-700 w-full md:w-auto justify-center">
+        <button id="playBtn" class="w-8 h-8 rounded-full bg-[#78BE21] text-[#003865] flex items-center justify-center font-bold hover:bg-orange-400 transition">
           <i id="playIcon" class="fa-solid fa-play"></i>
         </button>
         <div class="flex flex-col text-left">
           <span class="text-xs font-semibold text-slate-200">Albert R. LaMotte Narration</span>
-          <span id="syncStatus" class="text-[10px] text-orange-400">Audio Sync Ready</span>
+          <span id="syncStatus" class="text-[10px] text-[#CEDE55]">Audio Sync Ready</span>
         </div>
         <audio id="audioPlayer" preload="auto">
           <source src="speech.mp3" type="audio/mpeg">
@@ -39,11 +39,11 @@
         <span id="timeDisplay" class="text-xs font-mono text-slate-400 ml-2">00:00 / 04:36</span>
       </div>
       <div class="flex items-center gap-2">
-        <button id="prevSlide" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm border border-slate-700">
+        <button id="prevSlide" class="px-3 py-1.5 rounded-lg bg-[#0D5257] hover:bg-slate-700 text-slate-300 text-sm border border-slate-700">
           <i class="fa-solid fa-chevron-left mr-1"></i> Prev
         </button>
-        <span id="slideIndicator" class="text-xs font-mono text-orange-400 px-2">1 / 10</span>
-        <button id="nextSlide" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm border border-slate-700">
+        <span id="slideIndicator" class="text-xs font-mono text-[#CEDE55] px-2">1 / 10</span>
+        <button id="nextSlide" class="px-3 py-1.5 rounded-lg bg-[#0D5257] hover:bg-slate-700 text-slate-300 text-sm border border-slate-700">
           Next <i class="fa-solid fa-chevron-right ml-1"></i>
         </button>
       </div>
@@ -52,7 +52,7 @@
 
   <main class="max-w-5xl mx-auto px-4 py-8 flex-1 flex items-center justify-center w-full">
     <div class="slide active w-full" data-start="0" data-end="28">
-      <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-8 md:p-12 shadow-2xl">
+      <div class="bg-[#0D5257]/80 border border-slate-700 rounded-2xl p-8 md:p-12 shadow-2xl">
         <p class="text-orange-500 text-xs font-bold tracking-widest uppercase mb-3">Affordable Housing Automation Platform</p>
         <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">Section 8 Rentals and More</h1>
         <p class="text-slate-300 text-lg md:text-xl mb-8 leading-relaxed">
@@ -60,27 +60,27 @@
         </p>
         <div class="border-t border-slate-700 pt-6 flex justify-between text-sm text-slate-400">
           <div><strong class="text-white">Albert R. LaMotte</strong>, Founder & Managing Director</div>
-          <div class="text-orange-400 font-semibold"><i class="fa-solid fa-location-dot mr-1"></i> Lakeville, Minnesota</div>
+          <div class="text-[#CEDE55] font-semibold"><i class="fa-solid fa-location-dot mr-1"></i> Lakeville, Minnesota</div>
         </div>
       </div>
     </div>
 
     <div class="slide w-full" data-start="28" data-end="62">
-      <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-8 md:p-10 shadow-2xl">
+      <div class="bg-[#0D5257]/80 border border-slate-700 rounded-2xl p-8 md:p-10 shadow-2xl">
         <p class="text-orange-500 text-xs font-bold tracking-widest uppercase mb-2">The Industry Problem</p>
         <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">The Affordable Housing Bottleneck: Friction & Lost Revenue</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-700/60">
+          <div class="bg-[#003865]/60 p-5 rounded-xl border border-slate-700/60">
             <span class="text-xs font-bold text-orange-500 uppercase">Paperwork & RFTA Delays</span>
             <h3 class="text-lg font-bold text-white my-2">30–60 Day Move-In Lag</h3>
             <p class="text-xs text-slate-300">Manual packets with utility calculation mistakes trigger repeated caseworker rejections.</p>
           </div>
-          <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-700/60">
+          <div class="bg-[#003865]/60 p-5 rounded-xl border border-slate-700/60">
             <span class="text-xs font-bold text-orange-500 uppercase">NSPIRE Physical Gaps</span>
             <h3 class="text-lg font-bold text-white my-2">40%+ Failure Rate</h3>
             <p class="text-xs text-slate-300">Initial inspections fail over simple items, delaying rent by 30+ days.</p>
           </div>
-          <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-700/60">
+          <div class="bg-[#003865]/60 p-5 rounded-xl border border-slate-700/60">
             <span class="text-xs font-bold text-orange-500 uppercase">Landlord Hesitancy</span>
             <h3 class="text-lg font-bold text-white my-2">Lost Rental Income</h3>
             <p class="text-xs text-slate-300">Owners avoid Section 8 due to red tape and lost cash flow.</p>
@@ -90,11 +90,11 @@
     </div>
 
     <div class="slide w-full" data-start="62" data-end="88">
-      <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-8 md:p-10 shadow-2xl">
+      <div class="bg-[#0D5257]/80 border border-slate-700 rounded-2xl p-8 md:p-10 shadow-2xl">
         <p class="text-orange-500 text-xs font-bold tracking-widest uppercase mb-2">Lease-Up Velocity</p>
         <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">Compressing 45 Days Down to Under 10 Days</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-slate-900/60 p-6 rounded-xl border border-red-500/30">
+          <div class="bg-[#003865]/60 p-6 rounded-xl border border-red-500/30">
             <span class="text-xs font-bold text-red-400 uppercase tracking-wider">Traditional Method</span>
             <h3 class="text-2xl font-bold text-white my-2">45–60 Days Average</h3>
             <ul class="text-xs text-slate-300 space-y-2 mt-4">
@@ -103,8 +103,8 @@
               <li><i class="fa-solid fa-xmark text-red-500 mr-2"></i>Preventable inspection failures</li>
             </ul>
           </div>
-          <div class="bg-slate-900/60 p-6 rounded-xl border border-orange-500/40">
-            <span class="text-xs font-bold text-orange-400 uppercase tracking-wider">Section 8 Rentals & More</span>
+          <div class="bg-[#003865]/60 p-6 rounded-xl border border-orange-500/40">
+            <span class="text-xs font-bold text-[#CEDE55] uppercase tracking-wider">Section 8 Rentals & More</span>
             <h3 class="text-2xl font-bold text-white my-2">Under 10 Days to Signing</h3>
             <ul class="text-xs text-slate-300 space-y-2 mt-4">
               <li><i class="fa-solid fa-check text-orange-500 mr-2"></i>Automated HUD-52517 generated in 60s</li>
@@ -117,15 +117,15 @@
     </div>
 
     <div class="slide w-full" data-start="88" data-end="122">
-      <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-8 md:p-10 shadow-2xl">
+      <div class="bg-[#0D5257]/80 border border-slate-700 rounded-2xl p-8 md:p-10 shadow-2xl">
         <p class="text-orange-500 text-xs font-bold tracking-widest uppercase mb-2">Platform Capabilities</p>
         <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">Purpose-Built Voucher Automation Architecture</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-700/60">
+          <div class="bg-[#003865]/60 p-5 rounded-xl border border-slate-700/60">
             <h3 class="text-base font-bold text-white mb-1">Instant HUD-52517 Generation</h3>
             <p class="text-xs text-slate-300">Clean RFTA packets formatted for caseworkers in under 60 seconds.</p>
           </div>
-          <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-700/60">
+          <div class="bg-[#003865]/60 p-5 rounded-xl border border-slate-700/60">
             <h3 class="text-base font-bold text-white mb-1">Mobile NSPIRE Pre-Inspection</h3>
             <p class="text-xs text-slate-300">Room-by-room digital punchlists ensure units pass on the first visit.</p>
           </div>
@@ -134,39 +134,39 @@
     </div>
 
     <div class="slide w-full" data-start="122" data-end="152">
-      <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-8 md:p-10 shadow-2xl">
+      <div class="bg-[#0D5257]/80 border border-slate-700 rounded-2xl p-8 md:p-10 shadow-2xl">
         <p class="text-orange-500 text-xs font-bold tracking-widest uppercase mb-2">Regional Coverage</p>
         <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">Twin Cities 5-County Representation</h2>
         <div class="space-y-3 text-xs">
-          <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700 flex justify-between">
-            <div><strong class="text-orange-400">Dakota County</strong> | Dakota County CDA (Lakeville, Burnsville)</div>
-            <div class="text-orange-400 font-bold">$1,750 - $2,350/mo</div>
+          <div class="bg-[#003865]/60 p-3 rounded-xl border border-slate-700 flex justify-between">
+            <div><strong class="text-[#CEDE55]">Dakota County</strong> | Dakota County CDA (Lakeville, Burnsville)</div>
+            <div class="text-[#CEDE55] font-bold">$1,750 - $2,350/mo</div>
           </div>
-          <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700 flex justify-between">
-            <div><strong class="text-orange-400">Hennepin County</strong> | Minneapolis PHA (Minneapolis, Bloomington)</div>
-            <div class="text-orange-400 font-bold">$1,275 - $2,200/mo</div>
+          <div class="bg-[#003865]/60 p-3 rounded-xl border border-slate-700 flex justify-between">
+            <div><strong class="text-[#CEDE55]">Hennepin County</strong> | Minneapolis PHA (Minneapolis, Bloomington)</div>
+            <div class="text-[#CEDE55] font-bold">$1,275 - $2,200/mo</div>
           </div>
-          <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700 flex justify-between">
-            <div><strong class="text-orange-400">Ramsey County</strong> | Saint Paul PHA (Saint Paul, Roseville)</div>
-            <div class="text-orange-400 font-bold">$1,650 - $2,150/mo</div>
+          <div class="bg-[#003865]/60 p-3 rounded-xl border border-slate-700 flex justify-between">
+            <div><strong class="text-[#CEDE55]">Ramsey County</strong> | Saint Paul PHA (Saint Paul, Roseville)</div>
+            <div class="text-[#CEDE55] font-bold">$1,650 - $2,150/mo</div>
           </div>
-          <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700 flex justify-between">
-            <div><strong class="text-orange-400">Anoka County</strong> | Anoka County HRA (Coon Rapids, Blaine)</div>
-            <div class="text-orange-400 font-bold">$1,625 - $2,100/mo</div>
+          <div class="bg-[#003865]/60 p-3 rounded-xl border border-slate-700 flex justify-between">
+            <div><strong class="text-[#CEDE55]">Anoka County</strong> | Anoka County HRA (Coon Rapids, Blaine)</div>
+            <div class="text-[#CEDE55] font-bold">$1,625 - $2,100/mo</div>
           </div>
-          <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700 flex justify-between">
-            <div><strong class="text-orange-400">Washington County</strong> | Washington County CDA (Woodbury)</div>
-            <div class="text-orange-400 font-bold">$1,850 - $2,450/mo</div>
+          <div class="bg-[#003865]/60 p-3 rounded-xl border border-slate-700 flex justify-between">
+            <div><strong class="text-[#CEDE55]">Washington County</strong> | Washington County CDA (Woodbury)</div>
+            <div class="text-[#CEDE55] font-bold">$1,850 - $2,450/mo</div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="slide w-full" data-start="152" data-end="194">
-      <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-8 md:p-10 shadow-2xl">
+      <div class="bg-[#0D5257]/80 border border-slate-700 rounded-2xl p-8 md:p-10 shadow-2xl">
         <p class="text-orange-500 text-xs font-bold tracking-widest uppercase mb-2">Field Evaluation</p>
         <h2 class="text-2xl md:text-4xl font-bold text-white mb-4">Calvin's Practical Assessment</h2>
-        <div class="bg-slate-900/80 border-l-4 border-orange-500 p-6 rounded-r-xl mb-6">
+        <div class="bg-[#003865]/80 border-l-4 border-orange-500 p-6 rounded-r-xl mb-6">
           <p class="text-base italic text-slate-200">
             “It stripped out the confusion and turned a multi-week administrative hassle into a straightforward, automated routine.”
           </p>
@@ -178,20 +178,20 @@
     </div>
 
     <div class="slide w-full" data-start="194" data-end="226">
-      <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-8 md:p-10 shadow-2xl">
+      <div class="bg-[#0D5257]/80 border border-slate-700 rounded-2xl p-8 md:p-10 shadow-2xl">
         <p class="text-orange-500 text-xs font-bold tracking-widest uppercase mb-2">Business Models</p>
         <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">Turnkey Monetization Paths</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700">
-            <strong class="text-orange-400 block mb-1">Co-Hosting & Management</strong>
+          <div class="bg-[#003865]/60 p-4 rounded-xl border border-slate-700">
+            <strong class="text-[#CEDE55] block mb-1">Co-Hosting & Management</strong>
             <p class="text-slate-300">8–10% monthly management fee for handling paperwork, casework, and inspections.</p>
           </div>
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700">
-            <strong class="text-orange-400 block mb-1">Master Lease Arbitrage</strong>
+          <div class="bg-[#003865]/60 p-4 rounded-xl border border-slate-700">
+            <strong class="text-[#CEDE55] block mb-1">Master Lease Arbitrage</strong>
             <p class="text-slate-300">Master-lease vacant single-family homes, placing voucher holders at payment standards.</p>
           </div>
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700">
-            <strong class="text-orange-400 block mb-1">Contractor Synergies</strong>
+          <div class="bg-[#003865]/60 p-4 rounded-xl border border-slate-700">
+            <strong class="text-[#CEDE55] block mb-1">Contractor Synergies</strong>
             <p class="text-slate-300">Connect pre-inspection repairs to vetted local contractors, eliminating failed walkthroughs.</p>
           </div>
         </div>
@@ -199,7 +199,7 @@
     </div>
 
     <div class="slide w-full" data-start="226" data-end="254">
-      <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-8 md:p-10 shadow-2xl">
+      <div class="bg-[#0D5257]/80 border border-slate-700 rounded-2xl p-8 md:p-10 shadow-2xl">
         <p class="text-orange-500 text-xs font-bold tracking-widest uppercase mb-2">Competitive Edge</p>
         <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">Why We Beat Legacy Listing Boards</h2>
         <p class="text-sm text-slate-300 leading-relaxed">
@@ -209,16 +209,16 @@
     </div>
 
     <div class="slide w-full" data-start="254" data-end="280">
-      <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-8 md:p-10 shadow-2xl">
+      <div class="bg-[#0D5257]/80 border border-slate-700 rounded-2xl p-8 md:p-10 shadow-2xl">
         <p class="text-orange-500 text-xs font-bold tracking-widest uppercase mb-2">Execution Plan</p>
         <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">Immediate Execution Roadmap</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700">
-            <strong class="text-orange-400 block mb-1">Phase 1: Volume Sync</strong>
+          <div class="bg-[#003865]/60 p-4 rounded-xl border border-slate-700">
+            <strong class="text-[#CEDE55] block mb-1">Phase 1: Volume Sync</strong>
             <p class="text-slate-300">Active database across Dakota, Hennepin, Ramsey, Anoka, and Washington counties.</p>
           </div>
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700">
-            <strong class="text-orange-400 block mb-1">Phase 2: Landlord Outreach</strong>
+          <div class="bg-[#003865]/60 p-4 rounded-xl border border-slate-700">
+            <strong class="text-[#CEDE55] block mb-1">Phase 2: Landlord Outreach</strong>
             <p class="text-slate-300">Direct engagement with owners to eliminate paperwork lag and secure cash flow.</p>
           </div>
         </div>
@@ -226,7 +226,7 @@
     </div>
 
     <div class="slide w-full" data-start="280" data-end="999">
-      <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-8 md:p-12 shadow-2xl">
+      <div class="bg-[#0D5257]/80 border border-slate-700 rounded-2xl p-8 md:p-12 shadow-2xl">
         <p class="text-orange-500 text-xs font-bold tracking-widest uppercase mb-3">Partner With Us Today</p>
         <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">Guaranteed Direct-Deposit Rent</h2>
         <div class="space-y-4 my-8 text-sm text-slate-300">
@@ -235,7 +235,7 @@
         </div>
         <div class="border-t border-slate-700 pt-6 flex justify-between items-center">
           <div class="text-xs text-slate-400"><strong>Albert R. LaMotte</strong>, Managing Director</div>
-          <a href="index.html" class="px-6 py-2.5 rounded-xl bg-orange-500 text-slate-950 font-bold hover:bg-orange-400 text-sm">
+          <a href="index.html" class="px-6 py-2.5 rounded-xl bg-[#78BE21] text-[#003865] font-bold hover:bg-orange-400 text-sm">
             Return to Main Site
           </a>
         </div>
@@ -243,7 +243,7 @@
     </div>
   </main>
 
-  <footer class="bg-slate-900 border-t border-slate-800 px-4 py-3">
+  <footer class="bg-[#003865] border-t border-slate-800 px-4 py-3">
     <div class="max-w-5xl mx-auto flex items-center justify-between text-xs text-slate-400">
       <span class="font-semibold text-slate-300">Teleprompter Subtitle Sync</span>
       <span class="text-[10px] text-slate-500">Section 8 Rentals and More LLC</span>
