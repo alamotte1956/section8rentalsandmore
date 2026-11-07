@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS housing_referrals (
  id INTEGER PRIMARY KEY AUTOINCREMENT,
  partner_id INTEGER NOT NULL REFERENCES referral_partners(id),
  external_case_reference TEXT NOT NULL,
- county TEXT NOT NULL CHECK(county IN ('Hennepin','Ramsey','Dakota','Anoka','Washington')),
+ county TEXT NOT NULL CHECK(county IN ('Hennepin','Ramsey','Dakota','Anoka','Washington','Renville','Redwood','Lyon')),
  bedrooms_needed INTEGER NOT NULL CHECK(bedrooms_needed BETWEEN 0 AND 10),
  maximum_rent INTEGER CHECK(maximum_rent IS NULL OR maximum_rent BETWEEN 0 AND 20000),
  housing_program TEXT NOT NULL CHECK(housing_program IN ('HCV','other_subsidy','market_rate','unknown')),
