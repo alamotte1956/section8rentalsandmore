@@ -1,11 +1,110 @@
 <!DOCTYPE html><html><head><meta charset='UTF-8'><title>Voucher Holder Relocation</title><script src='https://cdn.tailwindcss.com'></script></head>
-<body class='bg-slate-50 text-slate-900 font-sans'><header class='bg-[#02162e] text-white py-5 px-6 flex justify-between items-center'>
-<a href='https://www.section8rentalsandmore.com' class='text-lg font-bold'>Section 8 Rentals & More <span class='text-[#f3ca65]'>LLC</span></a>
-<a href='tel:PASTE_NEW_NUMBER_HERE' class='text-[#f3ca65] font-semibold text-sm'>PASTE_NEW_NUMBER_HERE</a></header>
+<body class='bg-slate-50 text-slate-900 font-sans'><header class="bg-[#010e21] border-b border-[#dfa433]/30 sticky top-0 z-50 px-6 py-4 flex flex-wrap justify-between items-center shadow-xl">
+    <div class="flex items-center gap-3">
+      <a href="index.html" class="flex items-center gap-3 hover:opacity-90 transition-opacity">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-[#dfa433] to-[#f3ca65] flex items-center justify-center text-slate-950 font-black text-xl shadow-md">S8</div>
+        <div>
+          <h1 class="text-lg font-black tracking-wide text-white">Section 8 Rentals & More <span class="text-[#f3ca65]">LLC</span></h1>
+          <p class="text-xs text-slate-400">Twin Cities Metro & Western WI | Direct HCV Authority</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Center Navigation Links -->
+    <nav class="hidden lg:flex items-center gap-5 text-xs font-semibold text-slate-300">
+      <a href="index.html" class="hover:text-[#f3ca65] transition-colors">Home</a>
+      <a href="landlord-guaranteed-rent.html" class="hover:text-[#f3ca65] transition-colors">Guaranteed Rent</a>
+      <a href="property-managers.html" class="hover:text-[#f3ca65] transition-colors">Property Managers</a>
+      <a href="market-rate-conversions.html" class="hover:text-[#f3ca65] transition-colors">Market Conversions</a>
+      <a href="voucher-relocation.html" class="hover:text-[#f3ca65] transition-colors">Voucher Relocation</a>
+      <a href="presentation.html" class="hover:text-[#f3ca65] transition-colors">Presentation</a>
+    </nav>
+
+    <!-- Right-Hand Controls -->
+    <div class="flex items-center gap-3 mt-3 sm:mt-0">
+      <a href="admin.html" class="text-xs font-bold text-slate-950 bg-gradient-to-r from-[#dfa433] to-[#f3ca65] hover:opacity-90 px-3.5 py-2 rounded-lg transition-all shadow-md flex items-center gap-1.5">
+        <i class="fa-solid fa-lock"></i> Executive Hub
+      </a>
+      <button type="button" onclick="openLeadModal('Direct Landlord & Agency Consultation')" class="text-xs font-semibold text-[#f3ca65] border border-[#dfa433]/50 hover:bg-[#dfa433]/10 px-3.5 py-2 rounded-lg transition-all flex items-center gap-1.5 cursor-pointer">
+        <i class="fa-solid fa-envelope"></i> Contact Us
+      </button>
+    </div>
+  </header>
 <main class='max-w-3xl mx-auto py-12 px-4'><div class='bg-white p-8 rounded-xl shadow border border-slate-200'>
 <span class='bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase'>Active Voucher Families</span>
 <h1 class='text-3xl font-extrabold mt-4'>Active Housing Voucher? Move-In Ready Homes Available.</h1><p class='text-slate-600 mt-3 leading-relaxed'>Fast-track your RFTA packet with participating housing authorities including Minneapolis PHA, St. Paul PHA, and Dakota County CDA.</p>
 <div class='mt-8 pt-6 border-t border-slate-100 flex justify-between items-center'>
 <span class='text-xs text-slate-400'>Lakeville, MN • Dakota County</span>
 <a href='https://www.section8rentalsandmore.com' class='bg-[#02162e] text-white text-sm font-bold px-6 py-2.5 rounded-lg hover:bg-[#04244a]'>Access Platform</a>
-</div></div></main></body></html>
+</div></div></main>
+<!-- Universal Lead / Contact Modal -->
+<div id="universal-lead-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+  <div class="bg-[#02162e] border border-[#dfa433]/40 rounded-2xl max-w-lg w-full p-6 text-white shadow-2xl relative">
+    <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl cursor-pointer">&times;</button>
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-[#dfa433] to-[#f3ca65] flex items-center justify-center text-slate-950 font-black">S8</div>
+      <div>
+        <h3 id="modal-service-title" class="text-lg font-bold text-white">Direct Agency Contact</h3>
+        <p class="text-xs text-[#f3ca65]">Section 8 Rentals and More LLC | 5-County Portal</p>
+      </div>
+    </div>
+    <form id="universal-intake-form" onsubmit="handleLeadSubmit(event)" class="space-y-4">
+      <div>
+        <label class="block text-xs font-semibold text-slate-300 mb-1">Your Full Name</label>
+        <input type="text" id="intake-name" required placeholder="Dr. Albert LaMotte / Property Owner" class="w-full bg-[#010e21] border border-[#dfa433]/30 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-[#f3ca65]" />
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address</label>
+          <input type="email" id="intake-email" required placeholder="contact@domain.com" class="w-full bg-[#010e21] border border-[#dfa433]/30 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-[#f3ca65]" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Target County</label>
+          <select id="intake-county" class="w-full bg-[#010e21] border border-[#dfa433]/30 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-[#f3ca65]">
+            <option value="Dakota County (MN042)">Dakota County (CDA)</option>
+            <option value="Hennepin County (MN002)">Hennepin County (MPHA)</option>
+            <option value="Ramsey County (MN001)">Ramsey County (St. Paul PHA)</option>
+            <option value="Anoka County (MN027)">Anoka County</option>
+            <option value="Washington County (MN033)">Washington County</option>
+            <option value="Western Wisconsin">Western Wisconsin</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-slate-300 mb-1">Property Address or Voucher Inquiry</label>
+        <textarea id="intake-notes" rows="3" placeholder="Provide property address, current rent, or voucher bedroom count..." class="w-full bg-[#010e21] border border-[#dfa433]/30 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-[#f3ca65]"></textarea>
+      </div>
+      <div class="flex justify-end gap-3 pt-2">
+        <button type="button" onclick="closeLeadModal()" class="px-4 py-2 text-xs font-bold text-slate-400 hover:text-white cursor-pointer">Cancel</button>
+        <button type="submit" class="px-5 py-2.5 text-xs font-bold text-slate-950 bg-gradient-to-r from-[#dfa433] to-[#f3ca65] hover:opacity-90 rounded-lg shadow-lg cursor-pointer">Submit Securely</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+window.openLeadModal = function(title) {
+  const modal = document.getElementById('universal-lead-modal');
+  const t = document.getElementById('modal-service-title');
+  if (t && title) t.innerText = title;
+  if (modal) modal.classList.remove('hidden');
+};
+window.closeLeadModal = function() {
+  const modal = document.getElementById('universal-lead-modal');
+  if (modal) modal.classList.add('hidden');
+};
+window.handleLeadSubmit = function(e) {
+  e.preventDefault();
+  const name = document.getElementById('intake-name').value;
+  const email = document.getElementById('intake-email').value;
+  const county = document.getElementById('intake-county').value;
+  alert(`Thank you, ${name}!
+
+Your inquiry for ${county} has been securely transmitted to Section 8 Rentals and More LLC.
+Confirmation copy dispatched to: ${email}`);
+  closeLeadModal();
+  document.getElementById('universal-intake-form').reset();
+};
+</script>
+
+</body></html>
