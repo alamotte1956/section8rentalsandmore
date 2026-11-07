@@ -7,3 +7,7 @@ integrate_intake.py
 auto_merge.py
 __pycache__/
 *.pyc
+.secrets_archive/
+*.tmp
+*_marker.tmp
+.env
