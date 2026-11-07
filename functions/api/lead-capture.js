@@ -1,37 +1,12 @@
-﻿export async function onRequest(context) {
-  const { request } = context;
-
-  // Handle CORS preflight
-  if (request.method === "OPTIONS") {
-    return new Response(null, {
-      status: 204,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "POST, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type"
-      }
-    });
-  }
-
-  if (request.method !== "POST") {
-    return new Response(JSON.stringify({ error: `Method ${request.method} Not Allowed` }), {
-      status: 405,
-      headers: { 
-        "Content-Type": "application/json",
-        "Allow": "POST, OPTIONS",
-        "Access-Control-Allow-Origin": "*"
-      }
-    });
-  }
-
+﻿export async function onRequestPost(context) {
   try {
-    const contentType = request.headers.get("content-type") || "";
+    const contentType = context.request.headers.get("content-type") || "";
     let data = {};
 
     if (contentType.includes("application/json")) {
-      data = await request.json();
+      data = await context.request.json();
     } else if (contentType.includes("application/x-www-form-urlencoded") || contentType.includes("multipart/form-data")) {
-      const formData = await request.formData();
+      const formData = await context.request.formData();
       for (const [key, value] of formData.entries()) {
         data[key] = value;
       }
@@ -79,4 +54,15 @@
       headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" }
     });
   }
+}
+
+export async function onRequestOptions() {
+  return new Response(null, {
+    status: 204,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type"
+    }
+  });
 }
