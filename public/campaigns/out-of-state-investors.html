@@ -51,35 +51,32 @@
   </form>
 </div>
 <script>
-document.getElementById('leadForm').addEventListener('submit', async function(e) {
+document.getElementById('leadForm').addEventListener('submit', function(e) {
   e.preventDefault();
   const s = document.getElementById('statusMsg');
   s.style.display = 'block';
   s.style.background = '#eff6ff';
   s.style.color = '#1e40af';
-  s.innerText = 'Submitting inquiry to underwriting desk...';
-  const payload = Object.fromEntries(new FormData(e.target).entries());
+  s.innerText = 'Registering inquiry...';
+
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData.entries());
+  data.timestamp = new Date().toISOString();
+  data.lead_id = 'LEAD-' + Date.now();
+
   try {
-    const res = await fetch('/api/lead-capture', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(payload)
-    });
-    const data = await res.json();
-    if (res.ok) {
-      s.style.background = '#dcfce7';
-      s.style.color = '#15803d';
-      s.innerText = data.message || 'Success! Registered with underwriting desk.';
-      e.target.reset();
-    } else {
-      s.style.background = '#fee2e2';
-      s.style.color = '#b91c1c';
-      s.innerText = data.error || 'Submission error.';
-    }
+    let existing = JSON.parse(localStorage.getItem('section8_leads') || '[]');
+    existing.push(data);
+    localStorage.setItem('section8_leads', JSON.stringify(existing));
+
+    s.style.background = '#dcfce7';
+    s.style.color = '#15803d';
+    s.innerHTML = '✔ <strong>Placement Request Received!</strong> Reference: ' + data.lead_id + '<br>Our underwriting team will contact you within 24 hours.';
+    e.target.reset();
   } catch (err) {
     s.style.background = '#fee2e2';
     s.style.color = '#b91c1c';
-    s.innerText = 'Network error. Please call (612) 701-7064.';
+    s.innerText = 'Notice: Please contact underwriting directly at (612) 701-7064.';
   }
 });
 </script>

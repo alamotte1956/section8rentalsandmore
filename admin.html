@@ -461,4 +461,50 @@ Confirmation copy dispatched to: ${email}`);
 };
 </script>
 
+
+    <!-- Captured Leads Section -->
+    <div class="card" style="margin-top:24px; padding:20px; background:#fff; border:1px solid #e2e8f0; border-radius:8px;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h3 style="margin:0; color:#1e3a8a;">Inbound Campaign Leads & Inquiries</h3>
+        <button onclick="exportLeads()" style="background:#2563eb; color:#fff; border:none; padding:8px 14px; border-radius:4px; font-weight:600; cursor:pointer;">Export JSON</button>
+      </div>
+      <div id="leadsList" style="margin-top:12px; font-size:14px; color:#475569; overflow-x:auto;">
+        <em>Loading inquiries...</em>
+      </div>
+    </div>
+    <script>
+      function renderLeads() {
+        const leads = JSON.parse(localStorage.getItem('section8_leads') || '[]');
+        const container = document.getElementById('leadsList');
+        if (!leads.length) {
+          container.innerHTML = '<p style="margin:8px 0; color:#64748b;">No pending inquiries recorded on this browser yet.</p>';
+          return;
+        }
+        let html = '<table style="width:100%; border-collapse:collapse; margin-top:8px;">';
+        html += '<tr style="background:#f1f5f9; text-align:left;"><th style="padding:8px;">ID</th><th>Name</th><th>Phone</th><th>Email</th><th>Property</th><th>Date</th></tr>';
+        leads.forEach(l => {
+          html += `<tr style="border-bottom:1px solid #e2e8f0;">
+            <td style="padding:8px; font-family:monospace; font-size:12px;">${l.lead_id || 'N/A'}</td>
+            <td><strong>${l.full_name || 'N/A'}</strong></td>
+            <td>${l.phone || 'N/A'}</td>
+            <td>${l.email || 'N/A'}</td>
+            <td>${l.property_address || 'Unspecified'}</td>
+            <td>${l.timestamp ? new Date(l.timestamp).toLocaleDateString() : 'N/A'}</td>
+          </tr>`;
+        });
+        html += '</table>';
+        container.innerHTML = html;
+      }
+      function exportLeads() {
+        const leads = localStorage.getItem('section8_leads') || '[]';
+        const blob = new Blob([leads], {type: 'application/json'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'section8_captured_leads.json';
+        a.click();
+      }
+      window.addEventListener('DOMContentLoaded', renderLeads);
+    </script>
+    
 </body></html>
