@@ -10,10 +10,12 @@ from pathlib import Path
 from functools import wraps
 from flask import Flask, abort, jsonify, redirect, render_template_string, request, session, url_for
 from import_partners import import_partners
+from referral_routes import referrals, init_referral_schema
 
 ROOT = Path(__file__).resolve().parent
 DB_PATH = Path(os.environ.get("REFERRAL_DB_PATH", str(ROOT / "referrals.sqlite3")))
 app = Flask(__name__)
+app.register_blueprint(referrals)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY")
 app.config.update(SESSION_COOKIE_HTTPONLY=True, SESSION_COOKIE_SAMESITE="Lax",
                   SESSION_COOKIE_SECURE=True, MAX_CONTENT_LENGTH=16384)
@@ -94,7 +96,7 @@ def dashboard():
            LIMIT 500""", (county, county, status, status)).fetchall()
         counts = dict(db.execute("SELECT partnership_status,COUNT(*) FROM referral_partners GROUP BY partnership_status").fetchall())
     # Jinja auto-escapes all organization and contact fields.
-    body = """<article><h1>Referral prospects ({{ rows|length }})</h1>
+    body = """<article><h1>Referral prospects ({{ rows|length }})</h1><p><a href="{{ url_for('referrals.list_referrals') }}">Open housing referral pilot queue</a></p>
     <p>These are prospective organizations, not approved partners. Never enter tenant personal information here.</p>
     <p>All records: {% for key,val in counts.items() %}{{ key }}: {{ val }} · {% endfor %}</p>
     <form method="get"><label>County <select name="county"><option value="">All counties</option>
@@ -162,4 +164,6 @@ def verify_partner(partner_id):
 
 if __name__ == "__main__":
     import_partners(DB_PATH)
+    with connect() as db:
+        init_referral_schema(db, ROOT / "referral_schema.sql")
     app.run(host="127.0.0.1",port=8766,debug=False)
