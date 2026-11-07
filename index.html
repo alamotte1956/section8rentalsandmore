@@ -14,10 +14,10 @@
 <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col">
 
   <!-- TOP BAR -->
-  <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50"><div class="bg-orange-500 text-slate-950 text-center py-2 px-4 font-bold text-sm"><a href="admin.html" class="underline hover:text-white mr-4">Admin Hub</a><a href="presentation.html" class="underline hover:text-white">Click here to watch the Executive Presentation (Audio Synced) &rarr;</a></div>
+  <header class="bg-[#02162e] text-white border-b border-[#dfa433]/20 sticky top-0 z-50"><div class="bg-orange-500 text-slate-950 text-center py-2 px-4 font-bold text-sm"><a href="admin.html" class="underline hover:text-white mr-4">Admin Hub</a><a href="presentation.html" class="underline hover:text-white">Click here to watch the Executive Presentation (Audio Synced) &rarr;</a></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
       <div class="flex items-center space-x-3">
-        <div class="bg-amber-500 text-slate-950 font-black px-2.5 py-1 rounded text-xl tracking-wider">S8+</div>
+        <div class="bg-gradient-to-r from-[#dfa433] to-[#f3ca65] text-slate-950 font-black px-2.5 py-1 rounded text-xl tracking-wider">S8+</div>
         <div>
           <span class="font-bold text-lg leading-none block">Section 8 Rentals &amp; More</span>
           <span class="text-xs text-slate-400">Twin Cities Metro &amp; Greater Minnesota</span>
@@ -31,10 +31,10 @@
         </div>
       </div>
       <nav class="hidden md:flex space-x-1">
-        <button onclick="switchTab('listings-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-slate-800 transition text-amber-400" id="btn-listings">Rental Search</button>
-        <button onclick="switchTab('landlord-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-slate-800 transition text-slate-300" id="btn-landlord">List a Property</button>
-        <button onclick="switchTab('rfta-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-slate-800 transition text-slate-300" id="btn-rfta">RFTA &amp; Voucher Utility</button>
-        <button onclick="switchTab('nspire-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-slate-800 transition text-slate-300" id="btn-nspire">NSPIRE Punchlist</button>
+        <button onclick="switchTab('listings-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-[#04244a] transition text-[#f3ca65]" id="btn-listings">Rental Search</button>
+        <button onclick="switchTab('landlord-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-[#04244a] transition text-slate-300" id="btn-landlord">List a Property</button>
+        <button onclick="switchTab('rfta-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-[#04244a] transition text-slate-300" id="btn-rfta">RFTA &amp; Voucher Utility</button>
+        <button onclick="switchTab('nspire-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-[#04244a] transition text-slate-300" id="btn-nspire">NSPIRE Punchlist</button>
       <a href='presentation.html' class='text-orange-400 font-bold ml-4'>Watch Presentation</a></nav>
       <div class="flex items-center space-x-2">
         <span id="api-status-badge" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-900 text-yellow-200">
@@ -42,10 +42,20 @@
         </span>
       </div>
     </div>
-   <a href="/admin.html" class="bg-amber-500 text-slate-950 font-bold px-3 py-1.5 rounded text-xs uppercase tracking-wider shadow">Admin Hub</a> </header>
+   <a href="/admin.html" class="bg-gradient-to-r from-[#dfa433] to-[#f3ca65] text-slate-950 font-bold px-3 py-1.5 rounded text-xs uppercase tracking-wider shadow">Admin Hub</a> </header>
+
+    <!-- Brand Hero Banner Image Container -->
+    <div class="w-full bg-[#010e21] border-b border-[#dfa433]/30 overflow-hidden relative shadow-2xl">
+      <div class="max-w-7xl mx-auto px-4 py-2 flex justify-center">
+        <img src="/header-banner.png" 
+             alt="Section 8 Rentals & More LLC - Connecting Qualified Tenants, Landlords, and Housing Agencies" 
+             class="w-full h-auto max-h-56 md:max-h-64 object-cover object-center rounded-xl shadow-lg border border-[#dfa433]/40" />
+      </div>
+    </div>
+
 
   <!-- SUB NAV FOR MOBILE -->
-  <div class="md:hidden bg-slate-800 text-white flex overflow-x-auto px-2 py-2 space-x-1 text-xs">
+  <div class="md:hidden bg-[#04244a] text-white flex overflow-x-auto px-2 py-2 space-x-1 text-xs">
     <button onclick="switchTab('listings-tab')" class="px-3 py-1.5 rounded whitespace-nowrap bg-slate-700">Rentals</button>
     <button onclick="switchTab('landlord-tab')" class="px-3 py-1.5 rounded whitespace-nowrap">List Property</button>
     <button onclick="switchTab('rfta-tab')" class="px-3 py-1.5 rounded whitespace-nowrap">RFTA Helper</button>
@@ -163,7 +173,7 @@
             <textarea id="prop-desc" rows="3" placeholder="Includes heat and water; tenant pays electric. Close to transit..." class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-amber-500"></textarea>
           </div>
 
-          <button type="submit" id="btn-submit-listing" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 rounded-lg text-sm transition">
+          <button type="submit" id="btn-submit-listing" class="w-full bg-[#02162e] hover:bg-[#04244a] text-white font-semibold py-3 rounded-lg text-sm transition">
             Publish Property Listing
           </button>
           <div id="landlord-success-msg" class="hidden p-3 bg-emerald-100 text-emerald-800 rounded text-sm text-center"></div>
@@ -215,7 +225,7 @@
         </div>
 
         <div class="mt-6 flex justify-end">
-          <button onclick="alert('RFTA HUD-52517 pre-fill template prepared. Exporting parameters to packet generator...')" class="bg-amber-600 hover:bg-amber-500 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition">
+          <button onclick="alert('RFTA HUD-52517 pre-fill template prepared. Exporting parameters to packet generator...')" class="bg-amber-600 hover:bg-gradient-to-r from-[#dfa433] to-[#f3ca65] text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition">
             Export Pre-filled RFTA Packet (HUD-52517)
           </button>
         </div>
@@ -287,7 +297,7 @@
       } catch (err) {
         console.warn("Backend API direct fetch failed, utilizing client-side cached listings:", err);
         allProperties = defaultSeed;
-        badge.className = "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800 text-slate-300";
+        badge.className = "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#04244a] text-slate-300";
         badge.innerHTML = '<span class="w-1.5 h-1.5 mr-1.5 bg-amber-400 rounded-full"></span> Standalone Mode';
       }
       renderListings(allProperties);
@@ -393,7 +403,7 @@
       document.getElementById(tabId).classList.add("active");
 
       document.querySelectorAll(".nav-btn").forEach(btn => {
-        btn.classList.remove("text-amber-400");
+        btn.classList.remove("text-[#f3ca65]");
         btn.classList.add("text-slate-300");
       });
       const activeBtnMap = {
@@ -404,7 +414,7 @@
       };
       const activeBtn = document.getElementById(activeBtnMap[tabId]);
       if (activeBtn) {
-        activeBtn.classList.add("text-amber-400");
+        activeBtn.classList.add("text-[#f3ca65]");
         activeBtn.classList.remove("text-slate-300");
       }
     }

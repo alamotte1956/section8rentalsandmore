@@ -1,10 +1,10 @@
 <!DOCTYPE html><html><head><meta charset='UTF-8'><title>Property Manager Partnerships</title><script src='https://cdn.tailwindcss.com'></script></head>
-<body class='bg-slate-50 text-slate-900 font-sans'>  <header class="bg-slate-950 border-b border-amber-500/30 sticky top-0 z-50 px-6 py-4 flex flex-wrap justify-between items-center shadow-xl">
+<body class='bg-slate-50 text-slate-900 font-sans'>  <header class="bg-[#010e21] border-b border-[#dfa433]/40 sticky top-0 z-50 px-6 py-4 flex flex-wrap justify-between items-center shadow-xl">
     <div class="flex items-center gap-3">
       <a href="/admin.html" class="flex items-center gap-3 hover:opacity-90 transition-opacity">
-        <div class="w-10 h-10 rounded-lg bg-amber-500 flex items-center justify-center text-slate-950 font-black text-xl shadow-md">S8</div>
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-[#dfa433] to-[#f3ca65] flex items-center justify-center text-slate-950 font-black text-xl shadow-md">S8</div>
         <div>
-          <h1 class="text-lg font-black tracking-wide text-white">Section 8 Rentals and More <span class="text-amber-400">LLC</span></h1>
+          <h1 class="text-lg font-black tracking-wide text-white"><span class="dynamic-brand-text">Section 8 Rentals & More <span class="text-[#f3ca65]">LLC</span></span></h1>
           <p class="text-xs text-slate-400">Lakeville, MN | Executive Operations Console</p>
         </div>
       </a>
@@ -12,32 +12,42 @@
 
     <!-- Center Navigation Links with direct smooth scroll handlers -->
     <nav class="hidden md:flex items-center gap-5 text-xs font-semibold text-slate-300">
-      <button type="button" onclick="scrollToSection('portfolio-section')" class="hover:text-amber-400 cursor-pointer transition-colors bg-transparent border-none p-0 text-slate-300">Portfolio</button>
-      <button type="button" onclick="scrollToSection('compliance-section')" class="hover:text-amber-400 cursor-pointer transition-colors bg-transparent border-none p-0 text-slate-300">Statutory Notices</button>
-      <button type="button" onclick="scrollToSection('accounting-section')" class="hover:text-amber-400 cursor-pointer transition-colors bg-transparent border-none p-0 text-slate-300">QBO Sync</button>
-      <a href="/inspection_schedule.ics" download="inspection_schedule.ics" class="hover:text-amber-400 transition-colors flex items-center gap-1">
-        <i class="fa-solid fa-calendar-days text-amber-500"></i> Inspection Feed
+      <button type="button" onclick="scrollToSection('portfolio-section')" class="hover:text-[#f3ca65] cursor-pointer transition-colors bg-transparent border-none p-0 text-slate-300">Portfolio</button>
+      <button type="button" onclick="scrollToSection('compliance-section')" class="hover:text-[#f3ca65] cursor-pointer transition-colors bg-transparent border-none p-0 text-slate-300">Statutory Notices</button>
+      <button type="button" onclick="scrollToSection('accounting-section')" class="hover:text-[#f3ca65] cursor-pointer transition-colors bg-transparent border-none p-0 text-slate-300">QBO Sync</button>
+      <a href="/inspection_schedule.ics" download="inspection_schedule.ics" class="hover:text-[#f3ca65] transition-colors flex items-center gap-1">
+        <i class="fa-solid fa-calendar-days text-[#f3ca65]"></i> Inspection Feed
       </a>
     </nav>
 
     <!-- Right-Hand Controls -->
     <div class="flex items-center gap-3 mt-3 sm:mt-0">
-      <div class="bg-slate-800 border border-slate-700 rounded-lg p-1.5 flex items-center gap-2 text-xs">
+      <div class="bg-[#04244a] border border-[#dfa433]/30 rounded-lg p-1.5 flex items-center gap-2 text-xs">
         <span class="text-slate-400 px-1 font-medium">Role:</span>
-        <button id="btn-master" type="button" onclick="switchRole('Master Admin')" class="bg-amber-500 text-slate-950 font-bold px-3 py-1 rounded transition-all">Master Admin</button>
-        <button id="btn-manager" type="button" onclick="switchRole('Property Manager')" class="text-slate-300 hover:text-white font-medium px-3 py-1 rounded transition-all">Property Manager</button>
+        <button id="btn-master" type="button" onclick="switchRole('Master Admin')" class="bg-gradient-to-r from-[#dfa433] to-[#f3ca65] text-slate-950 font-bold px-3 py-1 rounded transition-all duration-300">Master Admin</button>
+        <button id="btn-manager" type="button" onclick="switchRole('Property Manager')" class="text-slate-300 hover:text-white font-medium px-3 py-1 rounded transition-all duration-300">Property Manager</button>
       </div>
-      <a href="/" class="text-xs font-semibold text-slate-400 hover:text-amber-400 border border-slate-700 hover:border-amber-400/50 px-3 py-2 rounded-lg transition-all flex items-center gap-1.5">
+      <a href="/" class="text-xs font-semibold text-slate-400 hover:text-[#f3ca65] border border-[#dfa433]/30 hover:border-amber-400/50 px-3 py-2 rounded-lg transition-all duration-300 flex items-center gap-1.5">
         <i class="fa-solid fa-arrow-up-right-from-square"></i> Public Portal
       </a>
     </div>
   </header>
+
+    <!-- Brand Hero Banner Image Container -->
+    <div class="w-full bg-[#010e21] border-b border-[#dfa433]/30 overflow-hidden relative shadow-2xl">
+      <div class="max-w-7xl mx-auto px-4 py-2 flex justify-center">
+        <img src="/header-banner.png" 
+             alt="Section 8 Rentals & More LLC - Connecting Qualified Tenants, Landlords, and Housing Agencies" 
+             class="w-full h-auto max-h-56 md:max-h-64 object-cover object-center rounded-xl shadow-lg border border-[#dfa433]/40" />
+      </div>
+    </div>
+
 <main class='max-w-3xl mx-auto py-12 px-4'><div class='bg-white p-8 rounded-xl shadow border border-slate-200'>
 <span class='bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase'>B2B Portfolio Managers</span>
 <h1 class='text-3xl font-extrabold mt-4'>Fill Vacancies with Pre-Screened HCV Tenants.</h1><p class='text-slate-600 mt-3 leading-relaxed'>Accelerate lease-up times with automated utility deduction schedules, rent reasonableness comparables, and first-time NSPIRE pre-inspection checklists.</p>
 <div class='mt-8 pt-6 border-t border-slate-100 flex justify-between items-center'>
 <span class='text-xs text-slate-400'>Lakeville, MN • Dakota County</span>
-<a href='https://www.section8rentalsandmore.com' class='bg-slate-900 text-white text-sm font-bold px-6 py-2.5 rounded-lg hover:bg-slate-800'>Access Platform</a>
+<a href='https://www.section8rentalsandmore.com' class='bg-[#02162e] text-white text-sm font-bold px-6 py-2.5 rounded-lg hover:bg-[#04244a]'>Access Platform</a>
 </div></div></main>
 <script>
 const API_BASE = 'https://section8-api-production.up.railway.app';
@@ -47,15 +57,15 @@ async function verifyRailwayStatus() {
   try {
     const res = await fetch(`${API_BASE}/api/v1/admin/status`, { method: 'GET' });
     if (res.ok) {
-      if (badge) badge.innerHTML = 'API: <strong class="text-emerald-400">Railway Live</strong>';
+      if (badge) badge.innerHTML = 'API: <strong class="text-[#f3ca65]">Railway Live</strong>';
     } else {
       const fallback = await fetch(`${API_BASE}/`);
       if (fallback.ok && badge) {
-        badge.innerHTML = 'API: <strong class="text-emerald-400">Railway Live</strong>';
+        badge.innerHTML = 'API: <strong class="text-[#f3ca65]">Railway Live</strong>';
       }
     }
   } catch (err) {
-    if (badge) badge.innerHTML = 'API: <strong class="text-amber-400">Connecting / Cached</strong>';
+    if (badge) badge.innerHTML = 'API: <strong class="text-[#f3ca65]">Connecting / Cached</strong>';
   }
 }
 
@@ -100,12 +110,12 @@ async function loadLiveListings() {
 
       const badgeClass = isOccupied 
         ? 'bg-emerald-500/20 text-emerald-300' 
-        : 'bg-amber-500/20 text-amber-300';
+        : 'bg-gradient-to-r from-[#dfa433] to-[#f3ca65]/20 text-amber-300';
 
       const row = `<tr>
         <td class="p-3 font-semibold text-white">${address}</td>
         <td class="p-3 text-slate-300">${county}</td>
-        <td class="p-3 text-emerald-400 font-bold">${rent}</td>
+        <td class="p-3 text-[#f3ca65] font-bold">${rent}</td>
         <td class="p-3 text-slate-300">${pha}</td>
         <td class="p-3"><span class="${badgeClass} px-2 py-0.5 rounded font-bold">${status}</span></td>
       </tr>`;
@@ -130,15 +140,15 @@ window.switchRole = function(role) {
   const managerNotice = document.getElementById('manager-locked-notice');
 
   if (role === 'Master Admin') {
-    if (btnMaster) btnMaster.className = 'bg-amber-500 text-slate-950 font-bold px-3 py-1 rounded transition-all';
-    if (btnManager) btnManager.className = 'text-slate-300 hover:text-white font-medium px-3 py-1 rounded transition-all';
+    if (btnMaster) btnMaster.className = 'bg-gradient-to-r from-[#dfa433] to-[#f3ca65] text-slate-950 font-bold px-3 py-1 rounded transition-all duration-300';
+    if (btnManager) btnManager.className = 'text-slate-300 hover:text-white font-medium px-3 py-1 rounded transition-all duration-300';
     if (roleDisplay) roleDisplay.innerText = 'Master Admin';
     if (roleDesc) roleDesc.innerText = 'Full 5-County Twin Cities & Western WI Authority | Complete Schema & Accounting Access';
     if (masterZone) masterZone.classList.remove('hidden');
     if (managerNotice) managerNotice.classList.add('hidden');
   } else {
-    if (btnManager) btnManager.className = 'bg-amber-500 text-slate-950 font-bold px-3 py-1 rounded transition-all';
-    if (btnMaster) btnMaster.className = 'text-slate-300 hover:text-white font-medium px-3 py-1 rounded transition-all';
+    if (btnManager) btnManager.className = 'bg-gradient-to-r from-[#dfa433] to-[#f3ca65] text-slate-950 font-bold px-3 py-1 rounded transition-all duration-300';
+    if (btnMaster) btnMaster.className = 'text-slate-300 hover:text-white font-medium px-3 py-1 rounded transition-all duration-300';
     if (roleDisplay) roleDisplay.innerText = 'Property Manager';
     if (roleDesc) roleDesc.innerText = 'Portfolio Scoped Access | Tenant HCV Applications, RFTA Packets, and Maintenance Dispatches';
     if (masterZone) masterZone.classList.add('hidden');

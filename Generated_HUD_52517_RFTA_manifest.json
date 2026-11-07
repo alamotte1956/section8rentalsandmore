@@ -1,0 +1,44 @@
+{
+  "status": "READY_FOR_SUBMISSION",
+  "authority": {
+    "cdacode": "MN042",
+    "name": "Dakota County CDA",
+    "limits": {
+      "0": 1350,
+      "1": 1540,
+      "2": 1890,
+      "3": 2420,
+      "4": 2850
+    }
+  },
+  "payment_standard": 2420,
+  "data": {
+    "topmostSubform[0].Page1[0].Header[0].PHA_Name[0]": "Dakota County CDA",
+    "topmostSubform[0].Page1[0].Header[0].PHA_Code[0]": "MN042",
+    "topmostSubform[0].Page1[0].Section1[0].UnitAddress[0]": "10805 173rd St W, Unit 127",
+    "topmostSubform[0].Page1[0].Section1[0].UnitCity[0]": "Lakeville",
+    "topmostSubform[0].Page1[0].Section1[0].UnitState[0]": "MN",
+    "topmostSubform[0].Page1[0].Section1[0].UnitZip[0]": "55044",
+    "topmostSubform[0].Page1[0].Section1[0].Bedrooms[0]": "3",
+    "topmostSubform[0].Page1[0].Section1[0].YearBuilt[0]": "2004",
+    "topmostSubform[0].Page1[0].Section1[0].ProposedRent[0]": "$2,250.00",
+    "topmostSubform[0].Page1[0].Section1[0].SecurityDeposit[0]": "$2,250.00",
+    "topmostSubform[0].Page1[0].Section1[0].DateAvailable[0]": "2026-12-01",
+    "topmostSubform[0].Page1[0].Section1[0].StructureType[0]": "Townhouse / Low-Rise",
+    "topmostSubform[0].Page1[0].Section2[0].OwnerName[0]": "Section 8 Rentals and More LLC",
+    "topmostSubform[0].Page1[0].Section2[0].OwnerAddress[0]": "10805 173rd St W, Unit 127",
+    "topmostSubform[0].Page1[0].Section2[0].OwnerCity[0]": "Lakeville",
+    "topmostSubform[0].Page1[0].Section2[0].OwnerState[0]": "MN",
+    "topmostSubform[0].Page1[0].Section2[0].OwnerZip[0]": "55044",
+    "topmostSubform[0].Page1[0].Section2[0].OwnerPhone[0]": "612-701-7064",
+    "topmostSubform[0].Page1[0].Section2[0].OwnerEmail[0]": "alamotte1956@gmail.com",
+    "topmostSubform[0].Page1[0].Section2[0].TenantName[0]": "Applicant Voucher Holder",
+    "topmostSubform[0].Page1[0].Section2[0].TenantPhone[0]": "612-555-0192",
+    "topmostSubform[0].Page2[0].Utilities[0].HeatingPayor[0]": "T",
+    "topmostSubform[0].Page2[0].Utilities[0].ElectricPayor[0]": "T",
+    "topmostSubform[0].Page2[0].Utilities[0].GasPayor[0]": "T",
+    "topmostSubform[0].Page2[0].Utilities[0].WaterPayor[0]": "O",
+    "topmostSubform[0].Page2[0].Utilities[0].SewerPayor[0]": "O",
+    "topmostSubform[0].Page2[0].Utilities[0].TrashPayor[0]": "O"
+  }
+}

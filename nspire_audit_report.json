@@ -1,0 +1,19 @@
+{
+  "property": "10805 173rd St W, Unit 127, Lakeville, MN 55044",
+  "score_percentage": 83.33333333333334,
+  "passed": false,
+  "action_items": [
+    {
+      "category": "HVAC_PLUMBING",
+      "item": "Water Heater TPR Valve",
+      "requirement": "Discharge pipe extends downward to within 6 inches of floor",
+      "critical": true
+    },
+    {
+      "category": "BUILDING_ENVELOPE",
+      "item": "Window Weatherization",
+      "requirement": "Intact seals, no broken panes, latches secure unit",
+      "critical": false
+    }
+  ]
+}
