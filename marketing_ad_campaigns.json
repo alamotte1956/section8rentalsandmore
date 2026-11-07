@@ -1,0 +1,50 @@
+[
+  {
+    "id": "single_family",
+    "slug": "single-family-conversions.html",
+    "title": "Maximize Single-Family ROI with Guaranteed Section 8 Rent",
+    "sub": "Convert 3-BR and 4-BR Twin Cities Homes into $2,264 - $2,538/Mo Guaranteed Rent Streams",
+    "benefits": [
+      "FY 2027 HUD FMR payment standards up to $2,538/mo for 4-BR homes",
+      "Direct government ACH disbursements on the 1st of every month",
+      "Rigorous applicant screening and proactive lease management",
+      "Zero out-of-pocket marketing fees until lease execution"
+    ]
+  },
+  {
+    "id": "out_of_state",
+    "slug": "out-of-state-investors.html",
+    "title": "Hands-Off Property Management for Out-of-State Investors",
+    "sub": "Government-Backed Cash Flow with Zero Operational Friction in MN & Western WI",
+    "benefits": [
+      "Complete local representation across all Twin Cities housing authorities",
+      "Pre-inspection NSPIRE compliance ensuring rapid initial pass rates",
+      "Transparent online accounting with QuickBooks Online ledger integration",
+      "Direct ACH disbursements deposited directly to your bank"
+    ]
+  },
+  {
+    "id": "distressed",
+    "slug": "distressed-asset-recovery.html",
+    "title": "Turn Distressed Rentals into High-Yield Performing Assets",
+    "sub": "Rapid Tenant Transition, Statutory Compliance & Reliable Cash Flow",
+    "benefits": [
+      "Expert navigation of MN 504B.321 and WI 704.17 statutory notices",
+      "Punchlist coordination to bring units into immediate NSPIRE compliance",
+      "Immediate access to pre-qualified Section 8 voucher holders",
+      "Elimination of ongoing collection defaults"
+    ]
+  },
+  {
+    "id": "accelerated",
+    "slug": "accelerated-tenant-placement.html",
+    "title": "Fill Your Twin Cities Vacancies in 14 Days or Less",
+    "sub": "Streamlined Voucher Processing and Automated HUD-52517 RFTA Submission",
+    "benefits": [
+      "Automated RFTA packet generation tailored to Dakota CDA, MPHA, and St. Paul PHA",
+      "Rigorous 40% initial rent burden underwriting to eliminate PHA rejections",
+      "Extensive pipeline of ready-to-move Section 8 voucher holders",
+      "Average 14-day lease-up turnaround from application to inspection"
+    ]
+  }
+]

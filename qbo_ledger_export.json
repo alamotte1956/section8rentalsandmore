@@ -25,5 +25,40 @@
       "description": "Tenant Out-of-Pocket Share (Sample Section 8 Tenant)"
     }
   ],
-  "balanced": true
+  "balanced": true,
+  "transactions": [
+    {
+      "txn_id": "TXN-2026-11-001",
+      "date": "2026-11-01",
+      "property_id": "MN-LAKEVILLE-17420",
+      "property_address": "17420 Kenwood Trail, Lakeville, MN 55044",
+      "pha_code": "MN042",
+      "description": "Dakota County CDA November 2026 HAP Subsidy ACH",
+      "debit_account": "1010 Operating Cash (Checking)",
+      "credit_account": "4010 Section 8 Guaranteed HAP Revenue",
+      "amount": 1644.0
+    },
+    {
+      "txn_id": "TXN-2026-11-002",
+      "date": "2026-11-02",
+      "property_id": "MN-LAKEVILLE-17420",
+      "property_address": "17420 Kenwood Trail, Lakeville, MN 55044",
+      "pha_code": "MN042",
+      "description": "Tenant Direct Share November 2026 (Resident ACH)",
+      "debit_account": "1010 Operating Cash (Checking)",
+      "credit_account": "4020 Resident Rent Revenue",
+      "amount": 481.0
+    },
+    {
+      "txn_id": "TXN-2026-11-003",
+      "date": "2026-11-05",
+      "property_id": "MN-LAKEVILLE-17420",
+      "property_address": "17420 Kenwood Trail, Lakeville, MN 55044",
+      "pha_code": "MN042",
+      "description": "Monthly Management Fee Retainer (8%)",
+      "debit_account": "5010 Property Management Expense",
+      "credit_account": "4090 Management Company Earned Revenue",
+      "amount": 170.0
+    }
+  ]
 }

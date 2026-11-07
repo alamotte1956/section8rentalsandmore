@@ -1,0 +1,100 @@
+{
+  "BatchItemRequest": [
+    {
+      "bId": "bId-TXN-2026-11-001",
+      "JournalEntry": {
+        "TxnDate": "2026-11-01",
+        "DocNumber": "TXN-2026-11-001",
+        "PrivateNote": "Dakota County CDA November 2026 HAP Subsidy ACH | Unit: MN-LAKEVILLE-17420",
+        "Line": [
+          {
+            "DetailType": "JournalEntryLineDetail",
+            "Amount": 1644.0,
+            "Description": "Debit: Dakota County CDA November 2026 HAP Subsidy ACH",
+            "JournalEntryLineDetail": {
+              "PostingType": "Debit",
+              "AccountRef": {
+                "name": "1010 Operating Cash (Checking)"
+              }
+            }
+          },
+          {
+            "DetailType": "JournalEntryLineDetail",
+            "Amount": 1644.0,
+            "Description": "Credit: Dakota County CDA November 2026 HAP Subsidy ACH",
+            "JournalEntryLineDetail": {
+              "PostingType": "Credit",
+              "AccountRef": {
+                "name": "4010 Section 8 Guaranteed HAP Revenue"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "bId": "bId-TXN-2026-11-002",
+      "JournalEntry": {
+        "TxnDate": "2026-11-02",
+        "DocNumber": "TXN-2026-11-002",
+        "PrivateNote": "Tenant Direct Share November 2026 (Resident ACH) | Unit: MN-LAKEVILLE-17420",
+        "Line": [
+          {
+            "DetailType": "JournalEntryLineDetail",
+            "Amount": 481.0,
+            "Description": "Debit: Tenant Direct Share November 2026 (Resident ACH)",
+            "JournalEntryLineDetail": {
+              "PostingType": "Debit",
+              "AccountRef": {
+                "name": "1010 Operating Cash (Checking)"
+              }
+            }
+          },
+          {
+            "DetailType": "JournalEntryLineDetail",
+            "Amount": 481.0,
+            "Description": "Credit: Tenant Direct Share November 2026 (Resident ACH)",
+            "JournalEntryLineDetail": {
+              "PostingType": "Credit",
+              "AccountRef": {
+                "name": "4020 Resident Rent Revenue"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "bId": "bId-TXN-2026-11-003",
+      "JournalEntry": {
+        "TxnDate": "2026-11-05",
+        "DocNumber": "TXN-2026-11-003",
+        "PrivateNote": "Monthly Management Fee Retainer (8%) | Unit: MN-LAKEVILLE-17420",
+        "Line": [
+          {
+            "DetailType": "JournalEntryLineDetail",
+            "Amount": 170.0,
+            "Description": "Debit: Monthly Management Fee Retainer (8%)",
+            "JournalEntryLineDetail": {
+              "PostingType": "Debit",
+              "AccountRef": {
+                "name": "5010 Property Management Expense"
+              }
+            }
+          },
+          {
+            "DetailType": "JournalEntryLineDetail",
+            "Amount": 170.0,
+            "Description": "Credit: Monthly Management Fee Retainer (8%)",
+            "JournalEntryLineDetail": {
+              "PostingType": "Credit",
+              "AccountRef": {
+                "name": "4090 Management Company Earned Revenue"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
