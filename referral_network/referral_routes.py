@@ -5,7 +5,7 @@ from flask import Blueprint, abort, redirect, render_template_string, request, s
 from matching import find_candidates
 
 referrals = Blueprint("referrals", __name__, url_prefix="/referrals")
-COUNTIES = ("Hennepin", "Ramsey", "Dakota", "Anoka", "Washington")
+COUNTIES = ("Hennepin", "Ramsey", "Dakota", "Anoka", "Washington", "Renville", "Redwood", "Lyon")
 PROGRAMS = ("HCV", "other_subsidy", "market_rate", "unknown")
 STATUSES = ("new", "reviewing", "matched", "closed")
 
