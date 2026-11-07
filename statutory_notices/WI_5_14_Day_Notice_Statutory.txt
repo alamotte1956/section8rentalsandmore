@@ -1,0 +1,33 @@
+================================================================================
+NOTICE TO PAY RENT OR VACATE
+State of Wisconsin - Wis. Stat. § 704.17
+================================================================================
+
+DATE: [DATE]
+
+TO TENANT(S):
+Tenant: [TENANT_NAME]
+Rental Address: [PROPERTY_ADDRESS], [CITY], WI [ZIP_CODE]
+
+FROM:
+Section 8 Rentals and More LLC
+10805 173rd St W, Unit 127, Lakeville, MN 55044
+Phone: 612-701-7064 | Email: info@section8rentalsandmore.com
+
+PLEASE TAKE NOTICE that you are in default of your lease agreement for failure to pay
+rent. The itemized past-due balance currently owed is: $ [TOTAL_AMOUNT]
+
+Pursuant to Wis. Stat. § 704.17, you are required to either:
+  [ ] FIVE (5) DAY REMEDY (Right to Cure): Pay the full amount stated above or vacate
+      and surrender the premises within five (5) days of service.
+  [ ] FOURTEEN (14) DAY NOTICE (No Right to Cure - Year-to-Year Lease / Second Notice):
+      Vacate and surrender the premises within fourteen (14) days of service.
+
+Failure to pay or vacate within the applicable statutory timeframe will result in 
+the commencement of a judicial eviction proceeding.
+
+HOUSING AUTHORITY COPY (Section 8 HCV):
+Housing Authority: [PHA_NAME]
+
+Authorized Agent: _____________________________________________
+Section 8 Rentals and More LLC
