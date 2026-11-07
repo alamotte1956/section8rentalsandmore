@@ -5,8 +5,8 @@ import sqlite3
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-SOURCES = ("referral_partner_prospects.csv", "metro_five_county_additions.csv")
-COUNTIES = {"Hennepin", "Ramsey", "Dakota", "Anoka", "Washington"}
+SOURCES = ("referral_partner_prospects.csv", "metro_five_county_additions.csv", "greater_minnesota_prospects.csv")
+COUNTIES = {"Hennepin", "Ramsey", "Dakota", "Anoka", "Washington", "Renville", "Redwood", "Lyon"}
 
 def import_partners(db_path: Path, source_dir: Path = ROOT):
     with sqlite3.connect(db_path) as db:
