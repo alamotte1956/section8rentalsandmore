@@ -13,6 +13,8 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         path = unquote(urlsplit(self.path).path)
         name = PUBLIC.get(path)
+        if name is None and path in ("/speech.mp3", "/Al LaMotte HUD speech.mp3"):
+            name = path[1:]
         if name is None and path.startswith("/media/"):
             candidate = path.removeprefix("/media/")
             if candidate in ("speech.mp3", "Al LaMotte HUD speech.mp3"):
