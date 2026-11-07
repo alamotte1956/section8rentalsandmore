@@ -1,0 +1,52 @@
+{
+  "engines": {
+    "HUD-52517 RFTA Engine": "PASS",
+    "NSPIRE Pre-Inspection Audit": "PASS",
+    "Dual-State Notice Engine": "PASS",
+    "CARES Act 30-Day Engine": "PASS",
+    "QBO Ledger Sync": "PASS",
+    "RFC-5545 Calendar Feed": "PASS",
+    "Ad Syndication Engine": "PASS",
+    "Operations Manual Compiler": "PASS"
+  },
+  "databases": {
+    "RFTA Manifest": "PASS (4 records)",
+    "NSPIRE Punchlist": "PASS (4 records)",
+    "QBO Ledger Export": "PASS (8 records)",
+    "Syndicated Campaigns": "PASS (2 records)",
+    "Multi-Agency SAFMR Matrix": "PASS (6 records)"
+  },
+  "notices": {
+    "MN 14-Day Notice": "PASS",
+    "WI 5-Day Notice": "PASS",
+    "CARES Act 30-Day Notice": "PASS"
+  },
+  "portals": {
+    "index.html": "PASS (Links: 12)",
+    "admin.html": "PASS (Links: 4)",
+    "presentation.html": "PASS (Links: 4)",
+    "investor-dossier.html": "PASS (Links: 2)",
+    "landlord-guaranteed-rent.html": "PASS (Links: 5)",
+    "market-rate-conversions.html": "PASS (Links: 5)",
+    "property-managers.html": "PASS (Links: 5)",
+    "voucher-relocation.html": "PASS (Links: 5)"
+  },
+  "assets": {
+    "Presentation Audio": "PASS (4088.4 KB)",
+    "Hero Artwork": "PASS (2322.7 KB)",
+    "Inspection Calendar": "PASS (0.8 KB)",
+    "Operations Manual": "PASS (4.7 KB)"
+  },
+  "edge": {
+    "/": "HTTP 200",
+    "/admin.html": "HTTP 200",
+    "/presentation.html": "HTTP 200",
+    "/investor-dossier.html": "HTTP 200",
+    "/landlord-guaranteed-rent.html": "HTTP 200",
+    "/market-rate-conversions.html": "HTTP 200",
+    "/property-managers.html": "HTTP 200",
+    "/voucher-relocation.html": "HTTP 200",
+    "/inspection_schedule.ics": "HTTP 200",
+    "/hero-banner.png": "HTTP 200"
+  }
+}
