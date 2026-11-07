@@ -11,38 +11,38 @@
     .tab-content.active { display: block; }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col"><a href="referral-partners.html" style="display:inline-block;margin:8px 12px;padding:9px 14px;background:#78BE21;color:#003865;font-weight:700;border-radius:8px;text-decoration:none">Housing Referral Network</a>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col"><a href="referral-partners.html" style="display:inline-block;margin:8px 12px;padding:9px 14px;background:#20B2AA;color:#003865;font-weight:700;border-radius:8px;text-decoration:none">Housing Referral Network</a>
 
   <!-- TOP BAR -->
-  <header class="bg-[#003865] text-white border-b border-slate-800 sticky top-0 z-50"><div class="bg-[#78BE21] text-[#003865] text-center py-2 px-4 font-bold text-sm"><a href="admin.html" class="underline hover:text-white mr-4">Admin Hub</a><a href="presentation.html" class="underline hover:text-white">Click here to watch the Executive Presentation (Audio Synced) &rarr;</a></div>
+  <header class="bg-[#003865] text-white border-b border-slate-800 sticky top-0 z-50"><div class="bg-[#20B2AA] text-[#003865] text-center py-2 px-4 font-bold text-sm"><a href="admin.html" class="underline hover:text-white mr-4">Admin Hub</a><a href="presentation.html" class="underline hover:text-white">Click here to watch the Executive Presentation (Audio Synced) &rarr;</a></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
       <div class="flex items-center space-x-3">
-        <div class="bg-[#78BE21] text-[#003865] font-black px-2.5 py-1 rounded text-xl tracking-wider">S8+</div>
+        <div class="bg-[#20B2AA] text-[#003865] font-black px-2.5 py-1 rounded text-xl tracking-wider">S8+</div>
         <div>
           <span class="font-bold text-lg leading-none block">Section 8 Rentals &amp; More</span>
           <span class="text-xs text-slate-400">Twin Cities Metro &amp; Greater Minnesota</span>
         </div>
       </div>
       <div>
-        <a href="admin.html" class="underline hover:text-white mr-4">Admin Hub</a><a href="presentation.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-[#78BE21] to-[#CEDE55] hover:from-[#8CCD43] hover:to-[#DFE99A] text-[#003865] font-black px-5 py-2.5 rounded-xl shadow-lg shadow-[#78BE21]/30 text-sm tracking-wide transition transform hover:scale-105 animate-pulse">
+        <a href="admin.html" class="underline hover:text-white mr-4">Admin Hub</a><a href="presentation.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-[#20B2AA] to-[#B9E9E4] hover:from-[#16968F] hover:to-[#D4F3F0] text-[#003865] font-black px-5 py-2.5 rounded-xl shadow-lg shadow-[#20B2AA]/30 text-sm tracking-wide transition transform hover:scale-105 animate-pulse">
           <i class="fa-solid fa-play"></i>
           <span>START PRESENTATION</span>
         </a>
         </div>
       </div>
       <nav class="hidden md:flex space-x-1">
-        <button onclick="switchTab('listings-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-[#0D5257] transition text-[#CEDE55]" id="btn-listings">Rental Search</button>
+        <button onclick="switchTab('listings-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-[#0D5257] transition text-[#B9E9E4]" id="btn-listings">Rental Search</button>
         <button onclick="switchTab('landlord-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-[#0D5257] transition text-slate-300" id="btn-landlord">List a Property</button>
         <button onclick="switchTab('rfta-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-[#0D5257] transition text-slate-300" id="btn-rfta">RFTA &amp; Voucher Utility</button>
         <button onclick="switchTab('nspire-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-[#0D5257] transition text-slate-300" id="btn-nspire">NSPIRE Punchlist</button>
-      <a href='presentation.html' class='text-[#CEDE55] font-bold ml-4'>Watch Presentation</a></nav>
+      <a href='presentation.html' class='text-[#B9E9E4] font-bold ml-4'>Watch Presentation</a></nav>
       <div class="flex items-center space-x-2">
         <span id="api-status-badge" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-900 text-yellow-200">
           <span class="w-1.5 h-1.5 mr-1.5 bg-yellow-400 rounded-full animate-pulse"></span> Connecting API
         </span>
       </div>
     </div>
-   <a href="/admin.html" class="bg-[#78BE21] text-[#003865] font-bold px-3 py-1.5 rounded text-xs uppercase tracking-wider shadow">Admin Hub</a> </header>
+   <a href="/admin.html" class="bg-[#20B2AA] text-[#003865] font-bold px-3 py-1.5 rounded text-xs uppercase tracking-wider shadow">Admin Hub</a> </header>
 
   <!-- SUB NAV FOR MOBILE -->
   <div class="md:hidden bg-[#0D5257] text-white flex overflow-x-auto px-2 py-2 space-x-1 text-xs">
@@ -235,7 +235,7 @@
         </div>
 
         <div class="mt-6 flex justify-end">
-          <button onclick="alert('RFTA HUD-52517 pre-fill template prepared. Exporting parameters to packet generator...')" class="bg-amber-600 hover:bg-[#78BE21] text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition">
+          <button onclick="alert('RFTA HUD-52517 pre-fill template prepared. Exporting parameters to packet generator...')" class="bg-amber-600 hover:bg-[#20B2AA] text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition">
             Export Pre-filled RFTA Packet (HUD-52517)
           </button>
         </div>
@@ -289,7 +289,7 @@
       if (!section) return;
       document.querySelectorAll(".tab-content").forEach(el => el.classList.toggle("active",el.id === id));
       document.querySelectorAll(".nav-btn").forEach(el => {
-        el.classList.toggle("text-[#CEDE55]",el.id === ({'listings-tab':'btn-listings','landlord-tab':'btn-landlord','rfta-tab':'btn-rfta','nspire-tab':'btn-nspire'}[id]));
+        el.classList.toggle("text-[#B9E9E4]",el.id === ({'listings-tab':'btn-listings','landlord-tab':'btn-landlord','rfta-tab':'btn-rfta','nspire-tab':'btn-nspire'}[id]));
       });
       history.replaceState(null,"","#"+id);
     }
