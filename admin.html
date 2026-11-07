@@ -21,6 +21,43 @@
       </a>
     </nav>
 
+    <!-- MODULAR SYSTEM ACTION BAR -->
+    <div class="bg-slate-900 border-b border-slate-800 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center justify-between py-3 gap-2">
+                <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+                    <!-- Portfolio Tab -->
+                    <button onclick="switchTab('portfolio')" class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition shadow-sm">
+                        <i class="fas fa-city text-amber-400"></i>
+                        <span>Portfolio</span>
+                    </button>
+                    <!-- Statutory Notices Engine -->
+                    <button onclick="triggerStatutoryEngine()" class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition shadow-sm">
+                        <i class="fas fa-file-contract text-sky-400"></i>
+                        <span>Statutory Notices</span>
+                    </button>
+                    <!-- QBO Financial Sync -->
+                    <button onclick="triggerQboSync()" class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition shadow-sm">
+                        <i class="fas fa-sync-alt text-emerald-400"></i>
+                        <span>QBO Sync</span>
+                    </button>
+                    <!-- Inspection Feed / ICS Calendar -->
+                    <a href="inspection_schedule.ics" download class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition shadow-sm">
+                        <i class="fas fa-calendar-check text-rose-400"></i>
+                        <span>Inspection Feed</span>
+                    </a>
+                </div>
+                <!-- Status Badge -->
+                <div class="flex items-center gap-2 text-xs font-mono text-emerald-400 bg-emerald-950/50 px-3 py-1.5 rounded-full border border-emerald-800/40">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Systems Operational</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <!-- Right-Hand Controls -->
     <div class="flex items-center gap-3 mt-3 sm:mt-0">
       <div class="bg-[#04244a] border border-[#dfa433]/30 rounded-lg p-1.5 flex items-center gap-2 text-xs">
