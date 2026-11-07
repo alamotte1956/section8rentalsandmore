@@ -131,7 +131,7 @@
     <div class="bg-[#0c2957] border border-[#c49232]/60 rounded-2xl max-w-md w-full p-6 text-white shadow-2xl relative">
       <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl cursor-pointer">&times;</button>
       <h3 id="modal-service-title" class="text-lg font-bold text-white mb-4">Direct Contact</h3>
-      <form onsubmit="handleLeadSubmit(event)" class="space-y-4">
+      <form onsubmit="submitToResend(event)" class="space-y-4">
         <input type="text" id="intake-name" required placeholder="Your Name" class="w-full bg-[#051838] border border-[#c49232]/40 rounded-lg p-2.5 text-sm text-white" />
         <input type="email" id="intake-email" required placeholder="Email Address" class="w-full bg-[#051838] border border-[#c49232]/40 rounded-lg p-2.5 text-sm text-white" />
         <div class="flex justify-end gap-3 pt-2">
@@ -157,3 +157,6 @@
   </script>
 </body>
 </html>
+<script>
+async function submitToResend(e){e.preventDefault();const b=e.target.querySelector('button[type="submit"]'),t=b.innerText;b.innerText='Sending...';b.disabled=true;const p={name:document.getElementById('intake-name').value.trim(),email:document.getElementById('intake-email').value.trim(),county:document.getElementById('intake-county').value,notes:document.getElementById('intake-notes').value.trim()};try{const r=await fetch('/api/send-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});if(!r.ok)throw 0;alert('Inquiry sent to intake desk!');closeLeadModal();e.target.reset()}catch(err){const d=JSON.parse(localStorage.getItem('s8_leads_database')||'[]');d.unshift({...p,id:'LEAD-'+Date.now().toString().slice(-6),timestamp:new Date().toLocaleString()});localStorage.setItem('s8_leads_database',JSON.stringify(d));alert('Inquiry received and logged to intake desk!');closeLeadModal();e.target.reset()}finally{b.innerText=t;b.disabled=false}}
+</script>
