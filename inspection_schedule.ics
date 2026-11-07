@@ -1,28 +1,22 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Section 8 Rentals and More LLC//Inspection Calendar 1.0//EN
+PRODID:-//Section 8 Rentals and More LLC//NSPIRE Pre-Inspection//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Section 8 & NSPIRE Inspection Schedule
-X-WR-TIMEZONE:America/Chicago
 BEGIN:VEVENT
-UID:nspire-annual-audit-20261115@section8rentalsandmore.com
-DTSTAMP:20261107T191813Z
-DTSTART;VALUE=DATE:20261115
-DTEND;VALUE=DATE:20261116
-SUMMARY:HUD NSPIRE Pre-Inspection Audit (Twin Cities Portfolio)
-DESCRIPTION:Pre-inspection compliance walkthrough auditing smoke/CO alarms, water heaters, GFCI outlets, and egress windows under HUD-52517 & NSPIRE standards.
-LOCATION:Minneapolis-St. Paul Metro, MN
+UID:insp-20261107134002@section8rentalsandmore.com
+DTSTAMP:20261107T134002Z
+DTSTART:20261114T140000Z
+DTEND:20261114T160000Z
+SUMMARY:HUD NSPIRE Pre-Inspection Audit - Section 8 Placement
+DESCRIPTION:Pre-inspection compliance walk-through: verify egress windows, check dual-sensor CO/smoke detectors, test GFCI outlets, inspect water heater TPR valve, and audit window paint friction surfaces.
+LOCATION:Metro Area Housing Authority Jurisdiction
 STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:pha-reinspection-20261122@section8rentalsandmore.com
-DTSTAMP:20261107T191813Z
-DTSTART;VALUE=DATE:20261122
-DTEND;VALUE=DATE:20261123
-SUMMARY:PHA Annual Voucher Re-Inspection Window
-DESCRIPTION:Annual housing authority recertification inspection window for Section 8 voucher participants.
-LOCATION:Metro HRA / St. Paul PHA Jurisdictions
-STATUS:CONFIRMED
+PRIORITY:1
+BEGIN:VALARM
+TRIGGER:-PT24H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Section 8 NSPIRE Inspection in 24 hours
+END:VALARM
 END:VEVENT
 END:VCALENDAR
