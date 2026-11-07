@@ -25,7 +25,7 @@ if not os.environ.get("REFERRAL_ADMIN_PASSWORD"):
     raise RuntimeError("Set REFERRAL_ADMIN_PASSWORD before starting referral admin")
 
 def connect():
-    db = sqlite3.connect(DB_PATH)
+    db = sqlite3.connect(os.environ.get("REFERRAL_DB_PATH", str(DB_PATH)))
     db.row_factory = sqlite3.Row
     db.execute("PRAGMA foreign_keys=ON")
     return db
