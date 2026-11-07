@@ -1,0 +1,38 @@
+# STANDARD OPERATING PROCEDURE & PROPERTY MANAGEMENT OPERATIONS MANUAL
+**Company:** Section 8 Rentals and More LLC  
+**Principal:** Dr. Albert Ray LaMotte, President & CEO  
+**Corporate Office:** 10805 173rd St W, Unit 127, Lakeville, MN 55044 | (612) 701-7064  
+**Effective Period:** FY 2026 - FY 2027
+
+---
+
+## 1.0 Executive Summary & Dual-State Jurisdictional Scope
+
+Section 8 Rentals and More LLC administers specialized property management, lease-up execution, and compliance under Section 8 Housing Choice Voucher (HCV) programs across the Minneapolis-St. Paul-Bloomington MSA (Dakota, Hennepin, Ramsey, Anoka, Washington) and Western Wisconsin (St. Croix County). Operations ensure maximum guaranteed contract rents under HUD FY 2027 Fair Market Rents (FMR) while maintaining strict statutory compliance.
+
+## 2.0 Underwriting, Payment Standards & Rent Reasonableness (24 CFR Part 982)
+
+- Payment Standards Verification: Query hud_fmr_2027.sqlite prior to tenancy proposal.
+- Utility Deductions: Apply local PHA utility allowance schedules to determine maximum net contract rent (Box 12).
+- 40% Initial Rent Burden Cap (24 CFR 982.508): Ensure tenant family share does not exceed 40% of adjusted monthly income at lease inception.
+- Rent Reasonableness Comps (24 CFR 982.507): Retain 3 unassisted market comparables in property file prior to RFTA packet submission.
+
+## 3.0 Physical Inspections & HUD NSPIRE Compliance
+
+- Life Safety: Smoke alarms on every level and inside all bedrooms; carbon monoxide alarms within 10 ft of all bedrooms (Minn. Stat. 299F.51).
+- Electrical Safety: GFCI protection operational on all outlets within 6 ft of water sources and exterior receptacles.
+- Lead-Safe Housing Rule (24 CFR Part 35): For all properties constructed before 1978, complete visual lead assessment ensuring zero peeling/chipping paint on friction surfaces.
+- Egress & Plumbing: Bedroom egress windows functional without prop sticks; Water heater TPR valve piped to within 6 inches of floor.
+
+## 4.0 Dual-State Statutory Notices & Default Enforcement
+
+- Federal CARES Act Mandate: All covered Section 8 tenancies require a mandatory 30-day written notice before eviction filings.
+- Minnesota Practice (Minn. Stat. 504B.321): Serve 14-day itemized pre-eviction notice detailing delinquent principal and emergency assistance resources.
+- Wisconsin Practice (Wis. Stat. 704.17): Serve 5-day pay-or-quit or 14-day notice terminating tenancy.
+- Mandatory PHA Service Copy: Transmit concurrent written copy of all legal notices to the Housing Authority case manager per 24 CFR 982.310(e)(2)(ii).
+
+## 5.0 Accounting & QuickBooks Online (QBO) Ledger Reconciliation
+
+- Direct HAP Deposit Split: Reconcile electronic ACH subsidy payments from PHA accounts separately from tenant rent portions.
+- Property-Specific Ledger Allocation: Segregate repair escrows, utility allocations, and net owner distributions per unique property ID.
+
