@@ -11,7 +11,7 @@ ADDRESS: [PROPERTY_ADDRESS]
 FROM:
 Section 8 Rentals and More LLC
 10805 173rd St W, Unit 127, Lakeville, MN 55044
-Phone: 612-701-7064 | info@section8rentalsandmore.com
+Phone: PASTE_NEW_NUMBER_HERE | info@section8rentalsandmore.com
 
 PLEASE TAKE NOTICE that the premises you occupy is a "covered property" under Section
 4024 of the federal Coronavirus Aid, Relief, and Economic Security (CARES) Act by virtue

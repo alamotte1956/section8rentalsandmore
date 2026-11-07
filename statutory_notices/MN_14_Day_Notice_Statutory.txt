@@ -13,7 +13,7 @@ City, State, Zip: [CITY], MN [ZIP_CODE]
 FROM LANDLORD / MANAGING AGENT:
 Section 8 Rentals and More LLC
 10805 173rd St W, Unit 127, Lakeville, MN 55044
-Telephone: 612-701-7064 | Email: info@section8rentalsandmore.com
+Telephone: PASTE_NEW_NUMBER_HERE | Email: info@section8rentalsandmore.com
 
 DEMAND FOR PAYMENT OF RENT:
 PLEASE TAKE NOTICE that under Minnesota Statutes Section 504B.321, you are indebted

@@ -12,7 +12,7 @@ Rental Address: [PROPERTY_ADDRESS], [CITY], WI [ZIP_CODE]
 FROM:
 Section 8 Rentals and More LLC
 10805 173rd St W, Unit 127, Lakeville, MN 55044
-Phone: 612-701-7064 | Email: info@section8rentalsandmore.com
+Phone: PASTE_NEW_NUMBER_HERE | Email: info@section8rentalsandmore.com
 
 PLEASE TAKE NOTICE that you are in default of your lease agreement for failure to pay
 rent. The itemized past-due balance currently owed is: $ [TOTAL_AMOUNT]
