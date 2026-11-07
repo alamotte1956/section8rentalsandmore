@@ -2,7 +2,7 @@
 CREATE TABLE IF NOT EXISTS rental_inventory (
  id INTEGER PRIMARY KEY AUTOINCREMENT,
  listing_reference TEXT NOT NULL UNIQUE,
- county TEXT NOT NULL CHECK(county IN ('Hennepin','Ramsey','Dakota','Anoka','Washington')),
+ county TEXT NOT NULL CHECK(county IN ('Hennepin','Ramsey','Dakota','Anoka','Washington','Renville','Redwood','Lyon')),
  bedrooms INTEGER NOT NULL CHECK(bedrooms BETWEEN 0 AND 10),
  monthly_rent INTEGER NOT NULL CHECK(monthly_rent BETWEEN 0 AND 20000),
  accessible INTEGER NOT NULL DEFAULT 0 CHECK(accessible IN (0,1)),
