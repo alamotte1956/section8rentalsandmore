@@ -1,0 +1,44 @@
+name: Secure PostgreSQL prospect import
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "preview rolls back; execute inserts new prospects"
+        required: true
+        default: preview
+        type: choice
+        options:
+          - preview
+          - execute
+permissions:
+  contents: read
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    environment: referral-database-import
+    timeout-minutes: 10
+    concurrency:
+      group: referral-database-import
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install PostgreSQL driver
+        run: python -m pip install "psycopg[binary]>=3.2,<4"
+      - name: Run transactional import
+        env:
+          DATABASE_URL: ${{ secrets.REFERRAL_DATABASE_URL }}
+          MODE: ${{ inputs.mode }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${DATABASE_URL:-}" ]; then
+            echo "REFERRAL_DATABASE_URL secret is missing"; exit 1
+          fi
+          if [ "$MODE" = execute ]; then
+            python referral_network/import_postgres.py --execute
+          else
+            python referral_network/import_postgres.py
+          fi
