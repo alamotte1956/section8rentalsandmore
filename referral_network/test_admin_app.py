@@ -36,9 +36,15 @@ class AdminTests(unittest.TestCase):
         self.assertEqual(self.client.post(endpoint,data={"status":"approved","csrf":csrf}).status_code,400)
         self.assertEqual(self.client.post(endpoint,data={"status":"contacted","csrf":"wrong"}).status_code,403)
         self.assertEqual(self.client.post(endpoint,data={"status":"contacted","csrf":csrf,"note":"Initial outreach"}).status_code,302)
+        verify_endpoint=f"/partner/{partner_id}/verification"
+        self.assertEqual(self.client.post(verify_endpoint,data={"verification_status":"verified","csrf":"wrong","evidence":"Checked official site"}).status_code,403)
+        self.assertEqual(self.client.post(verify_endpoint,data={"verification_status":"verified","csrf":csrf,"evidence":""}).status_code,400)
+        self.assertEqual(self.client.post(verify_endpoint,data={"verification_status":"verified","csrf":csrf,"evidence":"Confirmed organization contact with public agency directory"}).status_code,302)
+        self.assertEqual(self.client.post(endpoint,data={"status":"approved","csrf":csrf,"note":"Partner agreement signed"}).status_code,302)
+        self.assertEqual(self.client.post(verify_endpoint,data={"verification_status":"needs_verification","csrf":csrf,"evidence":"Review requested"}).status_code,400)
         with sqlite3.connect(os.environ["REFERRAL_DB_PATH"]) as db:
-            self.assertEqual(db.execute("SELECT partnership_status FROM referral_partners WHERE id=?",(partner_id,)).fetchone()[0],"contacted")
-            self.assertEqual(db.execute("SELECT COUNT(*) FROM referral_partner_events WHERE partner_id=?",(partner_id,)).fetchone()[0],1)
+            self.assertEqual(db.execute("SELECT partnership_status FROM referral_partners WHERE id=?",(partner_id,)).fetchone()[0],"approved")
+            self.assertEqual(db.execute("SELECT COUNT(*) FROM referral_partner_events WHERE partner_id=?",(partner_id,)).fetchone()[0],3)
 
 if __name__=="__main__":
     unittest.main()
