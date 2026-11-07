@@ -1,0 +1,20 @@
+name: Referral Network Tests
+on:
+  push:
+    branches:
+      - feature/referral-network-20261107
+  pull_request:
+    paths:
+      - 'referral_network/**'
+      - '.github/workflows/referral-tests.yml'
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r referral_network/requirements.txt
+      - run: python -m compileall -q referral_network
+      - run: python -m unittest discover -s referral_network -p 'test_*.py' -v

@@ -11,46 +11,66 @@
     .tab-content.active { display: block; }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col"><a href="referral-partners.html" style="display:inline-block;margin:8px 12px;padding:9px 14px;background:#20B2AA;color:#003865;font-weight:700;border-radius:8px;text-decoration:none">Housing Referral Network</a>
 
   <!-- TOP BAR -->
-  <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50"><div class="bg-orange-500 text-slate-950 text-center py-2 px-4 font-bold text-sm"><a href="admin.html" class="underline hover:text-white mr-4">Admin Hub</a><a href="presentation.html" class="underline hover:text-white">Click here to watch the Executive Presentation (Audio Synced) &rarr;</a></div>
+  <header class="bg-[#003865] text-white border-b border-slate-800 sticky top-0 z-50"><div class="bg-[#20B2AA] text-[#003865] text-center py-2 px-4 font-bold text-sm"><a href="admin.html" class="underline hover:text-white mr-4">Admin Hub</a><a href="presentation.html" class="underline hover:text-white">Click here to watch the Executive Presentation (Audio Synced) &rarr;</a></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
       <div class="flex items-center space-x-3">
-        <div class="bg-amber-500 text-slate-950 font-black px-2.5 py-1 rounded text-xl tracking-wider">S8+</div>
+        <div class="bg-[#20B2AA] text-[#003865] font-black px-2.5 py-1 rounded text-xl tracking-wider">S8+</div>
         <div>
           <span class="font-bold text-lg leading-none block">Section 8 Rentals &amp; More</span>
           <span class="text-xs text-slate-400">Twin Cities Metro &amp; Greater Minnesota</span>
         </div>
       </div>
       <div>
-        <a href="admin.html" class="underline hover:text-white mr-4">Admin Hub</a><a href="presentation.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-400 hover:to-amber-400 text-slate-950 font-black px-5 py-2.5 rounded-xl shadow-lg shadow-orange-500/30 text-sm tracking-wide transition transform hover:scale-105 animate-pulse">
+        <a href="admin.html" class="underline hover:text-white mr-4">Admin Hub</a><a href="presentation.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-[#20B2AA] to-[#B9E9E4] hover:from-[#16968F] hover:to-[#D4F3F0] text-[#003865] font-black px-5 py-2.5 rounded-xl shadow-lg shadow-[#20B2AA]/30 text-sm tracking-wide transition transform hover:scale-105 animate-pulse">
           <i class="fa-solid fa-play"></i>
           <span>START PRESENTATION</span>
         </a>
         </div>
       </div>
       <nav class="hidden md:flex space-x-1">
-        <button onclick="switchTab('listings-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-slate-800 transition text-amber-400" id="btn-listings">Rental Search</button>
-        <button onclick="switchTab('landlord-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-slate-800 transition text-slate-300" id="btn-landlord">List a Property</button>
-        <button onclick="switchTab('rfta-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-slate-800 transition text-slate-300" id="btn-rfta">RFTA &amp; Voucher Utility</button>
-        <button onclick="switchTab('nspire-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-slate-800 transition text-slate-300" id="btn-nspire">NSPIRE Punchlist</button>
-      <a href='presentation.html' class='text-orange-400 font-bold ml-4'>Watch Presentation</a></nav>
+        <button onclick="switchTab('listings-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-[#0D5257] transition text-[#B9E9E4]" id="btn-listings">Rental Search</button>
+        <button onclick="switchTab('landlord-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-[#0D5257] transition text-slate-300" id="btn-landlord">List a Property</button>
+        <button onclick="switchTab('rfta-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-[#0D5257] transition text-slate-300" id="btn-rfta">RFTA &amp; Voucher Utility</button>
+        <button onclick="switchTab('nspire-tab')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium hover:bg-[#0D5257] transition text-slate-300" id="btn-nspire">NSPIRE Punchlist</button>
+      <a href='presentation.html' class='text-[#B9E9E4] font-bold ml-4'>Watch Presentation</a></nav>
       <div class="flex items-center space-x-2">
         <span id="api-status-badge" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-900 text-yellow-200">
           <span class="w-1.5 h-1.5 mr-1.5 bg-yellow-400 rounded-full animate-pulse"></span> Connecting API
         </span>
       </div>
     </div>
-   <a href="/admin.html" class="bg-amber-500 text-slate-950 font-bold px-3 py-1.5 rounded text-xs uppercase tracking-wider shadow">Admin Hub</a> </header>
+   <a href="/admin.html" class="bg-[#20B2AA] text-[#003865] font-bold px-3 py-1.5 rounded text-xs uppercase tracking-wider shadow">Admin Hub</a> </header>
 
   <!-- SUB NAV FOR MOBILE -->
-  <div class="md:hidden bg-slate-800 text-white flex overflow-x-auto px-2 py-2 space-x-1 text-xs">
+  <div class="md:hidden bg-[#0D5257] text-white flex overflow-x-auto px-2 py-2 space-x-1 text-xs">
     <button onclick="switchTab('listings-tab')" class="px-3 py-1.5 rounded whitespace-nowrap bg-slate-700">Rentals</button>
     <button onclick="switchTab('landlord-tab')" class="px-3 py-1.5 rounded whitespace-nowrap">List Property</button>
     <button onclick="switchTab('rfta-tab')" class="px-3 py-1.5 rounded whitespace-nowrap">RFTA Helper</button>
     <button onclick="switchTab('nspire-tab')" class="px-3 py-1.5 rounded whitespace-nowrap">NSPIRE Tool</button>
   </div>
+
+
+  <section aria-labelledby="services-heading" class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-8">
+    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+      <p class="text-sm font-bold uppercase tracking-wide text-[#008EAA]">Our housing services</p>
+      <h2 id="services-heading" class="text-2xl font-bold text-[#003865] mt-1">From finding housing to getting move-in ready</h2>
+      <p class="text-sm text-slate-600 mt-2">Explore the tools and services described in our industry presentation. Some services are in development or require a participating housing agency.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
+        <article class="rounded-lg border p-4"><h3 class="font-bold text-[#003865]">Rental search &amp; voucher matching</h3><p class="text-sm text-slate-600 mt-2">Search current rental listings and explore properties by location, bedroom count and voucher suitability. Availability and eligibility require confirmation.</p><a class="text-[#00748C] underline text-sm" href="#listings-tab">Explore rentals</a></article>
+        <article class="rounded-lg border p-4"><h3 class="font-bold text-[#003865]">Landlord property listings</h3><p class="text-sm text-slate-600 mt-2">Submit rental properties for review and help connect with prospective tenants and referral partners.</p><a class="text-[#00748C] underline text-sm" href="#landlord-tab">List a property</a></article>
+        <article class="rounded-lg border p-4"><h3 class="font-bold text-[#003865]">RFTA packet preparation</h3><p class="text-sm text-slate-600 mt-2">Prepare information for HUD Form 52517, the Request for Tenancy Approval. Housing authority review and signatures remain required.</p><a class="text-[#00748C] underline text-sm" href="#rfta-tab">Open RFTA helper</a></article>
+        <article class="rounded-lg border p-4"><h3 class="font-bold text-[#003865]">Utility allowance &amp; payment standards</h3><p class="text-sm text-slate-600 mt-2">Guidance for checking local housing-authority utility schedules, payment standards and rent calculations. Verify current agency rules before relying on estimates.</p><span class="text-xs font-semibold text-[#0D5257]">Agency data integration planned</span></article>
+        <article class="rounded-lg border p-4"><h3 class="font-bold text-[#003865]">NSPIRE pre-inspection checklist</h3><p class="text-sm text-slate-600 mt-2">A landlord-facing preparation checklist for common inspection concerns; it does not replace an official inspection.</p><a class="text-[#00748C] underline text-sm" href="#nspire-tab">Open checklist</a></article>
+        <article class="rounded-lg border p-4"><h3 class="font-bold text-[#003865]">Housing agency referral network</h3><p class="text-sm text-slate-600 mt-2">Build connections with participating housing organizations and help streamline referrals. Agency participation and referral arrangements are not yet confirmed.</p><a class="text-[#00748C] underline text-sm" href="/referral-partners.html">Referral network</a></article>
+        <article class="rounded-lg border p-4"><h3 class="font-bold text-[#003865]">Verified, inspection-ready properties</h3><p class="text-sm text-slate-600 mt-2">Planned verification workflow for property availability, documentation and readiness before any verified badge is shown.</p><span class="text-xs font-semibold text-[#0D5257]">Verification program planned</span></article>
+        <article class="rounded-lg border p-4"><h3 class="font-bold text-[#003865]">Landlord management &amp; partnerships</h3><p class="text-sm text-slate-600 mt-2">Planned landlord dashboard, application progress tracking, and optional partnership or management arrangements subject to separate agreements.</p><span class="text-xs font-semibold text-[#0D5257]">Program under development</span></article>
+        <article class="rounded-lg border p-4"><h3 class="font-bold text-[#003865]">Tenant feedback &amp; housing alerts</h3><p class="text-sm text-slate-600 mt-2">Planned verified tenant landlord ratings, moderated reviews, saved searches, accessibility filters and listing alerts.</p><span class="text-xs font-semibold text-[#0D5257]">Account features under development</span></article>
+      </div>
+    </div>
+  </section>
 
   <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
@@ -62,23 +82,23 @@
             <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Search Keyword or City</label>
             <div class="relative">
               <i class="fa-solid fa-search absolute left-3 top-3 text-slate-400"></i>
-              <input type="text" id="filter-search" oninput="applyFilters()" placeholder="Lakeville, Minneapolis, St. Paul, Apple Valley..." class="w-full pl-9 pr-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
+              <input type="text" id="filter-search" oninput="applyFilters()" placeholder="Lakeville, Minneapolis, St. Paul, Apple Valley..." class="w-full pl-9 pr-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-[#008EAA] focus:outline-none">
             </div>
           </div>
           <div>
             <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">County / Housing Authority</label>
-            <select id="filter-county" onchange="applyFilters()" class="w-full py-2 px-3 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-amber-500 focus:outline-none">
-              <option value="ALL">All Metro Counties (5-County)</option>
+            <select id="filter-county" onchange="applyFilters()" class="w-full py-2 px-3 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-[#008EAA] focus:outline-none">
+              <option value="ALL">All Minnesota Counties (8-County Pilot)</option>
               <option value="Dakota">Dakota County CDA</option>
               <option value="Hennepin">Hennepin County / Mpls PHA</option>
               <option value="Ramsey">Ramsey County / St. Paul PHA</option>
               <option value="Anoka">Anoka County HRA</option>
-              <option value="Washington">Washington County CDA</option>
+              <option value="Washington">Washington County CDA</option><option value="Renville">Renville County</option><option value="Redwood">Redwood County (Walnut Grove)</option><option value="Lyon">Lyon County (Taunton)</option>
             </select>
           </div>
           <div>
             <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Bedrooms</label>
-            <select id="filter-beds" onchange="applyFilters()" class="w-full py-2 px-3 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-amber-500 focus:outline-none">
+            <select id="filter-beds" onchange="applyFilters()" class="w-full py-2 px-3 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-[#008EAA] focus:outline-none">
               <option value="ALL">Any Bedrooms</option>
               <option value="1">1 Bedroom</option>
               <option value="2">2 Bedrooms</option>
@@ -109,28 +129,28 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Property Street Address</label>
-              <input type="text" id="prop-address" required placeholder="e.g. 10805 173rd St W" class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-amber-500">
+              <input type="text" id="prop-address" required placeholder="e.g. 10805 173rd St W" class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-[#008EAA]">
             </div>
             <div>
               <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">City</label>
-              <input type="text" id="prop-city" required placeholder="e.g. Lakeville" class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-amber-500">
+              <input type="text" id="prop-city" required placeholder="e.g. Lakeville" class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-[#008EAA]">
             </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
               <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">County</label>
-              <select id="prop-county" required class="w-full p-2.5 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-amber-500">
+              <select id="prop-county" required class="w-full p-2.5 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-[#008EAA]">
                 <option value="Dakota">Dakota County</option>
                 <option value="Hennepin">Hennepin County</option>
                 <option value="Ramsey">Ramsey County</option>
                 <option value="Anoka">Anoka County</option>
-                <option value="Washington">Washington County</option>
+                <option value="Washington">Washington County</option><option value="Renville">Renville County</option><option value="Redwood">Redwood County</option><option value="Lyon">Lyon County</option>
               </select>
             </div>
             <div>
               <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Bedrooms</label>
-              <select id="prop-beds" required class="w-full p-2.5 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-amber-500">
+              <select id="prop-beds" required class="w-full p-2.5 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-[#008EAA]">
                 <option value="1">1 Bedroom</option>
                 <option value="2">2 Bedrooms</option>
                 <option value="3">3 Bedrooms</option>
@@ -139,14 +159,14 @@
             </div>
             <div>
               <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Monthly Rent ($)</label>
-              <input type="number" id="prop-rent" required placeholder="1850" class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-amber-500">
+              <input type="number" id="prop-rent" required placeholder="1850" class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-[#008EAA]">
             </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Housing Authority Tier / Section 8 Status</label>
-              <select id="prop-section8" class="w-full p-2.5 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-amber-500">
+              <select id="prop-section8" class="w-full p-2.5 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-[#008EAA]">
                 <option value="Vouchers Accepted">Section 8 Vouchers Accepted</option>
                 <option value="Section 8 & Market Rate">Section 8 &amp; Market Rate</option>
                 <option value="Expedited Inspection Ready">Expedited Inspection Ready</option>
@@ -154,19 +174,19 @@
             </div>
             <div>
               <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Contact Phone / Email</label>
-              <input type="text" id="prop-contact" required placeholder="contact@domain.com or phone" class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-amber-500">
+              <input type="text" id="prop-contact" required placeholder="contact@domain.com or phone" class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-[#008EAA]">
             </div>
           </div>
 
           <div>
             <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Property Description &amp; Utility Split</label>
-            <textarea id="prop-desc" rows="3" placeholder="Includes heat and water; tenant pays electric. Close to transit..." class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-amber-500"></textarea>
+            <textarea id="prop-desc" rows="3" placeholder="Includes heat and water; tenant pays electric. Close to transit..." class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-[#008EAA]"></textarea>
           </div>
 
-          <button type="submit" id="btn-submit-listing" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 rounded-lg text-sm transition">
+          <button type="submit" id="btn-submit-listing" class="w-full bg-[#003865] hover:bg-[#0D5257] text-white font-semibold py-3 rounded-lg text-sm transition">
             Publish Property Listing
           </button>
-          <div id="landlord-success-msg" class="hidden p-3 bg-emerald-100 text-emerald-800 rounded text-sm text-center"></div>
+          <div id="landlord-success-msg" class="hidden p-3 bg-green-100 text-emerald-800 rounded text-sm text-center"></div>
         </form>
       </div>
     </section>
@@ -215,7 +235,7 @@
         </div>
 
         <div class="mt-6 flex justify-end">
-          <button onclick="alert('RFTA HUD-52517 pre-fill template prepared. Exporting parameters to packet generator...')" class="bg-amber-600 hover:bg-amber-500 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition">
+          <button onclick="alert('RFTA HUD-52517 pre-fill template prepared. Exporting parameters to packet generator...')" class="bg-amber-600 hover:bg-[#20B2AA] text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition">
             Export Pre-filled RFTA Packet (HUD-52517)
           </button>
         </div>
@@ -230,23 +250,23 @@
 
         <div class="space-y-3 text-sm text-slate-700">
           <label class="flex items-start space-x-3 p-3 bg-slate-50 rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer">
-            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-amber-500">
+            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-[#008EAA]">
             <span><strong>Smoke &amp; CO Detectors:</strong> Dual photoelectric/ionization smoke alarms operational on each level; carbon monoxide detector within 10 feet of every bedroom (MN Statute Â§ 299F.50).</span>
           </label>
           <label class="flex items-start space-x-3 p-3 bg-slate-50 rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer">
-            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-amber-500">
+            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-[#008EAA]">
             <span><strong>Electrical Outlets &amp; GFCI:</strong> All wet areas (kitchen counters, bathrooms, laundry, exterior) have functional GFCI protection; zero missing covers or open junction knockouts.</span>
           </label>
           <label class="flex items-start space-x-3 p-3 bg-slate-50 rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer">
-            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-amber-500">
+            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-[#008EAA]">
             <span><strong>Windows &amp; Egress:</strong> Ground floor windows have working sash locks; second-floor egress windows open freely and hold position without prop sticks.</span>
           </label>
           <label class="flex items-start space-x-3 p-3 bg-slate-50 rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer">
-            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-amber-500">
+            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-[#008EAA]">
             <span><strong>Water Heater &amp; Plumbing:</strong> Temperature and Pressure (T&amp;P) relief valve discharge pipe terminates 6 inches above floor level; no leaks under traps.</span>
           </label>
           <label class="flex items-start space-x-3 p-3 bg-slate-50 rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer">
-            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-amber-500">
+            <input type="checkbox" class="mt-1 rounded text-amber-600 focus:ring-[#008EAA]">
             <span><strong>Handrails &amp; Guardrails:</strong> Solid, graspable handrails secured on stairs with 4 or more risers (both interior and exterior entry steps).</span>
           </label>
         </div>
@@ -263,177 +283,106 @@
   <script>
     const API_BASE = "https://section8-api-production.up.railway.app";
     let allProperties = [];
-
-    const defaultSeed = [
-      { id: 1, address: "10805 173rd St W", city: "Lakeville", county: "Dakota", bedrooms: 3, rent: 1850, section8: "Vouchers Accepted", desc: "Spacious suburban unit, immediate Dakota CDA inspection ready." },
-      { id: 2, address: "2412 Nicollet Ave", city: "Minneapolis", county: "Hennepin", bedrooms: 2, rent: 1550, section8: "Section 8 & Market Rate", desc: "Close to transit lines, Minneapolis PHA voucher approved standard." },
-      { id: 3, address: "784 Grand Ave", city: "St. Paul", county: "Ramsey", bedrooms: 1, rent: 1275, section8: "Vouchers Accepted", desc: "Updated apartment, St. Paul PHA expedited processing ready." },
-      { id: 4, address: "1140 109th Ave NE", city: "Blaine", county: "Anoka", bedrooms: 3, rent: 1920, section8: "Vouchers Accepted", desc: "Anoka County HRA compliant, private parking and quiet neighborhood." },
-      { id: 5, address: "8350 Radio Dr", city: "Woodbury", county: "Washington", bedrooms: 2, rent: 1680, section8: "Section 8 & Market Rate", desc: "Washington County CDA eligible, in-unit laundry and garage." }
-    ];
-
-    async function checkApiAndLoad() {
-      const badge = document.getElementById("api-status-badge");
-      try {
-        const res = await fetch(${API_BASE}/api/v1/listings, { method: "GET", headers: { "Accept": "application/json" } });
-        if (res.ok) {
-          const data = await res.json();
-          allProperties = Array.isArray(data) && data.length > 0 ? data : defaultSeed;
-          badge.className = "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-900 text-emerald-200";
-          badge.innerHTML = '<span class="w-1.5 h-1.5 mr-1.5 bg-emerald-400 rounded-full"></span> API Connected';
-        } else {
-          throw new Error("HTTP error " + res.status);
-        }
-      } catch (err) {
-        console.warn("Backend API direct fetch failed, utilizing client-side cached listings:", err);
-        allProperties = defaultSeed;
-        badge.className = "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800 text-slate-300";
-        badge.innerHTML = '<span class="w-1.5 h-1.5 mr-1.5 bg-amber-400 rounded-full"></span> Standalone Mode';
-      }
-      renderListings(allProperties);
+    const byId = id => document.getElementById(id);
+    function switchTab(id) {
+      const section = byId(id);
+      if (!section) return;
+      document.querySelectorAll(".tab-content").forEach(el => el.classList.toggle("active",el.id === id));
+      document.querySelectorAll(".nav-btn").forEach(el => {
+        el.classList.toggle("text-[#B9E9E4]",el.id === ({'listings-tab':'btn-listings','landlord-tab':'btn-landlord','rfta-tab':'btn-rfta','nspire-tab':'btn-nspire'}[id]));
+      });
+      history.replaceState(null,"","#"+id);
     }
-
     function renderListings(items) {
-      const grid = document.getElementById("listings-grid");
-      const countEl = document.getElementById("results-count");
-      grid.innerHTML = "";
-      countEl.innerText = ${items.length} properties available;
-
-      if (items.length === 0) {
-        grid.innerHTML = '<div class="col-span-3 text-center py-12 text-slate-500 font-medium">No properties match your filter criteria.</div>';
-        return;
+      const grid = byId("listings-grid");
+      grid.replaceChildren();
+      byId("results-count").textContent = items.length+" listings";
+      if (!items.length) {
+        const p=document.createElement("p");
+        p.className="col-span-3 text-center py-10 text-slate-600";
+        p.textContent="No live listings available for these search criteria.";
+        grid.append(p); return;
       }
-
-      items.forEach(prop => {
-        const card = document.createElement("div");
-        card.className = "bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-md transition";
-        card.innerHTML = 
-          <div class="p-5">
-            <div class="flex justify-between items-start mb-2">
-              <span class="inline-block bg-amber-100 text-amber-800 text-xs font-semibold px-2 py-0.5 rounded"> County</span>
-              <span class="text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded"></span>
-            </div>
-            <h3 class="font-bold text-slate-900 text-base mb-1"></h3>
-            <p class="text-slate-500 text-xs mb-3">, MN</p>
-            <p class="text-slate-600 text-sm mb-4 line-clamp-2"></p>
-            <div class="flex items-center space-x-4 text-xs font-medium text-slate-700">
-              <span><i class="fa-solid fa-bed mr-1 text-slate-400"></i>  Bed</span>
-              <span><i class="fa-solid fa-dollar-sign mr-1 text-slate-400"></i> C:\section8landlordsmn{prop.rent.toLocaleString()}/mo</span>
-            </div>
-          </div>
-          <div class="bg-slate-50 px-5 py-3 border-t border-slate-100 flex justify-between items-center">
-            <button onclick="requestViewing('')" class="text-xs font-bold text-amber-700 hover:text-amber-800">Apply / Request RFTA &rarr;</button>
-          </div>
-        ;
-        grid.appendChild(card);
-      });
+      for(const item of items) {
+        const article=document.createElement("article");
+        article.className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm";
+        const h=document.createElement("h3");h.className="font-bold text-[#003865]";
+        h.textContent=String(item.address||item.title||"Rental property");
+        const p=document.createElement("p");p.className="text-sm text-slate-600 mt-2";
+        p.textContent=[item.city,item.county,item.bedrooms!=null?item.bedrooms+" bedrooms":null,item.rent!=null?"$"+Number(item.rent).toLocaleString()+"/month":null].filter(Boolean).join(" · ");
+        const desc=document.createElement("p");desc.className="text-sm mt-2";
+        desc.textContent=String(item.desc||item.description||"");
+        article.append(h,p,desc);grid.append(article);
+      }
     }
-
     function applyFilters() {
-      const q = document.getElementById("filter-search").value.toLowerCase();
-      const county = document.getElementById("filter-county").value;
-      const beds = document.getElementById("filter-beds").value;
-
-      const filtered = allProperties.filter(item => {
-        const matchesQuery = !q || item.address.toLowerCase().includes(q) || item.city.toLowerCase().includes(q);
-        const matchesCounty = county === "ALL" || item.county.toLowerCase() === county.toLowerCase();
-        const matchesBeds = beds === "ALL" || (beds === "4" ? item.bedrooms >= 4 : item.bedrooms === parseInt(beds, 10));
-        return matchesQuery && matchesCounty && matchesBeds;
-      });
-
-      renderListings(filtered);
+      const q=byId("filter-search").value.trim().toLowerCase();
+      const county=byId("filter-county").value;
+      const beds=byId("filter-beds").value;
+      renderListings(allProperties.filter(item=>
+        (!q || [item.address,item.city,item.county].some(v=>String(v||"").toLowerCase().includes(q))) &&
+        (county==="ALL" || String(item.county||"").toLowerCase()===county.toLowerCase()) &&
+        (beds==="ALL" || (beds==="4"?Number(item.bedrooms)>=4:Number(item.bedrooms)===Number(beds)))
+      ));
     }
-
-    async function submitLandlordProperty(e) {
-      e.preventDefault();
-      const submitBtn = document.getElementById("btn-submit-listing");
-      const successMsg = document.getElementById("landlord-success-msg");
-
-      submitBtn.disabled = true;
-      submitBtn.innerText = "Submitting Listing...";
-
-      const newListing = {
-        address: document.getElementById("prop-address").value,
-        city: document.getElementById("prop-city").value,
-        county: document.getElementById("prop-county").value,
-        bedrooms: parseInt(document.getElementById("prop-beds").value, 10),
-        rent: parseInt(document.getElementById("prop-rent").value, 10),
-        section8: document.getElementById("prop-section8").value,
-        contact: document.getElementById("prop-contact").value,
-        desc: document.getElementById("prop-desc").value
-      };
-
+    async function checkApiAndLoad() {
+      const badge=byId("api-status-badge");
       try {
-        await fetch(${API_BASE}/api/v1/listings, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(newListing)
-        });
-      } catch (err) {
-        console.warn("API POST bypassed; appending listing locally:", err);
+        const res=await fetch(API_BASE+"/api/v1/listings",{headers:{"Accept":"application/json"}});
+        if(!res.ok)throw Error("HTTP "+res.status);
+        const data=await res.json();
+        allProperties=Array.isArray(data)?data:(Array.isArray(data.items)?data.items:[]);
+        badge.textContent="Live listings";
+        badge.className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-900";
+      } catch(e) {
+        allProperties=[];
+        badge.textContent="Listings temporarily unavailable";
+        badge.className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-900";
       }
-
-      allProperties.unshift({ id: Date.now(), ...newListing });
-      renderListings(allProperties);
-
-      submitBtn.disabled = false;
-      submitBtn.innerText = "Publish Property Listing";
-      successMsg.innerText = "Property listing submitted successfully and added to the search index!";
-      successMsg.classList.remove("hidden");
-      document.getElementById("landlord-form").reset();
-
-      setTimeout(() => {
-        successMsg.classList.add("hidden");
-        switchTab("listings-tab");
-      }, 1500);
+      applyFilters();
     }
-
-    function switchTab(tabId) {
-      document.querySelectorAll(".tab-content").forEach(el => el.classList.remove("active"));
-      document.getElementById(tabId).classList.add("active");
-
-      document.querySelectorAll(".nav-btn").forEach(btn => {
-        btn.classList.remove("text-amber-400");
-        btn.classList.add("text-slate-300");
-      });
-      const activeBtnMap = {
-        'listings-tab': 'btn-listings',
-        'landlord-tab': 'btn-landlord',
-        'rfta-tab': 'btn-rfta',
-        'nspire-tab': 'btn-nspire'
-      };
-      const activeBtn = document.getElementById(activeBtnMap[tabId]);
-      if (activeBtn) {
-        activeBtn.classList.add("text-amber-400");
-        activeBtn.classList.remove("text-slate-300");
+    async function submitLandlordProperty(event) {
+      event.preventDefault();
+      const button=byId("btn-submit-listing"), message=byId("landlord-success-msg");
+      button.disabled=true;button.textContent="Submitting...";
+      message.classList.add("hidden");
+      const listing={address:byId("prop-address").value,city:byId("prop-city").value,
+        county:byId("prop-county").value,bedrooms:Number(byId("prop-beds").value),
+        rent:Number(byId("prop-rent").value),section8:byId("prop-section8").value,
+        contact:byId("prop-contact").value,desc:byId("prop-desc").value};
+      try {
+        const response=await fetch(API_BASE+"/api/v1/listings",{method:"POST",
+          headers:{"Content-Type":"application/json"},body:JSON.stringify(listing)});
+        if(!response.ok)throw Error("HTTP "+response.status);
+        message.textContent="Listing submitted to the server. Publication and availability are subject to verification.";
+        byId("landlord-form").reset();
+        await checkApiAndLoad();
+      } catch(e) {
+        message.textContent="The listing could not be submitted. No property has been published. Please try again later.";
+      } finally {
+        message.classList.remove("hidden");button.disabled=false;button.textContent="Publish Property Listing";
       }
     }
-
     function runRftaCalc() {
-      const beds = document.getElementById("calc-beds").value;
-      const rates = {
-        "1": { fmr: 1390, util: 110 },
-        "2": { fmr: 1680, util: 145 },
-        "3": { fmr: 2150, util: 185 },
-        "4": { fmr: 2540, util: 220 }
-      };
-      const sel = rates[beds] || rates["2"];
-      document.getElementById("res-fmr").innerText = $;
-      document.getElementById("res-util").innerText = -C:\section8landlordsmn{sel.util.toLocaleString()};
-      document.getElementById("res-target").innerText = $;
+      for(const id of ["res-fmr","res-util","res-target"]) {
+        const el=byId(id);if(el)el.textContent="Confirm with housing authority";
+      }
     }
-
     function requestViewing(address) {
-      const email = "alamotte1956@gmail.com";
-      const subject = encodeURIComponent("RFTA & Tenant Application Request: " + address);
-      const body = encodeURIComponent("Hello Albert,\n\nI am requesting more information and an RFTA packet submission for the property located at:\n" + address + "\n\nPlease follow up with me regarding voucher requirements.\n\nThank you!");
-      window.location.href = mailto:?subject=&body=;
+      const subject=encodeURIComponent("Rental inquiry: "+address);
+      location.href="mailto:alamotte1956@gmail.com?subject="+subject;
     }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      checkApiAndLoad();
-      runRftaCalc();
+    document.addEventListener("DOMContentLoaded",()=>{
+      checkApiAndLoad();runRftaCalc();
+      const hash=location.hash.slice(1);
+      if(["listings-tab","landlord-tab","rfta-tab","nspire-tab"].includes(hash))switchTab(hash);
+      document.querySelectorAll('a[href^="#"]').forEach(link=>{
+        link.addEventListener("click",()=>{
+          const id=link.getAttribute("href").slice(1);
+          if(["listings-tab","landlord-tab","rfta-tab","nspire-tab"].includes(id))switchTab(id);
+        });
+      });
     });
   </script>
-</body>
+<div style="text-align:center;padding:14px;color:#003865;font-size:12px">Independent housing referral service. Not affiliated with or endorsed by Minnesota Housing or the State of Minnesota.</div></body>
 </html>
