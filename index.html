@@ -283,157 +283,105 @@
   <script>
     const API_BASE = "https://section8-api-production.up.railway.app";
     let allProperties = [];
-
-    // Never display fabricated listings as available properties.
-    async function checkApiAndLoad() {
-      const badge = document.getElementById("api-status-badge");
-      try {
-        const res = await fetch(API_BASE + "/api/v1/listings", {headers: {"Accept":"application/json"}});
-        if (!res.ok) throw new Error("HTTP " + res.status);
-        const data = await res.json();
-        allProperties = Array.isArray(data) ? data : (Array.isArray(data.items) ? data.items : []);
-        badge.textContent = "Live listings";
-        badge.className = "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-900";
-      } catch (err) {
-        allProperties = [];
-        badge.textContent = "Listings temporarily unavailable";
-        badge.className = "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-900";
-      }
-      renderListings(allProperties);
+    const byId = id => document.getElementById(id);
+    function switchTab(id) {
+      const section = byId(id);
+      if (!section) return;
+      document.querySelectorAll(".tab-content").forEach(el => el.classList.toggle("active",el.id === id));
+      document.querySelectorAll(".nav-btn").forEach(el => {
+        el.classList.toggle("text-[#CEDE55]",el.id === ({'listings-tab':'btn-listings','landlord-tab':'btn-landlord','rfta-tab':'btn-rfta','nspire-tab':'btn-nspire'}[id]));
+      });
+      history.replaceState(null,"","#"+id);
     }
     function renderListings(items) {
-      const grid = document.getElementById("listings-grid");
-      const countEl = document.getElementById("results-count");
+      const grid = byId("listings-grid");
       grid.replaceChildren();
-      countEl.textContent = items.length + " listings";
+      byId("results-count").textContent = items.length+" listings";
       if (!items.length) {
-        const msg = document.createElement("p");
-        msg.className = "col-span-3 text-center py-12 text-slate-600";
-        msg.textContent = "No verified live listings are currently available. Please check again later.";
-        grid.appendChild(msg);
-        return;
+        const p=document.createElement("p");
+        p.className="col-span-3 text-center py-10 text-slate-600";
+        p.textContent="No live listings available for these search criteria.";
+        grid.append(p); return;
       }
-      items.forEach(prop => {
-        const card = document.createElement("article");
-        card.className = "bg-white rounded-xl shadow-sm border border-slate-200 p-5";
-        const heading = document.createElement("h3");
-        heading.className = "font-bold text-lg text-slate-900";
-        heading.textContent = String(prop.address || "Rental property");
-        const details = document.createElement("p");
-        details.className = "text-sm text-slate-600 mt-2";
-        details.textContent = [prop.city, prop.county, prop.bedrooms != null ? prop.bedrooms + " bedrooms" : "", prop.rent != null ? "$" + Number(prop.rent).toLocaleString() + "/month" : ""].filter(Boolean).join(" · ");
-        const description = document.createElement("p");
-        description.className = "text-sm text-slate-600 mt-3";
-        description.textContent = String(prop.desc || prop.description || "");
-        card.append(heading,details,description);
-        grid.appendChild(card);
-      });
+      for(const item of items) {
+        const article=document.createElement("article");
+        article.className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm";
+        const h=document.createElement("h3");h.className="font-bold text-[#003865]";
+        h.textContent=String(item.address||item.title||"Rental property");
+        const p=document.createElement("p");p.className="text-sm text-slate-600 mt-2";
+        p.textContent=[item.city,item.county,item.bedrooms!=null?item.bedrooms+" bedrooms":null,item.rent!=null?"$"+Number(item.rent).toLocaleString()+"/month":null].filter(Boolean).join(" · ");
+        const desc=document.createElement("p");desc.className="text-sm mt-2";
+        desc.textContent=String(item.desc||item.description||"");
+        article.append(h,p,desc);grid.append(article);
+      }
     }
-
     function applyFilters() {
-      const q = document.getElementById("filter-search").value.toLowerCase();
-      const county = document.getElementById("filter-county").value;
-      const beds = document.getElementById("filter-beds").value;
-
-      const filtered = allProperties.filter(item => {
-        const matchesQuery = !q || item.address.toLowerCase().includes(q) || item.city.toLowerCase().includes(q);
-        const matchesCounty = county === "ALL" || item.county.toLowerCase() === county.toLowerCase();
-        const matchesBeds = beds === "ALL" || (beds === "4" ? item.bedrooms >= 4 : item.bedrooms === parseInt(beds, 10));
-        return matchesQuery && matchesCounty && matchesBeds;
-      });
-
-      renderListings(filtered);
+      const q=byId("filter-search").value.trim().toLowerCase();
+      const county=byId("filter-county").value;
+      const beds=byId("filter-beds").value;
+      renderListings(allProperties.filter(item=>
+        (!q || [item.address,item.city,item.county].some(v=>String(v||"").toLowerCase().includes(q))) &&
+        (county==="ALL" || String(item.county||"").toLowerCase()===county.toLowerCase()) &&
+        (beds==="ALL" || (beds==="4"?Number(item.bedrooms)>=4:Number(item.bedrooms)===Number(beds)))
+      ));
     }
-
-    async function submitLandlordProperty(e) {
-      e.preventDefault();
-      const submitBtn = document.getElementById("btn-submit-listing");
-      const successMsg = document.getElementById("landlord-success-msg");
-
-      submitBtn.disabled = true;
-      submitBtn.innerText = "Submitting Listing...";
-
-      const newListing = {
-        address: document.getElementById("prop-address").value,
-        city: document.getElementById("prop-city").value,
-        county: document.getElementById("prop-county").value,
-        bedrooms: parseInt(document.getElementById("prop-beds").value, 10),
-        rent: parseInt(document.getElementById("prop-rent").value, 10),
-        section8: document.getElementById("prop-section8").value,
-        contact: document.getElementById("prop-contact").value,
-        desc: document.getElementById("prop-desc").value
-      };
-
+    async function checkApiAndLoad() {
+      const badge=byId("api-status-badge");
       try {
-        await fetch(${API_BASE}/api/v1/listings, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(newListing)
-        });
-      } catch (err) {
-        console.warn("API POST bypassed; appending listing locally:", err);
+        const res=await fetch(API_BASE+"/api/v1/listings",{headers:{"Accept":"application/json"}});
+        if(!res.ok)throw Error("HTTP "+res.status);
+        const data=await res.json();
+        allProperties=Array.isArray(data)?data:(Array.isArray(data.items)?data.items:[]);
+        badge.textContent="Live listings";
+        badge.className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-900";
+      } catch(e) {
+        allProperties=[];
+        badge.textContent="Listings temporarily unavailable";
+        badge.className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-900";
       }
-
-      allProperties.unshift({ id: Date.now(), ...newListing });
-      renderListings(allProperties);
-
-      submitBtn.disabled = false;
-      submitBtn.innerText = "Publish Property Listing";
-      successMsg.innerText = "Property listing submitted successfully and added to the search index!";
-      successMsg.classList.remove("hidden");
-      document.getElementById("landlord-form").reset();
-
-      setTimeout(() => {
-        successMsg.classList.add("hidden");
-        switchTab("listings-tab");
-      }, 1500);
+      applyFilters();
     }
-
-    function switchTab(tabId) {
-      document.querySelectorAll(".tab-content").forEach(el => el.classList.remove("active"));
-      document.getElementById(tabId).classList.add("active");
-
-      document.querySelectorAll(".nav-btn").forEach(btn => {
-        btn.classList.remove("text-[#CEDE55]");
-        btn.classList.add("text-slate-300");
-      });
-      const activeBtnMap = {
-        'listings-tab': 'btn-listings',
-        'landlord-tab': 'btn-landlord',
-        'rfta-tab': 'btn-rfta',
-        'nspire-tab': 'btn-nspire'
-      };
-      const activeBtn = document.getElementById(activeBtnMap[tabId]);
-      if (activeBtn) {
-        activeBtn.classList.add("text-[#CEDE55]");
-        activeBtn.classList.remove("text-slate-300");
+    async function submitLandlordProperty(event) {
+      event.preventDefault();
+      const button=byId("btn-submit-listing"), message=byId("landlord-success-msg");
+      button.disabled=true;button.textContent="Submitting...";
+      message.classList.add("hidden");
+      const listing={address:byId("prop-address").value,city:byId("prop-city").value,
+        county:byId("prop-county").value,bedrooms:Number(byId("prop-beds").value),
+        rent:Number(byId("prop-rent").value),section8:byId("prop-section8").value,
+        contact:byId("prop-contact").value,desc:byId("prop-desc").value};
+      try {
+        const response=await fetch(API_BASE+"/api/v1/listings",{method:"POST",
+          headers:{"Content-Type":"application/json"},body:JSON.stringify(listing)});
+        if(!response.ok)throw Error("HTTP "+response.status);
+        message.textContent="Listing submitted to the server. Publication and availability are subject to verification.";
+        byId("landlord-form").reset();
+        await checkApiAndLoad();
+      } catch(e) {
+        message.textContent="The listing could not be submitted. No property has been published. Please try again later.";
+      } finally {
+        message.classList.remove("hidden");button.disabled=false;button.textContent="Publish Property Listing";
       }
     }
-
     function runRftaCalc() {
-      const beds = document.getElementById("calc-beds").value;
-      const rates = {
-        "1": { fmr: 1390, util: 110 },
-        "2": { fmr: 1680, util: 145 },
-        "3": { fmr: 2150, util: 185 },
-        "4": { fmr: 2540, util: 220 }
-      };
-      const sel = rates[beds] || rates["2"];
-      document.getElementById("res-fmr").innerText = $;
-      document.getElementById("res-util").innerText = -C:\section8landlordsmn{sel.util.toLocaleString()};
-      document.getElementById("res-target").innerText = $;
+      for(const id of ["res-fmr","res-util","res-target"]) {
+        const el=byId(id);if(el)el.textContent="Confirm with housing authority";
+      }
     }
-
     function requestViewing(address) {
-      const email = "alamotte1956@gmail.com";
-      const subject = encodeURIComponent("RFTA & Tenant Application Request: " + address);
-      const body = encodeURIComponent("Hello Albert,\n\nI am requesting more information and an RFTA packet submission for the property located at:\n" + address + "\n\nPlease follow up with me regarding voucher requirements.\n\nThank you!");
-      window.location.href = mailto:?subject=&body=;
+      const subject=encodeURIComponent("Rental inquiry: "+address);
+      location.href="mailto:alamotte1956@gmail.com?subject="+subject;
     }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      checkApiAndLoad();
-      runRftaCalc();
+    document.addEventListener("DOMContentLoaded",()=>{
+      checkApiAndLoad();runRftaCalc();
+      const hash=location.hash.slice(1);
+      if(["listings-tab","landlord-tab","rfta-tab","nspire-tab"].includes(hash))switchTab(hash);
+      document.querySelectorAll('a[href^="#"]').forEach(link=>{
+        link.addEventListener("click",()=>{
+          const id=link.getAttribute("href").slice(1);
+          if(["listings-tab","landlord-tab","rfta-tab","nspire-tab"].includes(id))switchTab(id);
+        });
+      });
     });
   </script>
 <div style="text-align:center;padding:14px;color:#003865;font-size:12px">Independent housing referral service. Not affiliated with or endorsed by Minnesota Housing or the State of Minnesota.</div></body>
