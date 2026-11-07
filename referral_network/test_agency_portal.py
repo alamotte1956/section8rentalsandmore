@@ -43,15 +43,16 @@ class AgencyPortalTests(unittest.TestCase):
         self.assertEqual(response.status_code,200)
         self.assertNotIn(b"OTHERCASE1",response.data)
         with self.client.session_transaction() as s:csrf=s["agency_csrf"]
-        data={"csrf":csrf,"external_case_reference":"MYCASE001","county":"Dakota",
+        data={"csrf":csrf,"county":"Dakota",
               "bedrooms_needed":"2","maximum_rent":"1500","housing_program":"HCV"}
         self.assertEqual(self.client.post("/agency/submit",data=data).status_code,400)
         data["consent_attested"]="1"
         self.assertEqual(self.client.post("/agency/submit",data=data).status_code,302)
-        self.assertIn(b"MYCASE001",self.client.get("/agency/").data)
+        self.assertEqual(self.client.post("/agency/submit",data={**data,"external_case_reference":"PERSON_NAME"}).status_code,400)
+        self.assertIn(b"REF_",self.client.get("/agency/").data)
         self.assertNotIn(b"OTHERCASE1",self.client.get("/agency/").data)
-        self.assertEqual(self.client.post("/agency/submit",data=data).status_code,409)
+        self.assertEqual(self.client.post("/agency/submit",data=data).status_code,302)
         with sqlite3.connect(os.environ["REFERRAL_DB_PATH"]) as db:
-            self.assertEqual(db.execute("SELECT partner_id FROM housing_referrals WHERE external_case_reference='MYCASE001'").fetchone()[0],self.ids[0])
+            self.assertEqual(db.execute("SELECT COUNT(*) FROM housing_referrals WHERE partner_id=? AND external_case_reference LIKE 'REF_%'",(self.ids[0],)).fetchone()[0],2)
 
 if __name__=="__main__":unittest.main()
