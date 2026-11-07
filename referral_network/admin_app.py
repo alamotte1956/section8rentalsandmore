@@ -168,8 +168,12 @@ def verify_partner(partner_id):
                    (partner_id,"verification:"+status,evidence))
     return redirect(url_for("dashboard"))
 
-if __name__ == "__main__":
+def initialize_database():
+    """Explicit initialization for deployment; never silently migrate a production database."""
     import_partners(DB_PATH)
     with connect() as db:
         init_referral_schema(db, ROOT / "referral_schema.sql")
+
+if __name__ == "__main__":
+    initialize_database()
     app.run(host="127.0.0.1",port=8766,debug=False)
