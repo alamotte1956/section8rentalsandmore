@@ -26,6 +26,64 @@
       <a href="../calculator.html" class="btn">Launch Rent Calculator</a>
     </div>
     <a href="../index.html" class="back">&larr; Return to Home</a>
-  </div>
+  
+<div style="margin-top:24px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:20px;">
+  <h3 style="margin-top:0;color:#1e3a8a;">Request Property Placement Analysis</h3>
+  <form id="leadForm">
+    <div style="margin-bottom:10px;">
+      <label style="display:block;font-size:13px;font-weight:600;margin-bottom:4px;">Full Name *</label>
+      <input type="text" name="full_name" required placeholder="Dr. Albert LaMotte" style="width:100%;box-sizing:border-box;padding:8px;border:1px solid #94a3b8;border-radius:4px;">
+    </div>
+    <div style="margin-bottom:10px;">
+      <label style="display:block;font-size:13px;font-weight:600;margin-bottom:4px;">Phone Number *</label>
+      <input type="tel" name="phone" required placeholder="(612) 701-7064" style="width:100%;box-sizing:border-box;padding:8px;border:1px solid #94a3b8;border-radius:4px;">
+    </div>
+    <div style="margin-bottom:10px;">
+      <label style="display:block;font-size:13px;font-weight:600;margin-bottom:4px;">Email Address *</label>
+      <input type="email" name="email" required placeholder="info@Section8RentalsandMore.com" style="width:100%;box-sizing:border-box;padding:8px;border:1px solid #94a3b8;border-radius:4px;">
+    </div>
+    <div style="margin-bottom:10px;">
+      <label style="display:block;font-size:13px;font-weight:600;margin-bottom:4px;">Property Address</label>
+      <input type="text" name="property_address" placeholder="17420 Kenwood Trail, Lakeville, MN" style="width:100%;box-sizing:border-box;padding:8px;border:1px solid #94a3b8;border-radius:4px;">
+    </div>
+    <button type="submit" style="width:100%;background:#16a34a;color:#fff;padding:10px;border:none;border-radius:4px;font-weight:700;cursor:pointer;">Submit for Guaranteed Placement</button>
+    <div id="statusMsg" style="margin-top:10px;padding:8px;border-radius:4px;display:none;font-size:13px;text-align:center;"></div>
+  </form>
+</div>
+<script>
+document.getElementById('leadForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const s = document.getElementById('statusMsg');
+  s.style.display = 'block';
+  s.style.background = '#eff6ff';
+  s.style.color = '#1e40af';
+  s.innerText = 'Submitting inquiry to underwriting desk...';
+  const payload = Object.fromEntries(new FormData(e.target).entries());
+  try {
+    const res = await fetch('/api/lead-capture', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    if (res.ok) {
+      s.style.background = '#dcfce7';
+      s.style.color = '#15803d';
+      s.innerText = data.message || 'Success! Registered with underwriting desk.';
+      e.target.reset();
+    } else {
+      s.style.background = '#fee2e2';
+      s.style.color = '#b91c1c';
+      s.innerText = data.error || 'Submission error.';
+    }
+  } catch (err) {
+    s.style.background = '#fee2e2';
+    s.style.color = '#b91c1c';
+    s.innerText = 'Network error. Please call (612) 701-7064.';
+  }
+});
+</script>
+
+</div>
 </body>
 </html>

@@ -1,0 +1,27 @@
+{
+  "portfolio": "Section 8 Rentals and More LLC - Active Portfolios",
+  "last_audit_run": "2026-11-07",
+  "properties": [
+    {
+      "property_id": "MN-LAKEVILLE-17420",
+      "address": "17420 Kenwood Trail, Lakeville, MN 55044",
+      "pha_name": "Dakota County CDA",
+      "insp_days": 12,
+      "recert_days": 22
+    },
+    {
+      "property_id": "MN-MPLS-2415",
+      "address": "2415 18th Ave S, Minneapolis, MN 55404",
+      "pha_name": "Minneapolis Public Housing Authority (MPHA)",
+      "insp_days": 48,
+      "recert_days": 55
+    },
+    {
+      "property_id": "WI-HUDSON-502",
+      "address": "502 2nd St, Hudson, WI 54016",
+      "pha_name": "West Central Wisconsin CAA",
+      "insp_days": 82,
+      "recert_days": 114
+    }
+  ]
+}

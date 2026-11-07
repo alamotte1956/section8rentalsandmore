@@ -1,0 +1,21 @@
+===========================================================================
+SECTION 8 RENTALS AND MORE LLC - INSPECTION & RECERTIFICATION AUDIT
+Audit Run: 2026-11-07
+===========================================================================
+[MN-LAKEVILLE-17420] 17420 Kenwood Trail, Lakeville, MN 55044
+  Housing Agency: Dakota County CDA
+  NSPIRE Inspection:  2026-11-19 (12 days remaining)
+  Annual Recert Date: 2026-11-29 (22 days remaining)
+  Action Status:      CRITICAL (<= 14 Days) - Conduct Pre-Inspection Walk
+
+[MN-MPLS-2415] 2415 18th Ave S, Minneapolis, MN 55404
+  Housing Agency: Minneapolis Public Housing Authority (MPHA)
+  NSPIRE Inspection:  2026-12-25 (48 days remaining)
+  Annual Recert Date: 2027-01-01 (55 days remaining)
+  Action Status:      ROUTINE COMPLIANCE
+
+[WI-HUDSON-502] 502 2nd St, Hudson, WI 54016
+  Housing Agency: West Central Wisconsin CAA
+  NSPIRE Inspection:  2027-01-28 (82 days remaining)
+  Annual Recert Date: 2027-03-01 (114 days remaining)
+  Action Status:      ROUTINE COMPLIANCE
