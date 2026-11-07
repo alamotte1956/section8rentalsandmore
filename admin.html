@@ -48,7 +48,184 @@
 <div class='mt-8 pt-6 border-t border-slate-100 flex justify-between items-center'>
 <span class='text-xs text-slate-400'>Lakeville, MN • Dakota County</span>
 <a href='https://www.section8rentalsandmore.com' class='bg-[#02162e] text-white text-sm font-bold px-6 py-2.5 rounded-lg hover:bg-[#04244a]'>Access Platform</a>
-</div></div></main>
+</div></div>    <!-- 2-Level Role-Based Management & Operations Console -->
+    <section class="mt-10 border border-[#c49232]/40 rounded-3xl bg-[#0c2957]/60 p-8 shadow-2xl">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#c49232]/20">
+        <div>
+          <div class="inline-block px-3 py-1 rounded-full border border-[#c49232]/50 text-[#e8c064] text-xs font-bold uppercase tracking-wider mb-2">Access Control & Allocation</div>
+          <h2 class="text-2xl font-black text-white">Portfolio Operations & Manager Assignment</h2>
+          <p class="text-xs text-slate-300">Assign property managers to units, monitor PHA vouchers, and control operational access.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <label class="text-xs font-bold text-slate-300">Active Role:</label>
+          <select id="user-role-select" onchange="switchRole(this.value)" class="bg-[#051838] border border-[#c49232] text-[#e8c064] text-xs font-bold rounded-lg px-3 py-2">
+            <option value="Admin">Executive Admin (Dr. Albert Ray LaMotte)</option>
+            <option value="Manager">Assigned Property Manager</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Unit Assignment & Intake Form -->
+      <div id="admin-controls" class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-6">
+        <div class="lg:col-span-1 bg-[#051838] border border-[#c49232]/30 rounded-2xl p-5">
+          <h3 class="text-sm font-bold text-white mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-user-plus text-[#e8c064]"></i> Assign Unit to Manager
+          </h3>
+          <form onsubmit="handleAssignUnit(event)" class="space-y-3">
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-300 mb-1">Unit ID / Address</label>
+              <input type="text" id="assign-unit" required placeholder="e.g. BLM-104 / 8200 Penn Ave" class="w-full bg-[#0c2957] border border-[#c49232]/40 rounded-lg p-2 text-xs text-white" />
+            </div>
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-300 mb-1">Assigned Manager</label>
+              <select id="assign-manager" class="w-full bg-[#0c2957] border border-[#c49232]/40 rounded-lg p-2 text-xs text-white">
+                <option value="Desk 1 - Twin Cities Metro">Desk 1 - Twin Cities Metro</option>
+                <option value="Desk 2 - Dakota/Scott County">Desk 2 - Dakota/Scott County</option>
+                <option value="Desk 3 - Western Wisconsin">Desk 3 - Western Wisconsin</option>
+              </select>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-300 mb-1">Housing Authority</label>
+                <select id="assign-pha" class="w-full bg-[#0c2957] border border-[#c49232]/40 rounded-lg p-2 text-xs text-white">
+                  <option value="MN042">Dakota CDA (MN042)</option>
+                  <option value="MN002">Minneapolis PHA (MN002)</option>
+                  <option value="MN001">Saint Paul PHA (MN001)</option>
+                  <option value="MN027">Anoka County (MN027)</option>
+                  <option value="MN033">Washington CDA (MN033)</option>
+                  <option value="WI-REG">Western WI Housing</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-300 mb-1">Contract Rent ($)</label>
+                <input type="number" id="assign-rent" required placeholder="2150" class="w-full bg-[#0c2957] border border-[#c49232]/40 rounded-lg p-2 text-xs text-white" />
+              </div>
+            </div>
+            <button type="submit" class="w-full s8-gold py-2 rounded-lg text-xs font-bold mt-2 shadow hover:opacity-90">Assign Unit</button>
+          </form>
+        </div>
+
+        <!-- Dynamic Assigned Units Table -->
+        <div class="lg:col-span-2 bg-[#051838] border border-[#c49232]/30 rounded-2xl p-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-list-check text-[#e8c064]"></i> Active Unit Directory
+              </h3>
+              <span id="role-badge" class="px-2 py-0.5 rounded text-[10px] font-bold bg-[#e8c064]/20 text-[#e8c064] border border-[#e8c064]/40">Admin Access</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs">
+                <thead>
+                  <tr class="border-b border-[#c49232]/30 text-slate-400">
+                    <th class="py-2">Unit</th>
+                    <th class="py-2">Assigned Lead</th>
+                    <th class="py-2">PHA</th>
+                    <th class="py-2">Rent</th>
+                    <th class="py-2 text-right">Status</th>
+                  </tr>
+                </thead>
+                <tbody id="unit-table-body" class="divide-y divide-slate-800 text-slate-200">
+                  <!-- Populated via script -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Purge Failsafe Bar -->
+          <div id="admin-purge-bar" class="mt-6 pt-4 border-t border-red-900/40 flex items-center justify-between">
+            <div>
+              <span class="text-xs font-bold text-red-400 block">Production Ready Failsafe</span>
+              <span class="text-[11px] text-slate-400">Flush simulated test records prior to client onboarding.</span>
+            </div>
+            <button onclick="purgeSampleData()" class="bg-red-950/80 hover:bg-red-900 border border-red-600/60 text-red-200 px-3 py-1.5 rounded-lg text-xs font-bold transition">
+              <i class="fa-solid fa-trash-can mr-1"></i> Purge Test Data
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let defaultUnits = [
+        { id: "BLM-104", unit: "8200 Penn Ave S, Bloomington", manager: "Desk 1 - Twin Cities Metro", pha: "MN042", rent: 2150, status: "HAP Active" },
+        { id: "MPLS-202", unit: "2412 Nicollet Ave, Minneapolis", manager: "Desk 1 - Twin Cities Metro", pha: "MN002", rent: 1890, status: "Inspection Pending" },
+        { id: "STP-305", unit: "1140 Grand Ave, Saint Paul", manager: "Desk 2 - Dakota/Scott County", pha: "MN001", rent: 2050, status: "RFTA Processing" },
+        { id: "HUD-401", unit: "410 2nd St, Hudson WI", manager: "Desk 3 - Western Wisconsin", pha: "WI-REG", rent: 1720, status: "HAP Active" }
+      ];
+
+      function getUnits() {
+        const stored = localStorage.getItem('s8_assigned_units');
+        return stored ? JSON.parse(stored) : defaultUnits;
+      }
+
+      function renderUnits() {
+        const units = getUnits();
+        const tbody = document.getElementById('unit-table-body');
+        if (!tbody) return;
+        tbody.innerHTML = '';
+        if (units.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="5" class="py-4 text-center text-slate-500 italic">No assigned units in system. Use the form to assign a unit.</td></tr>';
+          return;
+        }
+        units.forEach(u => {
+          const tr = document.createElement('tr');
+          tr.className = "hover:bg-slate-800/40";
+          tr.innerHTML = `
+            <td class="py-2.5 font-semibold text-white">${u.unit}</td>
+            <td class="py-2.5 text-slate-300">${u.manager}</td>
+            <td class="py-2.5 text-[#e8c064] font-bold">${u.pha}</td>
+            <td class="py-2.5 text-white">${Number(u.rent).toLocaleString()}</td>
+            <td class="py-2.5 text-right"><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-950 border border-emerald-600/50 text-emerald-300">${u.status}</span></td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      function handleAssignUnit(e) {
+        e.preventDefault();
+        const unit = document.getElementById('assign-unit').value;
+        const manager = document.getElementById('assign-manager').value;
+        const pha = document.getElementById('assign-pha').value;
+        const rent = document.getElementById('assign-rent').value;
+        const current = getUnits();
+        current.push({ id: "U-" + Date.now(), unit, manager, pha, rent, status: "RFTA Processing" });
+        localStorage.setItem('s8_assigned_units', JSON.stringify(current));
+        renderUnits();
+        e.target.reset();
+      }
+
+      function switchRole(role) {
+        const roleBadge = document.getElementById('role-badge');
+        const purgeBar = document.getElementById('admin-purge-bar');
+        const assignForm = document.getElementById('admin-controls');
+        if (role === 'Manager') {
+          roleBadge.innerText = 'Manager View (Restricted)';
+          roleBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-blue-950 text-blue-300 border border-blue-600/40';
+          if (purgeBar) purgeBar.classList.add('hidden');
+        } else {
+          roleBadge.innerText = 'Admin Access';
+          roleBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-[#e8c064]/20 text-[#e8c064] border border-[#e8c064]/40';
+          if (purgeBar) purgeBar.classList.remove('hidden');
+        }
+      }
+
+      function purgeSampleData() {
+        if (confirm("WARNING: Are you sure you want to purge all simulated test records? This will reset the unit directory and local intake queue to production empty.")) {
+          localStorage.removeItem('s8_assigned_units');
+          localStorage.removeItem('s8_leads_database');
+          defaultUnits = [];
+          renderUnits();
+          alert("All test data successfully purged. System is now zero-state production ready.");
+        }
+      }
+
+      window.addEventListener('DOMContentLoaded', renderUnits);
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        renderUnits();
+      }
+    </script>
+</main>
 <script>
 const API_BASE = 'https://section8-api-production.up.railway.app';
 
