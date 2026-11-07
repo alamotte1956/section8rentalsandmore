@@ -113,11 +113,11 @@ def dashboard():
     <select name="status" aria-label="Outreach status for {{ p.organization_name }}">
     {% for s in statuses %}<option value="{{ s }}" {% if s==p.partnership_status %}selected{% endif %}>{{ s }}</option>{% endfor %}
     </select><input name="note" maxlength="500" placeholder="Outreach note (optional)" aria-label="Outreach note">
-    <button>Save</button></form></td></tr>{% endfor %}</tbody></table></article>"""
+    <button>Save</button></form><form method="post" action="{{ url_for('verify_partner',partner_id=p.id) }}">\n    <input type="hidden" name="csrf" value="{{ csrf }}">\n    <label>Verification <select name="verification_status" aria-label="Verification status for {{ p.organization_name }}">\n    {% for v in verification_states %}<option value="{{ v }}" {% if v==p.verification_status %}selected{% endif %}>{{ v }}</option>{% endfor %}\n    </select></label><input name="evidence" required maxlength="500" placeholder="Evidence URL or verification details" aria-label="Verification evidence">\n    <button>Record verification</button></form></td></tr>{% endfor %}</tbody></table></article>"""
     return render_template_string(BASE, body=render_template_string(
         body, rows=rows, counts=counts, counties=("Hennepin","Ramsey","Dakota","Anoka","Washington"),
         statuses=("not_contacted","contacted","interested","approved","declined","inactive"),
-        county=county,status=status,csrf=session["csrf"]))
+        county=county,status=status,csrf=session["csrf"],\n        verification_states=("needs_verification","official_site_identified","verified")))
 
 @app.post("/partner/<int:partner_id>/status")
 @login_required
@@ -138,6 +138,26 @@ def update_partner(partner_id):
         db.execute("UPDATE referral_partners SET partnership_status=?,updated_at=CURRENT_TIMESTAMP WHERE id=?", (status,partner_id))
         db.execute("INSERT INTO referral_partner_events(partner_id,event_type,note) VALUES(?,?,?)",
                    (partner_id,"status:"+status,note))
+    return redirect(url_for("dashboard"))
+
+@app.post("/partner/<int:partner_id>/verification")
+@login_required
+def verify_partner(partner_id):
+    if not csrf_ok():
+        abort(403)
+    status = request.form.get("verification_status", "")
+    evidence = request.form.get("evidence", "").strip()
+    if status not in ("needs_verification", "official_site_identified", "verified") or not evidence or len(evidence) > 500:
+        abort(400)
+    with connect() as db:
+        current = db.execute("SELECT verification_status,partnership_status FROM referral_partners WHERE id=?", (partner_id,)).fetchone()
+        if current is None:
+            abort(404)
+        if current["partnership_status"] == "approved" and status != "verified":
+            abort(400, "Cannot unverify an approved partner; change partnership status first")
+        db.execute("UPDATE referral_partners SET verification_status=?,updated_at=CURRENT_TIMESTAMP WHERE id=?", (status,partner_id))
+        db.execute("INSERT INTO referral_partner_events(partner_id,event_type,note) VALUES(?,?,?)",
+                   (partner_id,"verification:"+status,evidence))
     return redirect(url_for("dashboard"))
 
 if __name__ == "__main__":
