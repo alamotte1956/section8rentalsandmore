@@ -11,11 +11,13 @@ from functools import wraps
 from flask import Flask, abort, jsonify, redirect, render_template_string, request, session, url_for
 from import_partners import import_partners
 from referral_routes import referrals, init_referral_schema
+from agency_portal import agency
 
 ROOT = Path(__file__).resolve().parent
 DB_PATH = Path(os.environ.get("REFERRAL_DB_PATH", str(ROOT / "referrals.sqlite3")))
 app = Flask(__name__)
 app.register_blueprint(referrals)
+app.register_blueprint(agency)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY")
 app.config.update(SESSION_COOKIE_HTTPONLY=True, SESSION_COOKIE_SAMESITE="Lax",
                   SESSION_COOKIE_SECURE=True, MAX_CONTENT_LENGTH=16384)
@@ -173,6 +175,7 @@ def initialize_database():
     import_partners(DB_PATH)
     with connect() as db:
         init_referral_schema(db, ROOT / "referral_schema.sql")
+        db.executescript((ROOT / "agency_schema.sql").read_text(encoding="utf-8"))
 
 if __name__ == "__main__":
     initialize_database()
