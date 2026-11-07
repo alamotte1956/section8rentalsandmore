@@ -1,0 +1,60 @@
+{
+  "form": "HUD-52517 (Request for Tenancy Approval)",
+  "omb_approval": "OMB No. 2577-0169",
+  "generated_timestamp": "2026-11-07T16:25:15.228090",
+  "housing_authority": {
+    "pha_code": "MN042",
+    "pha_name": "Dakota County Community Development Agency (CDA)",
+    "jurisdiction": "Dakota County, MN",
+    "pha_office": "1228 Town Centre Dr, Eagan, MN 55123"
+  },
+  "section_8_rentals_entity": {
+    "management_company": "Section 8 Rentals and More LLC",
+    "principal": "Dr. Albert Ray LaMotte",
+    "office_address": "10805 173rd St W, Unit 127, Lakeville, MN 55044",
+    "phone": "(612) 701-7064",
+    "email": "info@Section8RentalsandMore.com"
+  },
+  "box_1_tenant_information": {
+    "tenant_name": "Sample Section 8 Voucher Applicant",
+    "voucher_bedroom_size": 3
+  },
+  "box_2_unit_specifications": {
+    "address": "17420 Kenwood Trail, Lakeville, MN 55044",
+    "number_of_bedrooms": 3,
+    "number_of_bathrooms": 2.0,
+    "year_constructed": 1998,
+    "lead_based_paint_disclosure_required": false,
+    "structure_type": "Single Family Detached"
+  },
+  "box_12_proposed_rent_underwriting": {
+    "proposed_contract_rent": 2264,
+    "security_deposit": 2264,
+    "official_fy2027_hud_standard": 2264,
+    "metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area",
+    "variance_to_standard": 0,
+    "utility_responsibility": {
+      "owner_provided": [
+        "Water/Sewer",
+        "Trash"
+      ],
+      "tenant_provided": [
+        "Heat",
+        "Electricity"
+      ]
+    }
+  },
+  "statutory_compliance_tests": {
+    "cfr_982_508_initial_rent_burden_test": {
+      "tenant_monthly_income": 2600.0,
+      "statutory_40_percent_cap": 1040.0,
+      "projected_family_share": 780.0,
+      "status": "APPROVED (Compliant with 40% Cap)"
+    },
+    "cfr_982_507_rent_reasonableness_test": {
+      "market_comparables_average": 2292.33,
+      "variance": -28.33,
+      "status": "APPROVED (Rent Reasonable)"
+    }
+  }
+}

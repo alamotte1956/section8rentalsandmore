@@ -1,0 +1,12 @@
+{
+  "fiscal_year": 2027,
+  "source": "Official HUD FY 2027 Fair Market Rents",
+  "metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area",
+  "rates": {
+    "0BR": 1265,
+    "1BR": 1427,
+    "2BR": 1734,
+    "3BR": 2264,
+    "4BR": 2538
+  }
+}
