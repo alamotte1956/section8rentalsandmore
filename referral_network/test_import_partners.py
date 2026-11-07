@@ -15,8 +15,10 @@ class ImportTests(unittest.TestCase):
                 db.execute("UPDATE referral_partners SET partnership_status='contacted' WHERE organization_name='Solid Ground'")
                 db.commit()
             second = import_partners(db_path)
-            self.assertEqual(first, 65)
+            self.assertEqual(first, 73)
             self.assertEqual(second, first)
+            with sqlite3.connect(db_path) as db:
+                self.assertEqual(db.execute("SELECT service_area FROM referral_partners WHERE organization_name='Southwest Health and Human Services'").fetchone()[0], "Redwood; Lyon")
             with sqlite3.connect(db_path) as db:
                 status = db.execute("SELECT partnership_status FROM referral_partners WHERE organization_name='Solid Ground'").fetchone()[0]
                 self.assertEqual(status, "contacted")
