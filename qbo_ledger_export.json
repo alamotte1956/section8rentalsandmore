@@ -1,0 +1,29 @@
+{
+  "transaction_id": "JE-MN042-BLM-104-202611071149",
+  "date": "2026-11-07 11:49:59",
+  "entity": "Section 8 Rentals and More LLC",
+  "unit": "BLM-104",
+  "tenant": "Sample Section 8 Tenant",
+  "pha_source": "MN042",
+  "allocations": [
+    {
+      "account": "1050 - Section 8 ACH Clearing",
+      "type": "Debit",
+      "amount": 2150.0,
+      "description": "Monthly Rent Settlement: Unit BLM-104"
+    },
+    {
+      "account": "4010 - HUD Section 8 HAP Direct Deposits",
+      "type": "Credit",
+      "amount": 1700.0,
+      "description": "PHA ACH Subsidy Transfer (MN042)"
+    },
+    {
+      "account": "4020 - Tenant Direct Rent Collections",
+      "type": "Credit",
+      "amount": 450.0,
+      "description": "Tenant Out-of-Pocket Share (Sample Section 8 Tenant)"
+    }
+  ],
+  "balanced": true
+}

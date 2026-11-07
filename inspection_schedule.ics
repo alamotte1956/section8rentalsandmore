@@ -1,22 +1,22 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Section 8 Rentals and More LLC//Inspection Engine//EN
+PRODID:-//Section 8 Rentals and More LLC//NSPIRE Pre-Inspection//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-SUMMARY:NSPIRE Audit - 10805 173rd St W Unit 127
-DESCRIPTION:HCV Annual NSPIRE Inspection with Dakota County CDA.
-LOCATION:10805 173rd St W, Lakeville, MN 55044
-DTSTART:20261115T150000Z
-DTEND:20261115T163000Z
+UID:insp-20261107114959@section8rentalsandmore.com
+DTSTAMP:20261107T114959Z
+DTSTART:20261114T140000Z
+DTEND:20261114T160000Z
+SUMMARY:HUD NSPIRE Pre-Inspection Audit - Section 8 Placement
+DESCRIPTION:Pre-inspection compliance walk-through: verify egress windows, check dual-sensor CO/smoke detectors, test GFCI outlets, inspect water heater TPR valve, and audit window paint friction surfaces.
+LOCATION:Metro Area Housing Authority Jurisdiction
 STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:MPHA Initial HQS Inspection - 2412 Central Ave NE
-DESCRIPTION:Minneapolis Public Housing Authority Initial Move-In Inspection.
-LOCATION:2412 Central Ave NE, Minneapolis, MN 55418
-DTSTART:20261118T160000Z
-DTEND:20261118T173000Z
-STATUS:CONFIRMED
+PRIORITY:1
+BEGIN:VALARM
+TRIGGER:-PT24H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Section 8 NSPIRE Inspection in 24 hours
+END:VALARM
 END:VEVENT
 END:VCALENDAR
