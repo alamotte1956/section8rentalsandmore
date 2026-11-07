@@ -1,0 +1,67 @@
+{
+  "inspection_standard": "HUD National Standards for the Physical Inspection of Real Estate (NSPIRE)",
+  "generated_timestamp": "2026-11-07T16:27:24.820276",
+  "property_details": {
+    "address": "4120 4th Ave S, Minneapolis, MN 55409",
+    "county": "Hennepin",
+    "bedrooms": 2,
+    "year_built": 1956,
+    "property_type": "Single Family Detached"
+  },
+  "lead_paint_compliance": {
+    "applies": true,
+    "standard": "24 CFR Part 35 / HUD Lead Safe Housing Rule",
+    "action_required": "Visual paint inspection required; zero chipping, cracking, or peeling on interior and exterior friction surfaces."
+  },
+  "nspire_checklist": [
+    {
+      "category": "Life Safety & Alarms",
+      "item": "Smoke Detectors",
+      "nspire_rule": "Operable sealed 10-year battery or hardwired smoke alarms on every level, inside each bedroom, and outside sleeping areas.",
+      "criticality": "Life-Threatening (Fail Item)"
+    },
+    {
+      "category": "Life Safety & Alarms",
+      "item": "Carbon Monoxide Alarms",
+      "nspire_rule": "Installed within 10 feet of every bedroom in homes with fuel-burning appliances or attached garages (MN Statute 299F.51).",
+      "criticality": "Life-Threatening (Fail Item)"
+    },
+    {
+      "category": "Electrical & Shock Prevention",
+      "item": "GFCI Receptacles",
+      "nspire_rule": "GFCI protection operational on all outlets within 6 feet of sinks, water sources, exterior receptacles, and bathrooms.",
+      "criticality": "High (Fail Item)"
+    },
+    {
+      "category": "Electrical & Shock Prevention",
+      "item": "Electrical Panels & Covers",
+      "nspire_rule": "No open knockouts or exposed wiring; dead-front panel cover tightly fastened.",
+      "criticality": "Life-Threatening (Fail Item)"
+    },
+    {
+      "category": "Windows & Egress",
+      "item": "Bedroom Egress Windows",
+      "nspire_rule": "Windows in designated bedrooms must open smoothly, hold open without props, and latch securely.",
+      "criticality": "Severe (Fail Item)"
+    },
+    {
+      "category": "Plumbing & Water Heating",
+      "item": "Water Heater TPR Valve & Discharge",
+      "nspire_rule": "Temperature/Pressure Relief (TPR) valve installed with rigid discharge pipe terminating within 6 inches of floor.",
+      "criticality": "High (Fail Item)"
+    },
+    {
+      "category": "Doors & Security",
+      "item": "Exterior Entry Doors",
+      "nspire_rule": "Weatherstripped, weather-tight, and equipped with functioning single-cylinder deadbolt (no double-keyed locks).",
+      "criticality": "Medium"
+    },
+    {
+      "category": "HVAC & Thermal Environment",
+      "item": "Heating System Operational",
+      "nspire_rule": "Capable of maintaining continuous minimum 68\u00b0F indoor temperature during heating season without unvented space heaters.",
+      "criticality": "High (Fail Item)"
+    }
+  ],
+  "management_attestation": "Section 8 Rentals and More LLC \u2014 Quality Assurance Inspection Division"
+}

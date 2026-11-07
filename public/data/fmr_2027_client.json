@@ -1,0 +1,966 @@
+{
+  "fiscal_year": 2027,
+  "jurisdictions_count": 88,
+  "primary_counties": [
+    "Dakota County",
+    "Hennepin County",
+    "Ramsey County",
+    "Anoka County",
+    "Washington County",
+    "St. Croix County, WI"
+  ],
+  "counties": {
+    "Aitkin County": {
+      "metro_area": "Aitkin County, MN",
+      "rates": {
+        "0BR": 796,
+        "1BR": 801,
+        "2BR": 1048,
+        "3BR": 1451,
+        "4BR": 1515
+      }
+    },
+    "Anoka County": {
+      "metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area",
+      "rates": {
+        "0BR": 1265,
+        "1BR": 1427,
+        "2BR": 1734,
+        "3BR": 2264,
+        "4BR": 2538
+      }
+    },
+    "Becker County": {
+      "metro_area": "Becker County, MN",
+      "rates": {
+        "0BR": 769,
+        "1BR": 845,
+        "2BR": 1105,
+        "3BR": 1451,
+        "4BR": 1621
+      }
+    },
+    "Beltrami County": {
+      "metro_area": "Beltrami County, MN",
+      "rates": {
+        "0BR": 883,
+        "1BR": 940,
+        "2BR": 1230,
+        "3BR": 1466,
+        "4BR": 2041
+      }
+    },
+    "Benton County": {
+      "metro_area": "St. Cloud, MN MSA",
+      "rates": {
+        "0BR": 884,
+        "1BR": 961,
+        "2BR": 1233,
+        "3BR": 1656,
+        "4BR": 1961
+      }
+    },
+    "Big Stone County": {
+      "metro_area": "Big Stone County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 828,
+        "2BR": 1014,
+        "3BR": 1208,
+        "4BR": 1333
+      }
+    },
+    "Blue Earth County": {
+      "metro_area": "Mankato, MN MSA",
+      "rates": {
+        "0BR": 1016,
+        "1BR": 1023,
+        "2BR": 1230,
+        "3BR": 1703,
+        "4BR": 1744
+      }
+    },
+    "Brown County": {
+      "metro_area": "Brown County, MN",
+      "rates": {
+        "0BR": 746,
+        "1BR": 819,
+        "2BR": 1071,
+        "3BR": 1282,
+        "4BR": 1717
+      }
+    },
+    "Carlton County": {
+      "metro_area": "Duluth, MN-WI MSA",
+      "rates": {
+        "0BR": 841,
+        "1BR": 961,
+        "2BR": 1207,
+        "3BR": 1671,
+        "4BR": 2017
+      }
+    },
+    "Carver County": {
+      "metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area",
+      "rates": {
+        "0BR": 1265,
+        "1BR": 1427,
+        "2BR": 1734,
+        "3BR": 2264,
+        "4BR": 2538
+      }
+    },
+    "Cass County": {
+      "metro_area": "Cass County, MN",
+      "rates": {
+        "0BR": 734,
+        "1BR": 775,
+        "2BR": 1014,
+        "3BR": 1335,
+        "4BR": 1695
+      }
+    },
+    "Chippewa County": {
+      "metro_area": "Chippewa County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 784,
+        "2BR": 1014,
+        "3BR": 1404,
+        "4BR": 1443
+      }
+    },
+    "Chisago County": {
+      "metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area",
+      "rates": {
+        "0BR": 1265,
+        "1BR": 1427,
+        "2BR": 1734,
+        "3BR": 2264,
+        "4BR": 2538
+      }
+    },
+    "Clay County": {
+      "metro_area": "Fargo, ND-MN MSA",
+      "rates": {
+        "0BR": 781,
+        "1BR": 903,
+        "2BR": 1104,
+        "3BR": 1529,
+        "4BR": 1845
+      }
+    },
+    "Clearwater County": {
+      "metro_area": "Clearwater County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 805,
+        "2BR": 1014,
+        "3BR": 1210,
+        "4BR": 1481
+      }
+    },
+    "Cook County": {
+      "metro_area": "Cook County, MN",
+      "rates": {
+        "0BR": 712,
+        "1BR": 939,
+        "2BR": 1022,
+        "3BR": 1415,
+        "4BR": 1492
+      }
+    },
+    "Cottonwood County": {
+      "metro_area": "Cottonwood County, MN",
+      "rates": {
+        "0BR": 737,
+        "1BR": 824,
+        "2BR": 1014,
+        "3BR": 1404,
+        "4BR": 1481
+      }
+    },
+    "Crow Wing County": {
+      "metro_area": "Crow Wing County, MN",
+      "rates": {
+        "0BR": 816,
+        "1BR": 899,
+        "2BR": 1172,
+        "3BR": 1407,
+        "4BR": 1609
+      }
+    },
+    "Dakota County": {
+      "metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area",
+      "rates": {
+        "0BR": 1265,
+        "1BR": 1427,
+        "2BR": 1734,
+        "3BR": 2264,
+        "4BR": 2538
+      }
+    },
+    "Dodge County": {
+      "metro_area": "Rochester, MN HUD Metro FMR Area",
+      "rates": {
+        "0BR": 1183,
+        "1BR": 1226,
+        "2BR": 1422,
+        "3BR": 1969,
+        "4BR": 2377
+      }
+    },
+    "Douglas County": {
+      "metro_area": "Douglas County, MN",
+      "rates": {
+        "0BR": 770,
+        "1BR": 785,
+        "2BR": 1027,
+        "3BR": 1422,
+        "4BR": 1500
+      }
+    },
+    "Faribault County": {
+      "metro_area": "Faribault County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 859,
+        "2BR": 1014,
+        "3BR": 1386,
+        "4BR": 1391
+      }
+    },
+    "Fillmore County": {
+      "metro_area": "Fillmore County, MN HUD Metro FMR Area",
+      "rates": {
+        "0BR": 770,
+        "1BR": 775,
+        "2BR": 1014,
+        "3BR": 1328,
+        "4BR": 1333
+      }
+    },
+    "Freeborn County": {
+      "metro_area": "Freeborn County, MN",
+      "rates": {
+        "0BR": 719,
+        "1BR": 790,
+        "2BR": 1033,
+        "3BR": 1355,
+        "4BR": 1555
+      }
+    },
+    "Goodhue County": {
+      "metro_area": "Goodhue County, MN",
+      "rates": {
+        "0BR": 816,
+        "1BR": 966,
+        "2BR": 1172,
+        "3BR": 1613,
+        "4BR": 1959
+      }
+    },
+    "Grant County": {
+      "metro_area": "Grant County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 775,
+        "2BR": 1014,
+        "3BR": 1260,
+        "4BR": 1695
+      }
+    },
+    "Hennepin County": {
+      "metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area",
+      "rates": {
+        "0BR": 1265,
+        "1BR": 1427,
+        "2BR": 1734,
+        "3BR": 2264,
+        "4BR": 2538
+      }
+    },
+    "Houston County": {
+      "metro_area": "La Crosse-Onalaska, WI-MN HUD Metro FMR Area",
+      "rates": {
+        "0BR": 935,
+        "1BR": 1027,
+        "2BR": 1343,
+        "3BR": 1721,
+        "4BR": 2167
+      }
+    },
+    "Hubbard County": {
+      "metro_area": "Hubbard County, MN",
+      "rates": {
+        "0BR": 710,
+        "1BR": 780,
+        "2BR": 1020,
+        "3BR": 1412,
+        "4BR": 1705
+      }
+    },
+    "Isanti County": {
+      "metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area",
+      "rates": {
+        "0BR": 1265,
+        "1BR": 1427,
+        "2BR": 1734,
+        "3BR": 2264,
+        "4BR": 2538
+      }
+    },
+    "Itasca County": {
+      "metro_area": "Itasca County, MN",
+      "rates": {
+        "0BR": 811,
+        "1BR": 924,
+        "2BR": 1164,
+        "3BR": 1509,
+        "4BR": 1635
+      }
+    },
+    "Jackson County": {
+      "metro_area": "Jackson County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 922,
+        "2BR": 1014,
+        "3BR": 1328,
+        "4BR": 1333
+      }
+    },
+    "Kanabec County": {
+      "metro_area": "Kanabec County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 924,
+        "2BR": 1014,
+        "3BR": 1404,
+        "4BR": 1487
+      }
+    },
+    "Kandiyohi County": {
+      "metro_area": "Kandiyohi County, MN",
+      "rates": {
+        "0BR": 831,
+        "1BR": 836,
+        "2BR": 1026,
+        "3BR": 1421,
+        "4BR": 1715
+      }
+    },
+    "Kittson County": {
+      "metro_area": "Kittson County, MN",
+      "rates": {
+        "0BR": 712,
+        "1BR": 791,
+        "2BR": 1014,
+        "3BR": 1208,
+        "4BR": 1481
+      }
+    },
+    "Koochiching County": {
+      "metro_area": "Koochiching County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 775,
+        "2BR": 1014,
+        "3BR": 1238,
+        "4BR": 1481
+      }
+    },
+    "Lac qui Parle County": {
+      "metro_area": "Lac qui Parle County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 841,
+        "2BR": 1014,
+        "3BR": 1404,
+        "4BR": 1481
+      }
+    },
+    "Lake County": {
+      "metro_area": "Lake County, MN",
+      "rates": {
+        "0BR": 946,
+        "1BR": 1038,
+        "2BR": 1358,
+        "3BR": 1618,
+        "4BR": 1983
+      }
+    },
+    "Lake of the Woods County": {
+      "metro_area": "Lake of the Woods County, MN",
+      "rates": {
+        "0BR": 804,
+        "1BR": 882,
+        "2BR": 1154,
+        "3BR": 1375,
+        "4BR": 1685
+      }
+    },
+    "Le Sueur County": {
+      "metro_area": "Le Sueur County, MN HUD Metro FMR Area",
+      "rates": {
+        "0BR": 801,
+        "1BR": 839,
+        "2BR": 1098,
+        "3BR": 1520,
+        "4BR": 1708
+      }
+    },
+    "Lincoln County": {
+      "metro_area": "Lincoln County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 775,
+        "2BR": 1014,
+        "3BR": 1291,
+        "4BR": 1333
+      }
+    },
+    "Lyon County": {
+      "metro_area": "Lyon County, MN",
+      "rates": {
+        "0BR": 767,
+        "1BR": 870,
+        "2BR": 1014,
+        "3BR": 1404,
+        "4BR": 1695
+      }
+    },
+    "Mahnomen County": {
+      "metro_area": "Mahnomen County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 775,
+        "2BR": 1014,
+        "3BR": 1270,
+        "4BR": 1544
+      }
+    },
+    "Marshall County": {
+      "metro_area": "Marshall County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 775,
+        "2BR": 1014,
+        "3BR": 1281,
+        "4BR": 1695
+      }
+    },
+    "Martin County": {
+      "metro_area": "Martin County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 844,
+        "2BR": 1014,
+        "3BR": 1328,
+        "4BR": 1333
+      }
+    },
+    "McLeod County": {
+      "metro_area": "McLeod County, MN",
+      "rates": {
+        "0BR": 882,
+        "1BR": 951,
+        "2BR": 1073,
+        "3BR": 1278,
+        "4BR": 1593
+      }
+    },
+    "Meeker County": {
+      "metro_area": "Meeker County, MN",
+      "rates": {
+        "0BR": 758,
+        "1BR": 954,
+        "2BR": 1089,
+        "3BR": 1490,
+        "4BR": 1495
+      }
+    },
+    "Mille Lacs County": {
+      "metro_area": "Mille Lacs County, MN HUD Metro FMR Area",
+      "rates": {
+        "0BR": 820,
+        "1BR": 870,
+        "2BR": 1124,
+        "3BR": 1351,
+        "4BR": 1879
+      }
+    },
+    "Morrison County": {
+      "metro_area": "Morrison County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 789,
+        "2BR": 1014,
+        "3BR": 1404,
+        "4BR": 1484
+      }
+    },
+    "Mower County": {
+      "metro_area": "Mower County, MN",
+      "rates": {
+        "0BR": 752,
+        "1BR": 826,
+        "2BR": 1080,
+        "3BR": 1440,
+        "4BR": 1445
+      }
+    },
+    "Murray County": {
+      "metro_area": "Murray County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 931,
+        "2BR": 1014,
+        "3BR": 1208,
+        "4BR": 1420
+      }
+    },
+    "Nicollet County": {
+      "metro_area": "Mankato, MN MSA",
+      "rates": {
+        "0BR": 1016,
+        "1BR": 1023,
+        "2BR": 1230,
+        "3BR": 1703,
+        "4BR": 1744
+      }
+    },
+    "Nobles County": {
+      "metro_area": "Nobles County, MN",
+      "rates": {
+        "0BR": 749,
+        "1BR": 823,
+        "2BR": 1076,
+        "3BR": 1426,
+        "4BR": 1508
+      }
+    },
+    "Norman County": {
+      "metro_area": "Norman County, MN",
+      "rates": {
+        "0BR": 754,
+        "1BR": 775,
+        "2BR": 1014,
+        "3BR": 1208,
+        "4BR": 1333
+      }
+    },
+    "Olmsted County": {
+      "metro_area": "Rochester, MN HUD Metro FMR Area",
+      "rates": {
+        "0BR": 1183,
+        "1BR": 1226,
+        "2BR": 1422,
+        "3BR": 1969,
+        "4BR": 2377
+      }
+    },
+    "Otter Tail County": {
+      "metro_area": "Otter Tail County, MN",
+      "rates": {
+        "0BR": 746,
+        "1BR": 819,
+        "2BR": 1071,
+        "3BR": 1476,
+        "4BR": 1489
+      }
+    },
+    "Pennington County": {
+      "metro_area": "Pennington County, MN",
+      "rates": {
+        "0BR": 795,
+        "1BR": 873,
+        "2BR": 1142,
+        "3BR": 1564,
+        "4BR": 1668
+      }
+    },
+    "Pine County": {
+      "metro_area": "Pine County, MN",
+      "rates": {
+        "0BR": 832,
+        "1BR": 838,
+        "2BR": 1096,
+        "3BR": 1306,
+        "4BR": 1496
+      }
+    },
+    "Pipestone County": {
+      "metro_area": "Pipestone County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 775,
+        "2BR": 1014,
+        "3BR": 1209,
+        "4BR": 1488
+      }
+    },
+    "Polk County": {
+      "metro_area": "Grand Forks, ND-MN MSA",
+      "rates": {
+        "0BR": 816,
+        "1BR": 821,
+        "2BR": 1014,
+        "3BR": 1404,
+        "4BR": 1695
+      }
+    },
+    "Pope County": {
+      "metro_area": "Pope County, MN",
+      "rates": {
+        "0BR": 758,
+        "1BR": 832,
+        "2BR": 1088,
+        "3BR": 1325,
+        "4BR": 1430
+      }
+    },
+    "Ramsey County": {
+      "metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area",
+      "rates": {
+        "0BR": 1265,
+        "1BR": 1427,
+        "2BR": 1734,
+        "3BR": 2264,
+        "4BR": 2538
+      }
+    },
+    "Red Lake County": {
+      "metro_area": "Red Lake County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 775,
+        "2BR": 1014,
+        "3BR": 1328,
+        "4BR": 1333
+      }
+    },
+    "Redwood County": {
+      "metro_area": "Redwood County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 775,
+        "2BR": 1014,
+        "3BR": 1389,
+        "4BR": 1509
+      }
+    },
+    "Renville County": {
+      "metro_area": "Renville County, MN",
+      "rates": {
+        "0BR": 854,
+        "1BR": 859,
+        "2BR": 1014,
+        "3BR": 1404,
+        "4BR": 1695
+      }
+    },
+    "Rice County": {
+      "metro_area": "Rice County, MN",
+      "rates": {
+        "0BR": 931,
+        "1BR": 937,
+        "2BR": 1226,
+        "3BR": 1621,
+        "4BR": 2049
+      }
+    },
+    "Rock County": {
+      "metro_area": "Rock County, MN HUD Metro FMR Area",
+      "rates": {
+        "0BR": 770,
+        "1BR": 775,
+        "2BR": 1014,
+        "3BR": 1404,
+        "4BR": 1501
+      }
+    },
+    "Roseau County": {
+      "metro_area": "Roseau County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 931,
+        "2BR": 1014,
+        "3BR": 1343,
+        "4BR": 1505
+      }
+    },
+    "Scott County": {
+      "metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area",
+      "rates": {
+        "0BR": 1265,
+        "1BR": 1427,
+        "2BR": 1734,
+        "3BR": 2264,
+        "4BR": 2538
+      }
+    },
+    "Sherburne County": {
+      "metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area",
+      "rates": {
+        "0BR": 1265,
+        "1BR": 1427,
+        "2BR": 1734,
+        "3BR": 2264,
+        "4BR": 2538
+      }
+    },
+    "Sibley County": {
+      "metro_area": "Sibley County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 775,
+        "2BR": 1014,
+        "3BR": 1404,
+        "4BR": 1695
+      }
+    },
+    "St. Croix County, WI": {
+      "metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area",
+      "rates": {
+        "0BR": 1265,
+        "1BR": 1427,
+        "2BR": 1734,
+        "3BR": 2264,
+        "4BR": 2538
+      }
+    },
+    "St. Louis County": {
+      "metro_area": "Duluth, MN-WI MSA",
+      "rates": {
+        "0BR": 841,
+        "1BR": 961,
+        "2BR": 1207,
+        "3BR": 1671,
+        "4BR": 2017
+      }
+    },
+    "Stearns County": {
+      "metro_area": "St. Cloud, MN MSA",
+      "rates": {
+        "0BR": 884,
+        "1BR": 961,
+        "2BR": 1233,
+        "3BR": 1656,
+        "4BR": 1961
+      }
+    },
+    "Steele County": {
+      "metro_area": "Steele County, MN",
+      "rates": {
+        "0BR": 866,
+        "1BR": 951,
+        "2BR": 1244,
+        "3BR": 1703,
+        "4BR": 1814
+      }
+    },
+    "Stevens County": {
+      "metro_area": "Stevens County, MN",
+      "rates": {
+        "0BR": 715,
+        "1BR": 785,
+        "2BR": 1027,
+        "3BR": 1422,
+        "4BR": 1717
+      }
+    },
+    "Swift County": {
+      "metro_area": "Swift County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 835,
+        "2BR": 1014,
+        "3BR": 1373,
+        "4BR": 1384
+      }
+    },
+    "Todd County": {
+      "metro_area": "Todd County, MN",
+      "rates": {
+        "0BR": 778,
+        "1BR": 784,
+        "2BR": 1025,
+        "3BR": 1310,
+        "4BR": 1635
+      }
+    },
+    "Traverse County": {
+      "metro_area": "Traverse County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 805,
+        "2BR": 1014,
+        "3BR": 1404,
+        "4BR": 1695
+      }
+    },
+    "Wabasha County": {
+      "metro_area": "Wabasha County, MN HUD Metro FMR Area",
+      "rates": {
+        "0BR": 894,
+        "1BR": 931,
+        "2BR": 1014,
+        "3BR": 1328,
+        "4BR": 1512
+      }
+    },
+    "Wadena County": {
+      "metro_area": "Wadena County, MN",
+      "rates": {
+        "0BR": 737,
+        "1BR": 836,
+        "2BR": 1059,
+        "3BR": 1302,
+        "4BR": 1392
+      }
+    },
+    "Waseca County": {
+      "metro_area": "Waseca County, MN",
+      "rates": {
+        "0BR": 717,
+        "1BR": 787,
+        "2BR": 1030,
+        "3BR": 1349,
+        "4BR": 1354
+      }
+    },
+    "Washington County": {
+      "metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area",
+      "rates": {
+        "0BR": 1265,
+        "1BR": 1427,
+        "2BR": 1734,
+        "3BR": 2264,
+        "4BR": 2538
+      }
+    },
+    "Watonwan County": {
+      "metro_area": "Watonwan County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 842,
+        "2BR": 1014,
+        "3BR": 1261,
+        "4BR": 1333
+      }
+    },
+    "Wilkin County": {
+      "metro_area": "Wilkin County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 846,
+        "2BR": 1014,
+        "3BR": 1404,
+        "4BR": 1481
+      }
+    },
+    "Winona County": {
+      "metro_area": "Winona County, MN",
+      "rates": {
+        "0BR": 788,
+        "1BR": 890,
+        "2BR": 1118,
+        "3BR": 1352,
+        "4BR": 1625
+      }
+    },
+    "Wright County": {
+      "metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area",
+      "rates": {
+        "0BR": 1265,
+        "1BR": 1427,
+        "2BR": 1734,
+        "3BR": 2264,
+        "4BR": 2538
+      }
+    },
+    "Yellow Medicine County": {
+      "metro_area": "Yellow Medicine County, MN",
+      "rates": {
+        "0BR": 706,
+        "1BR": 799,
+        "2BR": 1014,
+        "3BR": 1290,
+        "4BR": 1468
+      }
+    }
+  },
+  "utility_allowances": {
+    "natural_gas_heat": {
+      "name": "Natural Gas Heat",
+      "rates": {
+        "0BR": 38,
+        "1BR": 49,
+        "2BR": 62,
+        "3BR": 74,
+        "4BR": 86
+      }
+    },
+    "electric_heat": {
+      "name": "Electric Heat",
+      "rates": {
+        "0BR": 65,
+        "1BR": 82,
+        "2BR": 104,
+        "3BR": 126,
+        "4BR": 148
+      }
+    },
+    "electric_cooking": {
+      "name": "Electric Cooking",
+      "rates": {
+        "0BR": 12,
+        "1BR": 15,
+        "2BR": 19,
+        "3BR": 24,
+        "4BR": 29
+      }
+    },
+    "gas_cooking": {
+      "name": "Gas Cooking",
+      "rates": {
+        "0BR": 7,
+        "1BR": 9,
+        "2BR": 11,
+        "3BR": 14,
+        "4BR": 17
+      }
+    },
+    "other_electric": {
+      "name": "Electric Lighting/Refrigeration",
+      "rates": {
+        "0BR": 34,
+        "1BR": 42,
+        "2BR": 54,
+        "3BR": 65,
+        "4BR": 76
+      }
+    },
+    "water_sewer": {
+      "name": "Water & Sewer",
+      "rates": {
+        "0BR": 45,
+        "1BR": 52,
+        "2BR": 68,
+        "3BR": 84,
+        "4BR": 98
+      }
+    },
+    "trash_collection": {
+      "name": "Trash Collection",
+      "rates": {
+        "0BR": 22,
+        "1BR": 22,
+        "2BR": 25,
+        "3BR": 28,
+        "4BR": 30
+      }
+    }
+  }
+}
