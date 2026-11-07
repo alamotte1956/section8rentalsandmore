@@ -115,11 +115,17 @@ def dashboard():
     <select name="status" aria-label="Outreach status for {{ p.organization_name }}">
     {% for s in statuses %}<option value="{{ s }}" {% if s==p.partnership_status %}selected{% endif %}>{{ s }}</option>{% endfor %}
     </select><input name="note" maxlength="500" placeholder="Outreach note (optional)" aria-label="Outreach note">
-    <button>Save</button></form><form method="post" action="{{ url_for('verify_partner',partner_id=p.id) }}">\n    <input type="hidden" name="csrf" value="{{ csrf }}">\n    <label>Verification <select name="verification_status" aria-label="Verification status for {{ p.organization_name }}">\n    {% for v in verification_states %}<option value="{{ v }}" {% if v==p.verification_status %}selected{% endif %}>{{ v }}</option>{% endfor %}\n    </select></label><input name="evidence" required maxlength="500" placeholder="Evidence URL or verification details" aria-label="Verification evidence">\n    <button>Record verification</button></form></td></tr>{% endfor %}</tbody></table></article>"""
+    <button>Save</button></form><form method="post" action="{{ url_for('verify_partner',partner_id=p.id) }}"> 
+    <input type="hidden" name="csrf" value="{{ csrf }}"> 
+    <label>Verification <select name="verification_status" aria-label="Verification status for {{ p.organization_name }}"> 
+    {% for v in verification_states %}<option value="{{ v }}" {% if v==p.verification_status %}selected{% endif %}>{{ v }}</option>{% endfor %} 
+    </select></label><input name="evidence" required maxlength="500" placeholder="Evidence URL or verification details" aria-label="Verification evidence"> 
+    <button>Record verification</button></form></td></tr>{% endfor %}</tbody></table></article>"""
     return render_template_string(BASE, body=render_template_string(
         body, rows=rows, counts=counts, counties=("Hennepin","Ramsey","Dakota","Anoka","Washington"),
         statuses=("not_contacted","contacted","interested","approved","declined","inactive"),
-        county=county,status=status,csrf=session["csrf"],\n        verification_states=("needs_verification","official_site_identified","verified")))
+        county=county,status=status,csrf=session["csrf"], 
+        verification_states=("needs_verification","official_site_identified","verified")))
 
 @app.post("/partner/<int:partner_id>/status")
 @login_required
