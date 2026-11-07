@@ -264,67 +264,48 @@
     const API_BASE = "https://section8-api-production.up.railway.app";
     let allProperties = [];
 
-    const defaultSeed = [
-      { id: 1, address: "10805 173rd St W", city: "Lakeville", county: "Dakota", bedrooms: 3, rent: 1850, section8: "Vouchers Accepted", desc: "Spacious suburban unit, immediate Dakota CDA inspection ready." },
-      { id: 2, address: "2412 Nicollet Ave", city: "Minneapolis", county: "Hennepin", bedrooms: 2, rent: 1550, section8: "Section 8 & Market Rate", desc: "Close to transit lines, Minneapolis PHA voucher approved standard." },
-      { id: 3, address: "784 Grand Ave", city: "St. Paul", county: "Ramsey", bedrooms: 1, rent: 1275, section8: "Vouchers Accepted", desc: "Updated apartment, St. Paul PHA expedited processing ready." },
-      { id: 4, address: "1140 109th Ave NE", city: "Blaine", county: "Anoka", bedrooms: 3, rent: 1920, section8: "Vouchers Accepted", desc: "Anoka County HRA compliant, private parking and quiet neighborhood." },
-      { id: 5, address: "8350 Radio Dr", city: "Woodbury", county: "Washington", bedrooms: 2, rent: 1680, section8: "Section 8 & Market Rate", desc: "Washington County CDA eligible, in-unit laundry and garage." }
-    ];
-
+    // Never display fabricated listings as available properties.
     async function checkApiAndLoad() {
       const badge = document.getElementById("api-status-badge");
       try {
-        const res = await fetch(${API_BASE}/api/v1/listings, { method: "GET", headers: { "Accept": "application/json" } });
-        if (res.ok) {
-          const data = await res.json();
-          allProperties = Array.isArray(data) && data.length > 0 ? data : defaultSeed;
-          badge.className = "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-900 text-emerald-200";
-          badge.innerHTML = '<span class="w-1.5 h-1.5 mr-1.5 bg-green-400 rounded-full"></span> API Connected';
-        } else {
-          throw new Error("HTTP error " + res.status);
-        }
+        const res = await fetch(API_BASE + "/api/v1/listings", {headers: {"Accept":"application/json"}});
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const data = await res.json();
+        allProperties = Array.isArray(data) ? data : (Array.isArray(data.items) ? data.items : []);
+        badge.textContent = "Live listings";
+        badge.className = "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-900";
       } catch (err) {
-        console.warn("Backend API direct fetch failed, utilizing client-side cached listings:", err);
-        allProperties = defaultSeed;
-        badge.className = "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#0D5257] text-slate-300";
-        badge.innerHTML = '<span class="w-1.5 h-1.5 mr-1.5 bg-amber-400 rounded-full"></span> Standalone Mode';
+        allProperties = [];
+        badge.textContent = "Listings temporarily unavailable";
+        badge.className = "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-900";
       }
       renderListings(allProperties);
     }
-
     function renderListings(items) {
       const grid = document.getElementById("listings-grid");
       const countEl = document.getElementById("results-count");
-      grid.innerHTML = "";
-      countEl.innerText = ${items.length} properties available;
-
-      if (items.length === 0) {
-        grid.innerHTML = '<div class="col-span-3 text-center py-12 text-slate-500 font-medium">No properties match your filter criteria.</div>';
+      grid.replaceChildren();
+      countEl.textContent = items.length + " listings";
+      if (!items.length) {
+        const msg = document.createElement("p");
+        msg.className = "col-span-3 text-center py-12 text-slate-600";
+        msg.textContent = "No verified live listings are currently available. Please check again later.";
+        grid.appendChild(msg);
         return;
       }
-
       items.forEach(prop => {
-        const card = document.createElement("div");
-        card.className = "bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-md transition";
-        card.innerHTML = 
-          <div class="p-5">
-            <div class="flex justify-between items-start mb-2">
-              <span class="inline-block bg-amber-100 text-amber-800 text-xs font-semibold px-2 py-0.5 rounded"> County</span>
-              <span class="text-xs font-medium text-emerald-700 bg-green-50 px-2 py-0.5 rounded"></span>
-            </div>
-            <h3 class="font-bold text-slate-900 text-base mb-1"></h3>
-            <p class="text-slate-500 text-xs mb-3">, MN</p>
-            <p class="text-slate-600 text-sm mb-4 line-clamp-2"></p>
-            <div class="flex items-center space-x-4 text-xs font-medium text-slate-700">
-              <span><i class="fa-solid fa-bed mr-1 text-slate-400"></i>  Bed</span>
-              <span><i class="fa-solid fa-dollar-sign mr-1 text-slate-400"></i> C:\section8landlordsmn{prop.rent.toLocaleString()}/mo</span>
-            </div>
-          </div>
-          <div class="bg-slate-50 px-5 py-3 border-t border-slate-100 flex justify-between items-center">
-            <button onclick="requestViewing('')" class="text-xs font-bold text-amber-700 hover:text-amber-800">Apply / Request RFTA &rarr;</button>
-          </div>
-        ;
+        const card = document.createElement("article");
+        card.className = "bg-white rounded-xl shadow-sm border border-slate-200 p-5";
+        const heading = document.createElement("h3");
+        heading.className = "font-bold text-lg text-slate-900";
+        heading.textContent = String(prop.address || "Rental property");
+        const details = document.createElement("p");
+        details.className = "text-sm text-slate-600 mt-2";
+        details.textContent = [prop.city, prop.county, prop.bedrooms != null ? prop.bedrooms + " bedrooms" : "", prop.rent != null ? "$" + Number(prop.rent).toLocaleString() + "/month" : ""].filter(Boolean).join(" · ");
+        const description = document.createElement("p");
+        description.className = "text-sm text-slate-600 mt-3";
+        description.textContent = String(prop.desc || prop.description || "");
+        card.append(heading,details,description);
         grid.appendChild(card);
       });
     }
