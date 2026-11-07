@@ -2,6 +2,7 @@
 import re
 import sqlite3
 from flask import Blueprint, abort, redirect, render_template_string, request, session, url_for
+from matching import find_candidates
 
 referrals = Blueprint("referrals", __name__, url_prefix="/referrals")
 COUNTIES = ("Hennepin", "Ramsey", "Dakota", "Anoka", "Washington")
@@ -19,6 +20,7 @@ def require_csrf():
 
 def init_referral_schema(db, schema_path):
     db.executescript(schema_path.read_text(encoding="utf-8"))
+    db.executescript(schema_path.with_name("matching_schema.sql").read_text(encoding="utf-8"))
 
 @referrals.get("/")
 def list_referrals():
@@ -54,12 +56,32 @@ def list_referrals():
     {% if not partners %}<p>No verified and approved partners yet. Approve partners before accepting referrals.</p>{% endif %}
     <h2>Referral queue</h2><table border="1" cellpadding="8"><tr><th>Case</th><th>Partner</th><th>County</th><th>Bedrooms</th><th>Rent cap</th><th>Status</th></tr>
     {% for r in rows %}<tr><td>{{ r.external_case_reference }}</td><td>{{ r.organization_name }}</td>
-    <td>{{ r.county }}</td><td>{{ r.bedrooms_needed }}</td><td>{{ r.maximum_rent or 'Not set' }}</td>
+    <td>{{ r.county }}</td><td>{{ r.bedrooms_needed }} <a href="{{ url_for('referrals.show_matches',referral_id=r.id) }}">Find matches</a></td><td>{{ r.maximum_rent or 'Not set' }}</td>
     <td><form method="post" action="{{ url_for('referrals.set_status', referral_id=r.id) }}">
     <input type="hidden" name="csrf" value="{{ csrf }}"><select name="status">
     {% for s in statuses %}<option value="{{ s }}" {% if r.status==s %}selected{% endif %}>{{ s }}</option>{% endfor %}
     </select><button>Update</button></form></td></tr>{% endfor %}</table></body></html>""",
     rows=rows,partners=partners,counties=COUNTIES,programs=PROGRAMS,statuses=STATUSES,csrf=session["csrf"])
+
+@referrals.get("/<int:referral_id>/matches")
+def show_matches(referral_id):
+    require_admin()
+    from admin_app import connect
+    with connect() as db:
+        referral=db.execute("SELECT external_case_reference FROM housing_referrals WHERE id=?",(referral_id,)).fetchone()
+        if referral is None:
+            abort(404)
+        matches=find_candidates(db,referral_id)
+    return render_template_string("""<!doctype html><html lang="en"><meta charset="utf-8">
+    <title>Candidate Rental Matches</title><body style="font:16px system-ui;max-width:900px;margin:30px auto">
+    <h1>Candidate matches for {{ reference }}</h1><a href="{{ url_for('referrals.list_referrals') }}">Back to referral queue</a>
+    <p>Preliminary matches only. Confirm availability, voucher eligibility, payment standards,
+    utility allowances, rent reasonableness, inspection requirements, and agency approval before making an offer.</p>
+    {% if not matches %}<p>No confirmed-available listings meet all entered criteria. Check rent cap and inventory.</p>{% endif %}
+    <table border="1" cellpadding="8"><tr><th>Listing</th><th>County</th><th>Bedrooms</th><th>Rent</th><th>Last confirmed</th></tr>
+    {% for m in matches %}<tr><td>{{ m.listing_reference }}</td><td>{{ m.county }}</td>
+    <td>{{ m.bedrooms }}</td><td>${{ m.monthly_rent }}</td><td>{{ m.last_confirmed_at or 'Not recorded' }}</td></tr>{% endfor %}
+    </table></body></html>""",reference=referral["external_case_reference"],matches=matches)
 
 @referrals.post("/")
 def create_referral():
