@@ -1,0 +1,42 @@
+{
+  "notice_header": "STATUTORY NOTICE TO REMEDY DEFAULT OR QUIT \u2014 WI",
+  "governing_state_statute": "Wisconsin Statutes \u00a7 704.17 (Notice Terminating Tenancy for Failure to Pay Rent)",
+  "federal_compliance": "Public Law 116-136, Section 4024 (Federal CARES Act 30-Day Notice Mandate Enforced)",
+  "service_details": {
+    "date_of_service": "November 07, 2026",
+    "expiration_deadline": "December 07, 2026",
+    "statutory_cure_window_days": 30
+  },
+  "recipient": {
+    "tenant_name": "Sample Resident WI",
+    "leased_premises": "1500 Crest View Dr, Hudson, WI 54016",
+    "county": "St. Croix"
+  },
+  "landlord_entity": {
+    "company": "Section 8 Rentals and More LLC",
+    "principal": "Dr. Albert Ray LaMotte",
+    "address": "10805 173rd St W, Unit 127, Lakeville, MN 55044",
+    "phone": "(612) 701-7064",
+    "email": "info@Section8RentalsandMore.com"
+  },
+  "section_8_housing_authority_notice": {
+    "rule": "24 CFR \u00a7 982.310(e)(2)(ii) \u2014 Mandatory Landlord Copy to Housing Authority",
+    "pha_code": "WI036",
+    "pha_name": "St. Croix County Housing Authority",
+    "service_requirement": "Concurrent written copy must be transmitted to the PHA case manager."
+  },
+  "financial_accounting": {
+    "total_delinquent_balance_owed": 780.0,
+    "ledger_itemization": [
+      {
+        "month": "November 2026",
+        "item": "Tenant Share of Rent",
+        "amount": 780.0
+      }
+    ]
+  },
+  "state_specific_advisories": {
+    "financial_assistance_disclosure": "You may apply for emergency assistance through Wisconsin Emergency Rental Assistance (WERA) or local CAP agencies.",
+    "remedy_instruction": "You must pay the total outstanding amount of $780.00 on or before December 07, 2026 or vacate the leased premises. Failure to cure will result in formal unlawful detainer/eviction proceedings."
+  }
+}

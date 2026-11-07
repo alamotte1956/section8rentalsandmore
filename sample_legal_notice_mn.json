@@ -1,0 +1,47 @@
+{
+  "notice_header": "STATUTORY NOTICE TO REMEDY DEFAULT OR QUIT \u2014 MN",
+  "governing_state_statute": "Minnesota Statutes \u00a7 504B.321 Subd. 1a (14-Day Pre-Eviction Notice Mandate)",
+  "federal_compliance": "Public Law 116-136, Section 4024 (Federal CARES Act 30-Day Notice Mandate Enforced)",
+  "service_details": {
+    "date_of_service": "November 07, 2026",
+    "expiration_deadline": "December 07, 2026",
+    "statutory_cure_window_days": 30
+  },
+  "recipient": {
+    "tenant_name": "Sample Resident",
+    "leased_premises": "17420 Kenwood Trail, Lakeville, MN 55044",
+    "county": "Dakota"
+  },
+  "landlord_entity": {
+    "company": "Section 8 Rentals and More LLC",
+    "principal": "Dr. Albert Ray LaMotte",
+    "address": "10805 173rd St W, Unit 127, Lakeville, MN 55044",
+    "phone": "(612) 701-7064",
+    "email": "info@Section8RentalsandMore.com"
+  },
+  "section_8_housing_authority_notice": {
+    "rule": "24 CFR \u00a7 982.310(e)(2)(ii) \u2014 Mandatory Landlord Copy to Housing Authority",
+    "pha_code": "MN042",
+    "pha_name": "Dakota County Community Development Agency (CDA)",
+    "service_requirement": "Concurrent written copy must be transmitted to the PHA case manager."
+  },
+  "financial_accounting": {
+    "total_delinquent_balance_owed": 1240.0,
+    "ledger_itemization": [
+      {
+        "month": "October 2026",
+        "item": "Tenant Share of Rent",
+        "amount": 620.0
+      },
+      {
+        "month": "November 2026",
+        "item": "Tenant Share of Rent",
+        "amount": 620.0
+      }
+    ]
+  },
+  "state_specific_advisories": {
+    "financial_assistance_disclosure": "You have the right to seek rent assistance. In Minnesota, you may apply through your local county health and human services department, community action agency, or by calling 211.",
+    "remedy_instruction": "You must pay the total outstanding amount of $1,240.00 on or before December 07, 2026 or vacate the leased premises. Failure to cure will result in formal unlawful detainer/eviction proceedings."
+  }
+}

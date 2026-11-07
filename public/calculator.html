@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FY 2027 Guaranteed Rent Underwriting Calculator | Section 8 Rentals and More LLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f8fafc; color: #0f172a; margin: 0; padding: 24px; }
+    .card { max-width: 640px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+    h2 { margin-top: 0; color: #1e3a8a; }
+    .form-group { margin-bottom: 20px; }
+    label.field-title { font-weight: 600; display: block; margin-bottom: 6px; }
+    select { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 15px; background: #fff; }
+    .util-box { background: #f1f5f9; padding: 14px; border-radius: 8px; border: 1px solid #e2e8f0; }
+    .results { margin-top: 24px; padding: 20px; border-radius: 8px; background: #f8fafc; border-top: 3px solid #2563eb; }
+    .metric { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 15px; }
+    .metric.net { font-size: 20px; font-weight: 700; color: #166534; border-top: 1px solid #cbd5e1; padding-top: 10px; margin-top: 10px; }
+    .metro-sub { font-size: 12px; color: #64748b; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>FY 2027 Section 8 Landlord Rent Calculator</h2>
+    <p style="font-size:14px; color:#475569;">Twin Cities MSA & Western Wisconsin Direct HUD Payment Standard Underwriter</p>
+
+    <div class="form-group">
+      <label class="field-title" for="countySelect">Select County / Jurisdiction:</label>
+      <select id="countySelect"></select>
+      <div id="metroAreaLabel" class="metro-sub"></div>
+    </div>
+
+    <div class="form-group">
+      <label class="field-title" for="bedroomSelect">Bedroom Configuration:</label>
+      <select id="bedroomSelect">
+        <option value="0">Efficiency / Studio (0-BR)</option>
+        <option value="1">1 Bedroom</option>
+        <option value="2" selected>2 Bedroom</option>
+        <option value="3">3 Bedroom</option>
+        <option value="4">4 Bedroom</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="field-title">Tenant-Paid Utilities (Allowances Deducted from Standard):</label>
+      <div id="utilityCheckboxes" class="util-box"></div>
+    </div>
+
+    <div class="results">
+      <div class="metric">
+        <span>Official FY 2027 HUD Standard:</span>
+        <span id="grossStandard">$0</span>
+      </div>
+      <div class="metric">
+        <span>Monthly Utility Allowance:</span>
+        <span id="utilityDeductions">-$0</span>
+      </div>
+      <div class="metric net">
+        <span>Max Box 12 Allowable Contract Rent:</span>
+        <span id="netOwnerRent">$0</span>
+      </div>
+    </div>
+  </div>
+  <script src="calculator.js"></script>
+</body>
+</html>
