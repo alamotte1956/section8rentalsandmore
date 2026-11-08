@@ -3,12 +3,12 @@
   Cache-Control: public, max-age=0, must-revalidate
   Access-Control-Allow-Origin: *
 
-/data/hud_fmr_active_standards.json
+/api/fmr
   Content-Type: application/json; charset=utf-8
   Cache-Control: public, max-age=0, must-revalidate
   Access-Control-Allow-Origin: *
 
-/fmr_2027_client.json
+/api/fmr.json
   Content-Type: application/json; charset=utf-8
   Cache-Control: public, max-age=0, must-revalidate
   Access-Control-Allow-Origin: *
