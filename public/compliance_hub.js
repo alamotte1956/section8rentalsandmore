@@ -91,6 +91,11 @@ function openComplianceModal(propId) {
           <div class="font-bold text-indigo-300">IRS Schedule E & 1099-MISC Report</div>
           <div class="text-[11px] text-slate-400 mt-1">Form 1040 Part I itemization, PHA 1099-MISC reconciliation & expense staging.</div>
         </button>
+      
+        <button onclick="generateSecurityDepositDisposition('${p.id}')" class="p-3.5 text-left rounded-2xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 transition-all">
+          <div class="font-bold text-amber-300">Security Deposit Escrow & 21-Day Notice</div>
+          <div class="text-[11px] text-slate-400 mt-1">MN § 504B.178 1% simple interest calc, WI § 704 itemization & 21-day return statement.</div>
+        </button>
       </div>
 
       <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-[11px] text-slate-500">
