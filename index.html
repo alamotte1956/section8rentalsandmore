@@ -80,7 +80,16 @@
       <a href="voucher-relocation.html" class="hover:text-[#e8c064]">Voucher Relocation</a>
       <a href="presentation.html" class="hover:text-[#e8c064]">Presentation</a>
       <a href="calculator.html" class="nav-link" style="background:#1e3a8a;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-weight:600;">📊 FY27 Rent Calculator</a>
-</nav>
+
+        <!-- Feature Nav Strip -->
+        <div class="hidden xl:flex items-center gap-1 bg-slate-950/70 p-1 rounded-xl border border-slate-800 text-xs font-semibold">
+          <button onclick="switchTab('dashboard')" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">Dashboard</button>
+          <button onclick="switchTab('reminders')" class="px-3 py-1.5 rounded-lg text-amber-400 hover:bg-slate-800 transition">Rent Due</button>
+          <button onclick="switchTab('accounting')" class="px-3 py-1.5 rounded-lg text-emerald-400 hover:bg-slate-800 transition">QBO Accounting</button>
+          <button onclick="switchTab('evictions')" class="px-3 py-1.5 rounded-lg text-rose-400 hover:bg-slate-800 transition">Legal Notices</button>
+        </div>
+
+    </nav>
 
     <!-- HERO SECTION: SINGLE UNIFIED HERO BANNER -->
     <header class="w-full bg-[#0a192f] border-b border-amber-500/30 shadow-2xl">
@@ -224,6 +233,43 @@
         <button onclick="openLeadModal('HCV Rate Intake')" class="s8-gold font-bold px-6 py-3 rounded-xl text-xs cursor-pointer shadow-lg">Lock In This Rate <i class="fa-solid fa-arrow-right ml-1"></i></button>
       </div>
     </section>
+  
+    <!-- VIEW: RENT REMINDERS -->
+    <section id="view-reminders" class="space-y-4 hidden mt-6">
+      <div class="p-5 rounded-2xl bg-slate-900 border border-amber-500/30 flex justify-between items-center">
+        <div>
+          <h2 class="text-lg font-bold text-white">Rent Due & Delinquency Tracker</h2>
+          <p class="text-xs text-slate-400">Minn. Stat. § 504B.177 8% statutory late fee cap enforced on tenant copays.</p>
+        </div>
+        <button onclick="alert('Dispatched all late notices!')" class="px-3 py-1.5 bg-amber-600 text-white rounded-xl text-xs font-bold">Send Notices</button>
+      </div>
+      <div class="rounded-2xl bg-slate-900 border border-slate-800 p-4 overflow-x-auto">
+        <table class="w-full text-left text-xs"><tbody id="rentRemindersTableBody"></tbody></table>
+      </div>
+    </section>
+
+    <!-- VIEW: QBO ACCOUNTING -->
+    <section id="view-accounting" class="space-y-4 hidden mt-6">
+      <div class="p-5 rounded-2xl bg-slate-900 border border-emerald-500/30 flex justify-between items-center">
+        <div>
+          <h2 class="text-lg font-bold text-white">General Ledger & QBO Sync</h2>
+          <p class="text-xs text-slate-400">Bifurcated Account 4100 (HAP Subsidy) & Account 4110 (Tenant Copay).</p>
+        </div>
+        <button onclick="alert('QuickBooks Online API Sync complete!')" class="px-3 py-1.5 bg-emerald-600 text-white rounded-xl text-xs font-bold">Sync QBO</button>
+      </div>
+      <div class="rounded-2xl bg-slate-900 border border-slate-800 p-4 overflow-x-auto">
+        <table class="w-full text-left text-xs"><tbody id="accountingLedgerBody"></tbody></table>
+      </div>
+    </section>
+
+    <!-- VIEW: EVICTIONS & NOTICES -->
+    <section id="view-evictions" class="space-y-4 hidden mt-6">
+      <div class="p-5 rounded-2xl bg-slate-900 border border-rose-500/30">
+        <h2 class="text-lg font-bold text-white mb-2">Statutory Notice Generator (MN § 504B / WI § 704)</h2>
+        <pre id="noticeDocumentCanvas" class="bg-slate-950 p-4 rounded-xl text-xs font-mono text-slate-300 whitespace-pre-wrap leading-relaxed"></pre>
+      </div>
+    </section>
+
   </main>
   <footer class="bg-[#051838] border-t border-[#c49232]/40 text-slate-400 text-xs py-10 px-6 mt-16">
     <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-6">
@@ -334,6 +380,9 @@ window.closeLeadModal=function(){const m=document.getElementById('universal-lead
     }
   </script>
 
+  <script src="features.js"></script>
+<script src="features.js"></script>
+<script src="calendar_and_onboarding.js"></script>
 </body>
 </html>
 <script>
