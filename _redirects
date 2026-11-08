@@ -1,4 +1,4 @@
-# Exact Statutory URL Canonical Aliases
+# Exact Canonical Redirects (No catch-all wildcards)
 /portal            /admin.html                           301
 /login             /index.html                           301
 /forms             /master_legal_forms_compendium.pdf    302
