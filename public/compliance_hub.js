@@ -121,6 +121,11 @@ function openComplianceModal(propId) {
           <div class="font-bold text-fuchsia-300">Form HUD-52665 Voucher Portability</div>
           <div class="text-[11px] text-slate-400 mt-1">Cross-jurisdictional PHA transfers (24 CFR § 982.355) & inter-agency billing packets.</div>
         </button>
+      
+        <button onclick="generateEscrowTrustCertificate('${p.id}')" class="p-3.5 text-left rounded-2xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 transition-all">
+          <div class="font-bold text-emerald-300">Escrow Trust Receipt & 1% Accrual</div>
+          <div class="text-[11px] text-slate-400 mt-1">MN § 504B.178 bank depository disclosure, trust account certification & simple interest tally.</div>
+        </button>
       </div>
 
       <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-[11px] text-slate-500">
