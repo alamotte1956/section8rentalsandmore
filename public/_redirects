@@ -1,15 +1,10 @@
-# Static Asset Passthroughs (Must precede any redirects)
-/master_legal_forms_compendium.pdf    /master_legal_forms_compendium.pdf    200
-/printable_legal_forms_packet.pdf     /printable_legal_forms_packet.pdf     200
-/technical_architecture_spec.pdf      /technical_architecture_spec.pdf      200
-/executive_summary.pdf                /executive_summary.pdf                200
-
-# Canonical Aliases
-/forms          /master_legal_forms_compendium.pdf    302
-/compendium     /master_legal_forms_compendium.pdf    302
-/portal         /admin.html                           301
-/login          /index.html                           301
-/safmr          /admin.html#safmrSection              302
-/ledger         /admin.html#financialSection          302
-/nspire         /admin.html#nspireSection             302
-/api            /admin.html#govApiSection             302
+# Exact Statutory URL Canonical Aliases
+/portal            /admin.html                           301
+/login             /index.html                           301
+/forms             /master_legal_forms_compendium.pdf    302
+/compendium        /master_legal_forms_compendium.pdf    302
+/packet            /printable_legal_forms_packet.pdf     302
+/safmr             /admin.html#safmrSection              302
+/ledger            /admin.html#financialSection          302
+/nspire            /admin.html#nspireSection             302
+/api               /admin.html#govApiSection             302
