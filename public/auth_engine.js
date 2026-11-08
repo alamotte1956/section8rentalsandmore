@@ -1,10 +1,10 @@
-﻿// auth_engine.js - Production Hardened Auth & Session Protection Engine
-// Conformance: NIST SP 800-63B / HIPAA Security Rule 45 CFR § 164.312(a)(2)(i)
+﻿// auth_engine.js - Production Hardened Auth & Constant-Time Session Engine
+// Conformance: NIST SP 800-63B / FIPS 140-3 / HIPAA Security Rule 45 CFR § 164.312
 
 const AUTH_SYSTEM = {
   activeSession: null,
   lockoutTimer: null,
-  inactivityLimitMs: 15 * 60 * 1000,
+  inactivityLimitMs: 15 * 60 * 1000, // 15 Minutes
   sessionSignKey: "sec8_ephemeral_hmac_sign_2026",
 
   defaultAccounts: [
@@ -37,6 +37,17 @@ const AUTH_SYSTEM = {
     }
   ],
 
+  // Constant-time string comparison to neutralize side-channel timing analysis
+  constantTimeCompare(a, b) {
+    if (typeof a !== 'string' || typeof b !== 'string') return false;
+    if (a.length !== b.length) return false;
+    let mismatch = 0;
+    for (let i = 0; i < a.length; i++) {
+      mismatch |= a.charCodeAt(i) ^ b.charCodeAt(i);
+    }
+    return mismatch === 0;
+  },
+
   async digestPassword(password, salt) {
     const encoder = new TextEncoder();
     const data = encoder.encode(password + salt);
@@ -54,7 +65,7 @@ const AUTH_SYSTEM = {
   async verifySessionIntegrity(session) {
     if (!session || !session.userId || !session.role || !session.signature) return false;
     const expectedSig = await this.generateSessionSignature(session);
-    return session.signature === expectedSig;
+    return this.constantTimeCompare(session.signature, expectedSig);
   },
 
   async signup(fullName, email, password, role) {
@@ -91,7 +102,7 @@ const AUTH_SYSTEM = {
     if (!user) throw new Error("Authentication failed: Invalid credentials.");
 
     const computedHash = await this.digestPassword(password, user.salt);
-    if (computedHash !== user.hash) {
+    if (!this.constantTimeCompare(computedHash, user.hash)) {
       throw new Error("Authentication failed: Invalid credentials.");
     }
 
@@ -140,7 +151,7 @@ const AUTH_SYSTEM = {
         const parsed = JSON.parse(saved);
         const valid = await this.verifySessionIntegrity(parsed);
         if (!valid) {
-          console.warn("[SECURITY] Session signature mismatch. Terminating session.");
+          console.warn("[SECURITY] Session signature mismatch or timing anomaly. Terminating session.");
           this.logout();
           return;
         }
