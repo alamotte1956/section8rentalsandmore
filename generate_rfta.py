@@ -230,3 +230,5 @@ if __name__ == "__main__":
     print(f"  • 40% Burden Test:   {tests['cfr_982_508_initial_rent_burden_test']['status']}")
     print(f"  • Rent Reasonable:   {tests['cfr_982_507_rent_reasonableness_test']['status']}")
     print("=" * 80)
+import sys
+sys.exit(0)
