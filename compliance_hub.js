@@ -126,6 +126,11 @@ function openComplianceModal(propId) {
           <div class="font-bold text-emerald-300">Escrow Trust Receipt & 1% Accrual</div>
           <div class="text-[11px] text-slate-400 mt-1">MN § 504B.178 bank depository disclosure, trust account certification & simple interest tally.</div>
         </button>
+      
+        <button onclick="generateReasonableAccommodationPacket('${p.id}')" class="p-3.5 text-left rounded-2xl bg-teal-500/10 hover:bg-teal-500/20 border border-teal-500/30 transition-all">
+          <div class="font-bold text-teal-300">Fair Housing Reasonable Accommodation</div>
+          <div class="text-[11px] text-slate-400 mt-1">42 U.S.C. § 3604 assistance animal fee waiver, 24 CFR Part 8 determination & approval cert.</div>
+        </button>
       </div>
 
       <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-[11px] text-slate-500">
