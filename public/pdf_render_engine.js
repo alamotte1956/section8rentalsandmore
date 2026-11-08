@@ -1,195 +1,225 @@
+// pdf_truncation_fix.js - Universal Zero-Truncation Layout & Print Normalizer
+// Fixes viewport clipping, orphaned signatures, and horizontal overset lines
 
-// pdf_render_engine.js - Precision Print Stylesheet & Fixed-Page Layout Engine
-// Enforces 8.5in x 11in page geometry, inner gutter margins, and clean break boundaries
-
-const PRINT_CSS = `
+const STRICT_ZERO_TRUNCATION_CSS = `
 @media print {
   @page {
     size: letter portrait;
-    margin: 0.75in 0.5in 0.75in 0.75in; /* 0.75in inner binding gutter */
+    margin-left: 0.75in !important;   /* 54pt court binding gutter */
+    margin-right: 0.50in !important;  /* 36pt outer trim */
+    margin-top: 0.75in !important;    /* 54pt top clearance */
+    margin-bottom: 0.75in !important; /* 54pt bottom clearance */
   }
 
-  body {
+  html, body {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
     background: #ffffff !important;
     color: #000000 !important;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 10pt;
-    line-height: 1.45;
-    margin: 0 !important;
-    padding: 0 !important;
+    font-family: "Times New Roman", Times, Georgia, serif !important;
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
   }
 
-  /* Structural Page Container */
-  .pdf-page-container {
+  /* Prevent browser viewports from clipping long documents */
+  .page-sheet, .pdf-page-container, #printRoot, pre, table {
+    overflow: visible !important;
+    float: none !important;
+    position: static !important;
+    max-height: none !important;
+  }
+
+  /* Table protection: prevent severed rows across page breaks */
+  table {
     width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box;
+    border-collapse: collapse !important;
+    page-break-inside: auto;
   }
 
-  /* Page Break Management */
-  .page-break-after {
-    page-break-after: always;
-    break-after: page;
-  }
-
-  .avoid-break, table, tr, figure, blockquote, .signature-block, .exhibit-panel {
+  tr {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
 
-  /* Table Grid Cleanliness */
-  table.print-table {
-    width: 100% !important;
-    border-collapse: collapse !important;
-    margin-top: 12pt;
-    margin-bottom: 12pt;
-  }
-
-  table.print-table th, table.print-table td {
-    border: 1px solid #1e293b !important;
-    padding: 6pt 8pt !important;
-    font-size: 9pt !important;
-    text-align: left;
-  }
-
-  table.print-table th {
-    background-color: #f1f5f9 !important;
-    color: #0f172a !important;
-    font-weight: 700 !important;
-    text-transform: uppercase;
-    font-size: 8pt !important;
-  }
-
-  /* Legal Monospace Staging */
-  pre.legal-mono {
-    font-family: "Courier New", Courier, monospace !important;
+  th, td {
+    padding: 5pt 6pt !important;
     font-size: 8.5pt !important;
-    line-height: 1.35 !important;
-    white-space: pre-wrap !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Orphan & signature line defense */
+  .signature-block, .avoid-break, .keep-together, .exhibit-box {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  h1, h2, h3, h4 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  /* Monospace wrap defense */
+  pre.legal-mono, pre.untruncated-mono {
+    font-family: "Courier New", Courier, monospace !important;
+    font-size: 7.5pt !important;
+    line-height: 1.25 !important;
+    white-space: pre-wrap !important;       /* CSS3 word-wrap */
+    word-wrap: break-word !important;
     word-break: break-all !important;
-    border: none !important;
-    padding: 0 !important;
+    overflow: visible !important;
     margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
   }
 
-  /* Header & Footer Anchors */
-  .running-header {
-    border-bottom: 1px solid #cbd5e1;
-    padding-bottom: 4pt;
-    margin-bottom: 12pt;
-    font-size: 8pt;
-    color: #64748b;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .running-footer {
-    border-top: 1px solid #cbd5e1;
-    padding-top: 4pt;
-    margin-top: 16pt;
-    font-size: 8pt;
-    color: #64748b;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  /* Hide Web UI Chrome */
+  /* Hide screen-only interactive elements */
   nav, button, .no-print, #nav-compliance-btn, #complianceHubModal, #marketingModal {
     display: none !important;
   }
 }
 `;
 
-function injectPrintStyles() {
-  if (document.getElementById('pdf-print-stylesheet')) return;
-  const style = document.createElement('style');
-  style.id = 'pdf-print-stylesheet';
-  style.textContent = PRINT_CSS;
-  document.head.appendChild(style);
+// Injects defensive CSS rules into current DOM
+function injectZeroTruncationStyles() {
+  let styleEl = document.getElementById('zero-truncation-stylesheet');
+  if (!styleEl) {
+    styleEl = document.createElement('style');
+    styleEl.id = 'zero-truncation-stylesheet';
+    styleEl.textContent = STRICT_ZERO_TRUNCATION_CSS;
+    document.head.appendChild(styleEl);
+  }
 }
 
-// Universal formatted print window generator
-function openFormattedPdfPrintWindow(title, subtitle, bodyHtml, isMonospace = false) {
-  injectPrintStyles();
+// Pre-wraps plain monospace text to a strict character width before rendering
+function wrapMonospaceText(text, maxChars = 78) {
+  if (!text) return '';
+  const lines = text.split('\n');
+  const wrapped = [];
 
+  for (let line of lines) {
+    if (line.length <= maxChars) {
+      wrapped.push(line);
+    } else {
+      while (line.length > maxChars) {
+        let splitIdx = line.lastIndexOf(' ', maxChars);
+        if (splitIdx === -1 || splitIdx < maxChars - 15) {
+          splitIdx = maxChars;
+        }
+        wrapped.push(line.substring(0, splitIdx));
+        line = line.substring(splitIdx).trimStart();
+      }
+      if (line.length > 0) wrapped.push(line);
+    }
+  }
+  return wrapped.join('\n');
+}
+
+// Universal print pipeline replacement
+function openFormattedPdfPrintWindow(title, subtitle, bodyContent, isMonospace = false) {
   const printWindow = window.open('', '_blank');
   if (!printWindow) {
-    alert('Pop-up blocked. Please allow pop-ups for this domain to generate PDFs.');
+    alert("Pop-up blocked. Please permit pop-ups to open full vector print documents.");
     return;
   }
 
+  const cleanContent = isMonospace ? wrapMonospaceText(bodyContent, 78) : bodyContent;
   const timestamp = new Date().toLocaleString();
-  const documentHtml = `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <title>${title}</title>
-      <style>${PRINT_CSS}</style>
-      <style>
-        /* Screen preview styling matching physical print paper */
-        body {
-          background-color: #0f172a;
-          padding: 24px;
-          display: flex;
-          justify-content: center;
-        }
-        .page-sheet {
-          background: #ffffff;
-          width: 8.5in;
-          min-height: 11in;
-          padding: 0.75in 0.5in 0.75in 0.75in;
-          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
-          box-sizing: border-box;
-          color: #000000;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-        @media print {
-          body { background: transparent; padding: 0; }
-          .page-sheet { width: 100%; min-height: auto; box-shadow: none; padding: 0; }
-        }
-      </style>
-    </head>
-    <body>
-      <div class="page-sheet">
-        <div class="running-header">
-          <span>Section 8 Rentals and More LLC • Statutory Compliance Record</span>
-          <span>${title}</span>
-        </div>
 
-        <div style="margin-bottom: 14pt;">
-          <h1 style="font-size: 14pt; margin: 0; font-weight: 800; text-transform: uppercase;">${title}</h1>
-          <p style="font-size: 9pt; color: #475569; margin: 2pt 0 0 0;">${subtitle}</p>
-        </div>
+  const printDocumentHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>${title}</title>
+  <style>${STRICT_ZERO_TRUNCATION_CSS}</style>
+  <style>
+    /* Screen presentation mimicking physical paper */
+    body {
+      background-color: #0f172a;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+    }
+    .page-sheet {
+      background: #ffffff;
+      width: 8.5in;
+      min-height: 11in;
+      padding: 0.75in 0.50in 0.75in 0.75in;
+      box-sizing: border-box;
+      color: #000000;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+    .running-header {
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 4pt;
+      margin-bottom: 12pt;
+      font-size: 8pt;
+      color: #64748b;
+      display: flex;
+      justify-content: space-between;
+      text-transform: uppercase;
+      font-family: sans-serif;
+    }
+    .running-footer {
+      border-top: 1px solid #cbd5e1;
+      padding-top: 4pt;
+      margin-top: 16pt;
+      font-size: 8pt;
+      color: #64748b;
+      display: flex;
+      justify-content: space-between;
+      font-family: sans-serif;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    @media print {
+      body { background: transparent; padding: 0; }
+      .page-sheet { width: 100%; min-height: auto; box-shadow: none; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-sheet">
+    <div class="running-header">
+      <span>Section 8 Rentals and More LLC • Statutory Record</span>
+      <span>${title}</span>
+    </div>
 
-        ${isMonospace 
-          ? `<pre class="legal-mono">${bodyHtml}</pre>` 
-          : `<div class="pdf-page-container">${bodyHtml}</div>`
-        }
+    <div style="margin-bottom: 12pt;">
+      <h1 style="font-size: 14pt; margin: 0; font-weight: bold; text-transform: uppercase; font-family: serif;">${title}</h1>
+      <p style="font-size: 8.5pt; color: #475569; margin: 2pt 0 0 0; font-family: sans-serif;">${subtitle}</p>
+    </div>
 
-        <div class="running-footer avoid-break">
-          <span>Certified Record Token: [SEC8-DOC-${Date.now().toString().slice(-8)}]</span>
-          <span>Rendered: ${timestamp}</span>
-        </div>
-      </div>
+    ${isMonospace 
+      ? `<pre class="untruncated-mono">${cleanContent}</pre>` 
+      : `<div class="pdf-page-container">${cleanContent}</div>`
+    }
 
-      <script>
-        window.addEventListener('load', () => {
-          setTimeout(() => {
-            window.print();
-          }, 250);
-        });
-      </script>
-    </body>
-    </html>
-  `;
+    <div class="running-footer avoid-break">
+      <span>Certified Compliance Docket • Single-Line Header Gutter Geometry</span>
+      <span>Rendered: ${timestamp}</span>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        window.print();
+      }, 250);
+    });
+  </script>
+</body>
+</html>`;
 
   printWindow.document.open();
-  printWindow.document.write(documentHtml);
+  printWindow.document.write(printDocumentHtml);
   printWindow.document.close();
 }
 
-window.injectPrintStyles = injectPrintStyles;
+window.injectZeroTruncationStyles = injectZeroTruncationStyles;
+window.wrapMonospaceText = wrapMonospaceText;
 window.openFormattedPdfPrintWindow = openFormattedPdfPrintWindow;
+
+document.addEventListener('DOMContentLoaded', injectZeroTruncationStyles);
