@@ -111,6 +111,11 @@ function openComplianceModal(propId) {
           <div class="font-bold text-rose-300">Emergency Trade Dispatch (P1)</div>
           <div class="text-[11px] text-slate-400 mt-1">Priority 1 contractor work order with photo proof staging for HUD-52580.</div>
         </button>
+      
+        <button onclick="generateRentIncreaseNotice('${p.id}')" class="p-3.5 text-left rounded-2xl bg-violet-500/10 hover:bg-violet-500/20 border border-violet-500/30 transition-all">
+          <div class="font-bold text-violet-300">HUD 60-Day Rent Increase Notice</div>
+          <div class="text-[11px] text-slate-400 mt-1">24 CFR § 982.507 / PIH 2023-27 notice with SAFMR justification & renewal terms.</div>
+        </button>
       </div>
 
       <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-[11px] text-slate-500">
