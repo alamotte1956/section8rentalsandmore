@@ -116,6 +116,11 @@ function openComplianceModal(propId) {
           <div class="font-bold text-violet-300">HUD 60-Day Rent Increase Notice</div>
           <div class="text-[11px] text-slate-400 mt-1">24 CFR § 982.507 / PIH 2023-27 notice with SAFMR justification & renewal terms.</div>
         </button>
+      
+        <button onclick="generatePortabilityPacket('${p.id}', 'Ramsey')" class="p-3.5 text-left rounded-2xl bg-fuchsia-500/10 hover:bg-fuchsia-500/20 border border-fuchsia-500/30 transition-all">
+          <div class="font-bold text-fuchsia-300">Form HUD-52665 Voucher Portability</div>
+          <div class="text-[11px] text-slate-400 mt-1">Cross-jurisdictional PHA transfers (24 CFR § 982.355) & inter-agency billing packets.</div>
+        </button>
       </div>
 
       <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-[11px] text-slate-500">
