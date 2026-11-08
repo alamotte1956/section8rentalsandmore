@@ -551,4 +551,21 @@ Confirmation copy dispatched to: ${email}`);
 <script src="aws_cloud_bridge.js"></script>
 <script src="marketing_distribution_engine.js"></script>
 <script src="tenant_portal_engine.js"></script>
-<script src="court_pleadings_engine.js"></script>\n</body></html>
+<script src="court_pleadings_engine.js"></script>\n
+  <script>
+    // Listen for hash triggers in URL
+    function handleUrlHashTriggers() {
+      const hash = window.location.hash;
+      if (!hash) return;
+      if (hash === '#compliance-hub' && typeof window.openComplianceHubModal === 'function') window.openComplianceHubModal();
+      if (hash === '#state-api-cert' && typeof window.openStateCertificationModal === 'function') window.openStateCertificationModal();
+      if (hash === '#qbo-sync' && typeof window.openQboSyncModal === 'function') window.openQboSyncModal();
+      if (hash === '#statutory-calendar' && typeof window.openComplianceCalendarModal === 'function') window.openComplianceCalendarModal();
+      if (hash === '#hipaa-vault' && typeof window.openHipaaVerificationModal === 'function') window.openHipaaVerificationModal();
+      if (hash === '#marketing-distribution' && typeof window.openMarketingDistributionModal === 'function') window.openMarketingDistributionModal();
+    }
+    window.addEventListener('DOMContentLoaded', handleUrlHashTriggers);
+    window.addEventListener('hashchange', handleUrlHashTriggers);
+  </script>
+</body>
+</html>

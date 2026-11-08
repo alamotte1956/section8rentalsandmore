@@ -287,6 +287,60 @@
     </div>
   </section>
 
+  
+  <!-- Anchor Section Targets -->
+  <section id="landlord-funnel" class="py-12 px-4 max-w-6xl mx-auto border-t border-slate-800">
+    <div class="glass-card p-8 rounded-3xl space-y-4">
+      <div class="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase">
+        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span> Property Owner Guarantee
+      </div>
+      <h2 class="text-2xl font-bold text-white">Guaranteed Direct Deposit Sovereign Rent for Property Owners</h2>
+      <p class="text-sm text-slate-300 leading-relaxed">
+        Stop chasing rent. Section 8 Housing Choice Vouchers disburse 70% to 100% of contract rent via direct electronic sovereign deposit on the first of every month directly from Hennepin, Ramsey, Dakota, and Anoka county housing authorities.
+      </p>
+      <button onclick="openLoginModal()" class="px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs">Access Owner Portal</button>
+    </div>
+  </section>
+
+  <section id="tenant-funnel" class="py-12 px-4 max-w-6xl mx-auto border-t border-slate-800">
+    <div class="glass-card p-8 rounded-3xl space-y-4">
+      <div class="flex items-center gap-2 text-emerald-400 font-mono text-xs font-bold uppercase">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> Voucher Resident Intake
+      </div>
+      <h2 class="text-2xl font-bold text-white">Section 8 Housing Choice Voucher Resident Intake & Fast Placement</h2>
+      <p class="text-sm text-slate-300 leading-relaxed">
+        We expedite RFTA packet submission (HUD Form 52517) and pre-inspect properties to guarantee passage under HUD NSPIRE physical habitability standards.
+      </p>
+      <button onclick="openLoginModal()" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs">Resident Voucher Login</button>
+    </div>
+  </section>
+
+  <section id="broker-funnel" class="py-12 px-4 max-w-6xl mx-auto border-t border-slate-800">
+    <div class="glass-card p-8 rounded-3xl space-y-4">
+      <div class="flex items-center gap-2 text-amber-400 font-mono text-xs font-bold uppercase">
+        <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Broker & Realtor Syndication
+      </div>
+      <h2 class="text-2xl font-bold text-white">Real Estate Agent & Broker Client Referral Program</h2>
+      <p class="text-sm text-slate-300 leading-relaxed">
+        Refer client rental assets or voucher holders for placement across the Twin Cities metro area with full statutory protection and lease execution assistance.
+      </p>
+      <button onclick="openLoginModal()" class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs">Broker Registration</button>
+    </div>
+  </section>
+
+  <section id="investor-funnel" class="py-12 px-4 max-w-6xl mx-auto border-t border-slate-800">
+    <div class="glass-card p-8 rounded-3xl space-y-4">
+      <div class="flex items-center gap-2 text-purple-400 font-mono text-xs font-bold uppercase">
+        <span class="w-2.5 h-2.5 rounded-full bg-purple-400"></span> Institutional Turnkey Portfolios
+      </div>
+      <h2 class="text-2xl font-bold text-white">Turnkey Section 8 Investment Portfolio Acquisition</h2>
+      <p class="text-sm text-slate-300 leading-relaxed">
+        Acquire cash-flowing single-family and multifamily properties structured under 2026 Small Area Fair Market Rent standards with audited 1% escrow interest compliance.
+      </p>
+      <button onclick="openLoginModal()" class="px-5 py-2.5 rounded-xl bg-purple-500 hover:bg-purple-400 text-white font-bold text-xs">Investor Inquiries</button>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer id="contact" class="py-12 px-4 border-t border-slate-800 text-xs text-slate-400 bg-brand-950">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
@@ -421,5 +475,22 @@
       }
     });
   </script>
+
+  <script>
+    // Listen for hash triggers in URL
+    function handleUrlHashTriggers() {
+      const hash = window.location.hash;
+      if (!hash) return;
+      if (hash === '#compliance-hub' && typeof window.openComplianceHubModal === 'function') window.openComplianceHubModal();
+      if (hash === '#state-api-cert' && typeof window.openStateCertificationModal === 'function') window.openStateCertificationModal();
+      if (hash === '#qbo-sync' && typeof window.openQboSyncModal === 'function') window.openQboSyncModal();
+      if (hash === '#statutory-calendar' && typeof window.openComplianceCalendarModal === 'function') window.openComplianceCalendarModal();
+      if (hash === '#hipaa-vault' && typeof window.openHipaaVerificationModal === 'function') window.openHipaaVerificationModal();
+      if (hash === '#marketing-distribution' && typeof window.openMarketingDistributionModal === 'function') window.openMarketingDistributionModal();
+    }
+    window.addEventListener('DOMContentLoaded', handleUrlHashTriggers);
+    window.addEventListener('hashchange', handleUrlHashTriggers);
+  </script>
 </body>
+
 </html>
