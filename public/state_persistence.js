@@ -1,17 +1,19 @@
-// state_persistence.js - Secured Multi-County Portfolio State & XSS-Sanitized DOM Renderer
+// state_persistence.js - Secured Multi-County State & XSS-Protected UI Sync
 (function() {
   'use strict';
 
   function escapeHTML(str) {
     if (typeof str !== 'string') return String(str || '');
-    return str.replace(/[&<>'"]/g, tag => ({
+    return str.replace(/[&<>'"]/g, t => ({
       '&': '&amp;',
       '<': '&lt;',
       '>': '&gt;',
       "'": '&#39;',
       '"': '&quot;'
-    }[tag] || tag));
+    }[t] || t));
   }
+
+  window.escapeHTML = escapeHTML;
 
   window.state = {
     properties: [
@@ -88,27 +90,26 @@
     ]
   };
 
-  // Statutory Late Fee Calculator (Enforces Minn. Stat. § 504B.177 & Wis. Stat. Ch. 704)
+  // Statutory Late Fee Calculator (Enforces Minn. Stat. § 504B.177 8% Cap on Tenant Copay Only)
   window.calculateStatutoryLateFee = function(copay) {
     const copayVal = parseFloat(copay) || 0;
     const maxFee = Math.round((copayVal * 0.08) * 100) / 100;
     return {
-      allowed: true,
+      allowed: copayVal > 0,
       maxLateFee: maxFee,
-      ruleCitation: "Minn. Stat. § 504B.177 restricts late fees to a strict 8% maximum of tenant copay portion only."
+      ruleCitation: "Minn. Stat. § 504B.177: Late fee capped at 8% of tenant copay portion only ($0 if 100% subsidized)."
     };
   };
 
   window.renderAdminPortfolioGrid = function() {
     const tbody = document.getElementById("adminPropertyTableBody");
     if (!tbody || !window.state || !Array.isArray(window.state.properties)) return;
-    
-    // Direct DOM construction avoiding unsanitized HTML injections
+
     tbody.innerHTML = "";
     window.state.properties.forEach(p => {
       const tr = document.createElement("tr");
       tr.className = "hover:bg-slate-900/50 transition-colors";
-      
+
       const safeAddr = escapeHTML(p.address);
       const safeCity = escapeHTML(p.city);
       const safeState = escapeHTML(p.state);
@@ -134,5 +135,9 @@
     });
   };
 
-  document.addEventListener("DOMContentLoaded", window.renderAdminPortfolioGrid);
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.getElementById("adminPropertyTableBody")) {
+      window.renderAdminPortfolioGrid();
+    }
+  });
 })();
