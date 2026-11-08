@@ -270,7 +270,24 @@
       </div>
     </section>
 
-  </main>
+  
+<section id="view-team" class="space-y-4 hidden mt-6">
+  <div class="p-5 rounded-2xl bg-slate-900 border border-indigo-500/30 flex justify-between items-center">
+    <h2 class="text-lg font-bold text-white">Operations Staff & Manager Console</h2>
+  </div>
+  <div class="rounded-2xl bg-slate-900 border border-slate-800 p-4">
+    <table class="w-full text-left text-xs"><tbody id="assignedManagersTableBody"></tbody></table>
+  </div>
+</section>
+<section id="view-reports" class="space-y-4 hidden mt-6">
+  <div class="p-5 rounded-2xl bg-slate-900 border border-amber-500/30 flex justify-between items-center">
+    <h2 class="text-lg font-bold text-white">IRS Schedule E & Staged Tax Statements</h2>
+    <button onclick="printFormattedReport()" class="px-3.5 py-1.5 bg-amber-600 text-white rounded-xl text-xs font-bold">Print Report</button>
+  </div>
+  <pre id="stagedReportCanvas" class="bg-slate-950 p-4 rounded-xl text-xs font-mono text-slate-300"></pre>
+</section>
+
+</main>
   <footer class="bg-[#051838] border-t border-[#c49232]/40 text-slate-400 text-xs py-10 px-6 mt-16">
     <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-6">
       <div class="flex items-center gap-3">
@@ -383,6 +400,7 @@ window.closeLeadModal=function(){const m=document.getElementById('universal-lead
   <script src="features.js"></script>
 <script src="features.js"></script>
 <script src="calendar_and_onboarding.js"></script>
+<script src="team_and_taxes.js"></script>
 </body>
 </html>
 <script>
