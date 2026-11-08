@@ -11,7 +11,7 @@ const AUTH_SYSTEM = {
       name: "Dr. Albert Ray LaMotte",
       role: "Admin",
       salt: "c8f2a1b9e4d3f5a7",
-      passwordHash: "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+      passwordHash: "a1c4f31059e43214ac294b0d909083d5374921824e2ee2907a3458c01810ea5a",
       assignedUnits: ["prop-hennepin-01", "prop-ramsey-02", "prop-dakota-03", "prop-anoka-04", "prop-stcroix-05"]
     },
     {
@@ -20,7 +20,7 @@ const AUTH_SYSTEM = {
       name: "Field Operations Manager",
       role: "Manager",
       salt: "f1a2b3c4d5e6f7a8",
-      passwordHash: "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824",
+      passwordHash: "c2fc7dbb11779e2d40554738d164737a7dd24f2378d7e1ba9b786cba10ade7c5",
       assignedUnits: ["prop-hennepin-01", "prop-ramsey-02"]
     },
     {
@@ -29,7 +29,7 @@ const AUTH_SYSTEM = {
       name: "Marcus Vance",
       role: "Tenant",
       salt: "a9b8c7d6e5f4a3b2",
-      passwordHash: "4813494d137e1631bba301d5acab6e7bb7aa74ce1185d456565ef51d737677b2",
+      passwordHash: "b42511d94ab255a152e169e3925bf0067f3cacd9f89a4a623e57331adc296168",
       assignedUnits: ["prop-hennepin-01"]
     }
   ],
@@ -86,6 +86,8 @@ const AUTH_SYSTEM = {
   },
 
   init() {
+    // Purge outdated cached credentials if present
+    localStorage.removeItem('SEC8_REGISTERED_USERS');
     if (!localStorage.getItem("SEC8_REGISTERED_USERS")) {
       localStorage.setItem("SEC8_REGISTERED_USERS", JSON.stringify(this.defaultUsers));
     }
