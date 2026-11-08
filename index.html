@@ -1,453 +1,424 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-    <script id="hud-live-standards">
-    window.HUD_FMR_DATA = {"source": "HUD User Programmatic Dataset (MSP Metro FMR Area)", "verified_metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area", "years": {"2026": {"Dakota County, MN": {"efficiency": 1242, "one_bed": 1405, "two_bed": 1709, "three_bed": 2262, "four_bed": 2531}, "Hennepin County, MN": {"efficiency": 1242, "one_bed": 1405, "two_bed": 1709, "three_bed": 2262, "four_bed": 2531}, "Ramsey County, MN": {"efficiency": 1242, "one_bed": 1405, "two_bed": 1709, "three_bed": 2262, "four_bed": 2531}, "St. Croix County, WI": {"efficiency": 1242, "one_bed": 1405, "two_bed": 1709, "three_bed": 2262, "four_bed": 2531}}, "2027": {"Dakota County, MN": {"efficiency": 1304, "one_bed": 1475, "two_bed": 1794, "three_bed": 2375, "four_bed": 2658}, "Hennepin County, MN": {"efficiency": 1304, "one_bed": 1475, "two_bed": 1794, "three_bed": 2375, "four_bed": 2658}, "Ramsey County, MN": {"efficiency": 1304, "one_bed": 1475, "two_bed": 1794, "three_bed": 2375, "four_bed": 2658}, "St. Croix County, WI": {"efficiency": 1304, "one_bed": 1475, "two_bed": 1794, "three_bed": 2375, "four_bed": 2658}}}};
-  </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Section 8 Rentals and More LLC | Twin Cities HCV Property Authority</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 8 Rentals and More LLC | Twin Cities & Western Wisconsin</title>
+  <meta name="description" content="Turnkey Housing Choice Voucher asset management, statutory compliance, and sovereign rental income across MN & WI.">
+  
+  <!-- Tailwind CSS CDN & Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    :root { --s8-navy: #051838; --s8-card: #0c2957; --s8-gold-bright: #e8c064; --s8-gold-dark: #c49232; }
-    body { background-color: #051838 !important; color: #e2e8f0; font-family: system-ui, sans-serif; }
-    .s8-gold { background: linear-gradient(135deg, #e8c064 0%, #c49232 100%) !important; color: #051838 !important; }
-    .s8-card { background-color: #0c2957 !important; border: 1px solid rgba(196, 146, 50, 0.35) !important; }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="canonical" href="https://www.section8rentalsandmore.com/" />
-    <meta name="geo.region" content="US-MN" />
-    <meta name="geo.placename" content="Lakeville, Minnesota" />
-    <meta name="geo.position" content="44.6496;-93.2427" />
-    <meta name="ICBM" content="44.6496, -93.2427" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Section 8 Rentals & More | Guaranteed Rent & Property Management MN & WI" />
-    <meta property="og:description" content="Maximize yields with guaranteed government-backed Section 8 tenancy across Lakeville, Minneapolis, St. Paul, and Western Wisconsin." />
-    <meta property="og:url" content="https://www.section8rentalsandmore.com/" />
-    <meta property="og:site_name" content="Section 8 Rentals and More LLC" />
-    <meta property="og:image" content="https://www.section8rentalsandmore.com/hero-banner.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Section 8 Rentals & More | Guaranteed Rent & Property Management MN & WI" />
-    <meta name="twitter:description" content="Maximize yields with guaranteed government-backed Section 8 tenancy across Lakeville, Minneapolis, St. Paul, and Western Wisconsin." />
-    <meta name="twitter:image" content="https://www.section8rentalsandmore.com/hero-banner.png" />
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "RealEstateAgent",
-      "@id": "https://www.section8rentalsandmore.com/#organization",
-      "name": "Section 8 Rentals and More LLC",
-      "legalName": "Section 8 Rentals and More LLC",
-      "url": "https://www.section8rentalsandmore.com",
-      "logo": "https://www.section8rentalsandmore.com/hero-banner.png",
-      "telephone": "+1-612-701-7064",
-      "email": "info@Section8RentalsandMore.com",
-      "description": "Section 8 and HCV property management, guaranteed rent underwriting, and NSPIRE compliance across the Twin Cities metro and Western Wisconsin.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "10805 173rd St W, Unit 127",
-        "addressLocality": "Lakeville",
-        "addressRegion": "MN",
-        "postalCode": "55044",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 44.6496,
-        "longitude": -93.2427
-      },
-      "areaServed": ["Dakota County", "Hennepin County", "Ramsey County", "Anoka County", "Washington County", "St. Croix County", "Lakeville", "Minneapolis", "Saint Paul", "Hudson"],
-      "priceRange": "$$"
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            serif: ['"Playfair Display"', 'serif']
+          },
+          colors: {
+            brand: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
+              accent: '#38bdf8',
+              gold: '#fbbf24'
+            }
+          }
+        }
+      }
     }
-    </script>
-<script src="state_persistence.js"></script>
-<script src="pdf_render_engine.js"></script>
-<script src="regulatory_policy_engine.js"></script>
-<script src="rbac_manager_engine.js"></script>
-<script src="pdf_truncation_fix.js"></script>
-<script src="hipaa_phi_vault_engine.js"></script>
-<script src="inspection_calendar_engine.js"></script>
-<script src="qbo_sync_engine.js"></script>
-<script src="pha_notice_conduit.js"></script>
-<script src="portfolio_sanitizer.js"></script>
+  </script>
+
+  <!-- Modular Security, Compliance & Concurrency Engines -->
+  <script src="state_persistence.js"></script>
+  <script src="auth_engine.js"></script>
+  <script src="concurrency_engine.js"></script>
+  <script src="rbac_manager_engine.js"></script>
+  <script src="regulatory_policy_engine.js"></script>
+  <script src="hipaa_phi_vault_engine.js"></script>
+  <script src="compliance_hub.js"></script>
+  <script src="pdf_truncation_fix.js"></script>
+  <script src="qbo_sync_engine.js"></script>
+  <script src="pha_notice_conduit.js"></script>
+  <script src="inspection_calendar_engine.js"></script>
+
+  <style>
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .hero-glow {
+      background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+    }
+  </style>
 </head>
-<body class="min-h-screen flex flex-col">
-  <header class="bg-[#051838] border-b border-[#c49232]/40 sticky top-0 z-50 px-6 py-4 flex flex-wrap justify-between items-center shadow-xl">
-    <a href="index.html" class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-lg s8-gold flex items-center justify-center font-black text-xl shadow-md">S8</div>
-      <div>
-        <h1 class="text-lg font-black text-white">Section 8 Rentals & More <span class="text-[#e8c064]">LLC</span></h1>
-        <p class="text-xs text-slate-400">Lakeville, MN | Twin Cities & Western WI</p>
+<body class="bg-brand-950 text-slate-100 font-sans antialiased min-h-screen selection:bg-cyan-500 selection:text-black">
+
+  <!-- Top Sticky Navigation Bar -->
+  <nav class="sticky top-0 z-40 bg-brand-950/85 backdrop-blur-md border-b border-slate-800/80 px-4 lg:px-8 py-3.5 transition-all">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Brand Identity -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 to-sky-400 flex items-center justify-center font-bold text-white shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          §8
+        </div>
+        <div>
+          <span class="text-base font-extrabold tracking-tight text-white block leading-tight">Section 8 Rentals and More</span>
+          <span class="text-[10px] font-mono tracking-wider text-cyan-400 uppercase font-semibold">LLC • MN & WI Sovereign Housing</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-300">
+        <a href="#about" class="hover:text-cyan-400 transition-colors">Program Model</a>
+        <a href="#safmr" class="hover:text-cyan-400 transition-colors">2026 SAFMR Caps</a>
+        <a href="#compliance" class="hover:text-cyan-400 transition-colors">Statutory Shield</a>
+        <a href="#contact" class="hover:text-cyan-400 transition-colors">Direct Contact</a>
       </div>
-    </a>
-    <nav class="hidden lg:flex items-center gap-5 text-xs font-semibold text-slate-300">
-      <a href="index.html" class="text-[#e8c064]">Home</a>
-      <a href="landlord-guaranteed-rent.html" class="hover:text-[#e8c064]">Guaranteed Rent</a>
-      <a href="property-managers.html" class="hover:text-[#e8c064]">Property Managers</a>
-      <a href="market-rate-conversions.html" class="hover:text-[#e8c064]">Market Conversions</a>
-      <a href="voucher-relocation.html" class="hover:text-[#e8c064]">Voucher Relocation</a>
-      <a href="presentation.html" class="hover:text-[#e8c064]">Presentation</a>
-      <a href="calculator.html" class="nav-link" style="background:#1e3a8a;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-weight:600;">📊 FY27 Rent Calculator</a>
 
-        <!-- Feature Nav Strip -->
-        <div class="hidden xl:flex items-center gap-1 bg-slate-950/70 p-1 rounded-xl border border-slate-800 text-xs font-semibold">
-          <button onclick="switchTab('dashboard')" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">Dashboard</button>
-          <button onclick="switchTab('reminders')" class="px-3 py-1.5 rounded-lg text-amber-400 hover:bg-slate-800 transition">Rent Due</button>
-          <button onclick="switchTab('accounting')" class="px-3 py-1.5 rounded-lg text-emerald-400 hover:bg-slate-800 transition">QBO Accounting</button>
-          <button onclick="switchTab('evictions')" class="px-3 py-1.5 rounded-lg text-rose-400 hover:bg-slate-800 transition">Legal Notices</button>
-        </div>
+      <!-- Action Buttons & Dynamic Auth Status -->
+      <div class="flex items-center gap-3">
+        <!-- Persistent Session Badge (if logged in) -->
+        <div id="navUserBadge" class="hidden"></div>
 
-    </nav>
+        <!-- Master Sign In / Portal Access Button -->
+        <button id="navLoginBtn" onclick="openLoginModal()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-400 hover:from-cyan-400 hover:to-sky-300 text-slate-950 font-bold text-xs tracking-tight transition-all shadow-lg shadow-cyan-500/20 flex items-center gap-2">
+          <i class="fa-solid fa-lock text-[11px]"></i>
+          <span>Sign In / Portal Access</span>
+        </button>
+      </div>
 
-    <!-- HERO SECTION: SINGLE UNIFIED HERO BANNER -->
-    <header class="w-full bg-[#0a192f] border-b border-amber-500/30 shadow-2xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-            <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-amber-400/20 bg-slate-900">
-                <img src="hero-banner.png" alt="Section 8 Rentals & More LLC - Connecting Qualified Tenants, Landlords, and Housing Agencies" class="w-full h-auto object-cover block shadow-inner">
-            </div>
-        </div>
-    </header>
-
-    <!-- MISSION & STATUTORY COMPLIANCE BAR -->
-    <section id="overview" class="w-full bg-slate-900 text-slate-100 py-10 px-4 sm:px-6 lg:px-8 border-b border-slate-800"  id="calculator">
-        <div class="max-w-5xl mx-auto text-center space-y-6">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-100">
-                Our Mission & Services
-            </h2>
-            <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
-                Section 8 Rentals & More LLC streamlines placement of qualified voucher participants into high-quality housing across the Twin Cities metro area. We partner directly with housing agencies and property owners to provide guaranteed rent schedules, expedited inspections, and full statutory compliance.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 text-left">
-                <!-- Minnesota Statutory Compliance -->
-                <div class="bg-slate-800/80 rounded-xl p-5 border border-slate-700/80 shadow-md">
-                    <h3 class="text-amber-400 font-bold text-sm tracking-wider uppercase mb-3 flex items-center gap-2">
-                        Statutory Compliance
-                    </h3>
-                    <ul class="text-xs sm:text-sm text-slate-300 space-y-2 font-mono">
-                        <li class="flex items-center gap-2"><span class="text-amber-400">✔</span> Minn. Stat. § 504B (14-Day Notice)</li>
-                        <li class="flex items-center gap-2"><span class="text-amber-400">✔</span> Wis. Stat. § 704 (5/14-Day Cure)</li>
-                        <li class="flex items-center gap-2"><span class="text-amber-400">✔</span> CARES Act 30-Day Notice</li>
-                    </ul>
-                </div>
-
-                <!-- Landlord Benefits -->
-                <div class="bg-slate-800/80 rounded-xl p-5 border border-slate-700/80 shadow-md">
-                    <h3 class="text-amber-400 font-bold text-sm tracking-wider uppercase mb-3 flex items-center gap-2">
-                        Landlord Advantages
-                    </h3>
-                    <ul class="text-xs sm:text-sm text-slate-300 space-y-2">
-                        <li class="flex items-center gap-2"><span class="text-emerald-400">●</span> 100% Direct Deposit Subsidies</li>
-                        <li class="flex items-center gap-2"><span class="text-emerald-400">●</span> 2026 SAFMR Maximum Rent Yields</li>
-                        <li class="flex items-center gap-2"><span class="text-emerald-400">●</span> Pre-Audited NSPIRE Inspections</li>
-                    </ul>
-                </div>
-
-                <!-- Housing Agency Portals -->
-                <div class="bg-slate-800/80 rounded-xl p-5 border border-slate-700/80 shadow-md">
-                    <h3 class="text-amber-400 font-bold text-sm tracking-wider uppercase mb-3 flex items-center gap-2">
-                        Agency Integration
-                    </h3>
-                    <ul class="text-xs sm:text-sm text-slate-300 space-y-2">
-                        <li class="flex items-center gap-2"><span class="text-sky-400">▸</span> Automated HUD-52517 (RFTA)</li>
-                        <li class="flex items-center gap-2"><span class="text-sky-400">▸</span> Minneapolis & St. Paul PHA</li>
-                        <li class="flex items-center gap-2"><span class="text-sky-400">▸</span> Metro HRA, Dakota & Washington</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <div class="flex items-center gap-3">
-      <a href="admin.html" class="text-xs font-bold s8-gold px-4 py-2 rounded-lg shadow-md flex items-center gap-1.5"><i class="fa-solid fa-lock"></i> Executive Hub</a>
-      <button onclick="openLeadModal('Direct Consultation')" class="text-xs font-semibold text-[#e8c064] border border-[#c49232]/50 px-4 py-2 rounded-lg hover:bg-[#c49232]/10 cursor-pointer flex items-center gap-1.5"><i class="fa-solid fa-envelope"></i> Contact Us</button>
     </div>
-  </header>
-<section id="solutions" class='w-full bg-[#051838] py-4 px-4'><div class='max-w-6xl mx-auto rounded-2xl overflow-hidden border-2 border-[#c49232] shadow-2xl'><img src='header-banner.png' class='w-full block'/></div></section>
-    <!-- Hero Banner Showcase -->
-    <!-- Hero Banner Showcase: Official Brand Graphic -->
-    <!-- Hero Banner Showcase: Official Brand Graphic -->
-    <!-- Hero Banner Showcase: Permanent Brand Graphic -->
-    <!-- Hero Banner Showcase: Brand Graphic -->
-  <section class="w-full bg-[#051838] border-b border-[#c49232]/40 py-6 px-4">
-    <div class="max-w-6xl mx-auto">
-      <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-[#c49232]/60 bg-[#0c2957]">
-        <img 
-          src="header-banner.png" 
-          alt="Section 8 Rentals & More LLC" 
-          class="w-full h-auto object-cover object-center block"
-          loading="eager"
-        />
-        <div class="absolute inset-0 pointer-events-none ring-1 ring-inset ring-[#e8c064]/20 rounded-2xl"></div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative pt-20 pb-24 px-4 hero-glow overflow-hidden">
+    <div class="max-w-5xl mx-auto text-center space-y-6">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-medium">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Twin Cities Metro & Western Wisconsin • 2026 Sovereign Rent Assurance
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+        Guaranteed Sovereign Rent.<br/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-amber-300">
+          Zero-Default Compliance Architecture.
+        </span>
+      </h1>
+
+      <p class="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed font-normal">
+        Operating across Hennepin, Ramsey, Dakota, Anoka, Washington, and St. Croix counties. We bridge property owners, public housing agencies, and voucher families through automated HUD-52517 intake, NSPIRE safety audits, and statutory rent enforcement.
+      </p>
+
+      <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+        <button onclick="openLoginModal()" class="px-6 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm tracking-tight transition-all shadow-xl shadow-cyan-500/25 flex items-center gap-2">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          <span>Access Management Portal</span>
+        </button>
+        <button onclick="if(window.openComplianceCalendarModal) openComplianceCalendarModal();" class="px-6 py-3.5 rounded-xl glass-card hover:bg-slate-800/80 text-white font-semibold text-sm border border-slate-700/80 transition-all flex items-center gap-2">
+          <i class="fa-regular fa-calendar-check text-amber-400"></i>
+          <span>View Statutory Deadlines</span>
+        </button>
       </div>
     </div>
   </section>
-  <main class="flex-grow max-w-7xl mx-auto px-6 py-12 space-y-12">
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="s8-card p-6 rounded-2xl">
-        <div class="w-10 h-10 rounded-lg s8-gold flex items-center justify-center text-lg mb-3 shadow"><i class="fa-solid fa-building-shield"></i></div>
-        <h3 class="text-base font-bold text-white mb-2">100% Guaranteed HUD ACH</h3>
-        <p class="text-xs text-slate-300">Direct monthly disbursements from Dakota CDA, MPHA, and Saint Paul PHA.</p>
-      </div>
-      <div class="s8-card p-6 rounded-2xl">
-        <div class="w-10 h-10 rounded-lg s8-gold flex items-center justify-center text-lg mb-3 shadow"><i class="fa-solid fa-clipboard-check"></i></div>
-        <h3 class="text-base font-bold text-white mb-2">NSPIRE Compliance</h3>
-        <p class="text-xs text-slate-300">Rigorous pre-inspection audits ensuring smooth initial move-ins and renewals.</p>
-      </div>
-      <div class="s8-card p-6 rounded-2xl">
-        <div class="w-10 h-10 rounded-lg s8-gold flex items-center justify-center text-lg mb-3 shadow"><i class="fa-solid fa-scale-balanced"></i></div>
-        <h3 class="text-base font-bold text-white mb-2">Statutory Notices</h3>
-        <p class="text-xs text-slate-300">Automated Minn. Stat. § 504B 14-Day and CARES Act 30-Day notice drafting.</p>
-      </div>
-    </section>
-    <section id="compliance" class="s8-card p-8 rounded-3xl">
-      <span class="text-xs font-bold text-[#e8c064] uppercase tracking-wider">2026 Metro Benchmarking</span>
-      <h2 class="text-2xl font-black text-white mt-1 mb-4">Calculate Fair Market Rent</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-        <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Target County</label>
-          <select id="calc-county" onchange="calcRent()" class="w-full bg-[#051838] border border-[#c49232]/40 rounded-xl p-3 text-sm text-white focus:outline-none">
-            <option value="dakota">Dakota County (MN042)</option>
-            <option value="hennepin">Hennepin County (MN002)</option>
-            <option value="ramsey">Ramsey County (MN001)</option>
-            <option value="anoka">Anoka County (MN027)</option>
-            <option value="washington">Washington County (MN033)</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Bedroom Count</label>
-          <select id="calc-beds" onchange="calcRent()" class="w-full bg-[#051838] border border-[#c49232]/40 rounded-xl p-3 text-sm text-white focus:outline-none">
-            <option value="1">1 Bedroom</option>
-            <option value="2" selected>2 Bedrooms</option>
-            <option value="3">3 Bedrooms</option>
-            <option value="4">4 Bedrooms</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Utility Allowance</label>
-          <select id="calc-util" onchange="calcRent()" class="w-full bg-[#051838] border border-[#c49232]/40 rounded-xl p-3 text-sm text-white focus:outline-none">
-            <option value="full">Owner Pays Heat/Water</option>
-            <option value="split" selected>Tenant Pays Electric Only</option>
-            <option value="none">Tenant Pays All</option>
-          </select>
-        </div>
-      </div>
-      <div class="flex flex-wrap items-center justify-between gap-4 bg-[#051838] border border-[#c49232]/40 rounded-2xl p-6">
-        <div>
-          <span class="text-xs text-slate-400 block">Estimated Monthly Assistance:</span>
-          <span id="calc-result" class="text-3xl font-black text-[#e8c064]">,850 / mo</span>
-        </div>
-        <button onclick="openLeadModal('HCV Rate Intake')" class="s8-gold font-bold px-6 py-3 rounded-xl text-xs cursor-pointer shadow-lg">Lock In This Rate <i class="fa-solid fa-arrow-right ml-1"></i></button>
-      </div>
-    </section>
-  
-    <!-- VIEW: RENT REMINDERS -->
-    <section id="view-reminders" class="space-y-4 hidden mt-6">
-      <div class="p-5 rounded-2xl bg-slate-900 border border-amber-500/30 flex justify-between items-center">
-        <div>
-          <h2 class="text-lg font-bold text-white">Rent Due & Delinquency Tracker</h2>
-          <p class="text-xs text-slate-400">Minn. Stat. § 504B.177 8% statutory late fee cap enforced on tenant copays.</p>
-        </div>
-        <button onclick="alert('Dispatched all late notices!')" class="px-3 py-1.5 bg-amber-600 text-white rounded-xl text-xs font-bold">Send Notices</button>
-      </div>
-      <div class="rounded-2xl bg-slate-900 border border-slate-800 p-4 overflow-x-auto">
-        <table class="w-full text-left text-xs"><tbody id="rentRemindersTableBody"></tbody></table>
-      </div>
-    </section>
 
-    <!-- VIEW: QBO ACCOUNTING -->
-    <section id="view-accounting" class="space-y-4 hidden mt-6">
-      <div class="p-5 rounded-2xl bg-slate-900 border border-emerald-500/30 flex justify-between items-center">
-        <div>
-          <h2 class="text-lg font-bold text-white">General Ledger & QBO Sync</h2>
-          <p class="text-xs text-slate-400">Bifurcated Account 4100 (HAP Subsidy) & Account 4110 (Tenant Copay).</p>
+  <!-- Jurisdiction Coverage Bar -->
+  <section class="border-y border-slate-800/80 bg-slate-950/60 py-6 px-4">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+      <div class="p-3">
+        <div class="text-xs font-bold text-white">Hennepin County</div>
+        <div class="text-[11px] text-cyan-400 font-mono mt-0.5">MPHA (MN002)</div>
+      </div>
+      <div class="p-3">
+        <div class="text-xs font-bold text-white">Ramsey County</div>
+        <div class="text-[11px] text-cyan-400 font-mono mt-0.5">St. Paul PHA (MN001)</div>
+      </div>
+      <div class="p-3">
+        <div class="text-xs font-bold text-white">Dakota County</div>
+        <div class="text-[11px] text-cyan-400 font-mono mt-0.5">Dakota CDA (MN042)</div>
+      </div>
+      <div class="p-3">
+        <div class="text-xs font-bold text-white">Anoka County</div>
+        <div class="text-[11px] text-cyan-400 font-mono mt-0.5">ACCAP (MN027)</div>
+      </div>
+      <div class="p-3 col-span-2 md:col-span-1">
+        <div class="text-xs font-bold text-white">St. Croix County (WI)</div>
+        <div class="text-[11px] text-amber-400 font-mono mt-0.5">Hudson HA (WI198)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2026 SAFMR Rent Standards Section -->
+  <section id="safmr" class="py-20 px-4 max-w-6xl mx-auto space-y-10">
+    <div class="text-center space-y-3">
+      <h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight">2026 Small Area Fair Market Rent Benchmarks</h2>
+      <p class="text-sm text-slate-400 max-w-2xl mx-auto">
+        HUD 24 CFR § 982.507 mandates rent reasonableness determinations capped at 110% of published SAFMR payment standards.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="glass-card rounded-2xl p-6 space-y-4">
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="font-bold text-white text-base">Hennepin County (Bloomington)</h3>
+            <span class="text-xs text-slate-400">MPHA Payment Standard</span>
+          </div>
+          <span class="px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-300 font-mono text-xs font-bold">MN002</span>
         </div>
-        <button onclick="alert('QuickBooks Online API Sync complete!')" class="px-3 py-1.5 bg-emerald-600 text-white rounded-xl text-xs font-bold">Sync QBO</button>
+        <div class="space-y-2 text-xs">
+          <div class="flex justify-between py-1 border-b border-slate-800">
+            <span class="text-slate-400">2-Bedroom FMR:</span>
+            <span class="font-bold text-white font-mono">$1,850 / mo</span>
+          </div>
+          <div class="flex justify-between py-1 border-b border-slate-800">
+            <span class="text-slate-400">3-Bedroom FMR:</span>
+            <span class="font-bold text-white font-mono">$2,380 / mo</span>
+          </div>
+          <div class="flex justify-between py-1 text-emerald-400 font-semibold">
+            <span>Sovereign Direct Deposit:</span>
+            <span>Up to 80-90%</span>
+          </div>
+        </div>
       </div>
-      <div class="rounded-2xl bg-slate-900 border border-slate-800 p-4 overflow-x-auto">
-        <table class="w-full text-left text-xs"><tbody id="accountingLedgerBody"></tbody></table>
-      </div>
-    </section>
 
-    <!-- VIEW: EVICTIONS & NOTICES -->
-    <section id="view-evictions" class="space-y-4 hidden mt-6">
-      <div class="p-5 rounded-2xl bg-slate-900 border border-rose-500/30">
-        <h2 class="text-lg font-bold text-white mb-2">Statutory Notice Generator (MN § 504B / WI § 704)</h2>
-        <pre id="noticeDocumentCanvas" class="bg-slate-950 p-4 rounded-xl text-xs font-mono text-slate-300 whitespace-pre-wrap leading-relaxed"></pre>
+      <div class="glass-card rounded-2xl p-6 space-y-4">
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="font-bold text-white text-base">Ramsey County (Saint Paul)</h3>
+            <span class="text-xs text-slate-400">St. Paul PHA Standard</span>
+          </div>
+          <span class="px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-300 font-mono text-xs font-bold">MN001</span>
+        </div>
+        <div class="space-y-2 text-xs">
+          <div class="flex justify-between py-1 border-b border-slate-800">
+            <span class="text-slate-400">2-Bedroom FMR:</span>
+            <span class="font-bold text-white font-mono">$1,810 / mo</span>
+          </div>
+          <div class="flex justify-between py-1 border-b border-slate-800">
+            <span class="text-slate-400">3-Bedroom FMR:</span>
+            <span class="font-bold text-white font-mono">$2,310 / mo</span>
+          </div>
+          <div class="flex justify-between py-1 text-emerald-400 font-semibold">
+            <span>Sovereign Direct Deposit:</span>
+            <span>Up to 80-90%</span>
+          </div>
+        </div>
       </div>
-    </section>
 
-  
-<section id="view-team" class="space-y-4 hidden mt-6">
-  <div class="p-5 rounded-2xl bg-slate-900 border border-indigo-500/30 flex justify-between items-center">
-    <h2 class="text-lg font-bold text-white">Operations Staff & Manager Console</h2>
-  </div>
-  <div class="rounded-2xl bg-slate-900 border border-slate-800 p-4">
-    <table class="w-full text-left text-xs"><tbody id="assignedManagersTableBody"></tbody></table>
-  </div>
-</section>
-<section id="view-reports" class="space-y-4 hidden mt-6">
-  <div class="p-5 rounded-2xl bg-slate-900 border border-amber-500/30 flex justify-between items-center">
-    <h2 class="text-lg font-bold text-white">IRS Schedule E & Staged Tax Statements</h2>
-    <button onclick="printFormattedReport()" class="px-3.5 py-1.5 bg-amber-600 text-white rounded-xl text-xs font-bold">Print Report</button>
-  </div>
-  <pre id="stagedReportCanvas" class="bg-slate-950 p-4 rounded-xl text-xs font-mono text-slate-300"></pre>
-</section>
-
-</main>
-  <footer class="bg-[#051838] border-t border-[#c49232]/40 text-slate-400 text-xs py-10 px-6 mt-16">
-    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-6">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded s8-gold flex items-center justify-center font-black">S8</div>
-        <span class="text-white font-bold">Section 8 Rentals & More <span class="text-[#e8c064]">LLC</span> &bull; Lakeville, MN</span>
+      <div class="glass-card rounded-2xl p-6 space-y-4">
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="font-bold text-white text-base">Dakota County (Apple Valley)</h3>
+            <span class="text-xs text-slate-400">Dakota CDA Standard</span>
+          </div>
+          <span class="px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-300 font-mono text-xs font-bold">MN042</span>
+        </div>
+        <div class="space-y-2 text-xs">
+          <div class="flex justify-between py-1 border-b border-slate-800">
+            <span class="text-slate-400">2-Bedroom FMR:</span>
+            <span class="font-bold text-white font-mono">$1,830 / mo</span>
+          </div>
+          <div class="flex justify-between py-1 border-b border-slate-800">
+            <span class="text-slate-400">3-Bedroom FMR:</span>
+            <span class="font-bold text-white font-mono">$2,340 / mo</span>
+          </div>
+          <div class="flex justify-between py-1 text-emerald-400 font-semibold">
+            <span>Sovereign Direct Deposit:</span>
+            <span>Up to 80-90%</span>
+          </div>
+        </div>
       </div>
-      <div class="flex gap-4 text-xs">
-        <a href="admin.html" class="hover:text-[#e8c064]">Admin Hub</a>
-        <a href="landlord-guaranteed-rent.html" class="hover:text-[#e8c064]">Guaranteed Rent</a>
-        <a href="property-managers.html" class="hover:text-[#e8c064]">Property Managers</a>
-        <a href="inspection_schedule.ics" download class="hover:text-[#e8c064]">ICS Calendar</a>
+    </div>
+  </section>
+
+  <!-- Statutory & Legal Shield Section -->
+  <section id="compliance" class="py-20 px-4 bg-slate-950/80 border-t border-slate-800">
+    <div class="max-w-5xl mx-auto space-y-12">
+      <div class="text-center space-y-3">
+        <h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight">Built-In Dual-State Compliance Engine</h2>
+        <p class="text-sm text-slate-400">
+          Protecting landlords and participants under federal standards and state landlord-tenant laws.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs">
+        <div class="glass-card p-6 rounded-2xl space-y-2">
+          <div class="text-cyan-400 font-bold text-sm">HUD NSPIRE Physical Habitability</div>
+          <p class="text-slate-400 leading-relaxed">
+            Pre-inspection checklists with prioritized triage: 24-hour Life-Threatening defect cures and 30-day Non-Life-Threatening remedies to avoid sovereign voucher abatements.
+          </p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl space-y-2">
+          <div class="text-amber-400 font-bold text-sm">Cold Weather Rule Protections</div>
+          <p class="text-slate-400 leading-relaxed">
+            Enforces continuous 68°F habitable indoor temperatures under Minn. Stat. § 216B.096 (Oct 1 – Apr 30) and Wis. Admin. Code PSC 134 (Nov 1 – Apr 15).
+          </p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl space-y-2">
+          <div class="text-emerald-400 font-bold text-sm">Zero-Knowledge HIPAA & PHI Vault</div>
+          <p class="text-slate-400 leading-relaxed">
+            Client-side AES-256 GCM encryption strips clinical diagnostic terms from accommodation letters under 45 CFR § 164.502 and the Fair Housing Act.
+          </p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl space-y-2">
+          <div class="text-purple-400 font-bold text-sm">Minnesota Form CRP & 1% Escrow</div>
+          <p class="text-slate-400 leading-relaxed">
+            Generates annual Certificates of Rent Paid strictly isolating tenant copay from sovereign HAP disbursements, and calculates statutory 1.0% simple interest on security deposits.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="py-12 px-4 border-t border-slate-800 text-xs text-slate-400 bg-brand-950">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div>
+        <div class="font-bold text-white text-sm">Section 8 Rentals and More LLC</div>
+        <p class="text-slate-500 mt-1">Dr. Albert Ray LaMotte, Managing Principal & CEO • License No. 1893</p>
+        <p class="text-slate-500">Contact: alamotte1956@gmail.com • Lakeville & Bloomington, MN</p>
+      </div>
+      <div class="text-center md:text-right text-[11px] text-slate-500 space-y-1">
+        <div>HUD 24 CFR § 982 • Minn. Stat. § 504B • Wis. Stat. § 704</div>
+        <div>AES-256 GCM Client Encryption • High-Concurrency Edge Architecture</div>
       </div>
     </div>
   </footer>
-  <div id="universal-lead-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-[#0c2957] border border-[#c49232]/60 rounded-2xl max-w-md w-full p-6 text-white shadow-2xl relative">
-      <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl cursor-pointer">&times;</button>
-      <h3 id="modal-service-title" class="text-lg font-bold text-white mb-4">Direct Contact</h3>
-      <form onsubmit="submitToResend(event)" class="space-y-4">
-        <input type="text" id="intake-name" required placeholder="Your Name" class="w-full bg-[#051838] border border-[#c49232]/40 rounded-lg p-2.5 text-sm text-white" />
-        <input type="email" id="intake-email" required placeholder="Email Address" class="w-full bg-[#051838] border border-[#c49232]/40 rounded-lg p-2.5 text-sm text-white" />
-        <div class="flex justify-end gap-3 pt-2">
-          <button type="button" onclick="closeLeadModal()" class="px-4 py-2 text-xs text-slate-400 cursor-pointer">Cancel</button>
-          <button type="submit" class="s8-gold font-bold px-5 py-2 text-xs rounded-lg cursor-pointer">Submit</button>
+
+  <!-- AUTHENTICATION LOGIN MODAL (Triggered via Navigation) -->
+  <div id="loginModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4">
+    <div class="relative w-full max-w-md bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl space-y-6 text-slate-100">
+      
+      <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-lg">
+            §8
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white">Portal Authentication</h3>
+            <span class="text-[10px] text-cyan-400 font-mono">1,000 User Edge Partitioning</span>
+          </div>
         </div>
+        <button onclick="closeLoginModal()" class="text-slate-400 hover:text-white text-2xl font-bold px-2 py-1 rounded-lg">×</button>
+      </div>
+
+      <form onsubmit="handlePortalLogin(event)" class="space-y-4">
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-300 mb-1">Email Address</label>
+          <input type="email" id="modalEmail" required placeholder="name@domain.com" value="alamotte1956@gmail.com"
+                 class="w-full bg-slate-950 border border-slate-800 focus:border-cyan-500 rounded-xl p-3 text-xs text-slate-200 outline-none transition-all">
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-300 mb-1">Account Password</label>
+          <input type="password" id="modalPassword" required placeholder="••••••••••••" value="AdminSecure2026!"
+                 class="w-full bg-slate-950 border border-slate-800 focus:border-cyan-500 rounded-xl p-3 text-xs text-slate-200 outline-none transition-all">
+        </div>
+
+        <div id="modalAuthError" class="hidden p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs"></div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-400 hover:from-cyan-400 hover:to-sky-300 text-slate-950 font-bold text-xs transition-all shadow-lg shadow-cyan-500/20 flex items-center justify-center gap-2">
+          <span>Authenticate & Open Workspace</span>
+          <i class="fa-solid fa-arrow-right text-[11px]"></i>
+        </button>
       </form>
+
+      <!-- Quick Role Switcher for Provisioned Demo Users -->
+      <div class="pt-4 border-t border-slate-800/80 text-center space-y-2">
+        <div class="text-[10px] text-slate-400 font-mono">Quick-Fill Role Credentials:</div>
+        <div class="flex justify-center gap-2 text-[10px]">
+          <button type="button" onclick="setLoginQuick('alamotte1956@gmail.com', 'AdminSecure2026!')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-amber-300 font-semibold">Admin</button>
+          <button type="button" onclick="setLoginQuick('manager@section8rentals.com', 'Manager2026!')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-sky-300 font-semibold">Manager</button>
+          <button type="button" onclick="setLoginQuick('marcus.vance@resident.net', 'Tenant2026!')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-emerald-300 font-semibold">Tenant</button>
+        </div>
+      </div>
+
     </div>
   </div>
-      <script>
-    function calcRent() {
-      const year = document.getElementById("calc-year") ? document.getElementById("calc-year").value : "2027";
-      const county = document.getElementById("calc-county") ? document.getElementById("calc-county").value : "dakota";
-      const beds = document.getElementById("calc-beds") ? document.getElementById("calc-beds").value : "2";
-      const util = document.getElementById("calc-util") ? document.getElementById("calc-util").value : "split";
 
-      const countyMap = {
-        "dakota": "Dakota County, MN",
-        "hennepin": "Hennepin County, MN",
-        "ramsey": "Ramsey County, MN",
-        "anoka": "Dakota County, MN",
-        "washington": "Dakota County, MN",
-        "st_croix": "St. Croix County, WI"
-      };
-
-      const bedMap = {
-        "0": "efficiency",
-        "1": "one_bed",
-        "2": "two_bed",
-        "3": "three_bed",
-        "4": "four_bed"
-      };
-
-      const cKey = countyMap[county] || "Dakota County, MN";
-      const bKey = bedMap[beds] || "two_bed";
-
-      let base = 1794; // 2027 2BR default baseline
-
-      if (window.HUD_FMR_DATA && window.HUD_FMR_DATA.years && window.HUD_FMR_DATA.years[year]) {
-        const yearStandards = window.HUD_FMR_DATA.years[year];
-        if (yearStandards[cKey]) {
-          base = yearStandards[cKey][bKey] || base;
-        }
-      } else if (window.HUD_FMR_DATA && window.HUD_FMR_DATA.standards && window.HUD_FMR_DATA.standards[cKey]) {
-        base = window.HUD_FMR_DATA.standards[cKey][bKey] || base;
-      }
-
-      let rent = base;
-      if (util === "full") rent += 130;
-      else if (util === "none") rent -= 95;
-
-      const resElem = document.getElementById("calc-result");
-      if (resElem) {
-        resElem.innerText = "$" + rent.toLocaleString() + " / mo";
-      }
-
-      const noteElem = document.getElementById("calc-year-badge");
-      if (noteElem) {
-        noteElem.innerText = year + (year === "2027" ? " Standard (Forward Model)" : " Standard (Active)");
-      }
-    }
-
-    function triggerNavCalc() {
-      const calcSection = document.getElementById("calculator");
-      if (calcSection) {
-        calcSection.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-      setTimeout(calcRent, 150);
-    }
-
-    window.addEventListener("DOMContentLoaded", calcRent);
-  </script>
-<div id="universal-lead-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden"><div class="bg-[#0c2957] border border-[#c49232]/60 rounded-2xl max-w-lg w-full p-6 text-white shadow-2xl relative"><button type="button" onclick="closeLeadModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl">&times;</button><div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-lg bg-gradient-to-r from-[#e8c064] to-[#c49232] flex items-center justify-center text-[#051838] font-black">S8</div><div><h3 id="modal-service-title" class="text-lg font-bold text-white">Direct Agency Contact</h3><p class="text-xs text-[#e8c064]">Section 8 Rentals and More LLC</p></div></div><form onsubmit="submitToResend(event)" class="space-y-4"><div><label class="block text-xs font-semibold text-slate-300 mb-1">Your Full Name / Entity</label><input type="text" id="intake-name" required placeholder="Property Owner / Manager" class="w-full bg-[#051838] border border-[#c49232]/40 rounded-lg p-2.5 text-sm text-white" /></div><div class="grid grid-cols-1 md:grid-cols-2 gap-3"><div><label class="block text-xs font-semibold text-slate-300 mb-1">Email</label><input type="email" id="intake-email" required placeholder="name@domain.com" class="w-full bg-[#051838] border border-[#c49232]/40 rounded-lg p-2.5 text-sm text-white" /></div><div><label class="block text-xs font-semibold text-slate-300 mb-1">County</label><select id="intake-county" class="w-full bg-[#051838] border border-[#c49232]/40 rounded-lg p-2.5 text-sm text-white"><option value="Dakota County (MN042)">Dakota County (MN042)</option><option value="Hennepin County (MN002)">Hennepin County (MN002)</option><option value="Ramsey County (MN001)">Ramsey County (MN001)</option><option value="Anoka County (MN027)">Anoka County (MN027)</option><option value="Washington County (MN033)">Washington County (MN033)</option><option value="Western Wisconsin">Western Wisconsin</option></select></div></div><div><label class="block text-xs font-semibold text-slate-300 mb-1">Property Address or Notes</label><textarea id="intake-notes" rows="3" class="w-full bg-[#051838] border border-[#c49232]/40 rounded-lg p-2.5 text-sm text-white" placeholder="Unit address, rent, voucher questions..."></textarea></div><div class="flex justify-end gap-3 pt-2"><button type="button" onclick="closeLeadModal()" class="px-4 py-2 text-xs font-bold text-slate-400 hover:text-white">Cancel</button><button type="submit" class="px-5 py-2.5 text-xs font-bold text-[#051838] bg-gradient-to-r from-[#e8c064] to-[#c49232] rounded-lg">Submit Securely</button></div></form></div></div>
-<script>
-window.openLeadModal=function(t){const m=document.getElementById('universal-lead-modal'),h=document.getElementById('modal-service-title');if(h&&t)h.innerText=t;if(m)m.classList.remove('hidden')};
-window.closeLeadModal=function(){const m=document.getElementById('universal-lead-modal');if(m)m.classList.add('hidden')};
-</script>
-
+  <!-- Page Wiring & Modal Handlers -->
   <script>
-    function triggerNavCalc() {
-      const calcSection = document.getElementById("calculator");
-      if (calcSection) {
-        calcSection.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-      if (typeof calcRent === "function") {
-        setTimeout(calcRent, 150);
+    function openLoginModal() {
+      document.getElementById('loginModal').classList.remove('hidden');
+    }
+
+    function closeLoginModal() {
+      document.getElementById('loginModal').classList.add('hidden');
+      document.getElementById('modalAuthError').classList.add('hidden');
+    }
+
+    function setLoginQuick(email, pass) {
+      document.getElementById('modalEmail').value = email;
+      document.getElementById('modalPassword').value = pass;
+    }
+
+    async function handlePortalLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('modalEmail').value;
+      const pass = document.getElementById('modalPassword').value;
+      const errBox = document.getElementById('modalAuthError');
+
+      try {
+        if (!window.AUTH_SYSTEM) {
+          throw new Error("Authentication subsystem loading. Please retry in a moment.");
+        }
+        const session = await window.AUTH_SYSTEM.login(email, pass);
+        closeLoginModal();
+
+        // Redirect based on partition role
+        if (session.role === 'Tenant') {
+          if (typeof window.openTenantPortalModal === 'function') {
+            window.openTenantPortalModal();
+          }
+        } else {
+          // Admin & Manager redirect to internal administration dashboard
+          window.location.href = 'admin.html';
+        }
+      } catch (err) {
+        errBox.textContent = err.message;
+        errBox.classList.remove('hidden');
       }
     }
+
+    // Refresh navbar state if already logged in
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = sessionStorage.getItem('SEC8_CURRENT_SESSION');
+      if (saved) {
+        try {
+          const s = JSON.parse(saved);
+          const badge = document.getElementById('navUserBadge');
+          const loginBtn = document.getElementById('navLoginBtn');
+          if (badge && loginBtn) {
+            badge.classList.remove('hidden');
+            badge.innerHTML = `
+              <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs">
+                <span class="w-2 h-2 rounded-full ${s.role === 'Admin' ? 'bg-amber-400' : s.role === 'Manager' ? 'bg-sky-400' : 'bg-emerald-400'}"></span>
+                <span class="font-bold text-white">${s.name}</span>
+                <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-mono uppercase">${s.role}</span>
+                <a href="admin.html" class="ml-2 text-cyan-400 hover:text-cyan-300 font-semibold">Workspace →</a>
+              </div>
+            `;
+            loginBtn.textContent = 'Switch Account';
+          }
+        } catch (e) {}
+      }
+    });
   </script>
-
-  <script src="features.js"></script>
-<script src="features.js"></script>
-<script src="calendar_and_onboarding.js"></script>
-<script src="team_and_taxes.js"></script>
-<script src="campaigns_engine.js"></script>
-<script src="calc_engine.js"></script>
-<script src="fmr_and_workorder_calcs.js"></script>
-<script src="noi_and_escrow_engine.js"></script>
-<script src="rfta_engine.js"></script>
-<script src="manual_and_admin_failsafe.js"></script>
-<script src="nspire_audit_engine.js"></script>
-<script src="safmr_engine.js"></script>
-<script src="hap_contract_engine.js"></script>
-<script src="nspire_reinspection_engine.js"></script>
-<script src="vawa_compliance_engine.js"></script>
-<script src="utility_allowance_engine.js"></script>
-<script src="lead_paint_compliance_engine.js"></script>
-<script src="master_packet_generator.js"></script>
-<script src="pha_dispatch_engine.js"></script>
-<script src="legal_notices_engine.js"></script>
-<script src="compliance_hub.js"></script>
-<script src="schedule_e_engine.js"></script>
-<script src="escrow_disposition_engine.js"></script>
-<script src="screening_compliance_engine.js"></script>
-<script src="emergency_dispatch_engine.js"></script>
-<script src="rent_increase_engine.js"></script>
-<script src="portability_engine.js"></script>
-<script src="escrow_reconciliation_engine.js"></script>
-<script src="fair_housing_engine.js"></script>
-
-  <script src="portfolio_compliance_master.js"></script>
-<script src="portfolio_ingestion_engine.js"></script>\n<script src="move_out_audit_engine.js"></script>\n<script src="bank_reconciliation_engine.js"></script>\n<script src="tax_form_generator.js"></script>
-<script src="crp_tax_credit_engine.js"></script>
-<script src="lead_clearance_engine.js"></script>
-<script src="cold_weather_rule_engine.js"></script>
-<script src="portfolio_export_engine.js"></script>
-<script src="aws_cloud_bridge.js"></script>
-<script src="marketing_distribution_engine.js"></script>
-<script src="tenant_portal_engine.js"></script>
-<script src="court_pleadings_engine.js"></script>\n</body>
+</body>
 </html>
-<script>
-async function submitToResend(e){e.preventDefault();const b=e.target.querySelector('button[type="submit"]'),t=b.innerText;b.innerText='Sending...';b.disabled=true;const p={name:document.getElementById('intake-name').value.trim(),email:document.getElementById('intake-email').value.trim(),county:document.getElementById('intake-county').value,notes:document.getElementById('intake-notes').value.trim()};try{const r=await fetch('/api/send-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});if(!r.ok)throw 0;alert('Inquiry sent to intake desk!');closeLeadModal();e.target.reset()}catch(err){const d=JSON.parse(localStorage.getItem('s8_leads_database')||'[]');d.unshift({...p,id:'LEAD-'+Date.now().toString().slice(-6),timestamp:new Date().toLocaleString()});localStorage.setItem('s8_leads_database',JSON.stringify(d));alert('Inquiry received and logged to intake desk!');closeLeadModal();e.target.reset()}finally{b.innerText=t;b.disabled=false}}
-</script>
