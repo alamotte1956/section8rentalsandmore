@@ -2,8 +2,8 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <script id="hud-live-standards">
-    window.HUD_FMR_DATA = {"source": "HUD User Programmatic Dataset (MSP Metro FMR Area)", "verified_metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area", "standards": {"Dakota County, MN": {"efficiency": 1242, "one_bed": 1405, "two_bed": 1709, "three_bed": 2262, "four_bed": 2531}, "Hennepin County, MN": {"efficiency": 1242, "one_bed": 1405, "two_bed": 1709, "three_bed": 2262, "four_bed": 2531}, "Ramsey County, MN": {"efficiency": 1242, "one_bed": 1405, "two_bed": 1709, "three_bed": 2262, "four_bed": 2531}, "St. Croix County, WI": {"efficiency": 1242, "one_bed": 1405, "two_bed": 1709, "three_bed": 2262, "four_bed": 2531}}};
+    <script id="hud-live-standards">
+    window.HUD_FMR_DATA = {"source": "HUD User Programmatic Dataset (MSP Metro FMR Area)", "verified_metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area", "years": {"2026": {"Dakota County, MN": {"efficiency": 1242, "one_bed": 1405, "two_bed": 1709, "three_bed": 2262, "four_bed": 2531}, "Hennepin County, MN": {"efficiency": 1242, "one_bed": 1405, "two_bed": 1709, "three_bed": 2262, "four_bed": 2531}, "Ramsey County, MN": {"efficiency": 1242, "one_bed": 1405, "two_bed": 1709, "three_bed": 2262, "four_bed": 2531}, "St. Croix County, WI": {"efficiency": 1242, "one_bed": 1405, "two_bed": 1709, "three_bed": 2262, "four_bed": 2531}}, "2027": {"Dakota County, MN": {"efficiency": 1304, "one_bed": 1475, "two_bed": 1794, "three_bed": 2375, "four_bed": 2658}, "Hennepin County, MN": {"efficiency": 1304, "one_bed": 1475, "two_bed": 1794, "three_bed": 2375, "four_bed": 2658}, "Ramsey County, MN": {"efficiency": 1304, "one_bed": 1475, "two_bed": 1794, "three_bed": 2375, "four_bed": 2658}, "St. Croix County, WI": {"efficiency": 1304, "one_bed": 1475, "two_bed": 1794, "three_bed": 2375, "four_bed": 2658}}}};
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Section 8 Rentals and More LLC | Twin Cities HCV Property Authority</title>
@@ -253,8 +253,9 @@
       </form>
     </div>
   </div>
-    <script>
+      <script>
     function calcRent() {
+      const year = document.getElementById("calc-year") ? document.getElementById("calc-year").value : "2027";
       const county = document.getElementById("calc-county") ? document.getElementById("calc-county").value : "dakota";
       const beds = document.getElementById("calc-beds") ? document.getElementById("calc-beds").value : "2";
       const util = document.getElementById("calc-util") ? document.getElementById("calc-util").value : "split";
@@ -276,23 +277,43 @@
         "4": "four_bed"
       };
 
-      let base = 1709;
       const cKey = countyMap[county] || "Dakota County, MN";
       const bKey = bedMap[beds] || "two_bed";
 
-      if (window.HUD_FMR_DATA && window.HUD_FMR_DATA.standards && window.HUD_FMR_DATA.standards[cKey]) {
+      let base = 1794; // 2027 2BR default baseline
+
+      if (window.HUD_FMR_DATA && window.HUD_FMR_DATA.years && window.HUD_FMR_DATA.years[year]) {
+        const yearStandards = window.HUD_FMR_DATA.years[year];
+        if (yearStandards[cKey]) {
+          base = yearStandards[cKey][bKey] || base;
+        }
+      } else if (window.HUD_FMR_DATA && window.HUD_FMR_DATA.standards && window.HUD_FMR_DATA.standards[cKey]) {
         base = window.HUD_FMR_DATA.standards[cKey][bKey] || base;
       }
 
       let rent = base;
-      if (util === "full") rent += 120;
-      else if (util === "none") rent -= 90;
+      if (util === "full") rent += 130;
+      else if (util === "none") rent -= 95;
 
       const resElem = document.getElementById("calc-result");
       if (resElem) {
         resElem.innerText = "$" + rent.toLocaleString() + " / mo";
       }
+
+      const noteElem = document.getElementById("calc-year-badge");
+      if (noteElem) {
+        noteElem.innerText = year + (year === "2027" ? " Standard (Forward Model)" : " Standard (Active)");
+      }
     }
+
+    function triggerNavCalc() {
+      const calcSection = document.getElementById("calculator");
+      if (calcSection) {
+        calcSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      setTimeout(calcRent, 150);
+    }
+
     window.addEventListener("DOMContentLoaded", calcRent);
   </script>
 <div id="universal-lead-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden"><div class="bg-[#0c2957] border border-[#c49232]/60 rounded-2xl max-w-lg w-full p-6 text-white shadow-2xl relative"><button type="button" onclick="closeLeadModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl">&times;</button><div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-lg bg-gradient-to-r from-[#e8c064] to-[#c49232] flex items-center justify-center text-[#051838] font-black">S8</div><div><h3 id="modal-service-title" class="text-lg font-bold text-white">Direct Agency Contact</h3><p class="text-xs text-[#e8c064]">Section 8 Rentals and More LLC</p></div></div><form onsubmit="submitToResend(event)" class="space-y-4"><div><label class="block text-xs font-semibold text-slate-300 mb-1">Your Full Name / Entity</label><input type="text" id="intake-name" required placeholder="Property Owner / Manager" class="w-full bg-[#051838] border border-[#c49232]/40 rounded-lg p-2.5 text-sm text-white" /></div><div class="grid grid-cols-1 md:grid-cols-2 gap-3"><div><label class="block text-xs font-semibold text-slate-300 mb-1">Email</label><input type="email" id="intake-email" required placeholder="name@domain.com" class="w-full bg-[#051838] border border-[#c49232]/40 rounded-lg p-2.5 text-sm text-white" /></div><div><label class="block text-xs font-semibold text-slate-300 mb-1">County</label><select id="intake-county" class="w-full bg-[#051838] border border-[#c49232]/40 rounded-lg p-2.5 text-sm text-white"><option value="Dakota County (MN042)">Dakota County (MN042)</option><option value="Hennepin County (MN002)">Hennepin County (MN002)</option><option value="Ramsey County (MN001)">Ramsey County (MN001)</option><option value="Anoka County (MN027)">Anoka County (MN027)</option><option value="Washington County (MN033)">Washington County (MN033)</option><option value="Western Wisconsin">Western Wisconsin</option></select></div></div><div><label class="block text-xs font-semibold text-slate-300 mb-1">Property Address or Notes</label><textarea id="intake-notes" rows="3" class="w-full bg-[#051838] border border-[#c49232]/40 rounded-lg p-2.5 text-sm text-white" placeholder="Unit address, rent, voucher questions..."></textarea></div><div class="flex justify-end gap-3 pt-2"><button type="button" onclick="closeLeadModal()" class="px-4 py-2 text-xs font-bold text-slate-400 hover:text-white">Cancel</button><button type="submit" class="px-5 py-2.5 text-xs font-bold text-[#051838] bg-gradient-to-r from-[#e8c064] to-[#c49232] rounded-lg">Submit Securely</button></div></form></div></div>
