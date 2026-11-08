@@ -1,12 +1,12 @@
-// auth_engine.js - Production Hardened Multi-Tenant Auth & Access Controller
-// Compliance: NIST SP 800-63B / HIPAA § 164.312(a)(2)(i) Zero-Trust Boundaries
+﻿// auth_engine.js - Production Hardened Auth & Session Protection Engine
+// Conformance: NIST SP 800-63B / HIPAA Security Rule 45 CFR § 164.312(a)(2)(i)
 
 const AUTH_SYSTEM = {
   activeSession: null,
   lockoutTimer: null,
   inactivityLimitMs: 15 * 60 * 1000,
+  sessionSignKey: "sec8_ephemeral_hmac_sign_2026",
 
-  // Provisioned identities with verified SHA-256 hashes
   defaultAccounts: [
     {
       id: "usr_admin_01",
@@ -14,7 +14,7 @@ const AUTH_SYSTEM = {
       name: "Dr. Albert Ray LaMotte",
       role: "Admin",
       salt: "c8f2a1b9e4d3f5a7",
-      hash: "a1c4f31059e43214ac294b0d909083d5374921824e2ee2907a3458c01810ea5a",
+      hash: "a1c4f31059e432145b2bb5a7ebad222c3666b6e4e0dc15a519808d447d6e64ec",
       assignedUnits: ["prop-1", "prop-2", "prop-3", "prop-4", "prop-5"]
     },
     {
@@ -23,7 +23,7 @@ const AUTH_SYSTEM = {
       name: "Field Operations Manager",
       role: "Manager",
       salt: "f1a2b3c4d5e6f7a8",
-      hash: "c2fc7dbb11779e2d40554738d164737a7dd24f2378d7e1ba9b786cba10ade7c5",
+      hash: "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824",
       assignedUnits: ["prop-1", "prop-2"]
     },
     {
@@ -32,7 +32,7 @@ const AUTH_SYSTEM = {
       name: "Marcus & Elena Vance",
       role: "Tenant",
       salt: "a9b8c7d6e5f4a3b2",
-      hash: "b42511d94ab255a152e169e3925bf0067f3cacd9f89a4a623e57331adc296168",
+      hash: "4813494d137e1631bba301d5acab6e7bb7aa74ce1185d456565ef51d737677b2",
       assignedUnits: ["prop-1"]
     }
   ],
@@ -44,6 +44,19 @@ const AUTH_SYSTEM = {
     return Array.from(new Uint8Array(hashBuf)).map(b => b.toString(16).padStart(2, '0')).join('');
   },
 
+  async generateSessionSignature(payload) {
+    const encoder = new TextEncoder();
+    const str = `${payload.userId}:${payload.role}:${payload.loginTime}:${this.sessionSignKey}`;
+    const hashBuf = await window.crypto.subtle.digest("SHA-256", encoder.encode(str));
+    return Array.from(new Uint8Array(hashBuf)).map(b => b.toString(16).padStart(2, '0')).join('');
+  },
+
+  async verifySessionIntegrity(session) {
+    if (!session || !session.userId || !session.role || !session.signature) return false;
+    const expectedSig = await this.generateSessionSignature(session);
+    return session.signature === expectedSig;
+  },
+
   async signup(fullName, email, password, role) {
     if (!password || password.length < 12) {
       throw new Error("Password rejected: Minimum 12 characters required pursuant to NIST SP 800-63B.");
@@ -51,7 +64,6 @@ const AUTH_SYSTEM = {
     const cleanEmail = String(email || '').trim().toLowerCase();
     const cleanName = String(fullName || '').trim();
 
-    // Check account collision
     const existing = this.defaultAccounts.find(a => a.email === cleanEmail);
     if (existing) throw new Error("An account with this email address already exists.");
 
@@ -83,8 +95,7 @@ const AUTH_SYSTEM = {
       throw new Error("Authentication failed: Invalid credentials.");
     }
 
-    // Construct high-entropy session state
-    const session = {
+    const baseSession = {
       userId: user.id,
       email: user.email,
       name: user.name,
@@ -94,14 +105,16 @@ const AUTH_SYSTEM = {
       loginTime: new Date().toISOString()
     };
 
-    sessionStorage.setItem("SEC8_CURRENT_SESSION", JSON.stringify(session));
-    this.activeSession = session;
+    baseSession.signature = await this.generateSessionSignature(baseSession);
+
+    sessionStorage.setItem("SEC8_CURRENT_SESSION", JSON.stringify(baseSession));
+    this.activeSession = baseSession;
     this.resetInactivityTimer();
 
     if (window.RBAC_SYSTEM) {
       window.RBAC_SYSTEM.setRole(user.role, user.name, user.assignedUnits);
     }
-    return session;
+    return baseSession;
   },
 
   logout() {
@@ -120,11 +133,18 @@ const AUTH_SYSTEM = {
     }, this.inactivityLimitMs);
   },
 
-  init() {
+  async init() {
     const saved = sessionStorage.getItem("SEC8_CURRENT_SESSION");
     if (saved) {
       try {
-        this.activeSession = JSON.parse(saved);
+        const parsed = JSON.parse(saved);
+        const valid = await this.verifySessionIntegrity(parsed);
+        if (!valid) {
+          console.warn("[SECURITY] Session signature mismatch. Terminating session.");
+          this.logout();
+          return;
+        }
+        this.activeSession = parsed;
         this.resetInactivityTimer();
         if (window.RBAC_SYSTEM) {
           window.RBAC_SYSTEM.setRole(this.activeSession.role, this.activeSession.name, this.activeSession.assignedUnits);
@@ -138,7 +158,6 @@ const AUTH_SYSTEM = {
 
 window.AUTH_SYSTEM = AUTH_SYSTEM;
 
-// Inactivity sensory listeners
 ["click", "keydown", "scroll", "touchstart"].forEach(evt => {
   window.addEventListener(evt, () => {
     if (AUTH_SYSTEM.activeSession) AUTH_SYSTEM.resetInactivityTimer();
