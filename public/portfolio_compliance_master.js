@@ -26,6 +26,6 @@ window.COMPLIANCE_ENGINES_REGISTRY = [
   { id: 'crp_tax_credit', title: 'MN Form CRP / WI Rent Certificate Generator', handler: 'generateStateRentCreditCertificate', cat: 'Tax' },
   { id: 'lead_clearance', title: 'HUD 24 CFR Part 35 Visual Clearance Certificate', handler: 'generateLeadClearanceAssessment', cat: 'Safety' },
   { id: 'cold_weather_rule', title: 'MN § 216B.096 Cold Weather Rule & Heating Protection', handler: 'generateColdWeatherRuleNotice', cat: 'Maintenance' },
-];
+  { id: 'court_pleadings', title: 'MN § 504B / WI § 799 Formal Court Eviction Complaint', handler: 'generateCourtEvictionPleadings', cat: 'Legal' },\n];
 
 console.log("✔ Complete Section 8 Compliance Registry initialized: " + window.COMPLIANCE_ENGINES_REGISTRY.length + " statutory engines active.");

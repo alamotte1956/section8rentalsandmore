@@ -437,7 +437,7 @@ window.closeLeadModal=function(){const m=document.getElementById('universal-lead
 <script src="aws_cloud_bridge.js"></script>
 <script src="marketing_distribution_engine.js"></script>
 <script src="tenant_portal_engine.js"></script>
-</body>
+<script src="court_pleadings_engine.js"></script>\n</body>
 </html>
 <script>
 async function submitToResend(e){e.preventDefault();const b=e.target.querySelector('button[type="submit"]'),t=b.innerText;b.innerText='Sending...';b.disabled=true;const p={name:document.getElementById('intake-name').value.trim(),email:document.getElementById('intake-email').value.trim(),county:document.getElementById('intake-county').value,notes:document.getElementById('intake-notes').value.trim()};try{const r=await fetch('/api/send-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});if(!r.ok)throw 0;alert('Inquiry sent to intake desk!');closeLeadModal();e.target.reset()}catch(err){const d=JSON.parse(localStorage.getItem('s8_leads_database')||'[]');d.unshift({...p,id:'LEAD-'+Date.now().toString().slice(-6),timestamp:new Date().toLocaleString()});localStorage.setItem('s8_leads_database',JSON.stringify(d));alert('Inquiry received and logged to intake desk!');closeLeadModal();e.target.reset()}finally{b.innerText=t;b.disabled=false}}
