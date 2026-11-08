@@ -23,6 +23,7 @@ window.COMPLIANCE_ENGINES_REGISTRY = [
   { id: 'portability', title: 'Form HUD-52665 Inter-Agency Voucher Portability Packet', handler: 'generatePortabilityPacket', cat: 'Intake' },
   { id: 'schedule_e', title: 'IRS Schedule E & Form 1099-MISC Dual-Stream Reconciliation', handler: 'generateScheduleETaxReport', cat: 'Tax' },
   { id: 'pha_dispatch', title: 'Direct County PHA Electronic Submission Engine', handler: 'dispatchPacketToPha', cat: 'Dispatch' }
+  { id: 'crp_tax_credit', title: 'MN Form CRP / WI Rent Certificate Generator', handler: 'generateStateRentCreditCertificate', cat: 'Tax' },
 ];
 
 console.log("✔ Complete Section 8 Compliance Registry initialized: " + window.COMPLIANCE_ENGINES_REGISTRY.length + " statutory engines active.");

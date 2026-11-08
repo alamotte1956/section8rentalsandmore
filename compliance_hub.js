@@ -136,6 +136,11 @@ function openComplianceModal(propId) {
           <div class="font-bold text-indigo-300">IRS Form 1099-MISC & 1099-NEC</div>
           <div class="text-[11px] text-slate-400 mt-1">Box 1 rent reconciliation & contractor nonemployee compensation summaries.</div>
         </button>
+      
+        <button onclick="generateStateRentCreditCertificate('${p.id}')" class="p-3.5 text-left rounded-2xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 transition-all">
+          <div class="font-bold text-amber-300">MN Form CRP / WI Rent Certificate</div>
+          <div class="text-[11px] text-slate-400 mt-1">Minn. Stat. § 290A.19 Certificate of Rent Paid with strict HAP exclusion for tenant refund.</div>
+        </button>
       </div>
 
       <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-[11px] text-slate-500">
