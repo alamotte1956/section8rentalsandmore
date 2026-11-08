@@ -1,2 +1,4 @@
-http://section8rentalsandmore.com/* https://section8rentalsandmore.com/:splat 301!
-https://www.section8rentalsandmore.com/* https://section8rentalsandmore.com/:splat 301!
+# Cloudflare Pages SPA Routing Directives
+/admin    /admin.html   200
+/login    /index.html   200
+/*        /index.html   200

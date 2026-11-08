@@ -1,112 +1,101 @@
-
-// state_persistence.js - Persistent Multi-Unit Portfolio State Manager
-// Automatically syncs additions from bulk rent roll imports or property card edits
-
-(function initPortfolioPersistence() {
-  const STORAGE_KEY = 'SEC8_PORTFOLIO_MASTER_DATA';
-
-  const defaultSeed = [
+// state_persistence.js - Multi-County Portfolio State & Local Sync
+window.state = {
+  properties: [
     {
-      id: 'prop-1',
-      address: '7820 Penn Ave S',
-      city: 'Bloomington',
-      state: 'MN',
-      county: 'Hennepin',
-      bedrooms: 3,
-      rent: 2150,
-      contractRent: 2150,
-      hap: 1680,
-      hapPortion: 1680,
-      copay: 470,
-      copayPortion: 470,
-      deposit: 2150,
-      tenant: 'Marcus & Elena Vance',
-      tenantName: 'Marcus & Elena Vance',
-      yearBuilt: 1974,
-      status: 'Active'
+      id: "prop-1",
+      address: "7820 Penn Ave S",
+      city: "Bloomington",
+      state: "MN",
+      zip: "55431",
+      county: "Hennepin",
+      pha: "MPHA (MN002)",
+      tenant: "Marcus & Elena Vance",
+      contractRent: 2150.00,
+      hap: 1680.00,
+      copay: 470.00,
+      status: "Active Voucher"
     },
     {
-      id: 'prop-2',
-      address: '1042 Grand Ave',
-      city: 'Saint Paul',
-      state: 'MN',
-      county: 'Ramsey',
-      bedrooms: 2,
-      rent: 1850,
-      contractRent: 1850,
-      hap: 1420,
-      hapPortion: 1420,
-      copay: 430,
-      copayPortion: 430,
-      deposit: 1850,
-      tenant: 'Sarah Jenkins',
-      tenantName: 'Sarah Jenkins',
-      yearBuilt: 1982,
-      status: 'Active'
+      id: "prop-2",
+      address: "1423 University Ave W",
+      city: "Saint Paul",
+      state: "MN",
+      zip: "55104",
+      county: "Ramsey",
+      pha: "St. Paul PHA (MN001)",
+      tenant: "Tariq & Amina Al-Mansoor",
+      contractRent: 2280.00,
+      hap: 1810.00,
+      copay: 470.00,
+      status: "Active Voucher"
     },
     {
-      id: 'prop-3',
-      address: '210 N Main St',
-      city: 'Hudson',
-      state: 'WI',
-      county: 'St. Croix',
-      bedrooms: 1,
-      rent: 1420,
-      contractRent: 1420,
-      hap: 1100,
-      hapPortion: 1100,
-      copay: 320,
-      copayPortion: 320,
-      deposit: 1420,
-      tenant: 'David Miller',
-      tenantName: 'David Miller',
-      yearBuilt: 1968,
-      status: 'Active'
+      id: "prop-3",
+      address: "15320 Galaxie Ave",
+      city: "Apple Valley",
+      state: "MN",
+      zip: "55124",
+      county: "Dakota",
+      pha: "Dakota CDA (MN042)",
+      tenant: "Darnell & Kendra Washington",
+      contractRent: 1980.00,
+      hap: 1530.00,
+      copay: 450.00,
+      status: "Active Voucher"
+    },
+    {
+      id: "prop-4",
+      address: "412 2nd St",
+      city: "Hudson",
+      state: "WI",
+      zip: "54016",
+      county: "St. Croix (WI)",
+      pha: "Hudson HA (WI198)",
+      tenant: "Sarah Lindstrom",
+      contractRent: 1890.00,
+      hap: 1420.00,
+      copay: 470.00,
+      status: "Active Voucher"
+    },
+    {
+      id: "prop-5",
+      address: "2840 Coon Rapids Blvd NW",
+      city: "Coon Rapids",
+      state: "MN",
+      zip: "55433",
+      county: "Anoka",
+      pha: "ACCAP (MN027)",
+      tenant: "Brianna Jenkins",
+      contractRent: 2180.00,
+      hap: 1680.00,
+      copay: 500.00,
+      status: "Active Voucher"
     }
-  ];
+  ]
+};
 
-  function loadState() {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          return parsed;
-        }
-      }
-    } catch (e) {
-      console.warn("Storage parse error, using default seed:", e);
-    }
-    return defaultSeed;
-  }
+function renderAdminPortfolioGrid() {
+  const tbody = document.getElementById("adminPropertyTableBody");
+  if (!tbody || !window.state.properties) return;
+  tbody.innerHTML = "";
+  window.state.properties.forEach(p => {
+    const tr = document.createElement("tr");
+    tr.className = "hover:bg-slate-900/50 transition-colors";
+    tr.innerHTML = `
+      <td class="py-3.5 px-3 font-semibold text-white">${p.address}<div class="text-[10px] text-slate-400">${p.city}, ${p.state} ${p.zip}</div></td>
+      <td class="py-3.5 px-3 font-mono text-cyan-400">${p.county}<div class="text-[10px] text-slate-400">${p.pha}</div></td>
+      <td class="py-3.5 px-3 text-slate-300">${p.tenant}</td>
+      <td class="py-3.5 px-3 font-mono font-bold text-white">$${p.contractRent.toFixed(2)}</td>
+      <td class="py-3.5 px-3 font-mono font-bold text-emerald-400">$${p.hap.toFixed(2)}</td>
+      <td class="py-3.5 px-3 font-mono text-amber-300">$${p.copay.toFixed(2)}</td>
+      <td class="py-3.5 px-3"><span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 text-[10px] font-semibold">${p.status}</span></td>
+      <td class="py-3.5 px-3 text-right">
+        <button onclick="openComplianceHubModal()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-300 text-[11px] font-semibold">Dockets</button>
+      </td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
 
-  function saveState(properties) {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(properties));
-    } catch (e) {
-      console.error("Failed saving portfolio state:", e);
-    }
-  }
-
-  window.state = window.state || {};
-  if (!window.state.properties || window.state.properties.length === 0) {
-    window.state.properties = loadState();
-  }
-
-  window.savePortfolioState = function() {
-    if (window.state && window.state.properties) {
-      saveState(window.state.properties);
-    }
-  };
-
-  // Auto-sync whenever bulk ingestion completes
-  const origProcess = window.processRawRentRoll;
-  if (typeof origProcess === 'function') {
-    window.processRawRentRoll = function() {
-      origProcess();
-      window.savePortfolioState();
-    };
-  }
-
-  console.log("✔ Portfolio state initialized with " + window.state.properties.length + " properties.");
-})();
+window.renderAdminPortfolioGrid = renderAdminPortfolioGrid;
+document.addEventListener("DOMContentLoaded", renderAdminPortfolioGrid);
