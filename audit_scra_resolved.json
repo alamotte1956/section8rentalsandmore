@@ -1,0 +1,31 @@
+{
+  "propertyId": "prop-1",
+  "docketStatus": "APPROVED_FOR_FILING",
+  "jurisdiction": "MN_4TH_JUDICIAL_DISTRICT_HOUSING_COURT",
+  "statutoryExhibits": {
+    "exhibit_A_lease_agreement": true,
+    "exhibit_B_14_day_notice_504B": true,
+    "exhibit_C_certified_mail_return_receipt": "9407111899564821903211",
+    "exhibit_D_pha_caseworker_service": true,
+    "exhibit_E_scra_military_affidavit": {
+      "certificateId": "DMDC-SCRA-0117B2E1",
+      "statutoryCitation": "50 U.S.C. \u00a7 3931(b)(1)",
+      "verificationSource": "Defense Manpower Data Center (DMDC)",
+      "tenantLastName": "VANCE",
+      "tenantFirstName": "MARCUS",
+      "ssnMasked": "***-**-4412",
+      "activeDutyStatus": false,
+      "scraCoverageApplies": false,
+      "notaryJuratRequired": true,
+      "verifiedAt": "2026-11-08T13:48:27Z",
+      "clearedForJudicialFiling": true
+    },
+    "exhibit_F_lead_hazard_disclosure": true
+  },
+  "delinquentBalance": {
+    "tenantCopayDelinquent": 470.0,
+    "statutoryLateFeeCap": 37.6,
+    "sovereignHAPExcluded": 1680.0,
+    "totalJudicialClaim": 507.6
+  }
+}
