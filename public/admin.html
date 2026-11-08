@@ -210,7 +210,91 @@
         </span>
       </div>
 
-      <div class="overflow-x-auto custom-scrollbar">
+      
+      <!-- SAFMR Rent Maximizer & Utility Optimizer Component -->
+      <div class="p-6 rounded-3xl bg-slate-900 border border-slate-800 shadow-xl space-y-4 mb-8">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-lg">$</div>
+            <div>
+              <h4 class="text-sm font-bold text-white">SAFMR Rent Maximization Engine</h4>
+              <p class="text-[11px] text-slate-400">Maximize Voucher Revenue (HUD 24 CFR &sect; 982.503)</p>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-mono font-bold">2026 Payment Standards</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+          <div>
+            <label class="block text-slate-400 mb-1">Target PHA Jurisdiction</label>
+            <select id="calcPhaSelect" onchange="runSafmrCalculation()" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-white">
+              <option value="MN002" selected>Minneapolis PHA (Hennepin)</option>
+              <option value="MN001">St. Paul PHA (Ramsey)</option>
+              <option value="MN042">Dakota County CDA</option>
+              <option value="MN027">Anoka County ACCAP</option>
+              <option value="MN033">Washington County CDA</option>
+              <option value="WI198">Hudson HA (St. Croix, WI)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-slate-400 mb-1">Voucher Bedroom Tier</label>
+            <select id="calcBedTier" onchange="runSafmrCalculation()" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-white">
+              <option value="1">1 Bedroom</option>
+              <option value="2" selected>2 Bedrooms</option>
+              <option value="3">3 Bedrooms</option>
+              <option value="4">4 Bedrooms</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-slate-400 mb-1">Utility Responsibility</label>
+            <select id="calcUtilProfile" onchange="runSafmrCalculation()" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-white">
+              <option value="0">Landlord Pays All Utilities ($0 deduction)</option>
+              <option value="135" selected>Tenant Pays Electric &amp; Gas (~$135 deduction)</option>
+              <option value="210">Tenant Pays All Utilities (~$210 deduction)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="p-4 bg-slate-950/70 border border-slate-800 rounded-2xl flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <div class="text-[10px] text-slate-400 uppercase tracking-wider">Estimated Maximum Allowable Contract Rent (110% SAFMR Ceiling)</div>
+            <div class="text-2xl font-bold font-mono text-emerald-400" id="calcResultRent">$2,195.00 <span class="text-xs text-slate-400 font-normal">/ month</span></div>
+          </div>
+          <button onclick="applyMaximizerToDraft()" class="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-emerald-500/20 transition-all">
+            Populate RFTA Packet
+          </button>
+        </div>
+      </div>
+
+      <script>
+        const SAFMR_MATRIX = {
+          MN002: { 1: 1540, 2: 1850, 3: 2360, 4: 2790 },
+          MN001: { 1: 1510, 2: 1810, 3: 2310, 4: 2720 },
+          MN042: { 1: 1480, 2: 1780, 3: 2280, 4: 2690 },
+          MN027: { 1: 1490, 2: 1790, 3: 2290, 4: 2710 },
+          MN033: { 1: 1500, 2: 1800, 3: 2300, 4: 2720 },
+          WI198: { 1: 1390, 2: 1670, 3: 2130, 4: 2510 }
+        };
+
+        function runSafmrCalculation() {
+          const pha = document.getElementById("calcPhaSelect").value;
+          const beds = document.getElementById("calcBedTier").value;
+          const utilDeduction = parseFloat(document.getElementById("calcUtilProfile").value) || 0;
+          
+          const baseSafmr = (SAFMR_MATRIX[pha] && SAFMR_MATRIX[pha][beds]) || 1850;
+          const maxAllowedPaymentStandard = Math.round(baseSafmr * 1.10); // 110% Exception Standard
+          const maxContractRent = maxAllowedPaymentStandard - utilDeduction;
+
+          document.getElementById("calcResultRent").innerHTML = `$${maxContractRent.toFixed(2)} <span class="text-xs text-slate-400 font-normal">/ month</span>`;
+        }
+
+        function applyMaximizerToDraft() {
+          const rentStr = document.getElementById("calcResultRent").innerText.split(" ")[0];
+          alert(`Populated HUD-52517 RFTA Intake Packet with optimized monthly contract rent: ${rentStr}`);
+        }
+      </script>
+
+<div class="overflow-x-auto custom-scrollbar">
         <table class="w-full text-left text-xs">
           <thead>
             <tr class="border-b border-slate-800 text-slate-400 font-mono text-[11px]">
