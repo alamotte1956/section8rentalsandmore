@@ -101,6 +101,16 @@ function openComplianceModal(propId) {
           <div class="font-bold text-teal-300">MN § 504B.173 Tenant Screening Disclosure</div>
           <div class="text-[11px] text-slate-400 mt-1">Pre-application criteria notice, fee refund terms & adverse action statement.</div>
         </button>
+      
+        <button onclick="generateLandlordEntryNotice('${p.id}')" class="p-3.5 text-left rounded-2xl bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/30 transition-all">
+          <div class="font-bold text-sky-300">MN § 504B.211 24-Hr Entry Notice</div>
+          <div class="text-[11px] text-slate-400 mt-1">Reasonable statutory notice with time window & NSPIRE inspection purpose.</div>
+        </button>
+
+        <button onclick="dispatchEmergencyContractorWorkOrder('${p.id}')" class="p-3.5 text-left rounded-2xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 transition-all">
+          <div class="font-bold text-rose-300">Emergency Trade Dispatch (P1)</div>
+          <div class="text-[11px] text-slate-400 mt-1">Priority 1 contractor work order with photo proof staging for HUD-52580.</div>
+        </button>
       </div>
 
       <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-[11px] text-slate-500">
