@@ -1,3 +1,7 @@
+function escapeHTML(str) {
+  if (typeof str !== 'string') return String(str || '');
+  return str.replace(/[&<>'"]/g, t => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[t] || t));
+}
 // compliance_hub.js - Self-Mounting Modal Engines & Statutory Document Generators
 // Fully resilient against DOM-readiness issues on both index.html and admin.html
 
