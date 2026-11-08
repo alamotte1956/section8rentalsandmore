@@ -86,6 +86,11 @@ function openComplianceModal(propId) {
           <div class="font-bold text-white">Dual-State SOP Manual</div>
           <div class="text-[11px] text-slate-400 mt-1">Standard operating procedures covering MN § 504B and WI § 704 operations.</div>
         </button>
+      
+        <button onclick="generateScheduleETaxReport('${p.id}')" class="p-3.5 text-left rounded-2xl bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/30 transition-all">
+          <div class="font-bold text-indigo-300">IRS Schedule E & 1099-MISC Report</div>
+          <div class="text-[11px] text-slate-400 mt-1">Form 1040 Part I itemization, PHA 1099-MISC reconciliation & expense staging.</div>
+        </button>
       </div>
 
       <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-[11px] text-slate-500">
