@@ -146,6 +146,11 @@ function openComplianceModal(propId) {
           <div class="font-bold text-amber-300">24 CFR Part 35 Lead Clearance Cert</div>
           <div class="text-[11px] text-slate-400 mt-1">Pre-1978 visual assessment, de minimis evaluation & lead-safe clearance certificate.</div>
         </button>
+      
+        <button onclick="generateColdWeatherRuleNotice('${p.id}')" class="p-3.5 text-left rounded-2xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 transition-all">
+          <div class="font-bold text-cyan-300">MN Cold Weather Rule & Heating Cert</div>
+          <div class="text-[11px] text-slate-400 mt-1">Minn. Stat. § 216B.096 winter shutoff protection notice, 68°F NSPIRE standard & EAP guide.</div>
+        </button>
       </div>
 
       <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-[11px] text-slate-500">
