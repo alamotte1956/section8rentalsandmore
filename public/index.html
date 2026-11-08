@@ -428,7 +428,8 @@ window.closeLeadModal=function(){const m=document.getElementById('universal-lead
 <script src="fair_housing_engine.js"></script>
 
   <script src="portfolio_compliance_master.js"></script>
-<script src="portfolio_ingestion_engine.js"></script>\n<script src="move_out_audit_engine.js"></script>\n<script src="bank_reconciliation_engine.js"></script>\n</body>
+<script src="portfolio_ingestion_engine.js"></script>\n<script src="move_out_audit_engine.js"></script>\n<script src="bank_reconciliation_engine.js"></script>\n<script src="tax_form_generator.js"></script>
+</body>
 </html>
 <script>
 async function submitToResend(e){e.preventDefault();const b=e.target.querySelector('button[type="submit"]'),t=b.innerText;b.innerText='Sending...';b.disabled=true;const p={name:document.getElementById('intake-name').value.trim(),email:document.getElementById('intake-email').value.trim(),county:document.getElementById('intake-county').value,notes:document.getElementById('intake-notes').value.trim()};try{const r=await fetch('/api/send-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});if(!r.ok)throw 0;alert('Inquiry sent to intake desk!');closeLeadModal();e.target.reset()}catch(err){const d=JSON.parse(localStorage.getItem('s8_leads_database')||'[]');d.unshift({...p,id:'LEAD-'+Date.now().toString().slice(-6),timestamp:new Date().toLocaleString()});localStorage.setItem('s8_leads_database',JSON.stringify(d));alert('Inquiry received and logged to intake desk!');closeLeadModal();e.target.reset()}finally{b.innerText=t;b.disabled=false}}

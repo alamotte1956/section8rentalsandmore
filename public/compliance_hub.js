@@ -131,6 +131,11 @@ function openComplianceModal(propId) {
           <div class="font-bold text-teal-300">Fair Housing Reasonable Accommodation</div>
           <div class="text-[11px] text-slate-400 mt-1">42 U.S.C. § 3604 assistance animal fee waiver, 24 CFR Part 8 determination & approval cert.</div>
         </button>
+      
+        <button onclick="generateAnnual1099Statements('${p.id}')" class="p-3.5 text-left rounded-2xl bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/30 transition-all">
+          <div class="font-bold text-indigo-300">IRS Form 1099-MISC & 1099-NEC</div>
+          <div class="text-[11px] text-slate-400 mt-1">Box 1 rent reconciliation & contractor nonemployee compensation summaries.</div>
+        </button>
       </div>
 
       <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-[11px] text-slate-500">
