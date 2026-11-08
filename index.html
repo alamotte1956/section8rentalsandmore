@@ -300,6 +300,19 @@
 window.openLeadModal=function(t){const m=document.getElementById('universal-lead-modal'),h=document.getElementById('modal-service-title');if(h&&t)h.innerText=t;if(m)m.classList.remove('hidden')};
 window.closeLeadModal=function(){const m=document.getElementById('universal-lead-modal');if(m)m.classList.add('hidden')};
 </script>
+
+  <script>
+    function triggerNavCalc() {
+      const calcSection = document.getElementById("calculator");
+      if (calcSection) {
+        calcSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      if (typeof calcRent === "function") {
+        setTimeout(calcRent, 150);
+      }
+    }
+  </script>
+
 </body>
 </html>
 <script>
