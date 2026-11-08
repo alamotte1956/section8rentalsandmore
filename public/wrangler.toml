@@ -1,0 +1,8 @@
+﻿name = "section8rentalsandmore"
+compatibility_date = "2026-11-01"
+pages_build_output_dir = "public"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "section8_production_db"
+database_id = "b189f3a2-031f-45c3-97d1-ef811b14a882"
