@@ -96,6 +96,11 @@ function openComplianceModal(propId) {
           <div class="font-bold text-amber-300">Security Deposit Escrow & 21-Day Notice</div>
           <div class="text-[11px] text-slate-400 mt-1">MN § 504B.178 1% simple interest calc, WI § 704 itemization & 21-day return statement.</div>
         </button>
+      
+        <button onclick="generateScreeningCriteriaDisclosure('${p.id}')" class="p-3.5 text-left rounded-2xl bg-teal-500/10 hover:bg-teal-500/20 border border-teal-500/30 transition-all">
+          <div class="font-bold text-teal-300">MN § 504B.173 Tenant Screening Disclosure</div>
+          <div class="text-[11px] text-slate-400 mt-1">Pre-application criteria notice, fee refund terms & adverse action statement.</div>
+        </button>
       </div>
 
       <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-[11px] text-slate-500">
