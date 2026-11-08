@@ -24,6 +24,7 @@ window.COMPLIANCE_ENGINES_REGISTRY = [
   { id: 'schedule_e', title: 'IRS Schedule E & Form 1099-MISC Dual-Stream Reconciliation', handler: 'generateScheduleETaxReport', cat: 'Tax' },
   { id: 'pha_dispatch', title: 'Direct County PHA Electronic Submission Engine', handler: 'dispatchPacketToPha', cat: 'Dispatch' }
   { id: 'crp_tax_credit', title: 'MN Form CRP / WI Rent Certificate Generator', handler: 'generateStateRentCreditCertificate', cat: 'Tax' },
+  { id: 'lead_clearance', title: 'HUD 24 CFR Part 35 Visual Clearance Certificate', handler: 'generateLeadClearanceAssessment', cat: 'Safety' },
 ];
 
 console.log("✔ Complete Section 8 Compliance Registry initialized: " + window.COMPLIANCE_ENGINES_REGISTRY.length + " statutory engines active.");
