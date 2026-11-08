@@ -1,6 +1,5 @@
-// Cloudflare Pages Worker Edge Handler
 export async function onRequest(context) {
-  const body = {
+  return new Response(JSON.stringify({
   "source": "HUD User Programmatic Dataset (MSP Metro FMR Area)",
   "verified_metro_area": "Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area",
   "standards": {
@@ -33,13 +32,11 @@ export async function onRequest(context) {
       "four_bed": 2531
     }
   }
-};
-  return new Response(JSON.stringify(body, null, 2), {
-    status: 200,
+}, null, 2), {
     headers: {
-      "Content-Type": "application/json; charset=utf-8",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=0, must-revalidate"
+      "content-type": "application/json;charset=UTF-8",
+      "access-control-allow-origin": "*",
+      "cache-control": "no-cache"
     }
   });
 }
